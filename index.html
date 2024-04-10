@@ -1,0 +1,75 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Numbers</title>
+</head>
+<body>
+    <h1>Find Numbers</h1>
+    
+    <label for="txtNumbers">Enter Numbers (comma-separated):</label>
+    <input type="text" id="txtNumbers">
+    <br>
+
+    <label for="txtTargetSum">Enter Target Sum:</label>
+    <input type="text" id="txtTargetSum">
+    <br>
+
+    <button onclick="findNumbers()">Find Result</button>
+    <br>
+
+    <label for="lstResult">Result:</label>
+    <ul id="lstResult"></ul>
+
+    <script>
+        function findNumbers() {
+            var numbersInput = document.getElementById('txtNumbers');
+            var targetSumInput = document.getElementById('txtTargetSum');
+            var resultContainer = document.getElementById('lstResult');
+
+            // Lấy và chuyển đổi dữ liệu nhập từ người dùng
+            var numbers = numbersInput.value.split(',').map(Number);
+            var targetSum = parseInt(targetSumInput.value);
+
+            // Thực hiện thuật toán tìm kiếm
+            var result = findNumbersWithSum(numbers, targetSum);
+
+            // Hiển thị kết quả trên giao diện web
+            resultContainer.innerHTML = '';
+            result.forEach(function (num) {
+                var listItem = document.createElement('li');
+                listItem.textContent = num;
+                resultContainer.appendChild(listItem);
+            });
+        }
+
+        function findNumbersWithSum(numbers, targetSum) {
+            var result = [];
+
+            // Sắp xếp mảng để tối ưu hóa thuật toán
+            numbers.sort(function(a, b) {
+                return a - b;
+            });
+
+            function backtrack(startIndex, currentSum, currentCombination) {
+                if (currentSum === targetSum) {
+                    result.push(currentCombination.slice());
+                    return;
+                }
+
+                for (var i = startIndex; i < numbers.length; i++) {
+                    if (currentSum + numbers[i] <= targetSum) {
+                        currentCombination.push(numbers[i]);
+                        backtrack(i + 1, currentSum + numbers[i], currentCombination);
+                        currentCombination.pop();
+                    }
+                }
+            }
+
+            backtrack(0, 0, []);
+
+            return result;
+        }
+    </script>
+
+
+</body>
