@@ -11,7 +11,8 @@ fetch('inventory.json')
     });
 
 function checkInventory(code) {
-    const item = inventory.find(item => item.code === code);
+    const itemCode = code.length === 13 ? code.substring(0, 12) : code; // Lấy 12 số đầu tiên
+    const item = inventory.find(item => item.code === itemCode);
     const resultElement = document.getElementById('result');
     
     if (item) {
