@@ -29,6 +29,8 @@ const qrCodeScanner = new Html5QrcodeScanner("scanner-container", {
 });
 
 qrCodeScanner.render((qrCodeMessage) => {
+    const resultElement = document.getElementById('code_result');
+    resultElement.textContent = "Code: " + qrCodeMessage;
     checkInventory(qrCodeMessage); // Gọi hàm kiểm tra mã QR
 }, (errorMessage) => {
     console.error(`QR scan failed: ${errorMessage}`);
