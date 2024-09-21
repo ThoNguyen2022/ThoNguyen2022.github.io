@@ -39,8 +39,11 @@ button:hover {
 
 #result {
     font-size: 18px;
-    margin-top: 20px;
+    margin-top: 20px; /* Tăng khoảng cách giữa camera và kết quả */
     color: #333;
+    padding: 10px; /* Thêm padding để kết quả dễ đọc hơn */
+    background-color: rgba(255, 255, 255, 0.8); /* Nền trắng trong suốt cho dễ đọc */
+    border-radius: 5px; /* Bo góc cho nền */
 }
 
 /* Responsive adjustments */
