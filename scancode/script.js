@@ -11,7 +11,6 @@ fetch('inventory.json')
     });
 
 function checkInventory(code) {
-    // Tìm sản phẩm dựa trên mã quét được
     const item = inventory.find(item => item.code === code);
     const resultElement = document.getElementById('result');
     
@@ -29,9 +28,7 @@ const qrCodeScanner = new Html5QrcodeScanner("scanner-container", {
 });
 
 qrCodeScanner.render((qrCodeMessage) => {
-    const resultElement = document.getElementById('code_result');
-    resultElement.textContent = "Code: " + qrCodeMessage;
-    checkInventory(qrCodeMessage); // Gọi hàm kiểm tra mã QR
+    checkInventory(qrCodeMessage);
 }, (errorMessage) => {
     console.error(`QR scan failed: ${errorMessage}`);
 });
