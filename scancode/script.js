@@ -1,42 +1,35 @@
-document.getElementById('start-scan').addEventListener('click', function() {
-    startScanner();
+let inventory = [];
+
+// Tải dữ liệu từ inventory.json
+fetch('inventory.json')
+    .then(response => response.json())
+    .then(data => {
+        inventory = data;
+    })
+    .catch(error => {
+        console.error("Error loading inventory:", error);
+    });
+
+function checkInventory(code) {
+    // Tìm sản phẩm dựa trên mã quét được
+    const item = inventory.find(item => item.code === code);
+    const resultElement = document.getElementById('result');
+    
+    if (item) {
+        resultElement.textContent = `Found: ${item.name} - Quantity: ${item.quantity}`;
+    } else {
+        resultElement.textContent = "Not found item";
+    }
+}
+
+// Cấu hình và khởi chạy QR code scanner
+const qrCodeScanner = new Html5QrcodeScanner("scanner-container", { 
+    fps: 10, 
+    qrbox: { width: 250, height: 250 } 
 });
 
-function startScanner() {
-    Quagga.init({
-        inputStream: {
-            name: "Live",
-            type: "LiveStream",
-            target: document.querySelector('#scanner-container') // Container for scanning
-        },
-        decoder: {
-            readers: ["code_128_reader", "ean_reader", "code_39_reader"] // EAN barcode reader
-        }
-    }, function(err) {
-        if (err) {
-            console.error(err);
-            return;
-        }
-        console.log("Scanner started");
-        Quagga.start();
-    });
-
-    Quagga.onDetected(function(result) {
-        var code = result.codeResult.code;
-        document.getElementById('code_result').textContent = "Mã: " + code;
-        checkInventory(code);
-    });
-}
-
-function checkInventory(barcode) {
-    fetch('inventory.json')
-        .then(response => response.json())
-        .then(data => {
-            let item = data.find(product => product.barcode === barcode);
-            if (item) {
-                document.getElementById('result').textContent = `Name: ${item.name}, Price: ${item.price}, Stock: ${item.stock}`;
-            } else {
-                document.getElementById('result').textContent = "Item not found!";
-            }
-        });
-}
+qrCodeScanner.render((qrCodeMessage) => {
+    checkInventory(qrCodeMessage); // Gọi hàm kiểm tra mã QR
+}, (errorMessage) => {
+    console.error(`QR scan failed: ${errorMessage}`);
+});
