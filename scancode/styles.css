@@ -20,6 +20,9 @@ h1 {
 }
 
 #scanner-container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các nút tràn xuống dòng tiếp theo */
+    justify-content: center;
     width: 100%;
     max-width: 400px;
     height: 200px; /* Giảm chiều cao */
