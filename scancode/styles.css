@@ -20,10 +20,21 @@ h1 {
 #scanner-container {
     width: 100%;
     max-width: 400px;
-    height: 250px; /* Chiều cao cụ thể cho camera */
+    height: 200px; /* Giảm chiều cao */
     margin: 20px 0; /* Khoảng cách trên và dưới */
     border: 2px solid #000;
     background-color: #ddd;
+    overflow: hidden; /* Ẩn nội dung tràn */
+    position: relative; /* Để có thể điều chỉnh nội dung bên trong */
+}
+
+video {
+    width: 100%; /* Đảm bảo video chiếm toàn bộ chiều rộng */
+    height: auto; /* Giữ tỷ lệ video */
+    position: absolute; /* Để định vị video bên trong khung */
+    top: 50%; /* Đưa video vào giữa */
+    left: 50%; /* Đưa video vào giữa */
+    transform: translate(-50%, -50%); /* Giảm thiểu không gian không cần thiết */
 }
 
 #result-container {
@@ -76,7 +87,7 @@ button:hover {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 60px) {
     h1 {
         font-size: 18px;
     }
