@@ -26,9 +26,12 @@ Quagga.init({
     inputStream: {
         type: "LiveStream",
         target: document.querySelector('#scanner-container'),
+        constraints: {
+            facingMode: "environment" // Sử dụng camera chính
+        },
     },
     decoder: {
-        readers: ["ean_reader"] // Sử dụng mã vạch EAN-13
+        readers: ["ean_reader"] // Đảm bảo sử dụng đúng reader
     }
 }, function(err) {
     if (err) {
