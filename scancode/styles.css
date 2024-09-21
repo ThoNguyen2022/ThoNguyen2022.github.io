@@ -14,9 +14,11 @@ h1 {
 #scanner-container {
     width: 100%;
     max-width: 400px;
+    height: auto;
+    aspect-ratio: 4 / 3;
     margin: 20px auto;
-    background-color: #ddd;
     border: 2px solid #000;
+    background-color: #ddd;
 }
 
 button {
@@ -41,6 +43,7 @@ button:hover {
     color: #333;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
     h1 {
         font-size: 20px;
@@ -58,6 +61,7 @@ button:hover {
 
     #result {
         font-size: 16px;
+        margin-top: 15px;
     }
 }
 
