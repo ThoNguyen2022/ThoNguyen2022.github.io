@@ -41,7 +41,5 @@ Quagga.init({
 // Khi Quagga phát hiện mã vạch, gọi hàm checkInventory
 Quagga.onDetected(function(result) {
     const code = result.codeResult.code;
-    const resultElement = document.getElementById('code_result');
-    resultElement.textContent = "Code: " + code;
     checkInventory(code);
 });
