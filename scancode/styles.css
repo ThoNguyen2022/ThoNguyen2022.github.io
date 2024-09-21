@@ -112,7 +112,11 @@ button:hover {
         font-size: 14px;
     }
 }
-
+#data-stored {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các nút tràn xuống dòng tiếp theo nếu không đủ chỗ */
+    justify-content: center; /* Canh giữa các nút */
+}
 .data-stored-button {
     flex: 0 0 9.5%; /* Đặt chiều rộng của mỗi nút (10 nút trên 1 dòng) */
     margin: 5px; /* Khoảng cách giữa các nút */
