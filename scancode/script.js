@@ -5,10 +5,22 @@ fetch('inventory.json')
     .then(response => response.json())
     .then(data => {
         inventory = data;
+        createButtons(); // Tạo các nút khi dữ liệu đã được tải
     })
     .catch(error => {
         console.error("Error loading inventory:", error);
     });
+
+function createButtons() {
+    const buttonContainer = document.getElementById('scanner-container');
+    inventory.forEach(item => {
+        const button = document.createElement('button');
+        button.textContent = item.name;
+        button.dataset.code = item.code; // Lưu mã tương ứng vào thuộc tính dữ liệu
+        button.classList.add('inventory-button'); // Thêm class cho nút
+        buttonContainer.appendChild(button);
+    });
+}
 
 function checkInventory(code) {
     const itemCode = code.length === 13 ? code.substring(0, 12) : code; // Lấy 12 số đầu tiên
@@ -17,9 +29,18 @@ function checkInventory(code) {
     
     if (item) {
         resultElement.textContent = `Found: ${item.name} - Quantity: ${item.quantity}`;
+        highlightButton(item.code); // Gọi hàm để tô màu nút
     } else {
         resultElement.textContent = "Not found item";
     }
+}
+function highlightButton(code) {
+    const buttons = document.querySelectorAll('.inventory-button');
+    buttons.forEach(button => {
+        if (button.dataset.code === code) {
+            button.style.backgroundColor = 'green'; // Tô màu nút thành xanh
+        }
+    });
 }
 
 // Khởi chạy scanner
