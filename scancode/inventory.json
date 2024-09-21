@@ -1,5 +1,4 @@
 [
-    { "barcode": "1234567890123", "name": "Product 1", "price": "$10", "stock": 20 },
-    { "barcode": "9876543210983", "name": "Product 2", "price": "$15", "stock": 35 },
-    { "barcode": "5432167890123", "name": "Product 3", "price": "$7", "stock": 50 }
+    { "code": "1234567890123", "name": "Item 1", "quantity": 10 },
+    { "code": "9876543210987", "name": "Item 2", "quantity": 5 }
 ]
