@@ -6,6 +6,12 @@ body {
     background-color: #f4f4f4;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 h1 {
     font-size: 24px;
     padding: 20px;
@@ -14,14 +20,14 @@ h1 {
 #scanner-container {
     width: 100%;
     max-width: 400px;
-    height: 250px; /* Đặt chiều cao cụ thể cho camera */
-    margin: 20px auto;
+    height: 250px; /* Chiều cao cụ thể cho camera */
+    margin: 20px 0; /* Khoảng cách trên và dưới */
     border: 2px solid #000;
     background-color: #ddd;
 }
 
 #result-container {
-    margin-top: 10px; /* Khoảng cách giữa scanner và kết quả */
+    margin-top: 20px; /* Khoảng cách giữa scanner và kết quả */
     padding: 10px; /* Padding cho kết quả */
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
