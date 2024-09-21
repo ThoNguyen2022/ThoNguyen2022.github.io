@@ -23,7 +23,7 @@ function startScanner() {
 
     Quagga.onDetected(function(result) {
         var code = result.codeResult.code;
-        document.getElementById('result').textContent = "Mã: " + code;
+        document.getElementById('code_result').textContent = "Mã: " + code;
         checkInventory(code);
     });
 }
