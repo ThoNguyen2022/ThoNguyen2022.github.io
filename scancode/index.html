@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Inventory Scanner</h1>
-    <div id="scanner-container"></div>
-    <button id="start-scan">Start Scan</button>
-    <p id="code_result">Code:</p>
-    <p id="result">Scan a code to see details</p>
+    <div class="container">
+        <h1>Inventory Scanner</h1>
+        <div id="scanner-container"></div>
+        <div id="result-container">
+            <p id="result">Scan a barcode to see details</p>
+        </div>
+        <button id="start-scan">Start Scan</button>
+    </div>
+
     <script src="https://unpkg.com/@ericblade/quagga2@v0.0.21/dist/quagga.min.js"></script>
     <script src="script.js"></script>
 </body>
