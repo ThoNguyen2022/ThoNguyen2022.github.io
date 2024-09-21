@@ -15,10 +15,11 @@ h1 {
     width: 100%;
     max-width: 400px;
     height: auto;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 3; /* Tỉ lệ giúp camera không chiếm quá nhiều không gian */
     margin: 20px auto;
     border: 2px solid #000;
     background-color: #ddd;
+    overflow: hidden; /* Đảm bảo không bị tràn */
 }
 
 button {
@@ -41,6 +42,8 @@ button:hover {
     font-size: 18px;
     margin-top: 20px;
     color: #333;
+    position: relative;
+    z-index: 10;
 }
 
 /* Responsive adjustments */
@@ -50,7 +53,7 @@ button:hover {
     }
 
     #scanner-container {
-        width: 90%;
+        max-width: 300px; /* Camera nhỏ hơn trên thiết bị nhỏ */
     }
 
     button {
@@ -61,6 +64,7 @@ button:hover {
 
     #result {
         font-size: 16px;
+        margin-top: 15px;
     }
 }
 
@@ -69,12 +73,18 @@ button:hover {
         font-size: 18px;
     }
 
+    #scanner-container {
+        max-width: 250px; /* Camera nhỏ nhất trên điện thoại */
+    }
+
     button {
         font-size: 14px;
         padding: 8px;
+        width: 90%;
     }
 
     #result {
         font-size: 14px;
+        margin-top: 10px;
     }
 }
