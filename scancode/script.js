@@ -12,12 +12,12 @@ fetch('inventory.json')
     });
 
 function createButtons() {
-    const buttonContainer = document.getElementById('scanner-container');
+    const buttonContainer = document.getElementById('data-stored');
     inventory.forEach(item => {
         const button = document.createElement('button');
         button.textContent = item.name;
         button.dataset.code = item.code; // Lưu mã tương ứng vào thuộc tính dữ liệu
-        button.classList.add('inventory-button'); // Thêm class cho nút
+        button.classList.add('data-stored-button'); // Thêm class cho nút
         buttonContainer.appendChild(button);
     });
 }
@@ -35,7 +35,7 @@ function checkInventory(code) {
     }
 }
 function highlightButton(code) {
-    const buttons = document.querySelectorAll('.inventory-button');
+    const buttons = document.querySelectorAll('.data-stored-button');
     buttons.forEach(button => {
         if (button.dataset.code === code) {
             button.style.backgroundColor = 'green'; // Tô màu nút thành xanh
