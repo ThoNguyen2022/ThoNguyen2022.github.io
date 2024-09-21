@@ -10,7 +10,7 @@ function startScanner() {
             target: document.querySelector('#scanner-container') // Container for scanning
         },
         decoder: {
-            readers: ["ean_reader"] // EAN barcode reader
+            readers: ["code_128_reader", "ean_reader", "code_39_reader"] // EAN barcode reader
         }
     }, function(err) {
         if (err) {
