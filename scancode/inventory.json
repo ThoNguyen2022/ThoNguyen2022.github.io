@@ -1,0 +1,5 @@
+[
+    { "barcode": "123456789012", "name": "Product 1", "price": "$10", "stock": 20 },
+    { "barcode": "987654321098", "name": "Product 2", "price": "$15", "stock": 35 },
+    { "barcode": "543216789012", "name": "Product 3", "price": "$7", "stock": 50 }
+]
