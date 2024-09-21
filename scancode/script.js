@@ -21,14 +21,27 @@ function checkInventory(code) {
     }
 }
 
-// Cấu hình và khởi chạy QR code scanner
-const qrCodeScanner = new Html5QrcodeScanner("scanner-container", { 
-    fps: 10, 
-    qrbox: { width: 250, height: 250 } 
+// Khởi chạy scanner
+Quagga.init({
+    inputStream: {
+        type: "LiveStream",
+        target: document.querySelector('#scanner-container'),
+    },
+    decoder: {
+        readers: ["ean_reader"] // Sử dụng mã vạch EAN-13
+    }
+}, function(err) {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    Quagga.start();
 });
 
-qrCodeScanner.render((qrCodeMessage) => {
-    checkInventory(qrCodeMessage);
-}, (errorMessage) => {
-    console.error(`QR scan failed: ${errorMessage}`);
+// Khi Quagga phát hiện mã vạch, gọi hàm checkInventory
+Quagga.onDetected(function(result) {
+    const code = result.codeResult.code;
+    const resultElement = document.getElementById('code_result');
+    resultElement.textContent = "Code: " + code;
+    checkInventory(code);
 });
