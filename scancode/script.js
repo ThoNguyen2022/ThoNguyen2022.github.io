@@ -39,6 +39,7 @@ function highlightButton(code) {
     buttons.forEach(button => {
         if (button.dataset.code === code) {
             button.style.backgroundColor = 'green'; // Tô màu nút thành xanh
+            button.parentNode.appendChild(button);
         }
     });
 }
