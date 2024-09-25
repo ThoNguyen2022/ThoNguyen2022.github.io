@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Data from Firebase</title>
+    <!-- Sử dụng Firebase SDK qua CDN -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+</head>
+<body>
+    <h1>Read Data from Firebase</h1>
+    <button id="loadDataBtn">Load Data</button>
+    <ul id="dataList"></ul>
+
+    <script>
+        // Cấu hình Firebase (thay thế bằng thông tin thực tế của bạn)
+        const firebaseConfig = {
+    			apiKey: "AIzaSyAgvVCGRl25CLSgNpLyut_Ezpl9n7Mffj8",
+    			authDomain: "haidl-2024.firebaseapp.com",
+    			databaseURL: "https://haidl-2024-default-rtdb.firebaseio.com",
+    			projectId: "haidl-2024",
+    			storageBucket: "haidl-2024.appspot.com",
+    			messagingSenderId: "486702312435",
+    			appId: "1:486702312435:web:cdf85f8b5f4883a9c8c086",
+    			measurementId: "G-HYDKHDSG5T"
+		    };
+
+        // Khởi tạo Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        // Hàm để tải dữ liệu từ Firebase
+        document.getElementById('loadDataBtn').addEventListener('click', function () {
+            const userListRef = database.ref('users/'); // Thay 'users/' bằng đường dẫn đến dữ liệu bạn muốn đọc
+            userListRef.once('value', function(snapshot) {
+                const dataList = document.getElementById('dataList');
+                dataList.innerHTML = ''; // Xóa dữ liệu cũ
+
+                snapshot.forEach(function(childSnapshot) {
+                    const childData = childSnapshot.val();
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `Name: ${childData.name}, Email: ${childData.email}`;
+                    dataList.appendChild(listItem);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
