@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+#welcomeMessage {
+    font-size: 18px;
+    color: #555;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+.form-container {
+	margin-bottom: 20px;
+}
+.form-row {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.form-row label {
+	flex: 1;
+	margin-right: 10px;
+	font-weight: bold;
+}
+
+.form-row input {
+	flex: 2;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+/* Media query cho các thiết bị mobile */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #welcomeMessage {
+        text-align: right;
+        width: 100%;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+
+    .form-container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    input {
+        font-size: 16px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
