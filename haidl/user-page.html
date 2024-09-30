@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xem công việc</title>
+    <!-- Bao gồm file CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Sử dụng Firebase SDK qua CDN -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+<body>
+    <div class="header">
+        <p id="welcomeMessage"></p>
+    </div>
+	
+	<h1>Xem danh sách công việc</h1>
+    <table id="taskTable">
+        <thead>
+            <tr>
+                <th>Tên công việc</th>
+                <th>Giá tiền</th>
+                <th>Tình trạng</th>
+                <th>Tên khách hàng</th>
+                <th>Thông tin khách hàng</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody id="dataList"></tbody>
+    </table>
+	
+     <div class="form-container">
+        <h1>Tạo việc</h1>
+        
+        <div class="form-row">
+            <label for="catagoryName">Tên công việc:</label>
+            <input type="text" id="catagoryName" placeholder="Tên công việc">
+        </div>
+
+        <div class="form-row">
+            <label for="priceNumber">Giá tiền:</label>
+            <input type="text" id="priceNumber" placeholder="Giá tiền">
+        </div>
+
+        <div class="form-row">
+            <label for="statusName">Tình trạng:</label>
+            <input type="text" id="statusName" placeholder="Tình trạng">
+        </div>
+
+        <div class="form-row">
+            <label for="customerName">Tên khách hàng:</label>
+            <input type="text" id="customerName" placeholder="Tên khách hàng">
+        </div>
+
+        <div class="form-row">
+            <label for="customerInformation">Thông tin khách hàng:</label>
+            <input type="text" id="customerInformation" placeholder="Thông tin khách hàng">
+        </div>
+
+        <button id="submitBtn">Gửi</button>
+    </div>
+    
+   
+	<script>
+        // Cấu hình Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAgvVCGRl25CLSgNpLyut_Ezpl9n7Mffj8",
+            authDomain: "haidl-2024.firebaseapp.com",
+            databaseURL: "https://haidl-2024-default-rtdb.firebaseio.com",
+            projectId: "haidl-2024",
+            storageBucket: "haidl-2024.appspot.com",
+            messagingSenderId: "486702312435",
+            appId: "1:486702312435:web:cdf85f8b5f4883a9c8c086",
+            measurementId: "G-HYDKHDSG5T"
+        };
+
+        // Khởi tạo Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        // Ghi dữ liệu vào Firebase
+        document.getElementById('submitBtn').addEventListener('click', function () {
+            const catagoryName = document.getElementById('catagoryName').value;
+            const priceNumber = document.getElementById('priceNumber').value;
+            const statusName = document.getElementById('statusName').value;
+            const customerName = document.getElementById('customerName').value;
+            const customerInformation = document.getElementById('customerInformation').value;
+
+            if (catagoryName && priceNumber) {
+				const taskRef = currentTaskId ? firebase.database().ref('tasks/' + currentTaskId) : firebase.database().ref('tasks').push(); 
+				
+				taskRef.set({
+					CatagoryName: catagoryName,
+					PriceNumber: priceNumber,
+					StatusName: statusName,
+					CustomerName: customerName,
+					CustomerInformation: customerInformation,
+					UserName: userName,
+				})
+				.then(() => {
+					console.log("Data saved successfully.");
+					document.getElementById('catagoryName').value = ''; // Xóa input
+					document.getElementById('priceNumber').value = ''; // Xóa input
+					document.getElementById('statusName').value = ''; // Xóa input
+					document.getElementById('customerName').value = ''; // Xóa input
+					document.getElementById('customerInformation').value = ''; // Xóa input
+					currentTaskId = null; // Reset taskId sau khi cập nhật xong
+					loadData(); // Tải lại danh sách
+				})
+				.catch((error) => {
+					console.error("Error saving data: ", error);
+				});
+			} else {
+				console.log("Please fill in all fields.");
+			}
+        });
+
+        function loadData() {
+            const taskListRef = database.ref('tasks');
+            taskListRef.once('value', function (snapshot) {
+                const dataList = document.getElementById('dataList');
+                dataList.innerHTML = ''; // Xóa dữ liệu cũ
+
+                snapshot.forEach(function (childSnapshot) {
+                    const childData = childSnapshot.val();
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${childData.CatagoryName}</td>
+                        <td>${childData.PriceNumber}</td>
+                        <td>${childData.StatusName}</td>
+                        <td>${childData.CustomerName}</td>
+                        <td>${childData.CustomerInformation}</td>
+                        <td><button onclick="updateTask('${childSnapshot.key}')">Update</button></td>
+                    `;
+                    dataList.appendChild(row);
+                });
+            });
+        }
+
+        // Hàm để xóa dữ liệu từ Firebase
+        function updateTask(taskId) {
+			const taskRef = firebase.database().ref('tasks/' + taskId); // Tham chiếu đến task cần cập nhật
+			taskRef.once('value', function(snapshot) {
+				const taskData = snapshot.val();
+				
+				// Điền thông tin vào các trường input
+				document.getElementById('catagoryName').value = taskData.CatagoryName; 
+				document.getElementById('priceNumber').value = taskData.PriceNumber;
+				document.getElementById('statusName').value = taskData.StatusName; 
+				document.getElementById('customerName').value = taskData.CustomerName; 
+				document.getElementById('customerInformation').value = taskData.CustomerInformation; 
+				
+				// Lưu lại taskId để sử dụng cho cập nhật sau này
+				currentTaskId = taskId;
+			});
+		}
+
+        // Hiển thị tên user từ localStorage
+		let currentTaskId = null;
+		loadData();
+        const userName = localStorage.getItem('userName');
+        if (userName) {
+            document.getElementById('welcomeMessage').textContent = `Xin chào, ${userName}!`;
+        } else {
+            document.getElementById('welcomeMessage').textContent = 'Bạn chưa đăng nhập.';
+        }
+    </script>
+</body>
+</html>
