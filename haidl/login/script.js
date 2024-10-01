@@ -40,7 +40,7 @@ document.getElementById('loginBtn').addEventListener('click', function () {
                 
                 document.getElementById('loginMessage').textContent = 'Đăng nhập thành công!';
                 // Chuyển hướng đến trang khác (ví dụ: welcome.html)
-                window.location.href = 'user-page.html'; 
+                window.location.href = ''../user-page/index.html''; 
             } else {
                 document.getElementById('loginMessage').textContent = 'Tên đăng nhập hoặc mật khẩu không đúng.';
             }
