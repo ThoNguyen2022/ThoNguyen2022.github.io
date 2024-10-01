@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xem công việc</title>
+    <!-- Bao gồm file CSS -->
+    <link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Sử dụng Firebase SDK qua CDN -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<p id="welcomeMessage"></p>	
+	<h2 class="centered">Xem danh sách công việc</h2>
+    <table id="taskTable">
+        <thead>
+            <tr>
+				<th>
+					<i class="fas fa-clock" title="Trạng thái công việc" style="font-size: 24px"></i>
+				</th>
+                <th>Tên công việc</th>
+                <th>Giá tiền</th>                
+                <th>Tên khách hàng</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody id="dataList"></tbody>		
+    </table>
+	<div id="pagination"></div>
+    <div class="form-container">        
+        <div class="form-row">
+            <label for="catagoryName">Tên công việc:</label>
+            <input type="text" id="catagoryName" placeholder="Tên công việc">
+        </div>
+
+        <div class="form-row">
+            <label for="priceNumber">Giá tiền:</label>
+            <input type="text" id="priceNumber" placeholder="Giá tiền">
+        </div>
+
+       <div class="form-row">
+			<label for="statusName">Tình trạng:</label>
+			<div class="status-buttons">
+				<div class="status-option not-started">
+					<input type="radio" id="notStarted" name="status" value="Chưa làm">
+					<label for="notStarted">Chưa làm</label>
+				</div>
+				<div class="status-option in-progress">
+					<input type="radio" id="inProgress" name="status" value="Đang làm">
+					<label for="inProgress">Đang làm</label>
+				</div>
+				<div class="status-option completed">
+					<input type="radio" id="completed" name="status" value="Hoàn thành">
+					<label for="completed">Hoàn thành</label>
+				</div>
+			</div>
+			<input type="text" id="statusName" placeholder="Tình trạng" style="display:none;">
+		</div>
+		
+        <div class="form-row">
+            <label for="customerName">Tên khách hàng:</label>
+            <input type="text" id="customerName" placeholder="Tên khách hàng">
+        </div>
+
+        <div class="form-row">
+            <label for="customerInformation">Thông tin khách hàng:</label>
+            <input type="text" id="customerInformation" placeholder="Thông tin khách hàng">
+        </div>
+		<div class="button-container">
+			<button id="addNewTask" onclick="resetForm()" style="display:none;">Thêm việc mới</button>
+			<button id="submitBtn">Cập nhật</button>
+		</div>
+    </div>
+	
+    <div id="taskDetails" style="display: none;">
+		<h2>Chi tiết công việc</h2>
+		<p><strong>Ngày tạo:</strong> <span id="creationDate"></span></p>
+		<p><strong>Người tạo:</strong> <span id="createdBy"></span></p>
+		<p><strong>Ngày cập nhật:</strong> <span id="updateDate"></span></p>
+		<p><strong>Người cập nhật:</strong> <span id="updateBy"></span></p>
+		<p><strong>Thông tin khác:</strong> <span id="additionalInfo"></span></p>
+	</div>
+   
+	<script>	
+    </script>
+</body>
+</html>
