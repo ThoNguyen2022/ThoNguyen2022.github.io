@@ -1,1 +1,20 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin đăng nhập</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Đăng nhập</h1>
+        <input type="text" id="userNameInput" placeholder="Tên đăng nhập" required>
+        <input type="password" id="passWordInput" placeholder="Mật khẩu" required>
+        <button id="loginBtn">Đăng nhập</button>
+        <p id="loginMessage"></p>
+</body>
+</html>
