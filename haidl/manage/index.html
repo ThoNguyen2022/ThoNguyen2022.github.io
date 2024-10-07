@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý công việc</title>
+    <!-- Bao gồm file CSS -->
+    <link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Sử dụng Firebase SDK qua CDN -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+	<script src="script.js" defer></script>
+</head>
+<body>
+    <p id="welcomeMessage"></p>
+	<button type="button" id="viewTableButton"  onclick="toggleviewTable()">Xem/Ẩn danh sách công việc</button>
+	<div id="viewTable">
+		<table id="taskTable">
+			<thead>
+				<tr>
+					<th>--</th>
+					<th>Công việc</th>
+					<th>Máy</th>
+					<th>Giá tiền</th>
+					<th>Tên khách hàng</th>
+					<th>Xem</th>
+				</tr>
+			</thead>
+			<tbody id="dataList"></tbody>
+		</table>
+		<div id="pagination"></div>
+	</div>
+	
+	<button type="button" id="createTaskButton" onclick="toggleCreateTaskForm()">Tạo/ẩn công việc mới</button>
+    <div class="form-container" id="createTask" style="display: block;">
+		<div class="form-row align-items-center">
+            <div class="col-2">
+                <label for="taskName">Công việc:</label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="taskName" class="form-control" placeholder="Tên công việc">
+            </div>
+            <div class="col-6 button-container"> <!-- Sử dụng class button-container -->
+                <button type="button" class="myButton btn btn-secondary" onclick="addTask('Tháo')">Tháo</button>
+                <button type="button" class="myButton btn btn-secondary" onclick="addTask('Lắp')">Lắp</button>
+                <button type="button" class="myButton btn btn-secondary" onclick="addTask('Vệ sinh')">Vệ sinh</button>
+                <button type="button" class="myButton btn btn-secondary" onclick="addTask('Sửa')">Sửa</button>
+            </div>
+        </div>
+
+		<div class="form-row align-items-center">
+            <div class="col-2">
+                <label for="machineName">Máy:</label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="machineName" class="form-control" placeholder="Tên máy">
+            </div>
+            <div class="col-6 button-container"> <!-- Sử dụng class button-container -->
+                <button type="button" class="myRadioButton btn btn-secondary" onclick="selectMachine('Máy lạnh')">Máy lạnh</button>
+                <button type="button" class="myRadioButton btn btn-secondary" onclick="selectMachine('Tủ lạnh')">Tủ lạnh</button>
+                <button type="button" class="myRadioButton btn btn-secondary" onclick="selectMachine('Máy giặt')">Máy giặt</button>
+            </div>
+        </div>
+		<div class="form-row align-items-center">
+            <div class="col-2">
+                <label for="price">Giá tiền:</label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="price" class="form-control" placeholder="Giá tiền" value="0">
+            </div>
+            <div class="col-6 button-container">
+				<button type="button" class="myPriceButton btn btn-secondary" value="100" onclick="handlePrice(this.value)">100</button>
+				<button type="button" class="myPriceButton btn btn-secondary" value="150" onclick="handlePrice(this.value)">150</button>
+				<button type="button" class="myPriceButton btn btn-secondary" value="200" onclick="handlePrice(this.value)">200</button>
+				<button type="button" class="myPriceButton btn btn-secondary" value="+25" onclick="handlePrice(this.value)">+25</button>
+				<button type="button" class="myPriceButton btn btn-secondary" value="+50" onclick="handlePrice(this.value)">+50</button>
+				<button type="button" class="myPriceButton btn btn-secondary" value="+100" onclick="handlePrice(this.value)">+100</button>
+			</div>
+
+        </div>
+        <div class="form-row align-items-center">
+            <div class="col-2">
+                <label for="customerName">Khách hàng:</label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="customerName" class="form-control" placeholder="Tên khách hàng">
+            </div>
+            <div class="col-3">
+                <input type="text" id="customerInformation" class="form-control" placeholder="Số điện thoại">
+            </div>
+			 <div class="col-3">
+                <input type="text" id="customerInformation" class="form-control" placeholder="Ghi chú">
+            </div>
+        </div>
+        <div class="button-container">
+            <button id="addNewTask" onclick="createNewTask()">Thêm việc mới</button>
+        </div>
+    </div>
+
+	<button type="button" id="viewDetailsButton" style="display: none;">Xem chi tiết công việc</button>
+    <div id="taskDetails" style="display: none;">
+        <h2>Chi tiết công việc</h2>
+		<p><strong>Tên khách hàng</strong> <span id="customerName"></span></p>
+		<p><strong>Thông tin KH</strong> <span id="customerInformation"></span></p>	
+		<p><strong>Người làm:</strong> <span id="note"></span></p>		
+        <p><strong>Ghi chú:</strong> <span id="note"></span></p>
+        <p><strong>Ngày tạo:</strong> <span id="creationDate"></span></p>
+        <p><strong>Người tạo:</strong> <span id="createdBy"></span></p>
+        <p><strong>Ngày cập nhật:</strong> <span id="updateDate"></span></p>
+        <p><strong>Người cập nhật:</strong> <span id="updateBy"></span></p>
+    </div>
+</body>
+</html>

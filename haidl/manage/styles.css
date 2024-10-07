@@ -1,0 +1,234 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 5px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 4px;
+}
+
+.form-row {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+}
+
+.form-row label {
+	flex: 1;
+	margin-right: 5px;
+	font-weight: bold;
+}
+
+.form-row input {
+	flex: 2;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+.not-started {
+    font-weight: normal;
+    color: grey;
+}
+
+.in-progress {
+    font-weight: bold;
+    color: orange;
+}
+
+.completed {
+    font-weight: bold;
+    color: green;
+}
+
+.status-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.status-option {
+    padding: 4px; /* Khoảng cách bên trong */
+    border-radius: 1px; /* Bo góc cho khung */
+    margin-right: 2px; /* Khoảng cách giữa các nút */
+    cursor: pointer; /* Đổi con trỏ khi di chuột qua */
+}
+
+.not-started {
+    background-color: #ffcccc; /* Màu đỏ nhạt cho chưa làm */
+    border: 1px solid red; /* Đường viền đỏ */
+}
+
+.in-progress {
+    background-color: #ffe5cc; /* Màu cam nhạt cho đang làm */
+    border: 1px solid orange; /* Đường viền cam */
+}
+
+.completed {
+    background-color: #ccffcc; /* Màu xanh nhạt cho hoàn thành */
+    border: 1px solid green; /* Đường viền xanh */
+}
+
+.status-option input[type="radio"] {
+    display: none; /* Ẩn nút radio gốc */
+}
+
+.status-option label {
+    display: block; /* Làm cho label chiếm toàn bộ không gian của khung */
+    text-align: center; /* Căn giữa văn bản */
+    cursor: pointer; /* Đổi con trỏ khi di chuột qua */
+}
+
+.status-option input[type="radio"]:checked + label {
+    font-weight: bold; /* Làm cho label đậm khi được chọn */
+}
+
+.centered {
+    text-align: center; /* Canh giữa nội dung văn bản */
+}
+
+.form-container {
+	display: none; /* Giữ nguyên để ẩn div nếu cần */
+	font-size: 90%; /* Giảm kích thước chữ xuống 10% */
+}
+
+.button-container {
+            display: flex; /* Sử dụng flexbox để sắp xếp các button */
+            justify-content: space-between; /* Tạo khoảng cách đều giữa các button */
+            flex-wrap: wrap; /* Đảm bảo các button xuống dòng khi không đủ không gian */
+        }
+        .button-container button {
+            flex: 1; /* Mỗi button sẽ chiếm bằng nhau */
+            margin: 2px; /* Tạo khoảng cách giữa các button */
+        }
+
+
+
+label {
+	padding-left: 5px; /* Thêm padding bên phải cho label */
+}
+.button-container button:last-child {
+	padding-right: 5px; /* Thêm padding cho button cuối cùng */
+}
+
+button {
+    /* Bạn có thể thêm các kiểu dáng cho nút ở đây nếu cần */
+    padding: 10px 15px; /* Khoảng cách bên trong nút */
+}
+
+
+#pagination {
+    margin-top: 20px;
+}
+
+#pagination button {
+    margin-right: 5px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#pagination button:hover {
+    background-color: #0056b3;
+}
+
+/* Media query cho các thiết bị mobile */
+@media (max-width: 768px) {
+    #welcomeMessage {
+        text-align: right;
+        width: 100%;
+		font-size: 16px;
+		color: #555;
+    }
+
+    table, th, td {
+        font-size: 10px;
+		width: 90%;
+		margin: 0 auto; /* Căn giữa bảng */
+    }
+	
+	table, body {
+		display: block;
+		max-height: 300px; /* Giới hạn chiều cao của phần thân bảng */
+		overflow-y: auto;  /* Thêm thanh cuộn dọc nếu vượt quá chiều cao */
+	}
+	
+	th:first-child, td:first-child {
+		width: 10%; /* Chiều rộng cho cột icon */
+	}
+	th:nth-child(2), td:nth-child(2) {
+		width: 35%; /* Chiều rộng cho cột Tên công việc */
+	}
+
+	th:nth-child(3), td:nth-child(3) {
+		width: 15%; /* Chiều rộng cho cột Giá tiền */
+	}
+
+	th:nth-child(4), td:nth-child(4) {
+		width: 25%; /* Chiều rộng cho cột Tên khách hàng */
+	}
+	
+	th:nth-child(5){
+		width: 15%; /* Chiều rộng cho cột Hành động */
+	}
+
+
+    button {
+        padding: 8px 16px;
+    }
+
+    input {
+        font-size: 16px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
