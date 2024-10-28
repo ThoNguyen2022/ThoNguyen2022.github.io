@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Animation with Text</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            position: relative; /* Set the body to relative for absolute positioning */
+        }
+
+        .heart {
+            width: 200px; /* Heart size */
+            height: 200px; /* Heart size */
+            background-color: red;
+            position: relative;
+            transform: rotate(-45deg);
+            animation: pulse 1s infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 200px; /* Heart size */
+            height: 200px; /* Heart size */
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -100px; /* Adjusted position */
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: 100px; /* Adjusted position */
+        }
+
+        .text {
+			z-index: 1;
+            position: absolute;
+            color: white;
+            font-size: 60px; /* Font size */
+            font-weight: bold;
+            text-align: center;
+            transform: translate(-50%, -70%) rotate(45deg); /* Adjusted position */
+            width: 300px; /* Width to center the text */
+            top: 35%; /* Center vertically */
+            left: 65%; /* Center horizontally */
+        }
+
+        .small-heart {
+            width: 30px; /* Smaller small heart */
+            height: 30px; /* Smaller small heart */
+            background-color: red;
+            position: absolute;
+            bottom: 10px; /* Adjusted position */
+            right: 10px; /* Adjusted position */
+            transform: rotate(-45deg);
+            animation: pulse 1s infinite;
+        }
+
+        .small-heart::before,
+        .small-heart::after {
+            content: "";
+            position: absolute;
+            width: 30px; /* Smaller small heart */
+            height: 30px; /* Smaller small heart */
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .small-heart::before {
+            top: -15px; /* Adjusted position */
+            left: 0;
+        }
+
+        .small-heart::after {
+            top: 0;
+            left: 15px; /* Adjusted position */
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.1) rotate(-45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart">
+        <div class="text">Thọ ❤️ Vi</div>
+        <div class="small-heart"></div>
+    </div>
+</body>
+</html>
