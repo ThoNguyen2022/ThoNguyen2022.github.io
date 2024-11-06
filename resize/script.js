@@ -24,32 +24,19 @@ document.addEventListener('DOMContentLoaded', function () {
                         return;
                     }
 
-                    // Tính toán kích thước mới
-                    let newWidth, newHeight;
+                    // Tính toán kích thước mới (với tỷ lệ người dùng nhập)
+                    let newWidth = ratioWidth;
+                    let newHeight = ratioHeight;
 
-                    if (ratioWidth / ratioHeight > originalWidth / originalHeight) {
-                        // Nếu tỷ lệ mới rộng hơn thì mở rộng chiều rộng
-                        newWidth = (originalHeight * ratioWidth) / ratioHeight;
-                        newHeight = originalHeight;
-                    } else {
-                        // Nếu tỷ lệ mới dài hơn thì mở rộng chiều dài
-                        newWidth = originalWidth;
-                        newHeight = (originalWidth * ratioHeight) / ratioWidth;
-                    }
-
-                    // Tạo canvas mới để vẽ
+                    // Cập nhật kích thước canvas để vừa vặn với ảnh sau khi resize
                     canvas.width = newWidth;
                     canvas.height = newHeight;
 
+                    // Vẽ ảnh lên canvas mà không có khoảng trống
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    // Tính toán offset để căn giữa ảnh
-                    const offsetX = (canvas.width - originalWidth) / 2;
-                    const offsetY = (canvas.height - originalHeight) / 2;
+                    ctx.drawImage(img, 0, 0, newWidth, newHeight);
 
-                    // Vẽ ảnh lên canvas
-                    ctx.drawImage(img, offsetX, offsetY, originalWidth, originalHeight);
-
-                    // Tải ảnh về
+                    // Tải ảnh đã chỉnh sửa
                     canvas.toBlob(function (blob) {
                         const downloadLink = document.createElement('a');
                         downloadLink.href = URL.createObjectURL(blob);
