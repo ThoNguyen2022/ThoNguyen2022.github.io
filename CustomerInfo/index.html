@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tách Thông Tin Cá Nhân</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="input-section">
+        <textarea id="inputText" rows="4" placeholder="Nhập thông tin ở đây..." style="width: 100%;"></textarea>
+        <button onclick="splitInfo()" style="margin-top: 10px; padding: 5px 10px; font-size: 16px;">Tách Thông Tin</button>
+    </div>
+
+    <div class="output-section" id="outputSection">
+        <div class="section">
+            <div class="info" id="name">Họ và Tên</div>
+            <button class="copy-button" onclick="copyText('name')">Copy Họ và Tên</button>
+        </div>
+
+        <div class="section">
+            <div class="info" id="phone">Số Điện Thoại</div>
+            <button class="copy-button" onclick="copyText('phone')">Copy Số Điện Thoại</button>
+        </div>
+
+        <div class="section">
+            <div class="info" id="address">Địa Chỉ</div>
+            <button class="copy-button" onclick="copyText('address')">Copy Địa Chỉ</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
