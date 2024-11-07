@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.input-section, .output-section {
+    margin: 10px;
+    width: 80%;
+    max-width: 400px;
+}
+
+.output-section {
+    display: none;
+}
+
+.section {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.info {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.copy-button {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
