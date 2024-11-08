@@ -26,34 +26,43 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .copy-btn.success {
+            background-color: #28a745; /* Green */
+        }
+        .copy-btn.failure {
+            background-color: #dc3545; /* Red */
         }
     </style>
 </head>
 <body>
-
-    <div class="response" id="response1">
-        <p>Response 1: Here is the text for the first response.</p>
+    <p>Response 1: Here is the text for the first response.</p>
+    <button class="copy-btn" onclick="copyAsImage('response1')" id="copyCard">Copy as Image</button>
+    <div class="response" id="response1" style="width:200px; height:200px">        
         <img src="./images/a.jpg" alt="Image 1">
-        <button class="copy-btn" onclick="copyAsImage('response1')">Copy as Image</button>
     </div>
 
     <script>
         function copyAsImage(elementId) {
             const element = document.getElementById(elementId);
-            
+            const copyButton = document.getElementById('copyCard');
+
             html2canvas(element).then(canvas => {
-                // Convert canvas to image URL
                 canvas.toBlob(blob => {
                     const item = new ClipboardItem({ "image/png": blob });
                     navigator.clipboard.write([item]).then(() => {
-                        alert("Image copied to clipboard!");
+                        // Copy successful - change button to green
+                        copyButton.classList.remove('failure');
+                        copyButton.classList.add('success');
                     }).catch(() => {
-                        alert("Failed to copy. Try downloading instead.");
+                        // Copy failed - change button to red
+                        copyButton.classList.remove('success');
+                        copyButton.classList.add('failure');
                     });
                 });
             });
         }
     </script>
-
 </body>
 </html>
