@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responses with Images</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        .response {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .response img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
+        .copy-btn {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="response" id="response1">
+        <p>Response 1: Here is the text for the first response.</p>
+        <img src="https://via.placeholder.com/150" alt="Image 1">
+		<img src="Screenshot_5.png">
+        <button class="copy-btn" onclick="copyAsImage('response1')">Copy as Image</button>
+    </div>
+
+    <script>
+        function copyAsImage(elementId) {
+            const element = document.getElementById(elementId);
+            
+            html2canvas(element).then(canvas => {
+                // Convert canvas to image URL
+                canvas.toBlob(blob => {
+                    const item = new ClipboardItem({ "image/png": blob });
+                    navigator.clipboard.write([item]).then(() => {
+                        alert("Image copied to clipboard!");
+                    }).catch(() => {
+                        alert("Failed to copy. Try downloading instead.");
+                    });
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>
