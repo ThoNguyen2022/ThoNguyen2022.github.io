@@ -27,14 +27,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Tính toán kích thước mới
                     let newWidth, newHeight;
 
-                    if (ratioWidth / ratioHeight < originalWidth / originalHeight) {
-                        // Nếu tỷ lệ mới rộng hơn thì mở rộng chiều rộng
-                        newWidth = (originalHeight * ratioWidth) / ratioHeight;
-                        newHeight = originalHeight;
+                    if (ratioWidth / ratioHeight > originalWidth / originalHeight) {
+                        // Nếu tỷ lệ mới rộng ít hơn thì mở rộng chiều rộng
+						newHeight = (originalWidth * ratioHeight) / ratioWidth;
+						newWidth = originalWidth;                        
                     } else {
                         // Nếu tỷ lệ mới dài hơn thì mở rộng chiều dài
-                        newWidth = originalWidth;
-                        newHeight = (originalWidth * ratioHeight) / ratioWidth;
+                        newWidth = (originalHeight * ratioWidth) / ratioHeight;
+                        newHeight = originalHeight;
                     }
 
                     // Tạo canvas mới để vẽ
