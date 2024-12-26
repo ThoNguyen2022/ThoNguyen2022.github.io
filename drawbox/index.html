@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiết kế hộp</title>
+</head>
+<body>
+    <h1>Thiết kế hộp</h1>
+    <label for="length">Chiều dài (mm): </label>
+    <input type="number" id="length" min="1" value="200">
+    <br>
+    <label for="width">Chiều rộng (mm): </label>
+    <input type="number" id="width" min="1" value="160">
+    <br>
+    <label for="height">Chiều cao (mm): </label>
+    <input type="number" id="height" min="1" value="120">
+    <br>
+	<label for="flap">Phần dán (mm): </label>
+    <input type="number" id="flap" min="1" value="10">
+    <br>
+    <button onclick="drawBox()">Tạo bản vẽ</button>
+
+    <svg id="svgCanvas" xmlns="http://www.w3.org/2000/svg" style="border:1px solid black; margin-top:20px;" width="1200" height="800">
+    </svg>
+
+    <script>
+        function drawBox() {
+            let length = parseFloat(document.getElementById('length').value); // mm
+            let width = parseFloat(document.getElementById('width').value); // mm
+            let height = parseFloat(document.getElementById('height').value); // mm
+            let flap = parseFloat(document.getElementById('flap').value); // mm
+            let startX = 10;
+            let startY = 10;
+			const maxwidth = 1200;
+			const maxheight = 800;
+			const currentWidth = startX * 2 + width + height + width + height + flap;
+			const currentHeight =  startY * 2 + flap + height + length + height + flap;
+			const ratio = Math.min(maxwidth / currentWidth, maxheight / currentHeight);
+			length = length*ratio;
+			width = width*ratio;
+			height = height*ratio;
+			flap = flap*ratio;
+			startX = startX * ratio;
+			startY = startY * ratio;
+            const svg = document.getElementById('svgCanvas');
+            svg.innerHTML = ''; // Xóa bản vẽ cũ	
+			
+            // Vẽ các phần
+            drawRect(svg, startX + width + height, startY, width, flap, '', "#00ff00"); // Dán nắp trên
+			drawRect(svg, startX + width + height, startY + flap, width, height, 'Nắp trên'); // Nắp trên
+			drawRect(svg, startX + width + height, startY + flap + height, width, length, 'Mặt chính'); // Mặt chính
+			drawRect(svg, startX + width + height, startY + flap + height + length, width, height, ' Nắp dưới'); // Nắp dưới
+			drawRect(svg, startX + width + height, startY + flap + height + length + height, width, flap, '', "#00ff00"); //Dán nắp dưới
+			drawRect(svg, startX, startY + flap + height, width, length, 'Mặt đối diện'); // Mặt đối diện
+			drawRect(svg, startX + width, startY + flap + height, height, length, 'Mặt trái'); // Mặt trái
+			drawRect(svg, startX + width + height + width, startY + flap + height, height, length, 'Mặt phải'); // Mặt phải
+			drawRect(svg, startX + width + height + width + height, startY + flap + height, flap, length, '', "#00ff00"); // Dán hong  
+			
+        }
+
+        function drawRect(svg, x, y, width, height, label, color = "#eeeeee") {
+            const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+            rect.setAttribute("x", x);
+            rect.setAttribute("y", y);
+            rect.setAttribute("width", width);
+            rect.setAttribute("height", height);
+            rect.setAttribute("fill", color);
+            rect.setAttribute("stroke", "black");
+            rect.setAttribute("stroke-width", "1");
+            svg.appendChild(rect);
+
+            // Thêm nhãn
+            const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            text.setAttribute("x", x + width / 2);
+            text.setAttribute("y", y + height / 2);
+            text.setAttribute("text-anchor", "middle");
+            text.setAttribute("dominant-baseline", "middle");
+            text.setAttribute("font-size", "12");
+            text.textContent = label;
+            svg.appendChild(text);
+        }
+
+        drawBox(); // Hiển thị bản vẽ mẫu ban đầu
+    </script>
+</body>
+</html>
