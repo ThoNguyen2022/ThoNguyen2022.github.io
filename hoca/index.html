@@ -19,11 +19,24 @@
 
       th,
       td {
-         width: 20%;
-         /* Điều chỉnh tùy vào số lượng cột */
          text-overflow: ellipsis;
          overflow: hidden;
          white-space: nowrap;
+      }
+
+      th:first-child,
+      td:first-child {
+         width: 45%;
+      }
+
+      th:nth-child(2),
+      td:nth-child(2) {
+         width: 25%;
+      }
+
+      th:nth-child(3),
+      td:nth-child(3) {
+         width: 25%;
       }
 
       .container {
@@ -57,8 +70,8 @@
       }
 
       #showInfor {
-         width: 80%;
-         /* Chiếm 80% chiều rộng trang */
+         width: 90%;
+         /* Chiếm 90% chiều rộng trang */
          height: 50px;
          /* Tăng chiều cao input */
          font-size: 16px;
@@ -78,12 +91,16 @@
          <td>
             <label for="length">Chiều dài (cm): </label>
             <br>
-            <input type="number" id="length" min="1" value="40" onblur="moveToNextInput('width')">
+            <input type="number" id="length" min="0" value="40" onchange="moveToNextInput('width')">
+            <button type="button" onclick="adjustValue('length', -10)">&#x2193;&#x2193; 10</button>
+            <button type="button" onclick="adjustValue('length', -5)">&#x2193; 5</button>
+            <button type="button" onclick="adjustValue('length', 5)">&#x2191; 5</button>
+            <button type="button" onclick="adjustValue('length', 10)">&#x2191;&#x2191; 10</button>
          </td>
          <td>
-            <input type="radio" name="option" value="1" checked onclick="calculate()"> Kính 3 ly<br>
-            <input type="radio" name="option" value="1.2" onclick="calculate()"> Kính 4 ly<br>
-            <input type="radio" name="option" value="1.4" onclick="calculate()"> Kính 5 ly
+            <input type="radio" name="option" id="option1" value="1" checked onclick="calculate()"> Kính 3 ly<br>
+            <input type="radio" name="option" id="option2" value="1.2" onclick="calculate()"> Kính 4 ly<br>
+            <input type="radio" name="option" id="option3" value="1.4" onclick="calculate()"> Kính 5 ly
          </td>
          <td>
             <label for="priceResource">Giá vật tư: </label><br>
@@ -94,12 +111,16 @@
          <td>
             <label for="width">Chiều rộng (cm): </label>
             <br>
-            <input type="number" id="width" min="1" value="30" onblur="moveToNextInput('height')">
+            <input type="number" id="width" min="0" value="30" onchange="moveToNextInput('height')">
+            <button type="button" onclick="adjustValue('width', -10)">&#x2193;&#x2193; 10</button>
+            <button type="button" onclick="adjustValue('width', -5)">&#x2193; 5</button>
+            <button type="button" onclick="adjustValue('width', 5)">&#x2191; 5</button>
+            <button type="button" onclick="adjustValue('width', 10)">&#x2191;&#x2191; 10</button>
          </td>
          <td>
-            <input type="radio" name="option" value="1.6" onclick="calculate()"> Kính 6 ly<br>
-            <input type="radio" name="option" value="2.1" onclick="calculate()"> Kính 8 ly<br>
-            <input type="radio" name="option" value="2.6" onclick="calculate()"> Kính 10 ly
+            <input type="radio" name="option" id="option4" value="1.6" onclick="calculate()"> Kính 6 ly<br>
+            <input type="radio" name="option" id="option5" value="2.1" onclick="calculate()"> Kính 8 ly<br>
+            <input type="radio" name="option" id="option6" value="2.6" onclick="calculate()"> Kính 10 ly
          </td>
          <td>
             <label for="priceOfTask">Tiền công: </label><br>
@@ -110,22 +131,26 @@
          <td>
             <label for="height">Chiều cao (cm): </label>
             <br>
-            <input type="number" id="height" min="1" value="30" onblur="moveToNextInput('draw')">
+            <input type="number" id="height" min="0" value="30" onchange="moveToNextInput('draw')">
+            <button type="button" onclick="adjustValue('height', -10)">&#x2193;&#x2193; 10</button>
+            <button type="button" onclick="adjustValue('height', -5)">&#x2193; 5</button>
+            <button type="button" onclick="adjustValue('height', 5)">&#x2191; 5</button>
+            <button type="button" onclick="adjustValue('height', 10)">&#x2191;&#x2191; 10</button>
          </td>
          <td>
-            <input type="radio" name="option" value="3.5" onclick="calculate()"> Kính 12 ly<br>
-            <input type="radio" name="option" value="6.3" onclick="calculate()"> Kính 15 ly<br>
-            <input type="radio" name="option" value="11.8" onclick="calculate()"> Kính 19 ly
+            <input type="radio" name="option" id="option7" value="3.5" onclick="calculate()"> Kính 12 ly<br>
+            <input type="radio" name="option" id="option8" value="6.3" onclick="calculate()"> Kính 15 ly<br>
+            <input type="radio" name="option" id="option9" value="11.8" onclick="calculate()"> Kính 19 ly
          </td>
          <td>
-            <label for="priceOfShip">Phí ship(<10Km): </label><br>
+            <label for="priceOfShip">Ship(<10Km): </label><br>
                   <input type="text" id="priceOfShip" readonly>
          </td>
       </tr>
       <tr>
          <td><label for="result">Tổng diện tích: </label><br><input type="text" id="result" readonly></td>
          <td>
-            <label for="priceOfGlass3mm">Giá 1m2 kính 3 ly </label><br>
+            <label for="priceOfGlass3mm">Kính 3 ly/m2 </label><br>
             <input type="text" id="priceOfGlass3mm" value="168">
          </td>
          <td>
@@ -143,6 +168,48 @@
       <svg id="svgCanvas" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"></svg>
    </div>
    <script>
+      function adjustValue(inputId, amount) {
+         const length = parseFloat(document.getElementById('length').value) || 0;
+         const width = parseFloat(document.getElementById('width').value) || 0;
+         const height = parseFloat(document.getElementById('height').value) || 0;
+
+         const volume = length * width * height / 1000;
+         if (volume > 1000) {
+            thickness = 9;
+         } else if (volume > 800) {
+            thickness = 8;
+         } else if (volume > 500) {
+            thickness = 7;
+         } else if (volume > 300) {
+            thickness = 6;
+         } else if (volume > 200) {
+            thickness = 5;
+         } else if (volume > 150) {
+            thickness = 4;
+         } else if (volume > 100) {
+            thickness = 3;
+         } else if (volume > 50) {
+            thickness = 2;
+         } else {
+            thickness = 1;
+         }
+         // Tự động chọn radio button
+         document.getElementById(`option${thickness}`).checked = true;
+         const input = document.getElementById(inputId);
+         let currentValue = parseInt(input.value);
+
+         // Điều chỉnh giá trị của input
+         currentValue += amount;
+
+         // Đảm bảo giá trị không nhỏ hơn min
+         if (currentValue < parseInt(input.min)) {
+            currentValue = parseInt(input.min);
+         }
+
+         // Cập nhật lại giá trị cho input
+         input.value = currentValue;
+         calculate();
+      }
       function copyText() {
          // Lấy giá trị từ radio button được chọn
          const radios = document.getElementsByName('option');
@@ -155,7 +222,6 @@
                break;
             }
          }
-         
          const length = parseFloat(document.getElementById('length').value) || 0;
          const width = parseFloat(document.getElementById('width').value) || 0;
          const height = parseFloat(document.getElementById('height').value) || 0;
