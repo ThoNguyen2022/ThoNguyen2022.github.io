@@ -1,207 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thiết hồ cá</title>
-	<style>
-        /* Bảng chiếm toàn bộ chiều rộng và chiều cao của màn hình */
-        table {
-            width: 100%;
-            border-collapse: collapse; /* Xóa khoảng cách giữa các ô */
-        }
-		  .container {
-            display: flex;
-            justify-content: center; /* Căn giữa theo chiều ngang */
-            align-items: center; /* Căn giữa theo chiều dọc */
-            height: 100%; /* Chiếm toàn bộ chiều cao */
-        }
-
-        /* SVG có border và khoảng cách trên */
-        svg {
-            border: 1px solid black;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <h1 style="text-align: center">Thiết kế hộp</h1>
-	<table border="1" cellpadding="8" cellspacing="0">
-        <tr>			
-            <td><label for="length">Chiều dài (cm): </label></td>
-            <td><input type="number" id="length" min="1" value="40" oninput="calculate()"></td>
-			<td rowspan="4" style="text-align: center; vertical-align: middle;">			
-				<button onclick="drawBox()">Tạo bản vẽ</button>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thiết hồ cá</title>
+      <style>
+         body, html {
+         height: 100%;
+         margin: 0;
+         }
+         table {
+         width: 100%;
+         table-layout: fixed;
+         }
+         th, td {
+         width: 20%; /* Điều chỉnh tùy vào số lượng cột */
+         text-overflow: ellipsis;
+         overflow: hidden;
+         white-space: nowrap;
+         }
+         .container {
+         display: flex;
+         justify-content: center; /* Căn giữa theo chiều ngang */
+         align-items: center; /* Căn giữa theo chiều dọc */
+         height: 100%; /* Chiếm toàn bộ chiều cao */
+         }
+         input[type="text"],
+         input[type="number"] {
+         display: block; /* Đảm bảo input được hiển thị */
+         width: 100%;     /* Làm cho nó chiếm hết chiều rộng có sẵn */
+         padding: 8px;    /* Đảm bảo có khoảng cách bên trong */
+         box-sizing: border-box; /* Đảm bảo padding không làm input bị tràn */
+         font-size: 16px;  /* Tăng kích thước chữ để dễ nhìn */
+         }
+         /* SVG có border và khoảng cách trên */
+         svg {
+         width: 100%;  /* Đảm bảo không vượt quá chiều rộng màn hình */
+         }
+      </style>
+   </head>
+   <body>
+      <h1 style="text-align: center">Thiết kế hộp</h1>
+      <table border="1" cellpadding="8" cellspacing="0">
+         <tr>
+            <td>
+				<label for="length">Chiều dài (cm): </label>
+				<br>
+				<input type="number" id="length" min="1" value="40" onblur="moveToNextInput('width')"></td>
+            <td>
+               <input type="radio" name="option" value="1" checked onclick="calculate()"> Kính 3 ly<br>
+               <input type="radio" name="option" value="1.2" onclick="calculate()"> Kính 4 ly<br>
+               <input type="radio" name="option" value="1.4" onclick="calculate()"> Kính 5 ly
+            </td>
+            <td>
+               <label for="priceResource">Giá vật tư: </label><br>
+               <input type="text" id="priceResource" readonly>
+            </td>
+         </tr>
+         <tr>
+            <td>
+				<label for="width">Chiều rộng (cm): </label>
+				<br>
+				<input type="number" id="width" min="1" value="30" onblur="moveToNextInput('height')">
 			</td>
-			<td>
-				<input type="radio" name="option" value="1" checked onclick="calculate()"> Kính 3 ly
-				<input type="radio" name="option" value="1.2" onclick="calculate()"> Kính 4 ly
-				<input type="radio" name="option" value="1.4" onclick="calculate()"> Kính 5 ly
+            <td>
+               <input type="radio" name="option" value="1.6" onclick="calculate()"> Kính 6 ly<br>
+               <input type="radio" name="option" value="2.1" onclick="calculate()"> Kính 8 ly<br>
+               <input type="radio" name="option" value="2.6" onclick="calculate()"> Kính 10 ly
+            </td>
+            <td>
+               <label for="priceOfTask">Tiền công: </label><br>
+               <input type="text" id="priceOfTask" readonly>
+            </td>
+         </tr>
+         <tr>
+            <td>
+				<label for="height">Chiều cao (cm): </label>
+				<br>
+				<input type="number" id="height" min="1" value="30" onblur="moveToNextInput('draw')">
 			</td>
-			<td>
-				<label for="priceResource">Giá vật tư ước tính: </label></td>
-			<td>
-				<input type="text" id="priceResource" readonly>
-			</td>			
-        </tr>
-        <tr>
-            <td><label for="width">Chiều rộng (cm): </label></td>
-            <td><input type="number" id="width" min="1" value="30" oninput="calculate()"></td>
-			<td>
-				<input type="radio" name="option" value="1.6" onclick="calculate()"> Kính 6 ly
-				<input type="radio" name="option" value="2.1" onclick="calculate()"> Kính 8 ly
-				<input type="radio" name="option" value="2.6" onclick="calculate()"> Kính 10 ly
-			</td>
-			<td>
-				<label for="priceOfTask">Tiền công: </label></td>
-			<td>
-				<input type="text" id="priceOfTask" readonly>
-			</td>
-        </tr>
-        <tr>
-            <td><label for="height">Chiều cao (cm): </label></td>
-            <td><input type="number" id="height" min="1" value="30" oninput="calculate()"></td>
-			<td>
-				<input type="radio" name="option" value="3.5" onclick="calculate()"> Kính 12 ly
-				<input type="radio" name="option" value="6.3" onclick="calculate()"> Kính 15 ly
-				<input type="radio" name="option" value="11.8" onclick="calculate()"> Kính 19 ly
-			</td>
-			<td>
-				<label for="priceOfShip">Phí vận chuyển(<10Km): </label></td>
-			<td>
-				<input type="text" id="priceOfShip" readonly>
-			</td>
-        </tr>
-        <tr>
-            <td><label for="result">Tổng diện tích: </label></td>
-            <td><input type="text" id="result" readonly></td>
-			<td>
-				<label for="priceOfGlass3mm">Giá 1m2 kính 3 ly </label>
-				<input type="text" id="priceOfGlass3mm" value="168">
-			</td>
-			<td>
-				<label for="totalPrice">Tổng: </label></td>
-			<td>
-				<input type="text" id="totalPrice" readonly>
-			</td>
-        </tr>
-    </table>
-	
-    <div class="container">
-        <svg id="svgCanvas" xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
-        </svg>
-    </div>
-
-    <script>
-		function calculate() {
-			// Lấy giá trị từ các ô input
-			const length = parseFloat(document.getElementById('length').value) || 0;
-			const width = parseFloat(document.getElementById('width').value) || 0;
-			const height = parseFloat(document.getElementById('height').value) || 0;
-
-			// Tính toán theo công thức
-			const result = (length * width + length * height * 2 + height * width * 2)/10000;
-
-			// Hiển thị kết quả trong ô textbox
-			document.getElementById('result').value = result;
-			updatePrices(result);
+            <td>
+               <input type="radio" name="option" value="3.5" onclick="calculate()"> Kính 12 ly<br>
+               <input type="radio" name="option" value="6.3" onclick="calculate()"> Kính 15 ly<br>
+               <input type="radio" name="option" value="11.8" onclick="calculate()"> Kính 19 ly
+            </td>
+            <td>
+               <label for="priceOfShip">Phí ship(<10Km): </label><br>
+               <input type="text" id="priceOfShip" readonly>
+            </td>
+         </tr>
+         <tr>
+            <td><label for="result">Tổng diện tích: </label><br><input type="text" id="result" readonly></td>
+            <td>
+               <label for="priceOfGlass3mm">Giá 1m2 kính 3 ly </label><br>
+               <input type="text" id="priceOfGlass3mm" value="168">
+            </td>
+            <td>
+               <label for="totalPrice">Tổng: </label><br>
+               <input type="text" id="totalPrice" readonly>
+            </td>
+         </tr>
+      </table>
+      <center style="padding-top: 10px">
+         <button id="draw" onclick="drawBox()" width="100%" height="100%" style="font-size: 36px">Tạo bản vẽ</button>
+      </center>
+      <div class="container">
+         <svg id="svgCanvas" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"></svg>
+      </div>
+      <script>
+		function moveToNextInput(nextInputId) {
+			// Chuyển focus đến input tiếp theo
+			document.getElementById(nextInputId).focus();
+			calculate();  // Tiếp tục tính toán khi chuyển sang ô tiếp theo
 		}
-		
-		function updatePrices(result) {		
-			const priceOfGlass3mm = parseFloat(document.getElementById('priceOfGlass3mm').value) || 0;
-            const radios = document.getElementsByName('option');
-            let selectedValue = 0;
-
-            for (const radio of radios) {
-                if (radio.checked) {
-                    selectedValue = parseFloat(radio.value);
-                    break;
-                }
-            }
-
-            if (selectedValue > 0) {
-                const priceResource = result * selectedValue * priceOfGlass3mm;
-                const priceOfTask = priceResource * 0.4;
-                const priceOfShip = priceResource * 0.3;
-                const totalPrice = priceResource + priceOfTask + priceOfShip;
-
-                document.getElementById('priceResource').value = priceResource.toFixed(2);
-                document.getElementById('priceOfTask').value = priceOfTask.toFixed(2);
-                document.getElementById('priceOfShip').value = priceOfShip.toFixed(2);
-                document.getElementById('totalPrice').value = totalPrice.toFixed(2);
-            } else {
-                // Reset giá trị nếu không chọn radio
-                document.getElementById('priceResource').value = '';
-                document.getElementById('priceOfTask').value = '';
-                document.getElementById('priceOfShip').value = '';
-                document.getElementById('totalPrice').value = '';
-            }
-        }
-		
-        function drawBox() {
-			const ILength = parseFloat(document.getElementById('length').value); 
-            const IWidth = parseFloat(document.getElementById('width').value); 
-            const IHeight = parseFloat(document.getElementById('height').value);
-            let startX = 10;
-            let startY = 10;
-			const maxwidth = 1180;
-			const maxheight = 780;
-			const currentWidth = IHeight + IWidth + IHeight;
-			const currentHeight = IHeight + ILength + IHeight;
-			const ratio = Math.min(maxwidth / currentWidth, maxheight / currentHeight);
-			startX = (maxwidth - currentWidth * ratio) / 2 + 10;
-			startY = (maxheight - currentHeight * ratio) / 2 + + 10;
-			length = ILength*ratio;
-			width = IWidth*ratio;
-			height = IHeight*ratio;
-            const svg = document.getElementById('svgCanvas');
-            svg.innerHTML = ''; // Xóa bản vẽ cũ	
-			let totalS = (ILength * IWidth + ILength * IHeight * 2 + IWidth * IHeight * 2)/10000
-			
-            // Vẽ các phần
-			drawRect(svg, startX + height, startY, width, height, 'Mặt trên'); // Mặt trên
-			drawRect(svg, startX + height, startY + height, width, length, 'Mặt chính'); // Mặt chính
-			drawRect(svg, startX + height, startY + height + length, width, height, ' Mặt dưới'); // Mặt dưới
-			drawRect(svg, startX, startY + height, height, length, 'Mặt trái'); // Mặt trái
-			drawRect(svg, startX + height + width, startY + height, height, length, 'Mặt phải'); // Mặt phải
-			
-        }
-
-        function drawRect(svg, x, y, width, height, label, color = "#eeeeee") {
-			 // Lấy tất cả các radio button
-			const radios = document.getElementsByName('option');
-			let selectedValue = 1;  // Mặc định chọn giá trị là 1
-
-			// Duyệt qua các radio button để tìm ra cái nào được chọn
-			for (const radio of radios) {
-				if (radio.checked) {
-					selectedValue = parseFloat(radio.value);  // Lấy giá trị của radio đã chọn
-					break;
-				}
-			}
-            const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-            rect.setAttribute("x", x);
-            rect.setAttribute("y", y);
-            rect.setAttribute("width", width);
-            rect.setAttribute("height", height);
-            rect.setAttribute("fill", color);
-            rect.setAttribute("stroke", "black");
-            rect.setAttribute("stroke-width", selectedValue);
-            svg.appendChild(rect);
-
-            // Thêm nhãn
-            const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-            text.setAttribute("x", x + width / 2);
-            text.setAttribute("y", y + height / 2);
-            text.setAttribute("text-anchor", "middle");
-            text.setAttribute("dominant-baseline", "middle");
-            text.setAttribute("font-size", "12");
-            text.textContent = label;
-            svg.appendChild(text);
-        }
-
-        drawBox(); // Hiển thị bản vẽ mẫu ban đầu
-		calculate();
-    </script>
-</body>
+         function calculate() {
+         	// Lấy giá trị từ các ô input
+         	const length = parseFloat(document.getElementById('length').value) || 0;
+         	const width = parseFloat(document.getElementById('width').value) || 0;
+         	const height = parseFloat(document.getElementById('height').value) || 0;
+         
+         	// Tính toán theo công thức
+         	const result = (length * width + length * height * 2 + height * width * 2)/10000;
+         
+         	// Hiển thị kết quả trong ô textbox
+         	document.getElementById('result').value = result;
+         	updatePrices(result);
+         }
+         
+         function updatePrices(result) {		
+         	const priceOfGlass3mm = parseFloat(document.getElementById('priceOfGlass3mm').value) || 0;
+                   const radios = document.getElementsByName('option');
+                   let selectedValue = 0;
+         
+                   for (const radio of radios) {
+                       if (radio.checked) {
+                           selectedValue = parseFloat(radio.value);
+                           break;
+                       }
+                   }
+         
+                   if (selectedValue > 0) {
+                       const priceResource = result * selectedValue * priceOfGlass3mm;
+                       const priceOfTask = priceResource * 0.4;
+                       const priceOfShip = priceResource * 0.3 + 15;
+                       const totalPrice = priceResource + priceOfTask + priceOfShip;
+         
+                       document.getElementById('priceResource').value = priceResource.toFixed(2);
+                       document.getElementById('priceOfTask').value = priceOfTask.toFixed(2);
+                       document.getElementById('priceOfShip').value = priceOfShip.toFixed(2);
+                       document.getElementById('totalPrice').value = totalPrice.toFixed(2);
+                   } else {
+                       // Reset giá trị nếu không chọn radio
+                       document.getElementById('priceResource').value = '';
+                       document.getElementById('priceOfTask').value = '';
+                       document.getElementById('priceOfShip').value = '';
+                       document.getElementById('totalPrice').value = '';
+                   }
+               }
+         
+               function drawBox() {
+         	const ILength = parseFloat(document.getElementById('length').value); 
+                   const IWidth = parseFloat(document.getElementById('width').value); 
+                   const IHeight = parseFloat(document.getElementById('height').value);
+                   let startX = 0;
+                   let startY = 0;
+         	const maxwidth = screen.width * 0.9; // 90% chiều rộng của màn hình
+         	const maxheight = screen.height * 0.9; // 90% chiều cao của màn hình
+         	const currentWidth = IHeight + IWidth + IHeight;
+         	const currentHeight = IHeight + ILength + IHeight;
+         	const ratio = Math.min(maxwidth / currentWidth, maxheight / currentHeight);
+         	startX = screen.width * 0.05;
+         	startY = screen.height * 0.05;
+         	length = ILength*ratio;
+         	width = IWidth*ratio;
+         	height = IHeight*ratio;
+                   const svg = document.getElementById('svgCanvas');
+                   svg.innerHTML = ''; // Xóa bản vẽ cũ	
+         	let totalS = (ILength * IWidth + ILength * IHeight * 2 + IWidth * IHeight * 2)/10000
+         	
+                   // Vẽ các phần
+         	drawRect(svg, startX + height, startY, width, height, 'Mặt trên: ' + IWidth + ' x ' + IHeight); // Mặt trên
+         	drawRect(svg, startX + height, startY + height, width, length, 'Mặt chính: ' + IWidth + ' x ' + ILength); // Mặt chính
+         	drawRect(svg, startX + height, startY + height + length, width, height, ' Mặt dưới: ' + IWidth + ' x ' + IHeight); // Mặt dưới
+         	drawRect(svg, startX, startY + height, height, length, 'Mặt trái: ' + IHeight + ' x ' + ILength); // Mặt trái
+         	drawRect(svg, startX + height + width, startY + height, height, length, 'Mặt phải: ' + IHeight + ' x ' + ILength); // Mặt phải
+         	
+               }
+         
+               function drawRect(svg, x, y, width, height, label, color = "#eeeeee") {
+         	 // Lấy tất cả các radio button
+         	const radios = document.getElementsByName('option');
+         	let selectedValue = 1;  // Mặc định chọn giá trị là 1
+         
+         	// Duyệt qua các radio button để tìm ra cái nào được chọn
+         	for (const radio of radios) {
+         		if (radio.checked) {
+         			selectedValue = parseFloat(radio.value);  // Lấy giá trị của radio đã chọn
+         			break;
+         		}
+         	}
+                   const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                   rect.setAttribute("x", x);
+                   rect.setAttribute("y", y);
+                   rect.setAttribute("width", width);
+                   rect.setAttribute("height", height);
+                   rect.setAttribute("fill", color);
+                   rect.setAttribute("stroke", "black");
+                   rect.setAttribute("stroke-width", selectedValue);
+                   svg.appendChild(rect);
+         
+                   // Thêm nhãn
+                   const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                   text.setAttribute("x", x + width / 2);
+                   text.setAttribute("y", y + height / 2);
+                   text.setAttribute("text-anchor", "middle");
+                   text.setAttribute("dominant-baseline", "middle");
+                   text.setAttribute("font-size", "12");
+                   text.textContent = label;
+                   svg.appendChild(text);
+               }
+         
+               drawBox(); // Hiển thị bản vẽ mẫu ban đầu
+         calculate();
+           
+      </script>
+   </body>
 </html>
