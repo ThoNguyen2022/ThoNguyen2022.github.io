@@ -155,15 +155,16 @@
                break;
             }
          }
-         const length = parseFloat(document.getElementById('length').value) / 10 || 0;
-         const width = parseFloat(document.getElementById('width').value) / 10 || 0;
-         const height = parseFloat(document.getElementById('height').value) / 10 || 0;
+         
+         const length = parseFloat(document.getElementById('length').value) || 0;
+         const width = parseFloat(document.getElementById('width').value) || 0;
+         const height = parseFloat(document.getElementById('height').value) || 0;
 
          // Lấy tổng giá trị từ totalPrice
          const totalPrice = Math.floor(document.getElementById('totalPrice').value / 10) * 10;
 
          // Tạo nội dung để copy
-         const textToCopy = `Hồ mới - ${length}${width}${height} - ${selectedValue}. Giá: ${totalPrice}k`;
+         const textToCopy = `Hồ mới - ${length}x${width}x${height} cm - ${selectedValue}. Giá: ${totalPrice}k`;
 
          // Copy nội dung vào clipboard
          navigator.clipboard.writeText(textToCopy).then(() => {
