@@ -162,15 +162,21 @@
       </tr>
    </table>
    <center style="padding-top: 10px">
-		<p> Một số mẫu cố thường gặp
-			<input type="radio" name="model" id="model1" onclick="setModel(3, 2, 2)"> Hồ 3-2-2
-            <input type="radio" name="model" id="model1" onclick="setModel(4, 3, 3)"> Hồ 4-3-3
-			<input type="radio" name="model" id="model1" onclick="setModel(6, 4, 4)"> Hồ 6-4-4
-			<input type="radio" name="model" id="model1" onclick="setModel(8, 5, 5)"> Hồ 8-5-5
-			<input type="radio" name="model" id="model1" onclick="setModel(10, 6, 6)"> Hồ 10-6-6
-			<input type="radio" name="model" id="model1" onclick="setModel(15, 6, 6)"> Hồ 15-6-6
-		</p>
-   
+      <div>
+         <p> Một số mẫu cố thường gặp
+         </p>
+         <label>Nhỏ: </label><input type="radio" name="model" id="model1" onclick="setModel(3, 2, 2)"> Hồ 3-2-2
+         <input type="radio" name="model" id="model1" onclick="setModel(4, 3, 3)"> Hồ 4-3-3
+         <br>
+         <label>Vừa: </label>
+         <input type="radio" name="model" id="model1" onclick="setModel(6, 4, 4)"> Hồ 6-4-4
+         <input type="radio" name="model" id="model1" onclick="setModel(8, 5, 5)"> Hồ 8-5-5
+         <br>
+         <label>Lớn: </label>
+         <input type="radio" name="model" id="model1" onclick="setModel(10, 6, 6)"> Hồ 10-6-6
+         <input type="radio" name="model" id="model1" onclick="setModel(15, 8, 8)"> Hồ 15-8-8
+      </div>
+
       <button id="draw" onclick="drawBox()" width="100%" height="100%" style="font-size: 36px">Tạo bản vẽ</button>
       <button id="copyButton" onclick="copyText()" style="font-size: 36px; margin-left: 10px;">Copy giá</button>
       <input id="showInfor" readonly width="200px" height="100%">
@@ -179,39 +185,14 @@
       <svg id="svgCanvas" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"></svg>
    </div>
    <script>
-		function setModel(x, y, z) {
+      function setModel(x, y, z) {
          document.getElementById('length').value = x * 10;
          document.getElementById('width').value = y * 10;
          document.getElementById('height').value = z * 10;
          calculate();  // Tiếp tục tính toán khi chuyển sang ô tiếp theo
-		}
-      function adjustValue(inputId, amount) {
-         const length = parseFloat(document.getElementById('length').value) || 0;
-         const width = parseFloat(document.getElementById('width').value) || 0;
-         const height = parseFloat(document.getElementById('height').value) || 0;
+      }
 
-         const volume = length * width * height / 1000;
-         if (volume > 1000) {
-            thickness = 9;
-         } else if (volume > 800) {
-            thickness = 8;
-         } else if (volume > 500) {
-            thickness = 7;
-         } else if (volume > 300) {
-            thickness = 6;
-         } else if (volume > 200) {
-            thickness = 5;
-         } else if (volume > 150) {
-            thickness = 4;
-         } else if (volume > 100) {
-            thickness = 3;
-         } else if (volume > 50) {
-            thickness = 2;
-         } else {
-            thickness = 1;
-         }
-         // Tự động chọn radio button
-         document.getElementById(`option${thickness}`).checked = true;
+      function adjustValue(inputId, amount) {
          const input = document.getElementById(inputId);
          let currentValue = parseInt(input.value);
 
@@ -287,6 +268,29 @@
          const length = parseFloat(document.getElementById('length').value) || 0;
          const width = parseFloat(document.getElementById('width').value) || 0;
          const height = parseFloat(document.getElementById('height').value) || 0;
+
+         const volume = length * width * height / 1000;
+         if (volume > 1000) {
+            thickness = 9;
+         } else if (volume > 800) {
+            thickness = 8;
+         } else if (volume > 500) {
+            thickness = 7;
+         } else if (volume > 300) {
+            thickness = 6;
+         } else if (volume > 200) {
+            thickness = 5;
+         } else if (volume > 150) {
+            thickness = 4;
+         } else if (volume > 100) {
+            thickness = 3;
+         } else if (volume > 50) {
+            thickness = 2;
+         } else {
+            thickness = 1;
+         }
+         // Tự động chọn radio button
+         document.getElementById(`option${thickness}`).checked = true;
 
          // Tính toán theo công thức
          const result = (length * width + length * height * 2 + height * width * 2) / 10000;
