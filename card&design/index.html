@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Content</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        td {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .copy-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .copy-btn:active {
+            background-color: #0056b3;
+        }
+
+        .copy-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Card & Design</h1>
+    <table>
+		<tr>
+            <th>STT</th>
+            <th>Sản phẩm</th>
+			<th>Copy</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Card visit</td>
+			<td><button class="copy-btn" onclick="copyText('CardVisit')">Copy</button></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Móc khóa</td>
+			<td><button class="copy-btn" onclick="copyText('KeyRing')">Copy</button></td>
+        </tr>
+         <tr>
+            <td>3</td>
+            <td>Thẻ nhựa PVC</td>
+			<td><button class="copy-btn" onclick="copyText('PVCCard')">Copy</button></td>
+        </tr> 
+		<tr>
+            <td>4</td>
+            <td>Huy hiệu</td>
+			<td><button class="copy-btn" onclick="copyText('Badge')">Copy</button></td>
+        </tr>
+		<tr>
+            <td>5</td>
+            <td>Sticker</td>
+			<td><button class="copy-btn" onclick="copyText('Sticker')">Copy</button></td>
+        </tr>
+		<tr>
+            <td>6</td>
+            <td>Design</td>
+			<td><button class="copy-btn" onclick="copyText('Design')">Copy</button></td>
+        </tr>
+    </table>
+	<center>
+	<p id="Context"></p>
+	</center>
+    <script>
+let CardVisit = `📇 𝕀𝕟 ℂ𝕒𝕣𝕕 𝕍𝕚𝕤𝕚𝕥 (𝟝.𝟜 * 𝟡.𝟘 𝕔𝕞)<br>
+(𝟙 𝕙ộ𝕡 = 𝟙𝟘𝟘 𝕔𝕒𝕣𝕕, 𝕚𝕟 𝟚 𝕞ặ𝕥, 𝕔á𝕟 𝕞à𝕟𝕘)<br>
+🟠 𝟙 𝕙ộ𝕡: 𝟟𝟘𝕜/𝕙ộ𝕡<br>
+🟡 𝟚-𝟝 𝕙ộ𝕡: 𝟞𝟘𝕜/𝕙ộ𝕡<br>
+🟢 𝟞-𝟙𝟘 𝕙ộ𝕡: 𝟝𝟘𝕜/𝕙ộ𝕡<br>
+🔵 𝕋𝕣ê𝕟 𝟙𝟘 𝕙ộ𝕡: 𝟜𝟘𝕜/𝕙ộ𝕡`;
+let KeyRing = `🔑 𝕄𝕠́𝕔 𝕜𝕙𝕠́𝕒 𝕞𝕚𝕔𝕒<br>
+📏 ℕ𝕠𝕥𝕖: 𝕔𝕠́ 𝟚 𝕝𝕠𝕒̣𝕚 𝕧𝕠̛́𝕚 𝕜𝕚́𝕔𝕙 𝕥𝕙𝕦̛𝕠̛́𝕔:<br>
+	•	🔵 𝕋𝕣𝕠̀𝕟 𝟛.𝟠 𝕔𝕞<br>
+	•	◼️ ℍ𝕔𝕟 𝟚.𝟟 × 𝟜.𝟜 𝕔𝕞<br>
+💰 𝔾𝕚𝕒́ 𝕤𝕚𝕖̂𝕦 𝕙𝕒̂́𝕡 𝕕𝕒̂̃𝕟:<br>
+🟠 𝔻𝕦̛𝕠̛́𝕚 𝟝 𝕔𝕒́𝕚: 𝟙𝟘𝕜/𝕔𝕒́𝕚<br>
+🟡 𝕋𝕦̛̀ 𝟝 - 𝟡 𝕔𝕒́𝕚: 𝟡𝕜/𝕔𝕒́𝕚<br>
+🟢 𝕋𝕦̛̀ 𝟙𝟘 - 𝟙𝟡 𝕔𝕒́𝕚: 𝟠𝕜/𝕔𝕒́𝕚<br>
+🔵 𝕋𝕦̛̀ 𝟚𝟘 - 𝟜𝟡 𝕔𝕒́𝕚: 𝟟𝕜/𝕔𝕒́𝕚<br>
+🟣 𝕋𝕦̛̀ 𝟝𝟘 - 𝟡𝟡 𝕔𝕒́𝕚: 𝟞𝕜/𝕔𝕒́𝕚<br>
+🔴 𝕋𝕦̛̀ 𝟙𝟘𝟘 𝕔𝕒́𝕚 𝕥𝕣𝕠̛̉ 𝕝𝕖̂𝕟: 𝟝𝕜/𝕔𝕒́𝕚`;
+let PVCCard = `🎨 𝕀𝕟 𝕋𝕙𝕖̉ ℙ𝕍ℂ (𝟝,𝟜 𝕩 𝟠,𝟝 𝕔𝕞) 🎨<br>
+💰 𝔾𝕚𝕒́ 𝕤𝕚𝕖̂𝕦 𝕙𝕒̂́𝕡 𝕕𝕒̂̃𝕟:<br>
+🟠 𝔻𝕦̛𝕠̛́𝕚 𝟝 𝕔𝕒́𝕚: 𝟙𝟘𝕜/𝕔𝕒́𝕚<br>
+🟡 𝕋𝕦̛̀ 𝟝 - 𝟡 𝕔𝕒́𝕚: 𝟡𝕜/𝕔𝕒́𝕚<br>
+🟢 𝕋𝕦̛̀ 𝟙𝟘 - 𝟙𝟡 𝕔𝕒́𝕚: 𝟠𝕜/𝕔𝕒́𝕚<br>
+🔵 𝕋𝕦̛̀ 𝟚𝟘 - 𝟜𝟡 𝕔𝕒́𝕚: 𝟟𝕜/𝕔𝕒́𝕚<br>
+🟣 𝕋𝕦̛̀ 𝟝𝟘 - 𝟡𝟡 𝕔𝕒́𝕚: 𝟞𝕜/𝕔𝕒́𝕚<br>
+🔴 𝕋𝕦̛̀ 𝟙𝟘𝟘 𝕔𝕒́𝕚 𝕥𝕣𝕠̛̉ 𝕝𝕖̂𝕟: 𝟝𝕜/𝕔𝕒́𝕚`;
+let Sticker = `𝕊𝕥𝕚𝕔𝕜𝕖𝕣<br>
+🟠 𝔻𝕚𝕖-𝕔𝕦𝕥<br>
+📏 ℕ𝕠𝕥𝕖: 𝕀𝕟 𝕥ố𝕚 𝕥𝕙𝕚ể𝕦 𝟝𝟘𝕜<br>
+	•	🔴 𝟛 𝕔𝕞: 𝟛𝟘𝟘 đồ𝕟𝕘 / 𝕤𝕥𝕜<br>
+	•	🟠 𝟜 𝕔𝕞: 𝟜𝟘𝟘 đồ𝕟𝕘 / 𝕤𝕥𝕜<br>
+	•	🟡 𝟝 𝕔𝕞: 𝟝𝟘𝟘 đồ𝕟𝕘 / 𝕤𝕥𝕜<br>
+	•	🟢 𝟞, 𝟟 𝕔𝕞: 𝟠𝟘𝟘 đồ𝕟𝕘 / 𝕤𝕥𝕜<br>
+	•	🔵 𝟠, 𝟡 𝕔𝕞: 𝟙,𝟝𝟘𝟘 đồ𝕟𝕘 / 𝕤𝕥𝕜<br>
+	•	🟣 𝟙𝟘 𝕔𝕞: 𝟚,𝟘𝟘𝟘 đồ𝕟𝕘 / 𝕤𝕥𝕜<br>
+
+🟡 𝕂𝕚𝕤𝕤-𝕔𝕦𝕥<br>
+📏 ℕ𝕠𝕥𝕖: 𝕋ố𝕚 𝕥𝕙𝕚ể𝕦 𝟙𝕞² (~𝟚𝟝𝟘 𝕤𝕥𝕜 𝟞𝕔𝕞), 𝔾𝕚á: 𝟙𝟠𝟘𝕜/𝟙𝕞²<br>
+📊 𝕊ố 𝕝ượ𝕟𝕘 𝕤𝕥𝕜 / 𝕞²:<br>
+	•	𝟛 𝕔𝕞: ~𝟡𝟘𝟘 𝕤𝕥𝕜<br>
+	•	𝟜 𝕔𝕞: ~𝟝𝟘𝟘 𝕤𝕥𝕜<br>
+	•	𝟝 𝕔𝕞: ~𝟜𝟘𝟘 𝕤𝕥𝕜<br>
+	•	𝟞 𝕔𝕞: ~𝟚𝟝𝟘 𝕤𝕥𝕜<br>
+	•	𝟟 𝕔𝕞: ~𝟙𝟟𝟘 𝕤𝕥𝕜<br>
+	•	𝟠 𝕔𝕞: ~𝟙𝟜𝟘 𝕤𝕥𝕜<br>
+	•	𝟡 𝕔𝕞: ~𝟙𝟚𝟘 𝕤𝕥𝕜<br>
+	•	𝟙𝟘 𝕔𝕞: ~𝟡𝟘 𝕤𝕥𝕜`;
+        function copyText(content) {
+			let context = '';
+			switch (content) {
+				case 'CardVisit':
+					context = CardVisit;
+					break;
+				case 'KeyRing':
+					context = KeyRing;
+					break;
+				case 'PVCCard':
+					context = PVCCard;
+					break;
+				case 'Badge':
+					context = Badge;
+					break;
+				case 'Sticker':
+					context = Sticker;
+					break;
+				case 'Design':
+					context = Design;
+					break;
+				default:
+					context = CardVisit;
+					break;
+			}
+			
+			 // Tạo một phần tử textarea ẩn để sao chép
+			let textarea = document.createElement('textarea');
+			textarea.value = context;  // Gán giá trị text vào textarea
+			document.body.appendChild(textarea);
+			textarea.select();  // Chọn nội dung trong textarea
+
+			try {
+				document.execCommand('copy');  // Thực hiện sao chép
+				document.getElementById('Context').innerHTML = textarea.value;
+			} catch (err) {
+				document.getElementById('Context').textContent = "Không thể sao chép";
+			}
+
+			// Xóa phần tử textarea sau khi sao chép
+			document.body.removeChild(textarea);
+        }
+    </script>
+</body>
+</html>
