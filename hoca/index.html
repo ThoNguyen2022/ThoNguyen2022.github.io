@@ -12,30 +12,30 @@
          margin: 0;
       }
 
-      table {
+      table:not(#customTable) {
          width: 100%;
          table-layout: fixed;
       }
 
       th,
-      td {
+      td:not(#customTable) {
          text-overflow: ellipsis;
          overflow: hidden;
          white-space: nowrap;
       }
 
       th:first-child,
-      td:first-child {
+      td:first-child:not(#customTable) {
          width: 46%;
       }
 
       th:nth-child(2),
-      td:nth-child(2) {
+      td:nth-child(2):not(#customTable) {
          width: 27%;
       }
 
       th:nth-child(3),
-      td:nth-child(3) {
+      td:nth-child(3):not(#customTable) {
          width: 27%;
       }
 
@@ -165,16 +165,50 @@
       <div>
          <p> Một số mẫu cố thường gặp
          </p>
-         <label>Nhỏ: </label><input type="radio" name="model" id="model1" onclick="setModel(3, 2, 2)"> Hồ 3-2-2
-         <input type="radio" name="model" id="model1" onclick="setModel(4, 3, 3)"> Hồ 4-3-3
-         <br>
-         <label>Vừa: </label>
-         <input type="radio" name="model" id="model1" onclick="setModel(6, 4, 4)"> Hồ 6-4-4
-         <input type="radio" name="model" id="model1" onclick="setModel(8, 5, 5)"> Hồ 8-5-5
-         <br>
-         <label>Lớn: </label>
-         <input type="radio" name="model" id="model1" onclick="setModel(10, 6, 6)"> Hồ 10-6-6
-         <input type="radio" name="model" id="model1" onclick="setModel(15, 8, 8)"> Hồ 15-8-8
+         <table border="1" style="border-collapse: collapse; width: 100%; text-align: left;" id="customTable">
+    <tr>
+        <th>Nhóm</th>
+        <th>Tùy chọn 1</th>
+		<th>Tùy chọn 2</th>
+		<th>Tùy chọn 3</th>
+    </tr>
+    <tr>
+        <td>Nhỏ</td>
+        <td>
+            <input type="radio" name="model" onclick="setModel(3, 2, 2)"> Hồ 3-2-2
+		</td>
+        <td>
+            <input type="radio" name="model" onclick="setModel(4, 3, 3)"> Hồ 4-3-3
+        </td>
+		<td>
+            <input type="radio" name="model" onclick="setModel(5, 4, 4)"> Hồ 5-4-4
+        </td>
+    </tr>
+    <tr>
+        <td>Vừa</td>
+        <td>
+            <input type="radio" name="model" onclick="setModel(6, 4, 4)"> Hồ 6-4-4
+		</td>
+        <td>
+            <input type="radio" name="model" onclick="setModel(8, 5, 5)"> Hồ 8-5-5
+        </td>
+		<td>
+            <input type="radio" name="model" onclick="setModel(9, 6, 6)"> Hồ 9-6-6
+        </td>
+    </tr>
+    <tr>
+        <td>Lớn</td>
+        <td>
+            <input type="radio" name="model" onclick="setModel(10, 6, 6)"> Hồ 10-6-6
+		</td>
+		<td>
+            <input type="radio" name="model" onclick="setModel(12, 6, 6)"> Hồ 12-6-6
+		</td>
+        <td>
+            <input type="radio" name="model" onclick="setModel(15, 8, 8)"> Hồ 15-8-8
+        </td>
+    </tr>
+</table>
       </div>
 
       <button id="draw" onclick="drawBox()" width="100%" height="100%" style="font-size: 36px">Tạo bản vẽ</button>
@@ -190,7 +224,36 @@
          document.getElementById('width').value = y * 10;
          document.getElementById('height').value = z * 10;
          calculate();  // Tiếp tục tính toán khi chuyển sang ô tiếp theo
+		 suggestGlass();
       }
+	  
+	  function suggestGlass(){
+		const length = parseFloat(document.getElementById('length').value) || 0;
+		const width = parseFloat(document.getElementById('width').value) || 0;
+        const height = parseFloat(document.getElementById('height').value) || 0; 
+		const volume = length * width * height / 1000;
+         if (volume > 1000) {
+            thickness = 9;
+         } else if (volume > 800) {
+            thickness = 8;
+         } else if (volume > 500) {
+            thickness = 7;
+         } else if (volume > 300) {
+            thickness = 6;
+         } else if (volume > 200) {
+            thickness = 5;
+         } else if (volume > 150) {
+            thickness = 4;
+         } else if (volume > 100) {
+            thickness = 3;
+         } else if (volume > 50) {
+            thickness = 2;
+         } else {
+            thickness = 1;
+         }
+         // Tự động chọn radio button
+         document.getElementById(`option${thickness}`).checked = true;
+	 }
 
       function adjustValue(inputId, amount) {
          const input = document.getElementById(inputId);
@@ -207,6 +270,7 @@
          // Cập nhật lại giá trị cho input
          input.value = currentValue;
          calculate();
+		 suggestGlass();
       }
       function copyText() {
          // Lấy giá trị từ radio button được chọn
@@ -262,35 +326,13 @@
          // Chuyển focus đến input tiếp theo
          document.getElementById(nextInputId).focus();
          calculate();  // Tiếp tục tính toán khi chuyển sang ô tiếp theo
+		 suggestGlass();
       }
       function calculate() {
          // Lấy giá trị từ các ô input
          const length = parseFloat(document.getElementById('length').value) || 0;
          const width = parseFloat(document.getElementById('width').value) || 0;
-         const height = parseFloat(document.getElementById('height').value) || 0;
-
-         const volume = length * width * height / 1000;
-         if (volume > 1000) {
-            thickness = 9;
-         } else if (volume > 800) {
-            thickness = 8;
-         } else if (volume > 500) {
-            thickness = 7;
-         } else if (volume > 300) {
-            thickness = 6;
-         } else if (volume > 200) {
-            thickness = 5;
-         } else if (volume > 150) {
-            thickness = 4;
-         } else if (volume > 100) {
-            thickness = 3;
-         } else if (volume > 50) {
-            thickness = 2;
-         } else {
-            thickness = 1;
-         }
-         // Tự động chọn radio button
-         document.getElementById(`option${thickness}`).checked = true;
+         const height = parseFloat(document.getElementById('height').value) || 0;        
 
          // Tính toán theo công thức
          const result = (length * width + length * height * 2 + height * width * 2) / 10000;
@@ -395,7 +437,7 @@
 
       drawBox(); // Hiển thị bản vẽ mẫu ban đầu
       calculate();
-
+	  suggestGlass();
    </script>
 </body>
 
