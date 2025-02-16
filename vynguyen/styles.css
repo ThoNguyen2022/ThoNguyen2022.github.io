@@ -1,0 +1,131 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #ffccff;
+    padding: 20px;
+    text-align: center;
+}
+
+header .logo h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    color: #ff66b2;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #ff66b2;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('https://via.placeholder.com/1500x600');
+    background-size: cover;
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+/* Sản phẩm */
+.products {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.products h3 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #ff66b2;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.product-item {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+}
+
+.product-item h4 {
+    padding: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Giới thiệu */
+.about {
+    padding: 50px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.about h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #ffccff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .footer-info p {
+    font-size: 1em;
+    color: #333;
+}
+
+footer .footer-social a {
+    text-decoration: none;
+    color: #ff66b2;
+    margin: 0 10px;
+}
