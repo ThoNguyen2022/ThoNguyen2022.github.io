@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.message {
+    font-size: 24px;
+    color: #fff;
+    padding: 20px;
+    background-color: #808080; /* Màu nền xám */
+    border-radius: 10px;
+    opacity: 0; /* Ban đầu chữ không hiển thị */
+    transition: opacity 0.3s ease; /* Hiệu ứng khi thay đổi độ mờ */
+}
+
+.message:hover {
+    opacity: 1; /* Khi rê chuột vào, chữ sẽ hiện lên */
+}
