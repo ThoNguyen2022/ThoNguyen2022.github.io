@@ -1,14 +1,83 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Web Yêu Thương</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Scratch to Reveal Text</title>
+  <style>
+    #container {
+      position: relative;
+      width: 500px;
+      height: 200px;
+      margin: 20px;
+      border: 1px solid #ccc;
+      background: #fff;
+    }
+    #hiddenText {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      color: #333;
+      z-index: 1;
+    }
+    #scratchCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+  </style>
 </head>
 <body>
-    <div class="message">
-        Em yêu anh rất nhiều.
-    </div>
+  <div id="container">
+    <div id="hiddenText">Hello vợ yêu, đang làm gì đó. Đi ăn thịt chó với anh không?</div>
+    <canvas id="scratchCanvas" width="500" height="200"></canvas>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('scratchCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Fill the canvas with a cover color (e.g., gray)
+    ctx.fillStyle = '#aaa';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Set the composite operation to 'destination-out' for erasing effect
+    ctx.globalCompositeOperation = 'destination-out';
+
+    let isDrawing = false;
+
+    function getMousePos(canvas, evt) {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: evt.clientX - rect.left,
+        y: evt.clientY - rect.top
+      };
+    }
+
+    canvas.addEventListener('mousedown', function(e) {
+      isDrawing = true;
+      const pos = getMousePos(canvas, e);
+      ctx.beginPath();
+      ctx.arc(pos.x, pos.y, 20, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    canvas.addEventListener('mousemove', function(e) {
+      if (!isDrawing) return;
+      const pos = getMousePos(canvas, e);
+      ctx.beginPath();
+      ctx.arc(pos.x, pos.y, 20, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    canvas.addEventListener('mouseup', () => { isDrawing = false; });
+    canvas.addEventListener('mouseleave', () => { isDrawing = false; });
+  </script>
 </body>
 </html>
