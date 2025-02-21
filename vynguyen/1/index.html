@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Scratch to Reveal Text</title>
+  <title>Scratch to Reveal Text (Mobile Support)</title>
   <style>
     #container {
       position: relative;
@@ -35,8 +35,9 @@
 </head>
 <body>
   <div id="container">
-    <div id="hiddenText">Hello vợ yêu, đang làm gì đó. Đi ăn thịt chó với anh không?</div>
-    <canvas id="scratchCanvas" width="500" height="200"></canvas>
+    <div id="hiddenText"> Hello vợ yêu, đang làm gì đó. Đi ăn thịt chó với anh không? </div>
+    <canvas id="scratchCanvas" width="500" height="200" style="touch-action: none;"></canvas>
+
   </div>
 
   <script>
@@ -52,32 +53,49 @@
 
     let isDrawing = false;
 
-    function getMousePos(canvas, evt) {
+    function getPos(canvas, evt) {
       const rect = canvas.getBoundingClientRect();
+      // For touch events, evt might be a Touch object, for mouse events it's an Event
       return {
-        x: evt.clientX - rect.left,
-        y: evt.clientY - rect.top
+        x: evt.clientX ? evt.clientX - rect.left : evt.touches[0].clientX - rect.left,
+        y: evt.clientY ? evt.clientY - rect.top : evt.touches[0].clientY - rect.top
       };
     }
 
-    canvas.addEventListener('mousedown', function(e) {
+    function startDrawing(evt) {
+      evt.preventDefault();
       isDrawing = true;
-      const pos = getMousePos(canvas, e);
+      const pos = getPos(canvas, evt);
       ctx.beginPath();
       ctx.arc(pos.x, pos.y, 20, 0, Math.PI * 2);
       ctx.fill();
-    });
+    }
 
-    canvas.addEventListener('mousemove', function(e) {
+    function draw(evt) {
+      evt.preventDefault();
       if (!isDrawing) return;
-      const pos = getMousePos(canvas, e);
+      const pos = getPos(canvas, evt);
       ctx.beginPath();
       ctx.arc(pos.x, pos.y, 20, 0, Math.PI * 2);
       ctx.fill();
-    });
+    }
 
-    canvas.addEventListener('mouseup', () => { isDrawing = false; });
-    canvas.addEventListener('mouseleave', () => { isDrawing = false; });
+    function endDrawing(evt) {
+      evt.preventDefault();
+      isDrawing = false;
+    }
+
+    // Mouse events for desktop
+    canvas.addEventListener('mousedown', startDrawing);
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mouseup', endDrawing);
+    canvas.addEventListener('mouseleave', endDrawing);
+
+    // Touch events for mobile
+    canvas.addEventListener('touchstart', startDrawing);
+    canvas.addEventListener('touchmove', draw);
+    canvas.addEventListener('touchend', endDrawing);
+    canvas.addEventListener('touchcancel', endDrawing);
   </script>
 </body>
 </html>
