@@ -1,0 +1,59 @@
+{
+    "buttons": [
+        { 
+			"name": "Quy cách in", 
+			"value": "📸 Quý khách vui lòng gửi ảnh theo tỉ lệ 5.6 * 8.7 cm. \n✂️ Shop sẽ in và cắt chừa viền 1mm. \n📐 Sản phẩm sau khi hoàn thành sẽ có kích thước 5.4 * 8.5 cm. \n🔍 Ảnh sẽ bị mất 0.5 - 1.5mm theo chiều ngang và chiều dọc." 
+		},
+        { "name": "Địa chỉ công ty", "value": "Đường số 10, CVPM, Đ. Quang Trung, Tân Chánh Hiệp, Quận 12, Hồ Chí Minh" },
+        { 
+			"name": "Thời gian hoàn thành",
+			"value": "📦 Với số lượng xxx sản phẩm, shop cần tối thiểu yyy ngày để hoàn thành\n 🚚 bên cạnh đó thời gian ship tới bạn có thể là zzz ngày.\n ⏰ Vì thế, tổng thời gian để bạn nhận được sản phẩm là ttt ngày." 
+		},
+        {
+			"name": "Sản phẩm liên quan",
+			"value": "Các sản phẩm liên quan shop có up lên Google Drive theo link này nhé: https://drive.google.com/drive/folders/1-KLNrcvpy9eaAsewQ4g8kU8YkE_Ta2Fu?usp=drive_link"
+		},
+		{
+			"name": "In Thẻ PVC",
+			"value": "🎨 𝕀𝕟 𝕋𝕙𝕖̉ ℙ𝕍ℂ (𝟝,𝟜 𝕩 𝟠,𝟝 𝕔𝕞)\n💰 𝔾𝕚𝕒́ 𝕤𝕚𝕖̂𝕦 𝕙𝕒̂́𝕡 𝕕𝕒̂̃𝕟:\n🟠 𝔻𝕦̛𝕠̛́𝕚 𝟝 𝕔𝕒́𝕚: 𝟙𝟘𝕜/𝕔𝕒́𝕚\n🟡 𝕋𝕦̛̀ 𝟝 - 𝟡 𝕔𝕒́𝕚: 𝟡𝕜/𝕔𝕒́𝕚\n🟢 𝕋𝕦̛̀ 𝟙𝟘 - 𝟙𝟡 𝕔𝕒́𝕚: 𝟠𝕜/𝕔𝕒́𝕚\n🔵 𝕋𝕦̛̀ 𝟚𝟘 - 𝟜𝟡 𝕔𝕒́𝕚: 𝟟𝕜/𝕔𝕒́𝕚\n🟣 𝕋𝕦̛̀ 𝟝𝟘 - 𝟡𝟡 𝕔𝕒́𝕚: 𝟞𝕜/𝕔𝕒́𝕚\n🔴 𝕋𝕦̛̀ 𝟙𝟘𝟘 𝕔𝕒́𝕚 𝕥𝕣𝕠̛̉ 𝕝𝕖̂𝕟: 𝟝𝕜/𝕔𝕒́𝕚\n📦 𝕊𝕒̉𝕟 𝕝𝕦̛𝕠̛̣𝕟𝕘: 𝟙𝟘𝟘 𝕔𝕒́𝕚/𝕟𝕘𝕒̀𝕪.\n\nhttps://www.facebook.com/share/p/15goVxHuMq/?mibextid=wwXIfr"
+		},
+        {
+			"name": "In lẻ gấp",
+			"value": "🕒 Thông thường shop sẽ gom các đơn lẻ để in vào cuối tuần, nếu quý khách có yêu cầu in lẻ và cần gấp, quý khách vui lòng trả thêm 20k nhé."
+		},
+        {
+			"name": "Gửi file ảnh",
+			"value": "📤 Quý khách vui lòng gửi file qua Zalo shop (0382596138) hoặc up ảnh lên Google Drive để đảm bảo chất lượng ảnh."
+		},
+        { "name": "Phí thiết kế cơ bản", "value": "Sau khi đánh giá về sản phẩm này, các thiết kế ở mức cơ bản không có tạo thêm logo, không yêu cầu khó. Vì thế shop đánh giá bản thiết kế này là 50k/mặt 💰🎨" },
+        {
+			"name": "Đánh giá thiết kế nâng cao",
+			"value": "Sau khi đánh giá về sản phẩm này, các thiết kế ở mức nâng cao. Vì có 1 hoặc nhiều yêu cầu sau:\n🎨 Cần phải tìm/thiết kế thêm logo => thêm 50k\n🖼️ Quá nhiều chi tiết/nội dung hoặc các hình ảnh/họa tiết không có sẵn => Thêm 50k\n📸 Yêu cầu làm file như ảnh chụp và ảnh chụp có các chi tiết chồng chéo phức tạp => Thêm 50K"
+		},
+        {
+			"name": "Lời cảm ơn",
+			"value": "Shop rất vui được làm việc với quý khách, một phần quà nhỏ mong là sẽ có ích với quý khách. 🎁😊"
+		},
+        { "name": "Cọc sản phẩm", "value": "Quý khách vui lòng cọc 30% tổng sản phẩm" },
+        { "name": "Cọc thiết kế", "value": "Quý khách vui lòng cọc 50% phí thiết kế" },
+        {
+            "name": "Sản phẩm kinh doanh",
+            "value": "🛒 Shop hiện đang sản xuất và kinh doanh các mặt hàng:\n💳 Thẻ nhựa PVC 3 lớp (5.4 * 8.5 cm)\n🔑 Móc khóa mica (tròn 3.8 cm, vuông 2.7*4.4 cm)\n🎖️ Huy hiệu 5.8 cm\n📇 Card visit\n🛍️ Sticker bế viền và sticker vuông die cut\n🖨️ Sản phẩm in 3D\n📡 Tích hợp thẻ NFC (mở SĐT, Web, Vị trí...)\n📖 Sổ bán hàng 2 liên\n🖼️ In ảnh theo yêu cầu (có cán màng bóng/mờ, ép plastic)\n🧲 Ảnh đế nam châm\n🪵 Khắc thông tin lên gỗ (Max size 8 * 8 cm)"
+        },
+        { "name": "Thanh toán", "value": "Quý khách vui lòng thanh toán số tiền là" },
+        { "name": "Chỉ địa chỉ", "value": "📍 Địa chỉ: 66/7 đường 45, phường 14, Gò Vấp, TP.Hồ Chí Minh\n📝 Ghi chú: Gần Emart Phan Huy Ích" },
+        { "name": "Chỉ SĐT", "value": "0382596138" },
+        {
+		  "name": "Thông tin shop",
+		  "value": "🏪 Thông tin shop:\n👤 Chủ shop: Nguyễn Phú Thọ\n📞 Số điện thoại: 0382596138 (Zalo)\n📍 Địa chỉ: 66/7 đường 45, phường 14, Gò Vấp, TP.Hồ Chí Minh\n📝 Ghi chú: Gần Emart Phan Huy Ích"
+		},
+        {
+            "name": "Chính sách ship",
+            "value": "🚚 Chính sách ship:\n📦 Chúng tôi sẽ ship hàng bằng ứng dụng ViettelPost.\n🎉 Đơn hàng trên 100k: 🚀 Freeship Hồ Chí Minh.\n🌍 Đơn hàng trên 200k: ✈️ Miễn ship toàn quốc!"
+        },
+        {
+            "name": "Quy trình làm việc",
+            "value": "📋 Quy trình làm việc:\n1️⃣ Gửi file ảnh và yêu cầu về số lượng cần in\n2️⃣ 📷 Shop kiểm tra ảnh và liên hệ nếu cần chỉnh sửa\n3️⃣ 📅 Shop dự tính ngày hoàn thành và thông báo\n4️⃣ 💰 Cọc: 30% sản phẩm - 50% chỉnh sửa file - 100% in mẫu\n5️⃣ 🖨️ In mẫu (nếu cần) và gửi hình, video cho khách\n6️⃣ ✅ Xác nhận in: nếu hài lòng, cọc thêm 20%\n7️⃣ 🔄 In đủ số lượng và gửi hình, video\n8️⃣ 📦 Tạo đơn và gửi thông tin ship"
+        }
+    ]
+}
