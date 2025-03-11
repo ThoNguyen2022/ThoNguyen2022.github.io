@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách nút</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+            width: 90%;
+            max-width: 400px;
+        }
+        button {
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:active {
+            background-color: #0056b3;
+        }
+        .copied {
+            background-color: red !important;
+        }
+        .copied-text {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 90%;
+            max-width: 400px;
+            text-align: left;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="buttonContainer"></div>
+    <div class="copied-text" id="copiedText">Nội dung copy sẽ hiển thị ở đây</div>
+    <script>
+        let lastCopiedButton = null;
+
+        fetch('buttons.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('buttonContainer');
+                data.buttons.forEach(item => {
+                    const button = document.createElement('button');
+                    button.textContent = item.name;
+                    button.onclick = () => copyToClipboard(button, item.value);
+                    container.appendChild(button);
+                });
+            });
+        
+        function copyToClipboard(button, text) {
+            navigator.clipboard.writeText(text).then(() => {
+                document.getElementById('copiedText').textContent = text;
+                if (lastCopiedButton) {
+                    lastCopiedButton.classList.remove('copied');
+                }
+                button.classList.add('copied');
+                lastCopiedButton = button;
+            });
+        }
+    </script>
+</body>
+</html>
