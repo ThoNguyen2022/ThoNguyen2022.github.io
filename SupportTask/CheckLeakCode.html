@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leak Search Tool</title>
+  <style>
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      animation: spin 1s linear infinite;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #results, #statusMessage {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>Leak Search Tool</h2>
+  <textarea id="keywords" rows="10" cols="60" placeholder="Line 1: Access Token&#10;Line 2+: Keywords, one per line"></textarea><br><br>
+  <button onclick="runSearch()">Run Search</button>
+
+  <div id="statusMessage" style="margin-top: 20px;"></div>
+
+  <table border="1" id="results" style="margin-top: 20px; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Keyword</th>
+        <th>Status</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    async function fetchWithRetry(url, headers, retries = 3, delay = 3000) {
+      for (let attempt = 1; attempt <= retries; attempt++) {
+        try {
+          let res = await fetch(url, { headers });
+
+          let remaining = res.headers.get("X-RateLimit-Remaining");
+          let resetTime = res.headers.get("X-RateLimit-Reset");
+
+          if (remaining === "0") {
+            const resetTimestamp = parseInt(resetTime, 10) * 1000;
+            const now = Date.now();
+            const waitMillis = resetTimestamp - now;
+            const waitSeconds = Math.ceil(waitMillis / 1000);
+            const resetDate = new Date(resetTimestamp).toLocaleString();
+
+            document.getElementById('statusMessage').innerHTML = `Rate limited. Waiting ${waitSeconds} seconds until ${resetDate}... <div class="spinner"></div>`;
+            document.getElementById('statusMessage').style.display = 'block';
+
+            await new Promise(resolve => setTimeout(resolve, waitMillis));
+
+            res = await fetch(url, { headers });
+            remaining = res.headers.get("X-RateLimit-Remaining");
+            resetTime = res.headers.get("X-RateLimit-Reset");
+          }
+
+          if (!res.ok) {
+            if (res.status === 403) {
+              const retryAfter = res.headers.get("Retry-After");
+              if (retryAfter) {
+                const remainTime = parseInt(retryAfter, 10);
+                return { error: `Rate limited. Retry after ${remainTime} seconds.` };
+              }
+            }
+            throw new Error(`HTTP ${res.status}`);
+          }
+
+          return await res.json();
+        } catch (error) {
+          if (attempt === retries) throw error;
+
+          let countdown = delay / 1000;
+          document.getElementById('statusMessage').innerHTML = `Retrying in <span id="countdown">${countdown}</span> seconds... <div class="spinner"></div>`;
+          document.getElementById('statusMessage').style.display = 'block';
+
+          const countdownInterval = setInterval(() => {
+            countdown--;
+            document.getElementById('countdown').innerText = countdown;
+            if (countdown <= 0) clearInterval(countdownInterval);
+          }, 1000);
+
+          await new Promise(resolve => setTimeout(resolve, delay));
+        }
+      }
+    }
+
+    async function runSearch() {
+      const lines = document.getElementById("keywords").value.trim().split("\n").filter(x => x.trim() !== "");
+      if (lines.length < 2) {
+        alert("Please enter access token in the first line and at least one keyword.");
+        return;
+      }
+
+      const token = lines[0].trim();
+      const keywords = lines.slice(1);
+
+      document.getElementById("keywords").style.display = "none";
+      document.querySelector("button").style.display = "none";
+
+      const table = document.getElementById("results").querySelector("tbody");
+      table.innerHTML = "";
+      document.getElementById("results").style.display = "table";
+      document.getElementById("statusMessage").style.display = "block";
+      document.getElementById("statusMessage").innerHTML = "Running search... <div class='spinner'></div>";
+
+      const headers = {
+        "Authorization": "Bearer " + token,
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+      };
+
+      for (let i = 0; i < keywords.length; i++) {
+        const keyword = keywords[i];
+        const encoded = encodeURIComponent(keyword);
+        const url = `https://api.github.com/search/code?q=${encoded}`;
+
+        let status = "Checking...";
+        let link = "-";
+
+        try {
+          const data = await fetchWithRetry(url, headers);
+          if (data.error) {
+            status = data.error;
+            link = "-";
+
+            if (data.error.includes("Rate limited")) {
+              document.getElementById("statusMessage").innerHTML = data.error;
+              break;
+            }
+          } else {
+            if (data.total_count > 0) {
+              status = "Possible Leak";
+              link = `<a href="https://github.com/search?q=${encoded}" target="_blank">Check</a>`;
+            } else {
+              status = "No Leak";
+            }
+          }
+        } catch (err) {
+          status = "Error: " + (err.message || "Unknown");
+        }
+
+        table.innerHTML += `
+          <tr>
+            <td>${i + 1}</td>
+            <td>${keyword}</td>
+            <td>${status}</td>
+            <td>${link}</td>
+          </tr>`;
+      }
+
+      document.getElementById("statusMessage").innerHTML = "Done.";
+    }
+  </script>
+</body>
+</html>
