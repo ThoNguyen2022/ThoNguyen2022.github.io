@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Comment / Uncomment .cs Files</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #fff;
+      padding: 2rem 3rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 500px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #333;
+      font-size: 24px;
+    }
+
+    input[type="file"] {
+      margin: 1rem 0;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 100%;
+      font-size: 14px;
+    }
+
+    .button-group {
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 45%;
+      transition: background-color 0.3s ease;
+      color: white;
+    }
+
+    .comment-btn {
+      background-color: #007bff;
+    }
+
+    .comment-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .uncomment-btn {
+      background-color: #28a745;
+    }
+
+    .uncomment-btn:hover {
+      background-color: #1c823a;
+    }
+
+    #status {
+      margin-top: 20px;
+      color: #555;
+      font-size: 16px;
+      font-style: italic;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Comment / Uncomment .cs Files</h2>
+    <input type="file" id="folderInput" webkitdirectory directory multiple />
+    <div class="button-group">
+      <button class="comment-btn" onclick="processFolder(true)">Comment & Download ZIP</button>
+      <button class="uncomment-btn" onclick="processFolder(false)">Uncomment & Download ZIP</button>
+    </div>
+    <p id="status"></p>
+  </div>
+
+  <script>
+    async function processFolder(isCommenting) {
+      const input = document.getElementById('folderInput');
+      const files = input.files;
+      const status = document.getElementById('status');
+
+      if (!files.length) {
+        alert('Please select a folder');
+        return;
+      }
+
+      status.textContent = 'Processing...';
+      const zip = new JSZip();
+
+      for (const file of files) {
+        const relativePath = file.webkitRelativePath;
+        const content = await file.text();
+        const trimmed = content.trimStart();
+
+        let newContent = content;
+
+        if (isCommenting) {
+          if (!trimmed.startsWith('/*')) {
+            newContent = `/*\n${content}\n*/`;
+          }
+        } else {
+          if (trimmed.startsWith('/*') && trimmed.endsWith('*/')) {
+            newContent = trimmed.replace(/^\/\*\s*\n?/, '').replace(/\n?\s*\*\/$/, '');
+          }
+        }
+
+        zip.file(relativePath, newContent);
+      }
+
+      const blob = await zip.generateAsync({ type: 'blob' });
+      const fileName = isCommenting ? 'commented_folder.zip' : 'uncommented_folder.zip';
+      saveAs(blob, fileName);
+      status.textContent = 'Done! ZIP file is downloading.';
+    }
+  </script>
+</body>
+</html>
