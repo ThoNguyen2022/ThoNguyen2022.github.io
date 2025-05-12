@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Pattern Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .output {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            margin-top: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        input[type="text"], button {
+            padding: 10px;
+            margin-top: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<h1>API Pattern Finder</h1>
+<form id="apiForm">
+    <label for="inputText">Enter text:</label>
+    <textarea id="inputText" name="inputText"></textarea>
+    <label for="delimiter">Enter delimiter:</label>
+    <input type="text" id="delimiter" name="delimiter" value="\n">
+    <button type="button" onclick="processText()">Submit</button>
+</form>
+
+<div id="output" class="output" style="display:none;">
+    <h2>Output</h2>
+    <div id="outputText"></div>
+</div>
+
+<script>
+    function processText() {
+        var inputText = document.getElementById('inputText').value;
+        var delimiter = document.getElementById('delimiter').value || '\n';
+        var pattern = /^[Aa][Pp][Ii]-\d{4}$/;
+        var text = inputText.replace(/[\[\]\(\),:"\/\n]/g, ' ');
+        var words = text.split(' ');
+        var apis = [];
+        
+        words.forEach(function(item) {
+            if (pattern.test(item) && apis.indexOf(item.toUpperCase()) === -1) {
+                apis.push(item.toUpperCase());
+            }
+        });
+
+        apis.sort();
+
+        // Convert the result to HTML with <br /> for new lines if delimiter is \n
+        var result;
+        if (delimiter === "\\n" || delimiter === "\n") {
+            result = apis.join('<br />');
+        } else {
+            result = apis.join(delimiter);
+        }
+
+        document.getElementById('outputText').innerHTML = result;
+        document.getElementById('output').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
