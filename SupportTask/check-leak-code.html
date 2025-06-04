@@ -4,11 +4,49 @@
   <meta charset="UTF-8">
   <title>Leak Search Tool</title>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #007bff;
+    }
+
+    textarea {
+      width: 80%;
+      height: 150px;
+      font-size: 16px;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      resize: none;
+      background-color: #fff;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
     .spinner {
       width: 24px;
       height: 24px;
       border: 4px solid #f3f3f3;
-      border-top: 4px solid #3498db;
+      border-top: 4px solid #007bff;
       border-radius: 50%;
       animation: spin 1s linear infinite;
       display: inline-block;
@@ -20,34 +58,53 @@
       100% { transform: rotate(360deg); }
     }
 
-    #results, #statusMessage {
-      display: none;
+    #statusMessage {
+      font-size: 16px;
       margin-top: 20px;
+      padding: 10px;
+      display: none;
+      background-color: #ffeeba;
+      border: 1px solid #ffc107;
+      border-radius: 5px;
     }
 
     table {
+      width: 80%;
+      margin: 20px auto;
       border-collapse: collapse;
-      width: 100%;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      background-color: white;
     }
 
     th, td {
+      padding: 12px;
       border: 1px solid #ddd;
-      padding: 8px;
       text-align: left;
     }
 
     th {
-      background-color: #f4f4f4;
+      background-color: #007bff;
+      color: white;
+    }
+
+    td a {
+      color: #28a745;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    td a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <h2>Leak Search Tool</h2>
-  <textarea id="keywords" rows="10" cols="60" placeholder="Line 1: Access Token&#10;Line 2+: Keywords, one per line"></textarea><br><br>
+  <textarea id="keywords" placeholder="Line 1: Access Token&#10;Line 2+: Keywords, one per line"></textarea><br><br>
   <button onclick="runSearch()">Run Search</button>
 
   <div id="statusMessage"></div>
-  
+
   <table id="results">
     <thead>
       <tr>
@@ -59,8 +116,7 @@
     </thead>
     <tbody></tbody>
   </table>
-
-  <script>
+    <script>
     async function fetchWithRetry(url, headers, retries = 3, delay = 3000) {
       for (let attempt = 1; attempt <= retries; attempt++) {
         try {
@@ -70,20 +126,29 @@
           let resetTime = res.headers.get("X-RateLimit-Reset");
 
           if (remaining === "0") {
-            const waitMillis = (parseInt(resetTime, 10) * 1000) - Date.now();
+            const resetTimestamp = parseInt(resetTime, 10) * 1000;
+            const now = Date.now();
+            const waitMillis = resetTimestamp - now;
             const waitSeconds = Math.ceil(waitMillis / 1000);
-            const resetDate = new Date(parseInt(resetTime, 10) * 1000).toLocaleString();
+            const resetDate = new Date(resetTimestamp).toLocaleString();
 
-            showStatusMessage(`Rate limited. Waiting ${waitSeconds} seconds until ${resetDate}...`, true);
-            await delayExecution(waitMillis);
+            document.getElementById('statusMessage').innerHTML = `Rate limited. Waiting ${waitSeconds} seconds until ${resetDate}... <div class="spinner"></div>`;
+            document.getElementById('statusMessage').style.display = 'block';
+
+            await new Promise(resolve => setTimeout(resolve, waitMillis));
 
             res = await fetch(url, { headers });
+            remaining = res.headers.get("X-RateLimit-Remaining");
+            resetTime = res.headers.get("X-RateLimit-Reset");
           }
 
           if (!res.ok) {
             if (res.status === 403) {
               const retryAfter = res.headers.get("Retry-After");
-              if (retryAfter) return { error: `Rate limited. Retry after ${parseInt(retryAfter, 10)} seconds.` };
+              if (retryAfter) {
+                const remainTime = parseInt(retryAfter, 10);
+                return { error: `Rate limited. Retry after ${remainTime} seconds.` };
+              }
             }
             throw new Error(`HTTP ${res.status}`);
           }
@@ -92,21 +157,39 @@
         } catch (error) {
           if (attempt === retries) throw error;
 
-          showStatusMessage(`Retrying in ${delay / 1000} seconds...`, true);
-          await delayExecution(delay);
+          let countdown = delay / 1000;
+          document.getElementById('statusMessage').innerHTML = `Retrying in <span id="countdown">${countdown}</span> seconds... <div class="spinner"></div>`;
+          document.getElementById('statusMessage').style.display = 'block';
+
+          const countdownInterval = setInterval(() => {
+            countdown--;
+            document.getElementById('countdown').innerText = countdown;
+            if (countdown <= 0) clearInterval(countdownInterval);
+          }, 1000);
+
+          await new Promise(resolve => setTimeout(resolve, delay));
         }
       }
     }
 
     async function runSearch() {
-      const lines = getInputLines();
-      if (lines.length < 2) return alert("Please enter access token in the first line and at least one keyword.");
+      const lines = document.getElementById("keywords").value.trim().split("\n").filter(x => x.trim() !== "");
+      if (lines.length < 2) {
+        alert("Please enter access token in the first line and at least one keyword.");
+        return;
+      }
 
       const token = lines[0].trim();
       const keywords = lines.slice(1);
 
-      toggleVisibility(false);
-      showStatusMessage("Running search...", true);
+      document.getElementById("keywords").style.display = "none";
+      document.querySelector("button").style.display = "none";
+
+      const table = document.getElementById("results").querySelector("tbody");
+      table.innerHTML = "";
+      document.getElementById("results").style.display = "table";
+      document.getElementById("statusMessage").style.display = "block";
+      document.getElementById("statusMessage").innerHTML = "Running search... <div class='spinner'></div>";
 
       const headers = {
         "Authorization": "Bearer " + token,
@@ -115,64 +198,47 @@
       };
 
       for (let i = 0; i < keywords.length; i++) {
-        await processKeyword(i, keywords[i], headers);
-      }
+        const keyword = keywords[i];
+        const encoded = encodeURIComponent(keyword);
+        const url = `https://api.github.com/search/code?q=${encoded}`;
 
-      showStatusMessage("Done.", false);
-    }
+        let status = "Checking...";
+        let link = "-";
 
-    async function processKeyword(index, keyword, headers) {
-      const encoded = encodeURIComponent(keyword);
-      const url = `https://api.github.com/search/code?q=${encoded}`;
+        try {
+          const data = await fetchWithRetry(url, headers);
+          if (data.error) {
+            status = data.error;
+            link = "-";
 
-      let status = "Checking...";
-      let link = "-";
-
-      try {
-        const data = await fetchWithRetry(url, headers);
-        if (data.error) {
-          status = data.error;
-          link = "-";
-          if (data.error.includes("Rate limited")) return showStatusMessage(data.error, false);
-        } else {
-          status = data.total_count > 0 ? "Possible Leak" : "No Leak";
-          link = data.total_count > 0 ? `<a href="https://github.com/search?q=${encoded}" target="_blank">Check</a>` : "-";
+            if (data.error.includes("Rate limited")) {
+              document.getElementById("statusMessage").innerHTML = data.error;
+              break;
+            }
+          } else {
+            if (data.total_count > 0) {
+              status = "Possible Leak";
+              link = `<a href="https://github.com/search?q=${encoded}" target="_blank">Check</a>`;
+            } else {
+              status = "No Leak";
+            }
+          }
+        } catch (err) {
+          status = "Error: " + (err.message || "Unknown");
         }
-      } catch (err) {
-        status = "Error: " + (err.message || "Unknown");
+
+        table.innerHTML += `
+          <tr>
+            <td>${i + 1}</td>
+            <td>${keyword}</td>
+            <td>${status}</td>
+            <td>${link}</td>
+          </tr>`;
       }
 
-      addTableRow(index + 1, keyword, status, link);
-    }
-
-    function addTableRow(no, keyword, status, link) {
-      document.querySelector("#results tbody").innerHTML += `
-        <tr>
-          <td>${no}</td>
-          <td>${keyword}</td>
-          <td>${status}</td>
-          <td>${link}</td>
-        </tr>`;
-    }
-
-    function getInputLines() {
-      return document.getElementById("keywords").value.trim().split("\n").filter(x => x.trim() !== "");
-    }
-
-    function showStatusMessage(message, showSpinner) {
-      document.getElementById("statusMessage").innerHTML = message + (showSpinner ? ' <div class="spinner"></div>' : '');
-      document.getElementById("statusMessage").style.display = "block";
-    }
-
-    function delayExecution(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    function toggleVisibility(hide) {
-      document.getElementById("keywords").style.display = hide ? "none" : "block";
-      document.querySelector("button").style.display = hide ? "none" : "block";
-      document.getElementById("results").style.display = hide ? "table" : "none";
+      document.getElementById("statusMessage").innerHTML = "Done.";
     }
   </script>
 </body>
+
 </html>
