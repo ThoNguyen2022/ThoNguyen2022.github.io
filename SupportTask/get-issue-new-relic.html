@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Mapping</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f5f7fa;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        textarea {
+            height: 150px;
+        }
+        button {
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+            background-color: white;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .copy-btn {
+            cursor: pointer;
+            padding: 5px;
+            border: none;
+            background: #28a745;
+            color: white;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .copy-btn:hover {
+            background: #218838;
+        }
+        .highlight {
+            background-color: #ffdddd;
+        }
+    </style>
+</head>
+<body>
+    <h2>✨ Error Mapping Tool ✨</h2>
+    
+    <label>📥 Upload JSON File:</label>
+    <input type="file" id="jsonFileInput">
+    
+    <label>✍️ Or Paste JSON Data:</label>
+    <textarea id="jsonTextInput" placeholder="Paste JSON data here..."></textarea>
+
+    <label>⚠️ Paste Errors:</label>
+    <textarea id="errorInput" placeholder="Paste errors here..."></textarea>
+
+    <button onclick="processErrors()">🚀 Generate Table</button>
+    
+    <table id="errorTable">
+        <thead>
+            <tr>
+                <th>Error</th>
+                <th>Ticket Name</th>
+                <th>Process Name</th>
+                <th>Error Message</th>
+                <th>🖨️ Copy</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        let errorMappings = [];
+
+        function loadJsonData() {
+            const jsonText = document.getElementById("jsonTextInput").value.trim();
+            if (jsonText) {
+                try {
+                    errorMappings = JSON.parse(jsonText);
+                } catch (e) {
+                    alert("🚨 Invalid JSON format.");
+                    errorMappings = [];
+                }
+            }
+        }
+
+        document.getElementById('jsonFileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                errorMappings = JSON.parse(e.target.result);
+            };
+            
+            reader.readAsText(file);
+        });
+
+        function processErrors() {
+            loadJsonData(); // Load JSON from textarea if available
+
+            const errors = document.getElementById("errorInput").value.split("\n").filter(e => e.trim());
+            const tableBody = document.querySelector("#errorTable tbody");
+            tableBody.innerHTML = "";
+
+            for (let i = 0; i < errors.length; i += 5) {
+                if (i + 4 >= errors.length) continue; // Đảm bảo đủ 5 dòng
+
+                const processName = errors[i].trim();
+                const errorMessage = errors[i + 1].trim();
+
+                let matchedTicket = errorMappings.find(e => processName.includes(e.ProcessName) && errorMessage.includes(e.ErrorMessage));
+
+                let row = `<tr>
+                    <td class="error-text">${errorMessage}</td>
+                    <td>${matchedTicket ? matchedTicket.TicketName : "null"}</td>
+                    <td>${processName}</td>
+                    <td>${matchedTicket ? matchedTicket.ErrorMessage : "null"}</td>
+                    <td><button class="copy-btn" onclick="copyError(this)">📋 Copy</button></td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            }
+        }
+
+        function copyError(button) {
+            const errorCell = button.parentElement.parentElement.querySelector(".error-text");
+            navigator.clipboard.writeText(errorCell.textContent).then(() => {
+                errorCell.classList.add("highlight"); // Đổi màu khi copy
+            }).catch(err => {
+                console.error("Failed to copy", err);
+            });
+        }
+    </script>
+</body>
+</html>
