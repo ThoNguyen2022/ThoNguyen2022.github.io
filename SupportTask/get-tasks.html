@@ -3,49 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Pattern Finder</title>
+    <title>✨ API Pattern Finder ✨</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 20px;
+            background-color: #f5f7fa;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            text-align: left;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        button {
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
         }
         .output {
-            background-color: #f4f4f4;
-            padding: 10px;
+            background-color: #fff;
+            padding: 15px;
             border-radius: 5px;
             margin-top: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            display: none;
         }
-        textarea {
-            width: 100%;
-            height: 150px;
-            padding: 10px;
-            margin-top: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
-        input[type="text"], button {
-            padding: 10px;
-            margin-top: 10px;
-        }
-        input[type="text"] {
-            width: 100%;
+        .output h2 {
+            color: #007bff;
         }
     </style>
 </head>
 <body>
 
-<h1>API Pattern Finder</h1>
-<form id="apiForm">
-    <label for="inputText">Enter text:</label>
-    <textarea id="inputText" name="inputText"></textarea>
-    <label for="delimiter">Enter delimiter:</label>
-    <input type="text" id="delimiter" name="delimiter" value="\n">
-    <button type="button" onclick="processText()">Submit</button>
-</form>
+<div class="container">
+    <h1>✨ API Pattern Finder ✨</h1>
+    <form id="apiForm">
+        <label for="inputText">🔍 Enter text:</label>
+        <textarea id="inputText" name="inputText"></textarea>
+        
+        <label for="delimiter">✏️ Enter delimiter:</label>
+        <input type="text" id="delimiter" name="delimiter" value="\n">
+        
+        <button type="button" onclick="processText()">🚀 Find Patterns</button>
+    </form>
 
-<div id="output" class="output" style="display:none;">
-    <h2>Output</h2>
-    <div id="outputText"></div>
+    <div id="output" class="output">
+        <h2>✅ API Matches</h2>
+        <div id="outputText"></div>
+    </div>
 </div>
 
 <script>
@@ -56,7 +88,7 @@
         var text = inputText.replace(/[\[\]\(\),:"\/\n]/g, ' ');
         var words = text.split(' ');
         var apis = [];
-        
+
         words.forEach(function(item) {
             if (pattern.test(item) && apis.indexOf(item.toUpperCase()) === -1) {
                 apis.push(item.toUpperCase());
@@ -65,7 +97,6 @@
 
         apis.sort();
 
-        // Convert the result to HTML with <br /> for new lines if delimiter is \n
         var result;
         if (delimiter === "\\n" || delimiter === "\n") {
             result = apis.join('<br />');
