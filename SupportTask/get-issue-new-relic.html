@@ -80,10 +80,10 @@
     <h2>✨ Error Mapping Tool ✨</h2>
     
     <label>📥 Upload JSON File:</label>
-    <input type="file" id="jsonFileInput">
-    
-    <label>✍️ Or Paste JSON Data:</label>
-    <textarea id="jsonTextInput" placeholder="Paste JSON data here..."></textarea>
+    <input type="file" id="jsonFileInput">  
+	
+	<label>✍️ Or Paste table Data:</label>
+    <textarea id="tableTextInput" placeholder="Paste table data here..."></textarea>
 
     <label>⚠️ Paste Errors:</label>
     <textarea id="errorInput" placeholder="Paste errors here..."></textarea>
@@ -107,15 +107,17 @@
         let errorMappings = [];
 
         function loadJsonData() {
-            const jsonText = document.getElementById("jsonTextInput").value.trim();
-            if (jsonText) {
-                try {
-                    errorMappings = JSON.parse(jsonText);
-                } catch (e) {
-                    alert("🚨 Invalid JSON format.");
-                    errorMappings = [];
-                }
-            }
+            let rawData = document.getElementById("tableTextInput").value.trim();
+				let lines = rawData.split("\n"); 
+				let jsonData = lines.map(line => {
+					let parts = line.split("\t"); 
+					return {
+						"TicketName": parts[0] || "",
+						"ProcessName": parts[1] || "",
+						"ErrorMessage": parts[2] || ""
+					};
+				});
+				errorMappings = jsonData;
         }
 
         document.getElementById('jsonFileInput').addEventListener('change', function(event) {
