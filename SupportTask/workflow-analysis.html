@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Workflow Display</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f9fc;
+      margin: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 160px;
+      font-family: monospace;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 6px 12px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 6px 10px;
+      margin: 2px 4px;
+      border-radius: 16px;
+      font-size: 13px;
+      font-weight: bold;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    .G { background-color: #81C784; color: white; }
+    .C { background-color: #64B5F6; color: white; }
+    .U { background-color: #FFF176; color: black; }
+    .other { background-color: #FFB74D; color: white; }
+
+    .workflow-line {
+      margin-bottom: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .workflow-title {
+      font-weight: bold;
+      font-size: 14px;
+      margin-right: 8px;
+      white-space: nowrap;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Workflow Display</h3>
+
+  <textarea id="workflowInput" placeholder="FunctionName[TAB]Entity: Steps..."></textarea><br>
+  <button onclick="generate()">Hiển thị Workflow</button>
+  <button onclick="generateTableActionCodes()">Impacted tables</button>
+
+  <div id="output" style="display: none;"></div>
+  <div id="workflow" style="display: none;"></div>
+
+  <script>
+    const prefixMap = {
+      '0_': 'dbo.',
+      '1_': 'Membership.',
+      '2_': 'Recurly.',
+      '3_': 'Vetspire.',
+      '4_': 'ezyVet.'
+    };
+
+    function applyPrefixMap(entityName) {
+      for (const prefix in prefixMap) {
+        if (entityName.startsWith(prefix)) {
+          return entityName.replace(prefix, prefixMap[prefix]);
+        }
+      }
+      return entityName;
+    }
+
+    function generateTableActionCodes() {
+      const input = document.getElementById("workflowInput").value.trim();
+      const lines = input.split(/\n+/);
+      const tableActions = {};
+
+      for (const line of lines) {
+        const [funcName, rest] = line.split(/\t|\s{2,}/);
+        if (!rest) continue;
+
+        const parts = rest.split('.');
+        for (let part of parts) {
+          part = part.trim();
+          if (!part.includes(':')) continue;
+
+          const [table, steps] = part.split(':').map(p => p.trim());
+          if (!steps) continue;
+
+          const matches = steps.match(/[\d']+[A-Z]/g);
+          if (!matches) continue;
+
+          if (!tableActions[table]) tableActions[table] = new Set();
+          matches.forEach(code => {
+            let action = code.slice(-1);
+            if (action === 'M') action = 'G';
+            tableActions[table].add(action);
+          });
+        }
+      }
+
+      // Hide workflow, show output
+      document.getElementById("workflow").style.display = 'none';
+      const outputDiv = document.getElementById("output");
+      outputDiv.style.display = 'block';
+      outputDiv.innerHTML = '<h3>Kết quả:</h3>';
+
+      const table = document.createElement("table");
+      table.innerHTML = '<tr><th>Table Name</th><th>Code</th></tr>';
+
+      const sorted = Object.entries(tableActions).sort((a, b) => a[0].localeCompare(b[0]));
+      for (const [tableName, actions] of sorted) {
+        const displayName = applyPrefixMap(tableName);
+        const codes = [...actions].sort().join('');
+        const code = codes.includes('G') && codes.includes('C') && codes.includes('U') ? 'F' : codes;
+
+        const row = document.createElement("tr");
+        row.innerHTML = `<td>${displayName}</td><td>${code}</td>`;
+        table.appendChild(row);
+      }
+
+      outputDiv.appendChild(table);
+    }
+
+    function generate() {
+      const container = document.getElementById("workflow");
+      container.innerHTML = '';
+      const inputLines = document.getElementById("workflowInput").value.trim().split('\n');
+
+      inputLines.forEach(line => {
+        const steps = [];
+        const [funcName, rest] = line.split('\t');
+        if (!rest) return;
+
+        rest.split(".").forEach(part => {
+          const trimmed = part.trim();
+          if (!trimmed) return;
+
+          const [entity, stepCodes] = trimmed.split(":").map(s => s.trim());
+          if (!entity || !stepCodes) return;
+
+          const codes = stepCodes.match(/[\d']+[A-Z]/g);
+          if (!codes) return;
+
+          codes.forEach(code => {
+            steps.push({
+              step: parseFloat(code.replace("'", ".")),
+              label: applyPrefixMap(entity),
+              action: code.slice(-1)
+            });
+          });
+        });
+
+        if (steps.length > 0) {
+          steps.sort((a, b) => a.step - b.step);
+
+          const rowDiv = document.createElement("div");
+          rowDiv.className = "workflow-line";
+
+          const title = document.createElement("div");
+          title.className = "workflow-title";
+          title.textContent = funcName + ":";
+          rowDiv.appendChild(title);
+
+          steps.forEach(s => {
+            const btn = document.createElement("div");
+            const color = ['G', 'C', 'U'].includes(s.action) ? s.action : 'other';
+            btn.className = `btn ${color}`;
+            btn.textContent = s.label;
+            rowDiv.appendChild(btn);
+          });
+
+          container.appendChild(rowDiv);
+        }
+      });
+
+      // Hide output, show workflow
+      document.getElementById("output").style.display = 'none';
+      document.getElementById("workflow").style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
