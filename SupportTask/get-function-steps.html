@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DB Access Extractor</title>
+</head>
+<body>
+  <h2>Paste your C# code below:</h2>
+  <textarea id="codeInput" rows="20" cols="100" placeholder="Paste your C# code here..."></textarea><br><br>
+  <button onclick="extract()">Extract DB Usage</button>
+  <pre id="output"></pre>
+
+  <script>
+	const contextPrefixes = ['_membershipContext', '_context', '_membershipV1Context', '_v1context', '_dboContext'];
+    const keywords = {
+      Create: ['Add(', 'AddAsync('],
+      Update: ['Update('],
+      Delete: ['Remove(', 'RemoveRange('],
+      Get: ['FirstOrDefaultAsync(', 'ToListAsync(', 'SingleOrDefaultAsync(', 'AnyAsync(', 'CountAsync(', 'FindAsync(', 'Where(']
+    };
+	let step = 0;
+	
+	function extractFunctions(code) {
+    const functionRegex = /\b(public|private|internal|protected)\s+(?:async\s+)?(?:Task(?:<[^>]+>)?|void|[\w\d]+)\s+(\w+)\s*\(([^)]*)\)/g;
+    let match;
+    while ((match = functionRegex.exec(code)) !== null) {
+        const fullLine = match[0];
+        if (/record\s/.test(fullLine) || /class\s+\w+\s*\(/.test(fullLine)) {
+            continue;
+        }
+        const access = match[1];
+        const name = match[2];
+        const parameters = match[3];
+
+        return `${name}(${parameters})`;
+    }
+}
+
+    function extractEntity(statement, step) {
+      for (const contextPrefix of contextPrefixes) {
+        const contextRegex = new RegExp(`(${contextPrefix}\\.\\w+)`, 'g');
+        const contextMatches = [...statement.matchAll(contextRegex)];
+
+        for (const match of contextMatches) {
+          const contextProp = match[1];
+          for (const [action, methods] of Object.entries(keywords)) {
+            for (const method of methods) {
+              if (statement.includes(`.${method}`)) {
+                return `${contextProp}: ${step}${action[0].toUpperCase()}`;
+              }
+            }
+          }
+        }
+      }
+      return null;
+    }
+
+    function extractMediator(statement) {
+      const mediatorMatch = statement.match(/_mediator\.Send\((new\s+)?(\w+(\.\w+)*)/);
+      if (mediatorMatch) {
+        return `_mediator.Send(${mediatorMatch[2]}): ${step}M`;
+      }
+      return null;
+    }
+
+    function extract() {
+      const code = document.getElementById('codeInput').value;
+      const rawLines = code.split('\n');
+      const statements = [];
+      let current = '';
+	  const results = new Set();
+	  
+      for (const line of rawLines) {
+		const isfunction = extractFunctions(line); 
+		if (isfunction)
+		{		
+			step+=1;
+			results.add(`${isfunction}: ${step}F`);
+		}
+        const trimmed = line.trim();
+        if (trimmed === '') continue;
+
+        current += ' ' + trimmed;
+        if (trimmed.endsWith(';')) {
+          statements.push(current.trim());
+          current = '';
+        }		
+      }
+	  
+      let previousStatement = null;
+		let newObjectName = null;
+		let newObjectClass = null;
+
+		for (const stmt of statements) {
+		  const result = extractEntity(stmt, step);		
+		  if (result) {
+			step += 1;
+			results.add(`${result}`);
+		  }
+
+		  // Bắt new [Class] trong statement
+		  const newMatch = stmt.match(/(?:var\s+)?(\w+)\s*=\s*new\s+([\w\.]+)\s*\(/);
+		  if (newMatch) {
+			newObjectName = newMatch[1];
+			newObjectClass = newMatch[2];
+			previousStatement = stmt;
+			continue;
+		  }
+
+		  // Nếu dòng này là Send(...) với biến vừa tạo
+		  if (newObjectName && stmt.includes(`_mediator.Send(${newObjectName}`)) {
+			results.add(`${newObjectClass}: ${step}M`);
+			step += 1;
+			newObjectName = null;
+			newObjectClass = null;
+		  }
+		}
+
+      const output = Array.from(results);
+      document.getElementById('output').textContent = output.length
+        ? output.join('\n')
+        : 'No DB access found.';
+    }
+  </script>
+</body>
+</html>
