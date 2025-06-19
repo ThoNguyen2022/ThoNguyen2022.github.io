@@ -11,12 +11,12 @@
   <pre id="output"></pre>
 
   <script>
-	const contextPrefixes = ['_membershipContext', '_context', '_membershipV1Context', '_v1context', '_dboContext'];
+	const contextPrefixes = ['_membershipContext', '_context', '_membershipV1Context', '_v1Context', '_dboContext'];
     const keywords = {
       Create: ['Add(', 'AddAsync('],
       Update: ['Update('],
       Delete: ['Remove(', 'RemoveRange('],
-      Get: ['FirstOrDefaultAsync(', 'ToListAsync(', 'SingleOrDefaultAsync(', 'AnyAsync(', 'CountAsync(', 'FindAsync(', 'Where(']
+      Get: ['FirstOrDefaultAsync(', 'ToListAsync(', 'SingleOrDefaultAsync(', 'AnyAsync(', 'CountAsync(', 'FindAsync(', 'Where(','FirstOrDefault(']
     };
 	let step = 0;
 	
@@ -28,11 +28,15 @@
         if (/record\s/.test(fullLine) || /class\s+\w+\s*\(/.test(fullLine)) {
             continue;
         }
+		
+		if (/public\s+Handler\s*\(/.test(fullLine) || /Handle\s*\(/.test(fullLine)) {
+            continue;
+        }
         const access = match[1];
         const name = match[2];
         const parameters = match[3];
 
-        return `${name}(${parameters})`;
+        return `${name}(...)`;
     }
 }
 
@@ -46,7 +50,7 @@
           for (const [action, methods] of Object.entries(keywords)) {
             for (const method of methods) {
               if (statement.includes(`.${method}`)) {
-                return `${contextProp}: ${step}${action[0].toUpperCase()}`;
+                return `${contextProp}: ${step+1}${action[0].toUpperCase()}`;
               }
             }
           }
@@ -69,6 +73,7 @@
       const statements = [];
       let current = '';
 	  const results = new Set();
+	  step = 0;
 	  
       for (const line of rawLines) {
 		const isfunction = extractFunctions(line); 
@@ -80,7 +85,7 @@
         const trimmed = line.trim();
         if (trimmed === '') continue;
 
-        current += ' ' + trimmed;
+        current += trimmed;
         if (trimmed.endsWith(';')) {
           statements.push(current.trim());
           current = '';
@@ -92,9 +97,14 @@
 		let newObjectClass = null;
 
 		for (const stmt of statements) {
-		  const result = extractEntity(stmt, step);		
+		  let result = extractEntity(stmt, step);		
 		  if (result) {
 			step += 1;
+			result = result.replaceAll('_v1Context', 'dbo');
+			result = result.replaceAll('_dboContext', 'dbo');
+			result = result.replaceAll('_membershipV1Context', 'dbo');
+			result = result.replaceAll('_membershipContext', 'Membership');
+			result = result.replaceAll('_context', 'Membership');
 			results.add(`${result}`);
 		  }
 
@@ -109,17 +119,66 @@
 
 		  // Nếu dòng này là Send(...) với biến vừa tạo
 		  if (newObjectName && stmt.includes(`_mediator.Send(${newObjectName}`)) {
-			results.add(`${newObjectClass}: ${step}M`);
 			step += 1;
+			results.add(`${newObjectClass}: ${step}M`);
 			newObjectName = null;
 			newObjectClass = null;
 		  }
+		  
+		  // Detect plain function call like object.function(...)
+        const funcCallMatch = stmt.match(/(await\s+)(\w+)\.(\w+)\s*\(.*?\)(?:\.\w+\(.*?\))?\s*;/);
+        if (funcCallMatch) {
+          const objectName = funcCallMatch[2];
+          const methodName = funcCallMatch[3];
+          if (!contextPrefixes.includes(objectName) && objectName !== '_mediator') {
+            step += 1;
+            results.add(`${objectName}.${methodName}(...): ${step}O`);
+          }
+        }
 		}
 
-      const output = Array.from(results);
-      document.getElementById('output').textContent = output.length
-        ? output.join('\n')
-        : 'No DB access found.';
+		const outputElement = document.getElementById('output');
+		outputElement.innerHTML = ''; // Clear output
+
+		if (results.size === 0) {
+		  outputElement.textContent = 'No DB access found.';
+		  return;
+		}
+
+		// Tạo bảng HTML
+		const table = document.createElement('table');
+		table.border = 1;
+		table.style.borderCollapse = 'collapse';
+		table.style.marginTop = '10px';
+
+		// Header row
+		const headerRow = document.createElement('tr');
+		['Step', 'Object', 'Method'].forEach(headerText => {
+		  const th = document.createElement('th');
+		  th.textContent = headerText;
+		  th.style.padding = '4px 8px';
+		  th.style.backgroundColor = '#f0f0f0';
+		  headerRow.appendChild(th);
+		});
+		table.appendChild(headerRow);
+
+		// Rows from results
+		for (const line of results) {
+		  const match = line.match(/^(.+):\s*(\d+)([A-Z])$/);
+		  if (match) {
+			const [, obj, step, method] = match;
+			const row = document.createElement('tr');
+			[step, obj, method].forEach(text => {
+			  const td = document.createElement('td');
+			  td.textContent = text;
+			  td.style.padding = '4px 8px';
+			  row.appendChild(td);
+			});
+			table.appendChild(row);
+		  }
+		}
+
+		outputElement.appendChild(table);
     }
   </script>
 </body>
