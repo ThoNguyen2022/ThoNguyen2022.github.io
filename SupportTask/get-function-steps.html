@@ -11,7 +11,7 @@
   <pre id="output"></pre>
 
   <script>
-	const contextPrefixes = ['_membershipContext', '_context', '_membershipV1Context', '_v1Context', '_dboContext'];
+	const contextPrefixes = ['_membershipContext', '_context', '_membershipV1Context', '_v1Context', '_dboContext', '_contextV1'];
     const keywords = {
       Create: ['Add(', 'AddAsync('],
       Update: ['Update('],
@@ -101,6 +101,7 @@
 		  if (result) {
 			step += 1;
 			result = result.replaceAll('_v1Context', 'dbo');
+			result = result.replaceAll('_contextV1', 'dbo');
 			result = result.replaceAll('_dboContext', 'dbo');
 			result = result.replaceAll('_membershipV1Context', 'dbo');
 			result = result.replaceAll('_membershipContext', 'Membership');
