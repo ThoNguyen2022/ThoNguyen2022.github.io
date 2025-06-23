@@ -120,6 +120,8 @@
 		  // Nếu dòng này là Send(...) với biến vừa tạo
 		  if (newObjectName && stmt.includes(`_mediator.Send(${newObjectName}`)) {
 			step += 1;
+			newObjectClass = newObjectClass.replaceAll('.Query', '');
+			newObjectClass = newObjectClass.replaceAll('.Command', '');
 			results.add(`${newObjectClass}: ${step}M`);
 			newObjectName = null;
 			newObjectClass = null;
