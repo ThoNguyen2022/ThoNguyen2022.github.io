@@ -123,14 +123,14 @@ function getStatusColor(status) {
 }
 // Cấu hình Firebase
 const firebaseConfig = {
-	apiKey: "AIzaSyAgvVCGRl25CLSgNpLyut_Ezpl9n7Mffj8",
-	authDomain: "haidl-2024.firebaseapp.com",
-	databaseURL: "https://haidl-2024-default-rtdb.firebaseio.com",
-	projectId: "haidl-2024",
-	storageBucket: "haidl-2024.appspot.com",
-	messagingSenderId: "486702312435",
-	appId: "1:486702312435:web:cdf85f8b5f4883a9c8c086",
-	measurementId: "G-HYDKHDSG5T"
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
 };
 
 // Khởi tạo Firebase
