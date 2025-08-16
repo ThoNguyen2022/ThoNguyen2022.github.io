@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1,
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #0056b3;
+    color: white;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.note {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #004494;
+}
+
+.result {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    border: 1px dashed #0056b3;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Main container for Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 1fr;
+    /* 3 equal columns and 1 for the button */
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: flex-end;
+    /* Align items to the bottom */
+}
+
+/* Input fields */
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Adjust button to span 2 rows */
+.button-span {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+    /* Start at row 1 and span 2 rows */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* Center the button vertically */
+}
+
+/* Ensure button takes 100% of its container's height */
+.button-span .btn {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+/* Basic styling for the Copy button */
+.copy-btn {
+    background-color: #28a745; /* Green color */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the Copy button */
+.copy-btn:hover {
+    background-color: #218838; /* Darker green */
+}
+
+/* Vertically align button in its cell */
+td {
+    vertical-align: middle;
+}
