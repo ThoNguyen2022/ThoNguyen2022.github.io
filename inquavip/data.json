@@ -23,6 +23,16 @@
       "gia": "10.000/10 card"
     },
 	{
+      "san_pham": "Huy hiệu kim loại",
+      "chat_lieu": "Huy hiệu tròn được làm từ kim loại đường kính 58 mm, có ghim cài. Ngoài ra chúng tôi còn có huy hiệu đế nam châm và đế gương",
+	  "so_mat_in":"1 mặt",
+	  "can_mang": "Không",
+	  "sl_toi_thieu":2,
+	  "sl_giam_toi_da": 100,
+	  "phan_tram_giam_toi_da": 40,
+      "gia": "20.000/2 cái"
+    },
+	{
       "san_pham": "Name Card số lượng lớn (từ 5 hộp)",
 	  "chat_lieu": "Giấy C300gsm",
 	  "so_mat_in":"2 mặt",
