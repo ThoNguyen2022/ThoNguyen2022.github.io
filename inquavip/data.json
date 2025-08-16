@@ -1,0 +1,86 @@
+{
+  "thiet_ke": [
+    {
+      "dich_vu": "Thiết kế Menu (A4)",
+      "mo_ta": "Thiết kế Menu.",
+      "gia": "Từ 100.000/mặt"
+    },
+    {
+      "dich_vu": "Thiết kế Name Card (54 * 90 mm)",
+      "mo_ta": "Thiết kế card visit, cung cấp file in ấn.",
+      "gia": "Từ 50.000/mặt"
+    }
+  ],
+  "in_an": [
+    {
+      "san_pham": "Name Card lẻ 5.4 * 9.0 cm",
+	  "chat_lieu": "Giấy Photo Paper cao cấp 230gsm",
+	  "so_mat_in":"2 mặt",
+	  "can_mang": "màng mờ",
+	  "sl_toi_thieu":50,
+	  "sl_giam_toi_da": 500,
+	  "phan_tram_giam_toi_da": 40,
+      "gia": "10.000/10 card"
+    },
+	{
+      "san_pham": "Name Card số lượng lớn (từ 5 hộp)",
+	  "chat_lieu": "Giấy C300gsm",
+	  "so_mat_in":"2 mặt",
+	  "can_mang": "màng mờ",
+	  "sl_toi_thieu":500,
+	  "sl_giam_toi_da": 5000,
+	  "phan_tram_giam_toi_da": 40,
+      "gia": "50.000/100 card"
+    },
+	{
+      "san_pham": "Móc khóa mica tròn",
+      "chat_lieu": "Khuôn được đúc từ mica, kích thước lòng trong 38 mm",
+	  "so_mat_in":"2 mặt",
+	  "can_mang": "Không",
+	  "sl_toi_thieu":10,
+	  "sl_giam_toi_da": 100,
+	  "phan_tram_giam_toi_da": 40,
+      "gia": "50.000/10 cái"
+    },
+	{
+      "san_pham": "Móc khóa mica hình chữ nhật",
+      "chat_lieu": "Khuôn được đúc từ mica, kích thước lòng trong 27 * 44 mm",
+	  "so_mat_in":"2 mặt",
+	  "can_mang": "Không",
+	  "sl_toi_thieu":10,
+	  "sl_giam_toi_da": 100,
+	  "phan_tram_giam_toi_da": 40,
+      "gia": "50.000/10 cái"
+    },
+	{
+      "san_pham": "Khắc laser lên gỗ",
+      "chat_lieu": "Phôi gỗ 3mm được cắt theo kích thước 60 * 90 mm",
+	  "so_mat_in":"1 mặt",
+	  "can_mang": "Không",
+	  "sl_toi_thieu":1,
+	  "sl_giam_toi_da": 50,
+	  "phan_tram_giam_toi_da": 40,
+      "gia": "15.000/1 cái"
+    },
+	{
+      "san_pham": "Card PVC",
+      "chat_lieu": "In trên phôi nhựa PVC 3 lớp, cắt theo kích thước 54 * 85 mm",
+	  "so_mat_in":"2 mặt",
+	  "can_mang": "Không",
+	  "sl_toi_thieu":2,
+	  "sl_giam_toi_da": 100,
+	  "phan_tram_giam_toi_da": 40,
+      "gia": "20.000/2 cái"
+    },
+	{
+      "san_pham": "Sticker bế viền",
+      "chat_lieu": "Sticker được in trên decal và đươc cán bóng bế viền. Sản phẩm có thể chống nước",
+	  "so_mat_in":"1 mặt",
+	  "can_mang": "Không",
+	  "sl_toi_thieu":1,
+	  "sl_giam_toi_da": 2,
+	  "phan_tram_giam_toi_da": 10,
+      "gia": "180.000/1 mét vuông"
+    }
+  ]
+}
