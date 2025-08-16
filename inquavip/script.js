@@ -63,6 +63,7 @@ function calculatePrice() {
     const mucIn = 1200;
     const mangBong = 1500;
     const mangMo = 1000;
+    const epPlastic = 2000;
     const catMay = 200;
     const catKhuonLon = 300;
     const catKhuonNho = 100;
@@ -122,7 +123,10 @@ function calculatePrice() {
         tongGia += soToA4ToiThieu * mangBong;
     } else if (yeuCauCanMang === 'mo') {
         tongGia += soToA4ToiThieu * mangMo;
+    } else if (yeuCauCanMang === 'plastic') {
+        tongGia += soToA4ToiThieu * epPlastic;
     }
+	
 
     // Cutting cost
     if ((chieuDai === 54 && chieuRong === 90) || (chieuDai === 90 && chieuRong === 54)) {
