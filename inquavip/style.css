@@ -152,3 +152,30 @@ tr:nth-child(even) {
 td {
     vertical-align: middle;
 }
+
+/* Media Queries cho các thiết bị có chiều rộng màn hình nhỏ hơn 768px (điện thoại) */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Thay đổi thành một cột duy nhất */
+        gap: 15px; /* Giữ nguyên khoảng cách giữa các hàng */
+    }
+
+    .grid-item {
+        margin-bottom: 0; /* Loại bỏ margin dưới không cần thiết */
+    }
+
+    .button-span {
+        grid-column: 1; /* Nút chiếm hết chiều rộng của cột */
+        grid-row: auto; /* Bỏ giới hạn về hàng */
+        height: auto;
+        margin-top: 15px; /* Thêm khoảng cách phía trên nút */
+    }
+
+    .button-span .btn {
+        height: auto;
+    }
+}
