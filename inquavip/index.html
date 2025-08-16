@@ -208,10 +208,11 @@
             // Định nghĩa mức giá
             const giayIn = 1200;
             const mucIn = 1200;
-            const mangBong = 1000;
-            const mangMo = 700;
+            const mangBong = 1500;
+            const mangMo = 1000;
             const catMay = 200;
-            const catKhuon = 300;
+            const catKhuonLon = 300;
+			const catKhuonNho = 100;
             const catThuCong = 500;
             const boGoc = 200;
 
@@ -221,6 +222,7 @@
             const width = document.getElementById('width').value;
             const doubleSided = document.getElementById('double-sided').value;
             const laminating = document.getElementById('laminating').value;
+            const chonBoGoc = document.getElementById('bo-goc').value;
 
             // Chuyển đổi các giá trị số từ chuỗi sang số nguyên
             const soLuong = parseInt(quantity);
@@ -270,16 +272,31 @@
             }
 
             // Chi phí cắt
-            if ((chieuDai === 54 && chieuRong === 90) || (chieuDai === 90 && chieuRong === 54)) {
+            if ((chieuDai === 54 && chieuRong === 90) || (chieuDai === 90 && chieuRong === 54)) 
+			{
                 tongGia += soLuong * catMay;
-            } else if ((chieuDai === 54 && chieuRong === 85) || (chieuDai === 85 && chieuRong === 54)) {
-                tongGia += soLuong * catKhuon;
-            } else {
+            } 
+			else if ((chieuDai === 54 && chieuRong === 85) || (chieuDai === 85 && chieuRong === 54)) 
+			{
+                tongGia += soLuong * catKhuonLon;
+            }
+			else if ((chieuDai === 30 && chieuRong === 40) 
+				|| (chieuDai === 40 && chieuRong === 30)
+				||(chieuDai === 35 && chieuRong === 45) 
+				|| (chieuDai === 45 && chieuRong === 35)) 
+			{
+                tongGia += soLuong * catKhuonLon;
+            }  
+			else 
+			{
                 tongGia += soLuong * catThuCong;
             }
 
             // Chi phí bo góc
-            tongGia += soLuong * boGoc;
+			if(chonBoGoc === "yes")
+			{
+				tongGia += soLuong * boGoc;
+			}
 
             tongGia /= 0.8;
             // Áp dụng giảm giá theo số lượng
@@ -361,4 +378,5 @@
             .catch(error => console.error('Lỗi khi đọc file JSON:', error));
     </script>
 </body>
+
 </html>
