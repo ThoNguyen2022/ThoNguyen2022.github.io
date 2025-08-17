@@ -2,13 +2,27 @@
   "thiet_ke": [
     {
       "dich_vu": "Thiết kế Menu (A4)",
-      "mo_ta": "Thiết kế Menu.",
-      "gia": "Từ 100.000/mặt"
+      "mo_ta": "Thiết kế Menu A4 theo yêu cầu, cung cấp file in ấn.",
+      "gia": "100.000/mặt",
+	  "url": "TKMenu"
     },
     {
       "dich_vu": "Thiết kế Name Card (54 * 90 mm)",
-      "mo_ta": "Thiết kế card visit, cung cấp file in ấn.",
-      "gia": "Từ 50.000/mặt"
+      "mo_ta": "Thiết kế Name Card theo yêu cầu, cung cấp file in ấn.",
+      "gia": "50.000/mặt",
+	  "url": "TKNameCard"
+    },
+    {
+      "dich_vu": "Thiết kế Website tĩnh",
+      "mo_ta": "Thiết kế wesite tĩnh và hỗ trợ hiện thị web cho người dùng. Cung cấp trang web tĩnh miễn phí nếu khách chưa mua tên miền. <b>Ghi chú: Nội dung website ở mức đơn giản: giới hạn trong 1000 chữ, 10 hình, 5 lần chỉnh sửa sau khi chốt. </b>",
+      "gia": "500.000/web",
+	  "url": "TKStaticWeb"
+    },
+    {
+      "dich_vu": "Thiết kế Website động.",
+      "mo_ta": "Thiết kế wesite dộng và hỗ trợ hiện thị web cho người dùng. Cung cấp trang web tĩnh miễn phí nếu khách chưa mua tên miền. <b>Ghi chú: Giới hạn 5 trang, 20 APIs, chưa hỗ trợ hosting và domain </b>",
+      "gia": "3.000.000/web",
+	  "url": "TKDynamicWeb"
     }
   ],
   "in_an": [
@@ -20,17 +34,8 @@
 	  "sl_toi_thieu":50,
 	  "sl_giam_toi_da": 500,
 	  "phan_tram_giam_toi_da": 40,
-      "gia": "10.000/10 card"
-    },
-	{
-      "san_pham": "Huy hiệu kim loại",
-      "chat_lieu": "Huy hiệu tròn được làm từ kim loại đường kính 58 mm, có ghim cài. Ngoài ra chúng tôi còn có huy hiệu đế nam châm và đế gương",
-	  "so_mat_in":"1 mặt",
-	  "can_mang": "Không",
-	  "sl_toi_thieu":2,
-	  "sl_giam_toi_da": 100,
-	  "phan_tram_giam_toi_da": 40,
-      "gia": "20.000/2 cái"
+      "gia": "10.000/10 card",
+	  "url": "NameCard"
     },
 	{
       "san_pham": "Name Card số lượng lớn (từ 5 hộp)",
@@ -40,7 +45,19 @@
 	  "sl_toi_thieu":500,
 	  "sl_giam_toi_da": 5000,
 	  "phan_tram_giam_toi_da": 40,
-      "gia": "50.000/100 card"
+      "gia": "50.000/100 card",
+	  "url": "NameCard"
+    },
+	{
+      "san_pham": "Huy hiệu kim loại",
+      "chat_lieu": "Huy hiệu tròn được làm từ kim loại đường kính 58 mm, có ghim cài. Ngoài ra chúng tôi còn có huy hiệu đế nam châm và đế gương",
+	  "so_mat_in":"1 mặt",
+	  "can_mang": "Không",
+	  "sl_toi_thieu":2,
+	  "sl_giam_toi_da": 100,
+	  "phan_tram_giam_toi_da": 40,
+      "gia": "20.000/2 cái",
+	  "url": "Pin"
     },
 	{
       "san_pham": "Móc khóa mica tròn",
@@ -50,7 +67,8 @@
 	  "sl_toi_thieu":10,
 	  "sl_giam_toi_da": 100,
 	  "phan_tram_giam_toi_da": 40,
-      "gia": "50.000/10 cái"
+      "gia": "50.000/10 cái",
+	  "url": "KeyMica"
     },
 	{
       "san_pham": "Móc khóa mica hình chữ nhật",
@@ -60,7 +78,8 @@
 	  "sl_toi_thieu":10,
 	  "sl_giam_toi_da": 100,
 	  "phan_tram_giam_toi_da": 40,
-      "gia": "50.000/10 cái"
+      "gia": "50.000/10 cái",
+	  "url": "NameCard"
     },
 	{
       "san_pham": "Khắc laser lên gỗ",
@@ -70,7 +89,8 @@
 	  "sl_toi_thieu":1,
 	  "sl_giam_toi_da": 50,
 	  "phan_tram_giam_toi_da": 40,
-      "gia": "15.000/1 cái"
+      "gia": "15.000/1 cái",
+	  "url": "Laser"
     },
 	{
       "san_pham": "Card PVC",
@@ -80,7 +100,8 @@
 	  "sl_toi_thieu":2,
 	  "sl_giam_toi_da": 100,
 	  "phan_tram_giam_toi_da": 40,
-      "gia": "20.000/2 cái"
+      "gia": "20.000/2 cái",
+	  "url": "PVCCard"
     },
 	{
       "san_pham": "Sticker bế viền",
@@ -90,7 +111,8 @@
 	  "sl_toi_thieu":1,
 	  "sl_giam_toi_da": 2,
 	  "phan_tram_giam_toi_da": 10,
-      "gia": "180.000/1 mét vuông"
+      "gia": "180.000/1 mét vuông",
+	  "url": "Sticker"
     }
   ]
 }
