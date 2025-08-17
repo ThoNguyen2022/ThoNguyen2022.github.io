@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
-            createTable(data.thiet_ke, 'design-services', ['Dịch Vụ', 'Mô Tả', 'Giá (VNĐ)']);
-            createTableInAn(data.in_an, 'printing-services', ['Sản Phẩm', 'Chất liệu', 'Giá (VND)']);
+            createTable(data.thiet_ke, 'design-services', ['Dịch Vụ', 'Mô Tả', 'Giá (VNĐ)', 'Xem sản phẩm']);
+            createTableInAn(data.in_an, 'printing-services', ['Sản Phẩm', 'Chất liệu', 'Giá (VND)', 'Xem sản phẩm']);
         })
         .catch(error => console.error('Error fetching JSON file:', error));
 });
@@ -173,16 +173,15 @@ function createTable(data, containerId, headerLabels) {
     headerLabels.forEach(label => {
         tableHTML += `<th>${label}</th>`;
     });
-    tableHTML += '<th>Action</th>'; // Add "Action" header for the copy button
     tableHTML += '</tr></thead><tbody>';
 
     // Create data rows
     data.forEach(item => {
         tableHTML += '<tr>';
-        for (const key in item) {
-            tableHTML += `<td class="copy-cell">${item[key]}</td>`;
-        }
-        tableHTML += `<td><button class="copy-btn">Copy</button></td>`;
+        tableHTML += `<td>${item.dich_vu}</td>`;
+        tableHTML += `<td>${item.mo_ta}</td>`;
+        tableHTML += `<td>${item.gia}</td>`;
+       tableHTML += `<td><a href="${item.url}" class="link-btn" target="_blank">${item.url}</a></td>`;
         tableHTML += '</tr>';
     });
 
@@ -199,16 +198,15 @@ function createTableInAn(data, containerId, headerLabels) {
     headerLabels.forEach(label => {
         tableHTML += `<th>${label}</th>`;
     });
-    tableHTML += '<th>Action</th>';
     tableHTML += '</tr></thead><tbody>';
 
     // Create data rows, displaying only the specified columns
     data.forEach(item => {
         tableHTML += '<tr>';
-        tableHTML += `<td class="copy-cell">${item.san_pham}</td>`;
-        tableHTML += `<td class="copy-cell">${item.chat_lieu}</td>`;
-        tableHTML += `<td class="copy-cell">${item.gia}</td>`;
-        tableHTML += `<td><button class="copy-btn">Copy</button></td>`;
+        tableHTML += `<td>${item.san_pham}</td>`;
+        tableHTML += `<td>${item.chat_lieu}</td>`;
+        tableHTML += `<td>${item.gia}</td>`;
+        tableHTML += `<td><a href="${item.url}" class="link-btn">${item.url}</a></td>`;
         tableHTML += '</tr>';
     });
 
