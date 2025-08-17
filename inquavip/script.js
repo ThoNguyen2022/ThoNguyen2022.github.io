@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
-            createTable(data.thiet_ke, 'design-services', ['Dịch Vụ', 'Mô Tả', 'Giá (VNĐ)', 'Xem sản phẩm']);
-            createTableInAn(data.in_an, 'printing-services', ['Sản Phẩm', 'Chất liệu', 'Giá (VND)', 'Xem sản phẩm']);
+            createTable(data.thiet_ke, 'design-services', ['Dịch Vụ', 'Giá (VNĐ)', 'Xem sản phẩm']);
+            createTableInAn(data.in_an, 'printing-services', ['Sản Phẩm', 'Giá (VND)', 'Xem sản phẩm']);
         })
         .catch(error => console.error('Error fetching JSON file:', error));
 });
@@ -179,9 +179,9 @@ function createTable(data, containerId, headerLabels) {
     data.forEach(item => {
         tableHTML += '<tr>';
         tableHTML += `<td>${item.dich_vu}</td>`;
-        tableHTML += `<td>${item.mo_ta}</td>`;
+        //tableHTML += `<td>${item.mo_ta}</td>`;
         tableHTML += `<td>${item.gia}</td>`;
-       tableHTML += `<td><a href="${item.url}" class="link-btn" target="_blank">${item.url}</a></td>`;
+        tableHTML += `<td><a href="${item.url}" class="link-btn" target="_blank">${item.url}</a></td>`;
         tableHTML += '</tr>';
     });
 
@@ -204,7 +204,7 @@ function createTableInAn(data, containerId, headerLabels) {
     data.forEach(item => {
         tableHTML += '<tr>';
         tableHTML += `<td>${item.san_pham}</td>`;
-        tableHTML += `<td>${item.chat_lieu}</td>`;
+        //tableHTML += `<td>${item.chat_lieu}</td>`;
         tableHTML += `<td>${item.gia}</td>`;
         tableHTML += `<td><a href="${item.url}" class="link-btn">${item.url}</a></td>`;
         tableHTML += '</tr>';
