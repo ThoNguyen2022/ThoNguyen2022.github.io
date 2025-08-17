@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    scroll-behavior: smooth; /* Tự động cuộn mượt khi click */
+}
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    color: #0056b3;
+}
+.navbar {
+    position: sticky; /* Make the element sticky */
+    top: 0; /* Stick it to the top of the viewport */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    background-color: #fff; /* Add a background color to prevent content from showing through */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 10px 0; /* Add some padding to the top and bottom */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow for better separation */
+}
+.navbar a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: 2px solid #007bff;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+.navbar a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+.product-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px; /* Thêm khoảng cách giữa các phần */
+}
+.product-card:hover {
+    transform: translateY(-5px);
+}
+.product-image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.product-image.active {
+    opacity: 1;
+}
+.product-title {
+    font-size: 1.2em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.price-table th, .price-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+.price-table th {
+    background-color: #e2eafc;
+    color: #333;
+}
+
+#kim-loai-cai, #nam-cham, #guong {
+    scroll-margin-top: 100px; /* Adjust this value to be slightly larger than your navbar's height */
+}
