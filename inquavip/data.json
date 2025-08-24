@@ -4,115 +4,135 @@
       "dich_vu": "Thiết kế Menu (A4)",
       "mo_ta": "Thiết kế Menu A4 theo yêu cầu, cung cấp file in ấn.",
       "gia": "100.000/mặt",
-	  "url": "TKMenu"
+      "url": "TKMenu"
     },
     {
       "dich_vu": "Thiết kế Name Card (54 * 90 mm)",
       "mo_ta": "Thiết kế Name Card theo yêu cầu, cung cấp file in ấn.",
       "gia": "50.000/mặt",
-	  "url": "TKNameCard"
+      "url": "TKNameCard"
     },
     {
       "dich_vu": "Thiết kế Website tĩnh",
       "mo_ta": "Thiết kế wesite tĩnh và hỗ trợ hiện thị web cho người dùng. Cung cấp trang web tĩnh miễn phí nếu khách chưa mua tên miền. <b>Ghi chú: Nội dung website ở mức đơn giản: giới hạn trong 1000 chữ, 10 hình, 5 lần chỉnh sửa sau khi chốt. </b>",
       "gia": "500.000/web",
-	  "url": "TKStaticWeb"
+      "url": "TKStaticWeb"
     },
     {
       "dich_vu": "Thiết kế Website động.",
       "mo_ta": "Thiết kế wesite dộng và hỗ trợ hiện thị web cho người dùng. Cung cấp trang web tĩnh miễn phí nếu khách chưa mua tên miền. <b>Ghi chú: Giới hạn 5 trang, 20 APIs, chưa hỗ trợ hosting và domain </b>",
       "gia": "3.000.000/web",
-	  "url": "TKDynamicWeb"
+      "url": "TKDynamicWeb"
+    }
+  ],
+  "in_cong_nghiep": [
+    {
+      "san_pham": "Name Card số lượng lớn (từ 5 hộp)",
+      "chat_lieu": "Giấy C300gsm",
+      "so_mat_in": "2 mặt",
+      "can_mang": "màng mờ",
+      "sl_toi_thieu": 500,
+      "sl_giam_toi_da": 5000,
+      "phan_tram_giam_toi_da": 40,
+      "gia": "50.000/100 card",
+      "url": "NameCard"
+    },
+    {
+      "san_pham": "Sticker bế viền",
+      "chat_lieu": "Sticker được in trên decal và đươc cán bóng bế viền. Sản phẩm có thể chống nước",
+      "so_mat_in": "1 mặt",
+      "can_mang": "Không",
+      "sl_toi_thieu": 1,
+      "sl_giam_toi_da": 2,
+      "phan_tram_giam_toi_da": 10,
+      "gia": "180.000/1 mét vuông",
+      "url": "Sticker"
     }
   ],
   "in_an": [
     {
       "san_pham": "Name Card lẻ 5.4 * 9.0 cm",
-	  "chat_lieu": "Giấy Photo Paper cao cấp 230gsm",
-	  "so_mat_in":"2 mặt",
-	  "can_mang": "màng mờ",
-	  "sl_toi_thieu":50,
-	  "sl_giam_toi_da": 500,
-	  "phan_tram_giam_toi_da": 40,
-      "gia": "10.000/10 card",
-	  "url": "NameCard"
+      "chat_lieu": "Giấy Photo Paper cao cấp 230gsm",
+      "so_mat_in": "2 mặt",
+      "can_mang": "màng mờ",
+      "sl_toi_thieu": 50,
+      "sl_giam_toi_da": 400,
+      "phan_tram_giam_toi_da": 20,
+      "gia_le": "20.000/10 card",
+      "gia_si": "1.000/card",
+      "url": "NameCard"
     },
-	{
-      "san_pham": "Name Card số lượng lớn (từ 5 hộp)",
-	  "chat_lieu": "Giấy C300gsm",
-	  "so_mat_in":"2 mặt",
-	  "can_mang": "màng mờ",
-	  "sl_toi_thieu":500,
-	  "sl_giam_toi_da": 5000,
-	  "phan_tram_giam_toi_da": 40,
-      "gia": "50.000/100 card",
-	  "url": "NameCard"
+    {
+      "san_pham": "Clear Card",
+      "chat_lieu": "Màng pvc trong suốt, sản phảm sẽ được ép plastic sau in",
+      "so_mat_in": "1 mặt",
+      "can_mang": "ép plastic",
+      "sl_toi_thieu": 10,
+      "sl_giam_toi_da": 50,
+      "phan_tram_giam_toi_da": 50,
+      "gia_le": "40.000/10 card",
+      "gia_si": "2.000/card",
+      "url": "NameCard"
     },
-	{
+    {
       "san_pham": "Huy hiệu kim loại",
       "chat_lieu": "Huy hiệu tròn được làm từ kim loại đường kính 58 mm, có ghim cài. Ngoài ra chúng tôi còn có huy hiệu đế nam châm và đế gương",
-	  "so_mat_in":"1 mặt",
-	  "can_mang": "Không",
-	  "sl_toi_thieu":2,
-	  "sl_giam_toi_da": 100,
-	  "phan_tram_giam_toi_da": 40,
-      "gia": "20.000/2 cái",
-	  "url": "Pin"
+      "so_mat_in": "1 mặt",
+      "can_mang": "Không",
+      "sl_toi_thieu": 2,
+      "sl_giam_toi_da": 50,
+      "phan_tram_giam_toi_da": 50,
+      "gia_le": "20.000/2 cái",
+      "gia_si": "6.000/cái",
+      "url": "Pin"
     },
-	{
+    {
       "san_pham": "Móc khóa mica tròn",
       "chat_lieu": "Khuôn được đúc từ mica, kích thước lòng trong 38 mm",
-	  "so_mat_in":"2 mặt",
-	  "can_mang": "Không",
-	  "sl_toi_thieu":10,
-	  "sl_giam_toi_da": 100,
-	  "phan_tram_giam_toi_da": 40,
-      "gia": "50.000/10 cái",
-	  "url": "KeyMica"
+      "so_mat_in": "2 mặt",
+      "can_mang": "Không",
+      "sl_toi_thieu": 10,
+      "sl_giam_toi_da": 50,
+      "phan_tram_giam_toi_da": 50,
+      "gia_le": "20.000/2 cái",
+      "gia_si": "5.000/cái",
+      "url": "KeyMica"
     },
-	{
+    {
       "san_pham": "Móc khóa mica hình chữ nhật",
       "chat_lieu": "Khuôn được đúc từ mica, kích thước lòng trong 27 * 44 mm",
-	  "so_mat_in":"2 mặt",
-	  "can_mang": "Không",
-	  "sl_toi_thieu":10,
-	  "sl_giam_toi_da": 100,
-	  "phan_tram_giam_toi_da": 40,
-      "gia": "50.000/10 cái",
-	  "url": "NameCard"
+      "so_mat_in": "2 mặt",
+      "can_mang": "Không",
+      "sl_toi_thieu": 2,
+      "sl_giam_toi_da": 50,
+      "phan_tram_giam_toi_da": 50,
+      "gia_le": "20.000/2 cái",
+      "gia_si": "5.000/cái",
+      "url": "NameCard"
     },
-	{
+    {
       "san_pham": "Khắc laser lên gỗ",
       "chat_lieu": "Phôi gỗ 3mm được cắt theo kích thước 60 * 90 mm",
-	  "so_mat_in":"1 mặt",
-	  "can_mang": "Không",
-	  "sl_toi_thieu":1,
-	  "sl_giam_toi_da": 50,
-	  "phan_tram_giam_toi_da": 40,
-      "gia": "15.000/1 cái",
-	  "url": "Laser"
+      "so_mat_in": "1 mặt",
+      "can_mang": "Không",
+      "sl_toi_thieu": 1,
+      "sl_giam_toi_da": 20,
+      "phan_tram_giam_toi_da": 50,
+      "gia_le": "20.000/1 cái",
+      "gia_si": "10.000/cái",
+      "url": "Laser"
     },
-	{
+    {
       "san_pham": "Card PVC",
       "chat_lieu": "In trên phôi nhựa PVC 3 lớp, cắt theo kích thước 54 * 85 mm",
-	  "so_mat_in":"2 mặt",
-	  "can_mang": "Không",
-	  "sl_toi_thieu":2,
-	  "sl_giam_toi_da": 100,
-	  "phan_tram_giam_toi_da": 40,
-      "gia": "20.000/2 cái",
-	  "url": "PVCCard"
-    },
-	{
-      "san_pham": "Sticker bế viền",
-      "chat_lieu": "Sticker được in trên decal và đươc cán bóng bế viền. Sản phẩm có thể chống nước",
-	  "so_mat_in":"1 mặt",
-	  "can_mang": "Không",
-	  "sl_toi_thieu":1,
-	  "sl_giam_toi_da": 2,
-	  "phan_tram_giam_toi_da": 10,
-      "gia": "180.000/1 mét vuông",
-	  "url": "Sticker"
+      "so_mat_in": "2 mặt",
+      "can_mang": "Không",
+      "sl_toi_thieu": 2,
+      "sl_giam_toi_da": 50,
+      "phan_tram_giam_toi_da": 50,
+      "gia_le": "20.000/2 cái",
+      "gia_si": "5.000/cái",
+      "url": "PVCCard"
     }
   ]
 }

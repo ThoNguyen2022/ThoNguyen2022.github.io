@@ -51,7 +51,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         .then(response => response.json())
         .then(data => {
             createTable(data.thiet_ke, 'design-services', ['Dịch Vụ', 'Giá (VNĐ)', 'Xem sản phẩm']);
-            createTableInAn(data.in_an, 'printing-services', ['Sản Phẩm', 'Giá (VND)', 'Xem sản phẩm']);
+            createTableInCongNghiep(data.in_cong_nghiep, 'printing-services', ['Sản Phẩm', 'Giá (VND)', 'Xem sản phẩm']);
+            createTableInAn(data.in_an, 'printing-services', ['Sản Phẩm', 'Giá lẻ', 'Giá sỉ', 'Xem sản phẩm']);
         })
         .catch(error => console.error('Error fetching JSON file:', error));
 });
@@ -190,9 +191,10 @@ function createTable(data, containerId, headerLabels) {
 }
 
 // Function to create the printing services table
-function createTableInAn(data, containerId, headerLabels) {
+function createTableInCongNghiep(data, containerId, headerLabels) {
     const container = document.getElementById(containerId);
-    let tableHTML = '<table><thead><tr>';
+    let tableHTML = '<h3>In công nghiệp</h3>';
+    tableHTML += '<table><thead><tr>';
 
     // Create table headers from the provided array
     headerLabels.forEach(label => {
@@ -206,6 +208,32 @@ function createTableInAn(data, containerId, headerLabels) {
         tableHTML += `<td>${item.san_pham}</td>`;
         //tableHTML += `<td>${item.chat_lieu}</td>`;
         tableHTML += `<td>${item.gia}</td>`;
+        tableHTML += `<td><a href="${item.url}" class="link-btn">${item.url}</a></td>`;
+        tableHTML += '</tr>';
+    });
+
+    tableHTML += '</tbody></table>';
+    container.innerHTML += tableHTML;
+}
+// Function to create the printing services table
+function createTableInAn(data, containerId, headerLabels) {
+    const container = document.getElementById(containerId);
+    let tableHTML = '<h3>In kỹ thuật số</h3>';
+    tableHTML += '<table><thead><tr>';
+
+    // Create table headers from the provided array
+    headerLabels.forEach(label => {
+        tableHTML += `<th>${label}</th>`;
+    });
+    tableHTML += '</tr></thead><tbody>';
+
+    // Create data rows, displaying only the specified columns
+    data.forEach(item => {
+        tableHTML += '<tr>';
+        tableHTML += `<td>${item.san_pham}</td>`;
+        //tableHTML += `<td>${item.chat_lieu}</td>`;
+        tableHTML += `<td>${item.gia_le}</td>`;
+        tableHTML += `<td>${item.gia_si} in từ ${item.sl_giam_toi_da}</td>`;
         tableHTML += `<td><a href="${item.url}" class="link-btn">${item.url}</a></td>`;
         tableHTML += '</tr>';
     });
