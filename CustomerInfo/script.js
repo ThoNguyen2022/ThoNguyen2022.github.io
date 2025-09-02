@@ -56,3 +56,15 @@ function splitInfo() {
   // Hiển thị phần kết quả
   document.getElementById("outputSection").style.display = "block";
 }
+
+function copyText(elementId) {
+    const text = document.getElementById(elementId).innerText;
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            alert("Đã sao chép!");
+        })
+        .catch((err) => {
+            console.error("Không thể sao chép", err);
+            alert("Không thể sao chép. Vui lòng thử lại!");
+        });
+}
