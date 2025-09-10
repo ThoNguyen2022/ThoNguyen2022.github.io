@@ -1,0 +1,14 @@
+Analyze the image and convert the quiz data into a JSON object with the following keys and structure. For the question and answer options, include both the original text and its Vietnamese translation.
+JSON Format:
+JSON
+{
+    "CauHoi": "[Original Question Text]",
+    "DichCauHoi": "[Vietnamese Translation of the Question]",
+    "CauTraLoi": [
+        { "TraLoi": "[Original Option Text]", "Dich": "[Vietnamese Translation of the Option]" },
+        ...
+    ],
+    "DapAn": "[Correct Option Letter (e.g., A, B, C)]",
+    "GiaiThich": "[Explanation in Vietnamese]"
+}
+```"

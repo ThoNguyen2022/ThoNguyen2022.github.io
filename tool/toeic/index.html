@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi Text sang JSON</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            height: 250px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+            resize: vertical;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 12px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #copyButton, #copyPrompt {
+            background-color: #28a745;
+            transition: background-color 0.3s ease;
+        }
+        #copyButton:hover, #copyPrompt:hover {
+            background-color: #218838;
+        }
+        pre {
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-top: 20px;
+            position: relative;
+        }
+        .note {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+        /* CSS cho hiệu ứng khi copy thành công */
+        .copied {
+            background-color: #dc3545 !important;
+            animation: pulse-red 0.5s infinite alternate;
+        }
+        @keyframes pulse-red {
+            from {
+                background-color: #dc3545;
+            }
+            to {
+                background-color: #c82333;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Chuyển đổi Text sang JSON</h2>
+        <p class="note">Vui lòng dán văn bản theo định dạng đã cho vào ô bên dưới.</p>
+        <textarea id="inputText" placeholder='Câu hỏi: "Would you like some coffee while you wait?" (Bạn có muốn uống chút cà phê trong lúc chờ không?)
+Các lựa chọn:
+A. Yes, two copies please (Vâng, cho tôi hai bản sao.)
+B. Yes, if it&#39;s not too much trouble (Vâng, nếu không phiền lắm.)
+C. No, I only got here five minutes ago. (Không, tôi mới đến đây năm phút trước thôi.)
+Đáp án đúng: C. Đây là câu trả lời lịch sự để từ chối và giải thích lý do (mới đến nên không cần chờ lâu).'></textarea>
+        <div class="button-group">
+            <button onclick="processText()">Tạo JSON</button>
+            <button id="copyButton" onclick="copyJson()">Copy JSON</button>
+            <button id="copyPrompt" onclick="copyPrompt()">Copy Prompt</button>
+        </div>
+        
+        <h3>Kết quả JSON:</h3>
+        <pre id="resultJson"></pre>
+    </div>
+
+    <script>
+        // Hàm đã có sẵn để xử lý text và tạo JSON
+        function processText() {
+            const text = document.getElementById('inputText').value;
+            const lines = text.split('\n').map(line => line.trim()).filter(line => line !== '');
+            
+            const data = {
+                CauHoi: "",
+                DichCauHoi: "",
+                CauTraLoi: [],
+                DapAn: "",
+                GiaiThich: ""
+            };
+
+            let currentSection = '';
+
+            for (const line of lines) {
+                if (line.startsWith('Câu hỏi:')) {
+                    const match = line.match(/"(.*?)"\s*\((.*?)\)/);
+                    if (match) {
+                        data.CauHoi = match[1];
+                        data.DichCauHoi = match[2];
+                    }
+                    currentSection = 'question';
+                } else if (line.startsWith('Các lựa chọn:')) {
+                    currentSection = 'options';
+                } else if (line.startsWith('Đáp án đúng:')) {
+                    currentSection = 'answer';
+                    const parts = line.substring('Đáp án đúng:'.length).trim().split('. ');
+                    if (parts.length > 0) {
+                        data.DapAn = parts[0].trim();
+                        if (parts.length > 1) {
+                            data.GiaiThich = parts.slice(1).join('. ').trim();
+                        }
+                    }
+                } else {
+                    if (currentSection === 'options') {
+                        const match = line.match(/^([A-Z]\. )(.*?)\s*\((.*?)\)$/);
+                        if (match) {
+                            data.CauTraLoi.push({
+                                TraLoi: match[1] + match[2].trim(),
+                                Dich: match[3].trim()
+                            });
+                        }
+                    }
+                }
+            }
+
+            const jsonString = JSON.stringify(data, null, 2);
+            document.getElementById('resultJson').textContent = jsonString;
+        }
+
+        // Hàm copy JSON (đã có)
+        function copyJson() {
+            const resultElement = document.getElementById('resultJson');
+            const jsonText = resultElement.textContent;
+            const copyButton = document.getElementById('copyButton');
+            
+            if (jsonText.trim() === '') {
+                return;
+            }
+
+            navigator.clipboard.writeText(jsonText).then(() => {
+                copyButton.classList.add('copied');
+                setTimeout(() => {
+                    copyButton.classList.remove('copied');
+                }, 3000);
+            }).catch(err => {});
+        }
+
+        // HÀM MỚI: copy nội dung từ file prompt.txt
+        async function copyPrompt() {
+            const copyPromptButton = document.getElementById('copyPrompt');
+            try {
+                // Sử dụng fetch để đọc nội dung từ file prompt.txt
+                const response = await fetch('prompt.txt');
+                if (!response.ok) {
+                    throw new Error('Lỗi khi tải file prompt.txt. Hãy đảm bảo file tồn tại.');
+                }
+                const promptText = await response.text();
+                
+                // Sao chép nội dung vào clipboard
+                await navigator.clipboard.writeText(promptText);
+                
+                // Kích hoạt hiệu ứng màu đỏ
+                copyPromptButton.classList.add('copied');
+                setTimeout(() => {
+                    copyPromptButton.classList.remove('copied');
+                }, 3000);
+            } catch (error) {
+                // Xử lý lỗi nếu fetch hoặc copy thất bại
+                console.error('Lỗi khi sao chép prompt:', error);
+            }
+        }
+    </script>
+</body>
+</html>

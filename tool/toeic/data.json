@@ -1,0 +1,62 @@
+[
+    {
+        "CauHoi": "Would you like some coffee while you wait?",
+        "DichCauHoi": "Bạn có muốn uống chút cà phê trong lúc chờ không?",
+        "CauTraLoi": [
+            {
+                "TraLoi": "A. Yes two copies please",
+                "Dich": "Vâng, cho tôi hai bản sao."
+            },
+            {
+                "TraLoi": "B. Yes if it's not too much trouble",
+                "Dich": "Vâng, nếu không phiền lắm."
+            },
+            {
+                "TraLoi": "C. No. I only got here five minutes ago",
+                "Dich": "Không. Tôi mới đến đây năm phút trước."
+            }
+        ],
+        "DapAn": "C",
+        "GiaiThich": "Câu trả lời C là một lời từ chối lịch sự, giải thích lý do không cần cà phê vì mới đến."
+    },
+    {
+        "CauHoi": "Who got the overseas assignment?",
+        "DichCauHoi": "Ai đã nhận được nhiệm vụ ở nước ngoài?",
+        "CauTraLoi": [
+            {
+                "TraLoi": "A. Ms. Simpson did.",
+                "Dich": "Cô Simpson đã nhận."
+            },
+            {
+                "TraLoi": "B. That's great",
+                "Dich": "Thật tuyệt vời."
+            },
+            {
+                "TraLoi": "C. A day after tomorrow",
+                "Dich": "Một ngày sau ngày mai."
+            }
+        ],
+        "DapAn": "A",
+        "GiaiThich": "Câu trả lời A cung cấp tên người trực tiếp cho câu hỏi 'Ai'."
+    },
+    {
+        "CauHoi": "When should I leave?",
+        "DichCauHoi": "Khi nào tôi nên đi?",
+        "CauTraLoi": [
+            {
+                "TraLoi": "A. Let's say goodbye here",
+                "Dich": "Hãy tạm biệt ở đây."
+            },
+            {
+                "TraLoi": "B. He is on his way over",
+                "Dich": "Anh ấy đang trên đường đến."
+            },
+            {
+                "TraLoi": "C. Take off right after lunch.",
+                "Dich": "Đi ngay sau bữa trưa."
+            }
+        ],
+        "DapAn": "C",
+        "GiaiThich": "Câu trả lời C đưa ra một thời điểm cụ thể để rời đi, trả lời chính xác câu hỏi 'Khi nào'."
+    }
+]
