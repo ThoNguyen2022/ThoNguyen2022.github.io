@@ -58,5 +58,126 @@
         ],
         "DapAn": "C",
         "GiaiThich": "Câu trả lời C đưa ra một thời điểm cụ thể để rời đi, trả lời chính xác câu hỏi 'Khi nào'."
-    }
+    },
+  {
+    "CauHoi": "According to the sign posted in front of the main office, the repair center is now ............ new management.",
+    "DichCauHoi": "Theo biển hiệu đặt trước văn phòng chính, trung tâm sửa chữa hiện đang ở dưới sự quản lý mới.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. over - trên",
+        "Dich": "trên"
+      },
+      {
+        "TraLoi": "B. around - xung quanh",
+        "Dich": "xung quanh"
+      },
+      {
+        "TraLoi": "C. between - giữa",
+        "Dich": "giữa"
+      },
+      {
+        "TraLoi": "D. under - dưới",
+        "Dich": "dưới"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Cụm từ 'under new management' có nghĩa là 'dưới sự quản lý mới', là một cách diễn đạt cố định trong tiếng Anh. Do đó, đáp án đúng là D. under."
+  },
+  {
+    "CauHoi": "You are no doubt aware, the new security system requires the installation of a backup power source in case an emergency situation arises.",
+    "DichCauHoi": "Như bạn chắc chắn đã biết, hệ thống bảo mật mới đòi hỏi việc lắp đặt nguồn dự phòng trong trường hợp xảy ra tình huống khẩn cấp.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. As - Như",
+        "Dich": "Như"
+      },
+      {
+        "TraLoi": "B. For - Đối với",
+        "Dich": "Đối với"
+      },
+      {
+        "TraLoi": "C. With - Với",
+        "Dich": "Với"
+      },
+      {
+        "TraLoi": "D. So - Vì",
+        "Dich": "Vì"
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Cấu trúc 'As you are no doubt aware' (hoặc 'As you know') được sử dụng để giới thiệu một thông tin mà người nói/viết cho rằng người nghe/đọc đã biết. Nó mang nghĩa 'Như bạn đã biết'. Vì vậy, đáp án đúng là A. As."
+  },
+  {
+    "CauHoi": "After a highly profitable first six months, the restaurant's profits for the second half of the year were a great ............ .",
+    "DichCauHoi": "Sau sáu tháng đầu tiên có lợi nhuận cao, lợi nhuận của nhà hàng trong nửa sau năm là một sự thất vọng lớn.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. disappoint - thất vọng",
+        "Dich": "thất vọng"
+      },
+      {
+        "TraLoi": "B. disappointed - thất vọng",
+        "Dich": "thất vọng"
+      },
+      {
+        "TraLoi": "C. disappointing - làm thất vọng",
+        "Dich": "làm thất vọng"
+      },
+      {
+        "TraLoi": "D. disappointment - sự thất vọng",
+        "Dich": "sự thất vọng"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Sau mạo từ 'a great' (một sự...) cần một danh từ. Trong các lựa chọn, 'disappointment' là danh từ, có nghĩa là 'sự thất vọng'. Cụm 'a great disappointment' có nghĩa là 'một sự thất vọng lớn'. Do đó, đáp án đúng là D."
+  },
+  {
+    "CauHoi": "Naturally, our company utilizes the production process ............ guarantees the most satisfactory results.",
+    "DichCauHoi": "Tự nhiên, công ty của chúng tôi sử dụng quy trình sản xuất đảm bảo mang lại kết quả hài lòng nhất.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. that",
+        "Dich": "rằng, cái mà"
+      },
+      {
+        "TraLoi": "B. who",
+        "Dich": "ai, người mà"
+      },
+      {
+        "TraLoi": "C. what",
+        "Dich": "cái gì"
+      },
+      {
+        "TraLoi": "D. how",
+        "Dich": "cách"
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Từ cần điền là một đại từ quan hệ thay thế cho 'the production process' (một vật). Cấu trúc này cần một đại từ quan hệ để bắt đầu mệnh đề quan hệ ('... guarantees the most satisfactory results.') Đại từ 'that' (hoặc 'which') có thể thay thế cho danh từ chỉ vật và làm chủ ngữ trong mệnh đề quan hệ. Do đó, đáp án đúng là A. 'that'."
+  },
+  {
+    "CauHoi": "The unexpected surge in the prices of steel and other minerals will result in a dramatic increase in tax ............ this year.",
+    "DichCauHoi": "Sự tăng bất ngờ giá thép và các khoáng sản khác sẽ dẫn đến một sự gia tăng đáng kể trong tỷ lệ thuế trong năm nay.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. rates - tỷ lệ",
+        "Dich": "tỷ lệ"
+      },
+      {
+        "TraLoi": "B. charges - phí",
+        "Dich": "phí"
+      },
+      {
+        "TraLoi": "C. expenses - chi phí",
+        "Dich": "chi phí"
+      },
+      {
+        "TraLoi": "D. costs - chi phí",
+        "Dich": "chi phí"
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Cụm từ 'tax rates' có nghĩa là 'tỷ lệ thuế' và là một cụm từ cố định trong tiếng Anh. Các từ 'charges', 'expenses', và 'costs' đều có nghĩa là chi phí nhưng không phù hợp với ngữ cảnh 'tỷ lệ thuế'. Do đó, đáp án đúng là A. rates."
+  }
 ]
+
