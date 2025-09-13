@@ -1,0 +1,39 @@
+Yêu cầu: Chuyển dữ liệu bài kiểm tra sang định dạng JSON.
+Cấu trúc JSON: Một mảng chứa hai loại đối tượng chính:
+Đối tượng Đoạn văn:
+Khoá: DoanVan
+Giá trị: Mảng các đối tượng, mỗi đối tượng có:
+Cau: Văn bản gốc của câu.
+Dich: Bản dịch tiếng Việt.
+Đối tượng Câu hỏi:
+Các khoá:
+CauHoi: Văn bản gốc của câu hỏi.
+DichCauHoi: Bản dịch tiếng Việt của câu hỏi.
+CauTraLoi: Mảng các đối tượng, mỗi đối tượng có:
+TraLoi: Văn bản gốc của phương án.
+DapAn: Ký tự của đáp án đúng (A, B, C, D).
+GiaiThich: Giải thích bằng tiếng Việt.
+Ví dụ về định dạng đầu ra:
+JSON
+[
+  {
+    "DoanVan": [
+      {
+        "Cau": "First sentence...",
+        "Dich": "Bản dịch câu đầu tiên..."
+      }
+    ]
+  },
+    "CauHoi": "First question...",
+    "DichCauHoi": "Bản dịch câu hỏi đầu tiên...",
+    "CauTraLoi": [
+        "TraLoi": "Answer A...",
+        "Dich": "Dịch đáp án A..."
+      },
+        "TraLoi": "Answer B...",
+        "Dich": "Dịch đáp án B..."
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Giải thích cho câu hỏi đầu tiên..."
+  }
+]

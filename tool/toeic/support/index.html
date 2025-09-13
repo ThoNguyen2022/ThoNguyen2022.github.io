@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi Text sang JSON</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Chuyển đổi Text sang JSON</h2>
+        <p class="note">Vui lòng dán văn bản theo định dạng đã cho vào ô bên dưới.</p>
+        <textarea id="inputText" placeholder='Câu hỏi: "Would you like some coffee while you wait?" (Bạn có muốn uống chút cà phê trong lúc chờ không?)
+Các lựa chọn:
+A. Yes, two copies please (Vâng, cho tôi hai bản sao.)
+B. Yes, if it&#39;s not too much trouble (Vâng, nếu không phiền lắm.)
+C. No, I only got here five minutes ago. (Không, tôi mới đến đây năm phút trước thôi.)
+Đáp án đúng: C. Đây là câu trả lời lịch sự để từ chối và giải thích lý do (mới đến nên không cần chờ lâu).'></textarea>
+        <div class="button-group">
+            <button onclick="processText()">Tạo JSON</button>
+            <button id="copyButton" onclick="copyJson()">Copy JSON</button>
+            <button id="copyPrompt" onclick="copyPrompt()">Copy Prompt</button>
+        </div>
+        
+        <h3>Kết quả JSON:</h3>
+        <pre id="resultJson"></pre>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài kiểm tra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Bài kiểm tra</h2>
+        <div class="navigation">
+            <div class="button-group">
+                <button id="prevBtn" onclick="prevQuiz()" disabled>Câu trước</button>
+                <button id="nextBtn" onclick="nextQuiz()" disabled>Câu sau</button>
+            </div>
+            <div class="go-to-group">
+                <input type="number" id="quizNumberInput" min="1" placeholder="Số câu">
+                <button id="goToBtn" onclick="goToQuiz()">Đi tới</button>
+            </div>
+            <button id="showAnswerBtn" onclick="showAnswer()">Xem đáp án</button>
+        </div>
+
+        <div id="welcomeScreen" class="welcome-section">
+            <h3>Chọn bài kiểm tra có sẵn hoặc tải lên file của bạn</h3>
+            <div class="welcome-buttons">
+                <div id="quizListContainer"></div>
+                <input type="file" id="jsonFile" accept=".json" style="display:none;">
+                <button onclick="document.getElementById('jsonFile').click()">Tải lên file</button>
+            </div>
+        </div>
+
+        <div id="quizScreen">
+            <div class="quiz-content">
+                <p id="questionText"></p>
+                <p id="questionDich"></p>
+                <ul id="options" class="options-list"></ul>
+                <div id="explanation" class="explanation" style="display:none;">
+                    <p><strong>Giải thích:</strong> <span id="explanationText"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+/*
+    Đây là mã CSS chung để định dạng toàn bộ trang web
+    Màu nền, phông chữ, và bố cục chính
+*/
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+.container {
+    max-width: 900px;
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+/*
+    Ẩn nội dung quiz và đoạn văn ban đầu
+    JavaScript sẽ thay đổi display: none thành block/flex khi cần
+*/
+.quiz-content, .passage-content {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: none;
+}
+#passage-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 0 0 15px;
+}
+.passage-dich {
+    font-style: italic;
+    color: #666;
+    margin-left: 15px;
+    display: none;
+}
+/*
+    Định dạng cho các câu hỏi
+*/
+#questionNumber {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 5px;
+}
+#questionText {
+    font-size: 1.25em;
+    margin-top: 0;
+    color: #007BFF;
+    margin-bottom: 5px;
+}
+.dich-cau-hoi {
+    font-style: italic;
+    color: #666;
+    margin-top: 0;
+    display: none;
+}
+/*
+    Định dạng cho các tùy chọn trả lời
+*/
+.options-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+}
+.options-list li {
+    background: #f9f9f9;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.options-list li:hover {
+    background-color: #f0f0f0;
+}
+/*
+    Màu cho câu trả lời đúng và sai
+*/
+.options-list li.correct {
+    font-weight: bold;
+    color: #28a745;
+    background-color: #e6f7e9;
+    border-color: #28a745;
+}
+.options-list li.incorrect {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border-color: #dc3545;
+}
+.options-list input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+.options-list label {
+    width: 100%;
+    cursor: pointer;
+}
+.dich-tra-loi {
+    font-style: italic;
+    color: #888;
+    display: none;
+    margin-left: 10px;
+}
+/*
+    Định dạng cho phần giải thích
+*/
+.explanation {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f0f8ff;
+    border-left: 4px solid #007BFF;
+    border-radius: 4px;
+    display: none;
+}
+.explanation p {
+    margin: 0;
+}
+.explanation strong {
+    color: #0056b3;
+}
+/*
+    Định dạng cho các nút điều hướng
+*/
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    display: none;
+    /* Thêm dòng này để các nhóm nút xếp chồng lên nhau theo cột */
+    flex-direction: column; 
+    gap: 2px; /* Thêm khoảng cách giữa 2 dòng */
+}
+/*
+   Thay đổi dưới đây để các nhóm nút con bên trong không tự động xuống dòng
+*/
+.button-group, .goto-section {
+    display: flex;
+    gap: 2px;
+    flex-wrap: nowrap; /* Đảm bảo các nút trong một nhóm không xuống dòng */
+}
+button {
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+#showAnswerBtn {
+    background-color: #6c757d;
+}
+#showAnswerBtn:hover {
+    background-color: #5a6268;
+}
+.goto-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.goto-section input {
+    padding: 10px;
+    width: 50px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+.welcome-screen {
+    text-align: center;
+}
+.welcome-screen h3 {
+    margin-bottom: 20px;
+}
