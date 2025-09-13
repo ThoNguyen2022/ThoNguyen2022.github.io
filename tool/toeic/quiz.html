@@ -273,7 +273,7 @@
             const options = document.querySelectorAll('#options li');
             options.forEach(option => {
                 const radio = option.querySelector('input[type="radio"]');
-                if (radio.value === selectedAnswer) {
+                if (radio.value === selectedAnswer || radio.value.includes(selectedAnswer)) {
                     option.classList.add(isCorrect ? 'correct' : 'incorrect');
                 }
                 radio.disabled = true;
