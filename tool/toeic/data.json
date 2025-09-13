@@ -1,66 +1,6 @@
 [
-    {
-        "CauHoi": "Would you like some coffee while you wait?",
-        "DichCauHoi": "Bạn có muốn uống chút cà phê trong lúc chờ không?",
-        "CauTraLoi": [
-            {
-                "TraLoi": "A. Yes two copies please",
-                "Dich": "Vâng, cho tôi hai bản sao."
-            },
-            {
-                "TraLoi": "B. Yes if it's not too much trouble",
-                "Dich": "Vâng, nếu không phiền lắm."
-            },
-            {
-                "TraLoi": "C. No. I only got here five minutes ago",
-                "Dich": "Không. Tôi mới đến đây năm phút trước."
-            }
-        ],
-        "DapAn": "C",
-        "GiaiThich": "Câu trả lời C là một lời từ chối lịch sự, giải thích lý do không cần cà phê vì mới đến."
-    },
-    {
-        "CauHoi": "Who got the overseas assignment?",
-        "DichCauHoi": "Ai đã nhận được nhiệm vụ ở nước ngoài?",
-        "CauTraLoi": [
-            {
-                "TraLoi": "A. Ms. Simpson did.",
-                "Dich": "Cô Simpson đã nhận."
-            },
-            {
-                "TraLoi": "B. That's great",
-                "Dich": "Thật tuyệt vời."
-            },
-            {
-                "TraLoi": "C. A day after tomorrow",
-                "Dich": "Một ngày sau ngày mai."
-            }
-        ],
-        "DapAn": "A",
-        "GiaiThich": "Câu trả lời A cung cấp tên người trực tiếp cho câu hỏi 'Ai'."
-    },
-    {
-        "CauHoi": "When should I leave?",
-        "DichCauHoi": "Khi nào tôi nên đi?",
-        "CauTraLoi": [
-            {
-                "TraLoi": "A. Let's say goodbye here",
-                "Dich": "Hãy tạm biệt ở đây."
-            },
-            {
-                "TraLoi": "B. He is on his way over",
-                "Dich": "Anh ấy đang trên đường đến."
-            },
-            {
-                "TraLoi": "C. Take off right after lunch.",
-                "Dich": "Đi ngay sau bữa trưa."
-            }
-        ],
-        "DapAn": "C",
-        "GiaiThich": "Câu trả lời C đưa ra một thời điểm cụ thể để rời đi, trả lời chính xác câu hỏi 'Khi nào'."
-    },
   {
-    "CauHoi": "According to the sign posted in front of the main office, the repair center is now ............ new management.",
+    "CauHoi": "Question 101. According to the sign posted in front of the main office, the repair center is now ............ new management.",
     "DichCauHoi": "Theo biển hiệu đặt trước văn phòng chính, trung tâm sửa chữa hiện đang ở dưới sự quản lý mới.",
     "CauTraLoi": [
       {
@@ -81,10 +21,10 @@
       }
     ],
     "DapAn": "D",
-    "GiaiThich": "Cụm từ 'under new management' có nghĩa là 'dưới sự quản lý mới', là một cách diễn đạt cố định trong tiếng Anh. Do đó, đáp án đúng là D. under."
+    "GiaiThich": "Cụm từ cố định 'under new management' có nghĩa là 'dưới sự quản lý mới'."
   },
   {
-    "CauHoi": "You are no doubt aware, the new security system requires the installation of a backup power source in case an emergency situation arises.",
+    "CauHoi": "Question 102. ............ you are no doubt aware, the new security system requires the installation of a backup power source in case an emergency situation arises.",
     "DichCauHoi": "Như bạn chắc chắn đã biết, hệ thống bảo mật mới đòi hỏi việc lắp đặt nguồn dự phòng trong trường hợp xảy ra tình huống khẩn cấp.",
     "CauTraLoi": [
       {
@@ -105,10 +45,10 @@
       }
     ],
     "DapAn": "A",
-    "GiaiThich": "Cấu trúc 'As you are no doubt aware' (hoặc 'As you know') được sử dụng để giới thiệu một thông tin mà người nói/viết cho rằng người nghe/đọc đã biết. Nó mang nghĩa 'Như bạn đã biết'. Vì vậy, đáp án đúng là A. As."
+    "GiaiThich": "'As you are no doubt aware' là một cụm từ thông dụng có nghĩa là 'Như bạn đã biết'."
   },
   {
-    "CauHoi": "After a highly profitable first six months, the restaurant's profits for the second half of the year were a great ............ .",
+    "CauHoi": "Question 103. After a highly profitable first six months, the restaurant's profits for the second half of the year were a great ............ .",
     "DichCauHoi": "Sau sáu tháng đầu tiên có lợi nhuận cao, lợi nhuận của nhà hàng trong nửa sau năm là một sự thất vọng lớn.",
     "CauTraLoi": [
       {
@@ -129,10 +69,10 @@
       }
     ],
     "DapAn": "D",
-    "GiaiThich": "Sau mạo từ 'a great' (một sự...) cần một danh từ. Trong các lựa chọn, 'disappointment' là danh từ, có nghĩa là 'sự thất vọng'. Cụm 'a great disappointment' có nghĩa là 'một sự thất vọng lớn'. Do đó, đáp án đúng là D."
+    "GiaiThich": "Cần một danh từ sau cụm 'a great'. 'Disappointment' là danh từ duy nhất có nghĩa là 'sự thất vọng', phù hợp với ngữ cảnh."
   },
   {
-    "CauHoi": "Naturally, our company utilizes the production process ............ guarantees the most satisfactory results.",
+    "CauHoi": "Question 104. Naturally, our company utilizes the production process ............ guarantees the most satisfactory results.",
     "DichCauHoi": "Tự nhiên, công ty của chúng tôi sử dụng quy trình sản xuất đảm bảo mang lại kết quả hài lòng nhất.",
     "CauTraLoi": [
       {
@@ -153,10 +93,10 @@
       }
     ],
     "DapAn": "A",
-    "GiaiThich": "Từ cần điền là một đại từ quan hệ thay thế cho 'the production process' (một vật). Cấu trúc này cần một đại từ quan hệ để bắt đầu mệnh đề quan hệ ('... guarantees the most satisfactory results.') Đại từ 'that' (hoặc 'which') có thể thay thế cho danh từ chỉ vật và làm chủ ngữ trong mệnh đề quan hệ. Do đó, đáp án đúng là A. 'that'."
+    "GiaiThich": "Cần một đại từ quan hệ để bổ nghĩa cho 'the production process'. 'That' phù hợp để làm chủ ngữ cho mệnh đề quan hệ."
   },
   {
-    "CauHoi": "The unexpected surge in the prices of steel and other minerals will result in a dramatic increase in tax ............ this year.",
+    "CauHoi": "Question 105. The unexpected surge in the prices of steel and other minerals will result in a dramatic increase in tax ............ this year.",
     "DichCauHoi": "Sự tăng bất ngờ giá thép và các khoáng sản khác sẽ dẫn đến một sự gia tăng đáng kể trong tỷ lệ thuế trong năm nay.",
     "CauTraLoi": [
       {
@@ -172,12 +112,1598 @@
         "Dich": "chi phí"
       },
       {
-        "TraLoi": "D. costs - chi phí",
-        "Dich": "chi phí"
+        "TraLoi": "D. revenues - doanh thu",
+        "Dich": "doanh thu"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Giá cả tăng sẽ làm tăng tổng số tiền thuế thu được, được gọi là 'tax revenues', chứ không phải thay đổi 'tax rates' (tỷ lệ thuế)."
+  },
+  {
+    "CauHoi": "Question 106. Company strategists ............ predicted that conditions in the Middle East would eventually stabilize and result in expanded sales.",
+    "DichCauHoi": "Các chiến lược gia của công ty đã dự đoán sai rằng tình hình ở Trung Đông sẽ ổn định và dẫn đến doanh số bán hàng tăng.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. wrong - sai",
+        "Dich": "sai"
+      },
+      {
+        "TraLoi": "B. wronged - làm sai",
+        "Dich": "làm sai"
+      },
+      {
+        "TraLoi": "C. wrongly - một cách sai",
+        "Dich": "một cách sai"
+      },
+      {
+        "TraLoi": "D. wrongness - sự sai lầm",
+        "Dich": "sự sai lầm"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Cần một trạng từ để bổ nghĩa cho động từ 'predicted'. 'Wrongly' là trạng từ duy nhất phù hợp."
+  },
+  {
+    "CauHoi": "Question 107. The director ............ has often been seen to take his lunch in the staff canteen along with the other workers.",
+    "DichCauHoi": "Giám đốc thường được nhìn thấy đi ăn trưa tại căng tin nhân viên cùng với các công nhân khác.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. him - anh ấy",
+        "Dich": "anh ấy"
+      },
+      {
+        "TraLoi": "B. his - của anh ấy",
+        "Dich": "của anh ấy"
+      },
+      {
+        "TraLoi": "C. himself - bản thân anh ấy",
+        "Dich": "bản thân anh ấy"
+      },
+      {
+        "TraLoi": "D. he - anh ấy",
+        "Dich": "anh ấy"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Đại từ phản thân 'himself' được sử dụng để nhấn mạnh rằng chính giám đốc chứ không phải ai khác."
+  },
+  {
+    "CauHoi": "Question 108. The secretary filling in at the reception desk has been performing so well that management is considering offering her a ............ position.",
+    "DichCauHoi": "Người thư ký đang làm việc tại bàn tiếp tân đã làm việc rất tốt đến nỗi ban quản lý đang xem xét cung cấp cho cô ấy một vị trí làm việc lâu dài.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. durable - bền",
+        "Dich": "bền"
+      },
+      {
+        "TraLoi": "B. periodic - định kỳ",
+        "Dich": "định kỳ"
+      },
+      {
+        "TraLoi": "C. binding - ràng buộc",
+        "Dich": "ràng buộc"
+      },
+      {
+        "TraLoi": "D. permanent - lâu dài",
+        "Dich": "lâu dài"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "'Permanent position' là cụm từ cố định có nghĩa là 'vị trí lâu dài' hoặc 'công việc chính thức', phù hợp với ngữ cảnh."
+  },
+  {
+    "CauHoi": "Question 109. Ms. Harris was extremely ............ to take an opportunity to thank you for all of the hard-working and dedication.",
+    "DichCauHoi": "Cô Harris rất hạnh phúc được có cơ hội cảm ơn bạn vì tất cả sự cố gắng và sự tận tâm.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. happy - hạnh phúc",
+        "Dich": "hạnh phúc"
+      },
+      {
+        "TraLoi": "B. happily - một cách hạnh phúc",
+        "Dich": "một cách hạnh phúc"
+      },
+      {
+        "TraLoi": "C. happier - hạnh phúc hơn",
+        "Dich": "hạnh phúc hơn"
+      },
+      {
+        "TraLoi": "D. happiness - sự hạnh phúc",
+        "Dich": "sự hạnh phúc"
       }
     ],
     "DapAn": "A",
-    "GiaiThich": "Cụm từ 'tax rates' có nghĩa là 'tỷ lệ thuế' và là một cụm từ cố định trong tiếng Anh. Các từ 'charges', 'expenses', và 'costs' đều có nghĩa là chi phí nhưng không phù hợp với ngữ cảnh 'tỷ lệ thuế'. Do đó, đáp án đúng là A. rates."
+    "GiaiThich": "Sau trạng từ 'extremely' cần một tính từ. 'Happy' là tính từ phù hợp duy nhất trong các lựa chọn."
+  },
+  {
+    "CauHoi": "Question 110. ............ in computer technology have allowed technicians to perform multi-dimensional graphics far better than ever before.",
+    "DichCauHoi": "Những tiến bộ trong công nghệ máy tính đã cho phép các kỹ thuật viên thực hiện đồ họa đa chiều tốt hơn bao giờ hết.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Advance - Tiến bộ",
+        "Dich": "Tiến bộ"
+      },
+      {
+        "TraLoi": "B. Advancing - Đang tiến bộ",
+        "Dich": "Đang tiến bộ"
+      },
+      {
+        "TraLoi": "C. Advancement - Sự tiến bộ",
+        "Dich": "Sự tiến bộ"
+      },
+      {
+        "TraLoi": "D. Advances - Những tiến bộ",
+        "Dich": "Những tiến bộ"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Vị trí chủ ngữ cần một danh từ số nhiều để phù hợp với động từ 'have allowed'. 'Advances' là danh từ số nhiều, có nghĩa là 'những tiến bộ'."
+  },
+  {
+    "CauHoi": "Question 111. To gain access to confidential company documents, employees require ............ from the operations manager.",
+    "DichCauHoi": "Để truy cập vào tài liệu công ty mật, nhân viên cần sự xác nhận từ quản lý hoạt động.",
+    "CauTraLoi": [
+      {
+TraLoi: "A. clear - rõ ràng",
+Dich: "rõ ràng"
+},
+{
+TraLoi: "B. clarify - làm rõ",
+Dich: "làm rõ"
+},
+{
+TraLoi: "C. clarity - sự rõ ràng",
+Dich: "sự rõ ràng"
+},
+{
+TraLoi: "D. clearance - sự xác nhận",
+Dich: "sự xác nhận"
+}
+],
+"DapAn": "D",
+"GiaiThich": "Cần một danh từ sau động từ 'require'. 'Clearance' có nghĩa là 'sự cho phép, sự xác nhận' để truy cập vào tài liệu mật, rất phù hợp với ngữ cảnh."
+},
+{
+"CauHoi": "Question 112. The Department of the Environment supports the replacement of introduced plants with ............ plants that require much less watering.",
+"DichCauHoi": "Bộ Môi trường ủng hộ việc thay thế các loại thực vật được giới thiệu bằng các loại thực vật bản địa yêu cầu ít nước hơn.",
+"CauTraLoi": [
+{
+TraLoi: "A. native - bản địa",
+Dich: "bản địa"
+},
+{
+TraLoi: "B. nativly - theo kiểu bản địa",
+Dich: "theo kiểu bản địa"
+},
+{
+TraLoi: "C. natively - theo kiểu bản địa",
+Dich: "theo kiểu bản địa"
+},
+{
+TraLoi: "D. nativeness - tính bản địa",
+Dich: "tính bản địa"
+}
+],
+"DapAn": "A",
+"GiaiThich": "Cần một tính từ để bổ nghĩa cho danh từ 'plants'. 'Native' là tính từ phù hợp duy nhất, có nghĩa là 'bản địa'."
+},
+{
+"CauHoi": "Question 113. Ms. Julie Kennedy and her innovative marketing team have gained renown for creating ............ products for struggling companies.",
+"DichCauHoi": "Cô Julie Kennedy và đội ngũ tiếp thị sáng tạo của cô đã nổi tiếng với việc tạo ra các sản phẩm quảng cáo cho các công ty gặp khó khăn.",
+"CauTraLoi": [
+{
+TraLoi: "A. promote - quảng cáo",
+Dich: "quảng cáo"
+},
+{
+TraLoi: "B. promotes - quảng cáo",
+Dich: "quảng cáo"
+},
+{
+TraLoi: "C. promotion - sự quảng cáo",
+Dich: "sự quảng cáo"
+},
+{
+TraLoi: "D. promotional - quảng cáo",
+Dich: "quảng cáo"
+}
+],
+"DapAn": "D",
+"GiaiThich": "Cần một tính từ để bổ nghĩa cho danh từ 'products'. 'Promotional' là tính từ, có nghĩa là 'mang tính quảng cáo'."
+},
+{
+"CauHoi": "Question 114. The Department of Social Welfare's report this year indicated that it is focusing ............ on the homeless and long-term unemployed.",
+"DichCauHoi": "Báo cáo của Bộ Phúc lợi Xã hội năm nay cho thấy rằng họ đang tập trung vào người vô gia cư và người thất nghiệp dài hạn.",
+"CauTraLoi": [
+{
+TraLoi: "A. distinctly - rõ ràng",
+Dich: "rõ ràng"
+},
+{
+TraLoi: "B. individually - cá nhân",
+Dich: "cá nhân"
+},
+{
+TraLoi: "C. exceptionally - một cách đặc biệt",
+Dich: "một cách đặc biệt"
+},
+{
+TraLoi: "D. particularly - đặc biệt",
+Dich: "đặc biệt"
+}
+],
+"DapAn": "D",
+"GiaiThich": "Cần một trạng từ để bổ nghĩa cho động từ 'focusing'. 'Particularly' có nghĩa là 'đặc biệt', rất phù hợp với ngữ cảnh."
+},
+{
+"CauHoi": "Question 115. ABC Shoe Store asked ............ to make their final selections and bring them to cashiers' stations within 30 minutes.",
+"DichCauHoi": "Cửa hàng giày ABC yêu cầu khách hàng chọn sản phẩm cuối cùng của họ và mang đến các quầy thu ngân trong vòng 30 phút.",
+"CauTraLoi": [
+{
+TraLoi: "A. shopper - người mua hàng",
+Dich: "người mua hàng"
+},
+{
+TraLoi: "B. shopping - việc mua sắm",
+Dich: "việc mua sắm"
+},
+{
+TraLoi: "C. to shop - để mua sắm",
+Dich: "để mua sắm"
+},
+{
+TraLoi: "D. shoppers - những người mua hàng",
+Dich": "những người mua hàng"
+}
+],
+"DapAn": "D",
+"GiaiThich": "Cần một danh từ số nhiều để phù hợp với ngữ cảnh yêu cầu tất cả khách hàng. 'Shoppers' là danh từ số nhiều, có nghĩa là 'những người mua hàng'."
+},
+{
+"CauHoi": "Question 116. In next month's issue, ............ coupons offering a steep discount for new subscriptions only.",
+"DichCauHoi": "Trong số ra của tháng sau, chúng tôi sẽ chèn những phiếu giảm giá cung cấp cho đăng ký mới với mức giảm giá lớn.",
+"CauTraLoi": [
+{
+TraLoi: "A. were inserting - đã chèn",
+Dich: "đã chèn"
+},
+{
+TraLoi: "B. have been inserted - đã được chèn",
+Dich": "đã được chèn"
+},
+{
+TraLoi: "C. had inserted - đã chèn",
+Dich": "đã chèn"
+},
+{
+TraLoi: "D. will be inserting - sẽ được chèn",
+Dich": "sẽ được chèn"
+}
+],
+"DapAn": "D",
+"GiaiThich": "Câu hỏi nói về 'next month's issue' (số báo tháng sau), vì vậy cần sử dụng thì tương lai. 'Will be inserting' là thì tương lai tiếp diễn, phù hợp với ngữ cảnh."
+},
+{
+"CauHoi": "Question 117. Under ............ circumstances, the CEO would have approved the pay increases, but this year it was not possible.",
+"DichCauHoi": "Trong hoàn cảnh thuận lợi, giám đốc điều hành sẽ chấp nhận việc tăng lương, nhưng năm nay không thể.",
+"CauTraLoi": [
+{
+TraLoi: "A. favorable - thuận lợi",
+Dich": "thuận lợi"
+},
+{
+TraLoi: "B. favorably - một cách thuận lợi",
+Dich": "một cách thuận lợi"
+},
+{
+TraLoi: "C. favor - sự ưu ái",
+Dich": "sự ưu ái"
+},
+{
+TraLoi: "D. favorite - ưa thích",
+Dich": "ưa thích"
+}
+],
+"DapAn": "A",
+"GiaiThich": "Cần một tính từ để bổ nghĩa cho danh từ 'circumstances'. 'Favorable' là tính từ phù hợp duy nhất, có nghĩa là 'thuận lợi'."
+},
+{
+"CauHoi": "Question 118. Consultation with the appropriate experts is essential if we are to arrive at an ............ decision.",
+"DichCauHoi": "Việc tham khảo ý kiến của các chuyên gia phù hợp là cần thiết nếu chúng ta muốn đưa ra một quyết định có căn cứ.",
+"CauTraLoi": [
+{
+TraLoi: "A. informed - có căn cứ",
+Dich": "có căn cứ"
+},
+{
+TraLoi: "B. obtained - đạt được",
+Dich": "đạt được"
+},
+{
+TraLoi: "C. enlightened - thông thái",
+Dich": "thông thái"
+},
+{
+TraLoi: "D. acquainted - quen biết",
+Dich": "quen biết"
+}
+],
+"DapAn": "A",
+"GiaiThich": "Cụm từ 'informed decision' là cụm từ cố định có nghĩa là 'quyết định có căn cứ', 'quyết định dựa trên thông tin đầy đủ'."
+},
+{
+"CauHoi": "Question 119. As of October 1, Carla Fishermen will ............ the company as its interface in all dealings with the local government.",
+"DichCauHoi": "Từ ngày 1 tháng 10, Carla Fishermen sẽ đại diện cho công ty trong tất cả các giao dịch với chính quyền địa phương.",
+"CauTraLoi": [
+{
+TraLoi: "A. accommodate - đáp ứng",
+Dich": "đáp ứng"
+},
+{
+TraLoi: "B. perform - thực hiện",
+Dich": "thực hiện"
+},
+{
+TraLoi: "C. attend - tham dự",
+Dich": "tham dự"
+},
+{
+TraLoi: "D. represent - đại diện",
+Dich": "đại diện"
+}
+],
+"DapAn": "D",
+"GiaiThich": "Từ 'represent' có nghĩa là 'đại diện', phù hợp với ngữ cảnh 'đại diện công ty trong các giao dịch với chính quyền địa phương'."
+},
+{
+"CauHoi": "Question 120. Although he did not perform ............ well as a student, he went on to become one of the most respected scholars in his field.",
+"DichCauHoi": "Mặc dù anh ta không có thành tích xuất sắc khi là sinh viên, nhưng anh ta đã trở thành một trong những học giả được tôn trọng nhất trong lĩnh vực của mình.",
+"CauTraLoi": [
+{
+TraLoi: "A. especially - đặc biệt",
+Dich": "đặc biệt"
+},
+{
+TraLoi: "B. sufficiently - đủ",
+Dich": "đủ"
+},
+{
+TraLoi: "C. desperately - một cách tuyệt vọng",
+Dich": "một cách tuyệt vọng"
+},
+{
+TraLoi: "D. excellently - một cách xuất sắc",
+Dich": "một cách xuất sắc"
+}
+],
+"DapAn": "D",
+"GiaiThich": "Cần một trạng từ để bổ nghĩa cho động từ 'perform' và tính từ 'well'. 'Excellently' có nghĩa là 'một cách xuất sắc', phù hợp với ngữ cảnh."
+},
+{
+"CauHoi": "Question 121. After the earthquake, the building was ............ unsafe since its foundation was badly damaged.",
+"DichCauHoi": "Sau động đất, tòa nhà đã được tuyên bố không an toàn vì nền móng của nó bị hư hỏng nghiêm trọng.",
+"CauTraLoi": [
+{
+TraLoi: "A. maximized - tối đa hóa",
+Dich": "tối đa hóa"
+},
+{
+TraLoi: "B. erected - dựng lên",
+Dich": "dựng lên"
+},
+{
+TraLoi: "C. arranged - sắp xếp",
+Dich": "sắp xếp"
+},
+{
+TraLoi: "D. declared - tuyên bố",
+Dich": "tuyên bố"
+}
+],
+"DapAn": "D",
+"GiaiThich": "Động từ 'declared' trong cấu trúc bị động 'was declared' có nghĩa là 'đã được tuyên bố', phù hợp với ngữ cảnh 'tuyên bố không an toàn'."
+},
+{
+"CauHoi": "Question 122. The upcoming convention invites ............ from anyone working or having research interests in the field.",
+"DichCauHoi": "Hội nghị sắp tới mời đóng góp ý từ bất kỳ ai đang làm việc hoặc có quan tâm nghiên cứu trong lĩnh vực này.",
+"CauTraLoi": [
+{
+TraLoi: "A. contributions - đóng góp",
+Dich": "đóng góp"
+},
+{
+TraLoi: "B. solutions - giải pháp",
+Dich": "giải pháp"
+},
+{
+TraLoi: "C. additions - thêm vào",
+Dich": "thêm vào"
+},
+{
+TraLoi: "D. subscription - đăng ký",
+Dich": "đăng ký"
+}
+],
+"DapAn": "A",
+"GiaiThich": "'Contributions' có nghĩa là 'sự đóng góp', phù hợp với ngữ cảnh 'mời đóng góp ý kiến'."
+},
+{
+"CauHoi": "Question 123. Health inspections are conducted ............ at all restaurants throughout the province for the purpose of maintaining high standards of hygiene.",
+"DichCauHoi": "Các cuộc kiểm tra sức khỏe được tiến hành thường xuyên tại các nhà hàng trên toàn tỉnh nhằm duy trì các tiêu chuẩn vệ sinh cao.",
+"CauTraLoi": [
+{
+TraLoi: "A. extremely - cực kỳ",
+Dich": "cực kỳ"
+},
+{
+TraLoi: "B. marginally - mức độ nhỏ",
+Dich": "mức độ nhỏ"
+},
+{
+TraLoi: "C. overly - quá mức",
+Dich": "quá mức"
+},
+{
+TraLoi: "D. routinely - theo lịch trình",
+Dich": "theo lịch trình"
+}
+],
+"DapAn": "D",
+"GiaiThich": "Trạng từ 'routinely' có nghĩa là 'theo thường lệ, theo lịch trình', phù hợp với ngữ cảnh các cuộc kiểm tra được thực hiện một cách thường xuyên để duy trì tiêu chuẩn."
+},
+{
+"CauHoi": "Question 124. Several exciting new pieces of equipment ............ in our gymnasium, and we invite you to come and try them out at no cost during the next week.",
+"DichCauHoi": "Một số thiết bị mới hấp dẫn đã được lắp đặt tại phòng tập gym của chúng tôi, và chúng tôi mới bạn đến và thử nghiệm chúng miễn phí trong tuần tới.",
+"CauTraLoi": [
+{
+TraLoi: "A. install - lắp đặt",
+Dich": "lắp đặt"
+},
+{
+TraLoi: "B. installed - đã được lắp đặt",
+Dich": "đã được lắp đặt"
+},
+{
+TraLoi: "C. have install - đã lắp đặt",
+Dich": "đã lắp đặt"
+},
+{
+TraLoi: "D. have been installed - đã được lắp đặt",
+Dich": "đã được lắp đặt"
+}
+],
+"DapAn": "D",
+"GiaiThich": "Câu này ở thể bị động (thiết bị được lắp đặt) và thì hiện tại hoàn thành (việc lắp đặt đã hoàn thành). Do đó, 'have been installed' là đáp án đúng."
+},
+{
+"CauHoi": "Question 125. All drivers are required to maintain ............ logbooks accurately and to hand them in to the central office before leaving on Friday night.",
+"DichCauHoi": "Tất cả các tài xế phải duy trì sổ ghi chép của họ một cách chính xác và nộp chúng cho văn phòng trung tâm trước khi rời đi vào tối thứ Sáu.",
+"CauTraLoi": [
+{
+TraLoi: "A. its - của nó",
+Dich": "của nó"
+},
+{
+TraLoi: "B. his - của anh ấy",
+Dich": "của anh ấy"
+},
+{
+TraLoi: "C. our - của chúng tôi",
+Dich": "của chúng tôi"
+},
+{
+TraLoi: "D. their - của họ",
+Dich": "của họ"
+}
+],
+"DapAn": "D",
+"GiaiThich": "Chủ ngữ là 'all drivers' (số nhiều), nên đại từ sở hữu phù hợp là 'their'."
+},
+{
+"CauHoi": "Question 126. As you would expect at one of the world's most reputable hotels, the ............ is prompt, efficient and discreet.",
+"DichCauHoi": "Như bạn mong đợi tại một trong những khách sạn uy tín nhất thế giới, dịch vụ vụ là nhanh chóng, hiệu quả và kín đáo.",
+"CauTraLoi": [
+{
+TraLoi: "A. exertion - sự cố gắng",
+Dich": "sự cố gắng"
+},
+{
+TraLoi: "B. decision - quyết định",
+Dich": "quyết định"
+},
+{
+TraLoi: "C. challenge - thử thách",
+Dich": "thử thách"
+},
+{
+TraLoi: "D. service - dịch vụ",
+Dich": "dịch vụ"
+}
+],
+"DapAn": "D",
+"GiaiThich": "Các tính từ 'prompt, efficient, and discreet' (nhanh chóng, hiệu quả, kín đáo) mô tả 'service' (dịch vụ), phù hợp với ngữ cảnh của một khách sạn uy tín."
+},
+{
+"CauHoi": "Question 127. Rexington Engineering has recently set up an entire new research ............ because of the increasing interest in robotic technology.",
+"DichCauHoi": "Rexington Engineering đã gần đây thành lập một bộ phận nghiên cứu hoàn toàn mới do sự quan tâm ngày càng tăng về công nghệ robot.",
+"CauTraLoi": [
+{
+TraLoi: "A. separation - sự chia cắt",
+Dich": "sự chia cắt"
+},
+{
+TraLoi: "B. partition - sự phân chia",
+Dich": "sự phân chia"
+},
+{
+TraLoi: "C. segmentation - sự phân đoạn",
+Dich": "sự phân đoạn"
+},
+{
+TraLoi: "D. division - bộ phận",
+Dich": "bộ phận"
+}
+],
+"DapAn": "D",
+"GiaiThich": "'Research division' là cụm danh từ có nghĩa là 'bộ phận nghiên cứu', phù hợp với ngữ cảnh công ty thành lập một bộ phận mới."
+},
+{
+"CauHoi": "Question 128. A small group of contestants has been selected following a nationwide search ............ over the last six months.",
+    "DichCauHoi": "Một nhóm nhỏ thí sinh đã được chọn sau một cuộc tìm kiếm trên toàn quốc được tiến hành trong vòng sáu tháng qua.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. alerted - được báo cho",
+        "Dich": "được báo cho"
+      },
+      {
+        "TraLoi": "B. engaged - tham gia",
+        "Dich": "tham gia"
+      },
+      {
+        "TraLoi": "C. protected - bảo vệ",
+        "Dich": "bảo vệ"
+      },
+      {
+        "TraLoi": "D. conducted - được tiến hành",
+        "Dich": "được tiến hành"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Động từ 'conducted' có nghĩa là 'được tiến hành, được thực hiện', phù hợp với ngữ cảnh 'một cuộc tìm kiếm được tiến hành'."
+  },
+  {
+    "CauHoi": "Question 129. The chief financial officer believes that we should maintain the present course, ............ his deputy.",
+    "DichCauHoi": "Giám đốc tài chính cho rằng chúng ta nên duy trì hướng đi hiện tại, và cũng như phó của ông.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. as to - đối với",
+        "Dich": "đối với"
+      },
+      {
+        "TraLoi": "B. whereas - trong khi",
+        "Dich": "trong khi"
+      },
+      {
+        "TraLoi": "C. as does - cũng như",
+        "Dich": "cũng như"
+      },
+      {
+        "TraLoi": "D. as long as - miễn là",
+        "Dich": "miễn là"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "'As does his deputy' là cấu trúc rút gọn của 'as his deputy also believes', có nghĩa là 'cũng như phó của ông ấy tin rằng'. Cấu trúc này dùng để diễn tả sự đồng tình."
+  },
+  {
+    "CauHoi": "Question 130. One of the leading companies, Big Star agreed to buy ............ drug company for 10 billion dollars.",
+    "DichCauHoi": "Một trong những công ty hàng đầu, Big Star đã đồng ý mua công ty dược cạnh tranh với giá 10 tỷ đô la.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. rival - đối thủ",
+        "Dich": "đối thủ"
+      },
+      {
+        "TraLoi": "B. compromising - làm lòng lòng",
+        "Dich": "làm lòng lòng"
+      },
+      {
+        "TraLoi": "C. renewed - gia hạn",
+        "Dich": "gia hạn"
+      },
+      {
+        "TraLoi": "D. contrasting - tương phản",
+        "Dich": "tương phản"
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Cần một tính từ để bổ nghĩa cho 'drug company'. 'Rival' ở đây đóng vai trò như một tính từ, có nghĩa là 'đối thủ', phù hợp với ngữ cảnh 'mua một công ty dược là đối thủ'."
+  },
+  {
+    "CauHoi": "Question 131. Because there were too many participants at the seminar, we should ............ them into smaller groups for discussion.",
+    "DichCauHoi": "Vì có quá nhiều người tham dự hội thảo, chúng ta nên chia nhỏ thành các nhóm nhỏ hơn để thảo luận.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. divisible - có thể chia",
+        "Dich": "có thể chia"
+      },
+      {
+        "TraLoi": "B. division - sự chia nhỏ",
+        "Dich": "sự chia nhỏ"
+      },
+      {
+        "TraLoi": "C. dividing - chia nhỏ",
+        "Dich": "chia nhỏ"
+      },
+      {
+        "TraLoi": "D. divide - chia",
+        "Dich": "chia"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Sau trợ động từ 'should' cần một động từ nguyên mẫu. 'Divide' là động từ nguyên mẫu duy nhất phù hợp, có nghĩa là 'chia'."
+  },
+  {
+    "CauHoi": "Question 132. ............ wanting to apply for maternity leave should let their immediate supervisor know about their plans at least one month in advance.",
+    "DichCauHoi": "Những người muốn xin nghỉ thai sản nên thông báo cho cấp trên ngay về kế hoạch của họ ít nhất là một tháng trước.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Them - họ",
+        "Dich": "họ"
+      },
+      {
+        "TraLoi": "B. That - đó",
+        "Dich": "đó"
+      },
+      {
+        "TraLoi": "C. One - một",
+        "Dich": "một"
+      },
+      {
+        "TraLoi": "D. Those - những người đó",
+        "Dich": "những người đó"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Đại từ 'Those' được sử dụng để thay thế cho 'people' trong cấu trúc 'Those who want to...' có nghĩa là 'những người muốn...'"
+  },
+  {
+    "CauHoi": "Question 133. Electron Recycling has developed a profitable business by recycling metals retrieved from ............ electronic components.",
+    "DichCauHoi": "Electron Recycling đã phát triển một doanh nghiệp sinh lời bằng cách tái chế các kim loại thu được từ các linh kiện điện tử đã bị vứt bỏ.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. discarded - bị vứt bỏ",
+        "Dich": "bị vứt bỏ"
+      },
+      {
+        "TraLoi": "B. exceeded - vượt quá",
+        "Dich": "vượt quá"
+      },
+      {
+        "TraLoi": "C. unnoticed - không bị chiếm đóng",
+        "Dich": "không bị chiếm đóng"
+      },
+      {
+        "TraLoi": "D. suppressed - bị đàn áp",
+        "Dich": "bị đàn áp"
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Cần một tính từ để bổ nghĩa cho 'electronic components'. 'Discarded' có nghĩa là 'đã bị vứt bỏ', phù hợp với ngữ cảnh."
+  },
+  {
+    "CauHoi": "Question 134. The new head of marketing is already making his mark on the company even though he only arrived 6 weeks ago.",
+    "DichCauHoi": "Giám đốc marketing mới đã để lại dấu ấn của mình trên công ty dù anh chỉ đến từ 6 tuần trước.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. carried - mang",
+        "Dich": "mang"
+      },
+      {
+        "TraLoi": "B. elapsed - trôi qua",
+        "Dich": "trôi qua"
+      },
+      {
+        "TraLoi": "C. deliberated - suy nghĩ kỹ lưỡng",
+        "Dich": "suy nghĩ kỹ lưỡng"
+      },
+      {
+        "TraLoi": "D. arrived - đến",
+        "Dich": "đến"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Cần một động từ ở dạng quá khứ đơn để phù hợp với '6 weeks ago'. 'Arrived' có nghĩa là 'đã đến', phù hợp với ngữ cảnh."
+  },
+  {
+    "CauHoi": "Question 135. The FM convenience store in the central park is ............ situated and it is always busy with many customers.",
+    "DichCauHoi": "Cửa hàng tiện lợi FM ở công viên trung tâm được đặt ở vị trí rất thuận tiện và luôn luôn đông đúc với nhiều khách hàng.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. conveniently - một cách thuận tiện",
+        "Dich": "một cách thuận tiện"
+      },
+      {
+        "TraLoi": "B. promptly - một cách nhanh chóng",
+        "Dich": "một cách nhanh chóng"
+      },
+      {
+        "TraLoi": "C. greatly - rất",
+        "Dich": "rất"
+      },
+      {
+        "TraLoi": "D. widely - rộng rãi",
+        "Dich": "rộng rãi"
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Cần một trạng từ để bổ nghĩa cho tính từ 'situated'. 'Conveniently' có nghĩa là 'một cách thuận tiện', phù hợp với ngữ cảnh 'cửa hàng ở vị trí thuận tiện'."
+  },
+  {
+    "CauHoi": "Question 136. Once you have paid the appropriate student fees, you will be able to ............ the medical, recreational, and other facilities.",
+    "DichCauHoi": "Sau khi bạn đã thanh toán các khoản phí sinh viên thích hợp, bạn sẽ có thể truy cập vào các cơ sở y tế, giải trí và các cơ sở khác.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. access - truy cập",
+        "Dich": "truy cập"
+      },
+      {
+        "TraLoi": "B. accessed - đã truy cập",
+        "Dich": "đã truy cập"
+      },
+      {
+        "TraLoi": "C. accessory - phụ kiện",
+        "Dich": "phụ kiện"
+      },
+      {
+        "TraLoi": "D. accessible - có thể truy cập",
+        "Dich": "có thể truy cập"
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Sau cụm từ 'will be able to' cần một động từ nguyên mẫu. 'Access' là động từ phù hợp duy nhất, có nghĩa là 'truy cập'."
+  },
+  {
+    "CauHoi": "Question 137. Although the ............ for the best design will be very fierce, Mr. Gozalas has a good chance of getting the award.",
+    "DichCauHoi": "Mặc dù cuộc thi cho thiết kế tốt nhất sẽ rất gay gắt, ông Gozalas có cơ hội rất tốt để giành giải thưởng.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. competitively - một cách cạnh tranh",
+        "Dich": "một cách cạnh tranh"
+      },
+      {
+        "TraLoi": "B. competitive - cạnh tranh",
+        "Dich": "cạnh tranh"
+      },
+      {
+        "TraLoi": "C. compete - cạnh tranh",
+        "Dich": "cạnh tranh"
+      },
+      {
+        "TraLoi": "D. competition - cuộc thi",
+        "Dich": "cuộc thi"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Cần một danh từ làm chủ ngữ. 'Competition' có nghĩa là 'cuộc thi', phù hợp với ngữ cảnh 'cuộc thi thiết kế'."
+  },
+  {
+    "CauHoi": "Question 138. While we still take telephone calls, other ............ of correspondence are encouraged to avoid tying up telephone lines unnecessarily.",
+    "DichCauHoi": "Trong khi chúng tôi vẫn tiếp nhận cuộc gọi điện thoại, các hình thức liên lạc khác được khuyến khích để tránh làm tặc đường dây điện thoại một cách không cần thiết.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. profiles - hồ sơ",
+        "Dich": "hồ sơ"
+      },
+      {
+        "TraLoi": "B. views - quan điểm",
+        "Dich": "quan điểm"
+      },
+      {
+        "TraLoi": "C. outlines - đề cương",
+        "Dich": "đề cương"
+      },
+      {
+        "TraLoi": "D. forms - hình thức",
+        "Dich": "hình thức"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Danh từ 'forms' có nghĩa là 'hình thức', phù hợp với ngữ cảnh 'các hình thức liên lạc khác'."
+  },
+  {
+    "CauHoi": "Question 139. Numerous speakers came forward to express their gratitude ............ the retiring secretary's unfailing courtesy and efficiency.",
+    "DichCauHoi": "Nhiều diễn giả đã đứng lên để bày tỏ lòng biết ơn đối với sự lịch sự và hiệu quả không bao giờ thay đổi của thư ký về hưu sắp nghỉ hưu.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. for - cho",
+        "Dich": "cho"
+      },
+      {
+        "TraLoi": "B. at - tại",
+        "Dich": "tại"
+      },
+      {
+        "TraLoi": "C. to - đến",
+        "Dich": "đến"
+      },
+      {
+        "TraLoi": "D. with - với",
+        "Dich": "với"
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Cụm 'express gratitude for something' có nghĩa là 'bày tỏ lòng biết ơn đối với điều gì đó'."
+  },
+  {
+    "CauHoi": "Question 140. ............ more factory workers are hired, we cannot meet the deadline for the products on time.",
+    "DichCauHoi": "Trừ khi thêm nhiều công nhân nhà máy được tuyển dụng, chúng tôi không thể hoàn thành đúng hạn cho các sản phẩm.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Unless - trừ khi",
+        "Dich": "trừ khi"
+      },
+      {
+        "TraLoi": "B. Also - cũng",
+        "Dich": "cũng"
+      },
+      {
+        "TraLoi": "C. Except - ngoại trừ",
+        "Dich": "ngoại trừ"
+      },
+      {
+        "TraLoi": "D. Therefore - do đó",
+        "Dich": "do đó"
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Liên từ 'Unless' có nghĩa là 'trừ khi', phù hợp với ngữ cảnh diễn tả một điều kiện."
+  },
+  {
+    "CauHoi": "Question 141. ............ the recent sales campaign was not as successful as we had expected, our new range of goods has been well reviewed by consumer groups.",
+    "DichCauHoi": "Mặc dù chiến dịch bán hàng gần đây không thành công như chúng tôi đã mong đợi, bộ sản phẩm mới của chúng tôi đã được các nhóm người tiêu dùng đánh giá tốt.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Instead of - thay vì",
+        "Dich": "thay vì"
+      },
+      {
+        "TraLoi": "B. Notwithstanding - mặc dù",
+        "Dich": "mặc dù"
+      },
+      {
+        "TraLoi": "C. Although - mặc dù",
+        "Dich": "mặc dù"
+      },
+      {
+        "TraLoi": "D. Whereas - trong khi",
+        "Dich": "trong khi"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Liên từ 'Although' có nghĩa là 'mặc dù', phù hợp để nối hai mệnh đề có ý nghĩa tương phản."
+  },
+  {
+    "CauHoi": "Question 142. The giant pharmaceutical company insists that its new drug is ............ as long as it is used under the supervision of a doctor.",
+    "DichCauHoi": "Công ty dược lớn khẳng định rằng thuốc mới của họ an toàn miễn là được sử dụng dưới sự giám sát của bác sĩ.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. perfect - hoàn hảo",
+        "Dich": "hoàn hảo"
+      },
+      {
+        "TraLoi": "B. perfection - sự hoàn hảo",
+        "Dich": "sự hoàn hảo"
+      },
+      {
+        "TraLoi": "C. perfectly - hoàn hảo",
+        "Dich": "hoàn hảo"
+      },
+      {
+        "TraLoi": "D. approvingly - chấp thuận",
+        "Dich": "chấp thuận"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Cần một trạng từ để bổ nghĩa cho tính từ 'safe' (ngầm hiểu). 'Perfectly' có nghĩa là 'hoàn hảo', phù hợp với ngữ cảnh 'hoàn toàn an toàn'."
+  },
+  {
+    "CauHoi": "Question 143. Once you have familiarized yourself with the basic commands, we can begin to learn some of this program's more creative features.",
+    "DichCauHoi": "Sau khi bạn đã làm quen với các lệnh cơ bản, chúng ta có thể bắt đầu học một số tính năng sáng tạo hơn của chương trình này.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Already - đã",
+        "Dich": "đã"
+      },
+      {
+        "TraLoi": "B. Before - trước khi",
+        "Dich": "trước khi"
+      },
+      {
+        "TraLoi": "C. Once - sau khi",
+        "Dich": "sau khi"
+      },
+      {
+        "TraLoi": "D. Earlier - trước đây",
+        "Dich": "trước đây"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Liên từ 'Once' có nghĩa là 'một khi, sau khi', phù hợp với ngữ cảnh 'sau khi đã làm quen, chúng ta có thể bắt đầu...'"
+  },
+  {
+    "CauHoi": "Question 144. It is true that the number of traffic accidents involving cyclists has increased ............ over the last 10 years.",
+    "DichCauHoi": "Đúng là số vụ tai nạn giao thông liên quan đến người đi xe đạp đã tăng đáng kể trong 10 năm qua.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. meagerly - một cách cằn cỗi",
+        "Dich": "một cách cằn cỗi"
+      },
+      {
+        "TraLoi": "B. fundamentally - về cơ bản",
+        "Dich": "về cơ bản"
+      },
+      {
+        "TraLoi": "C. significantly - đáng kể",
+        "Dich": "đáng kể"
+      },
+      {
+        "TraLoi": "D. adequately - đủ",
+        "Dich": "đủ"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Trạng từ 'significantly' có nghĩa là 'đáng kể', phù hợp với ngữ cảnh 'số vụ tai nạn đã tăng đáng kể'."
+  },
+  {
+    "CauHoi": "Question 145. Students can ............ in the university's education program starting July 6th.",
+    "DichCauHoi": "Sinh viên có thể đăng ký vào chương trình giáo dục của trường đại học bắt đầu từ ngày 6 tháng 7.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Enroll - đăng ký",
+        "Dich": "đăng ký"
+      },
+      {
+        "TraLoi": "B. Admit - nhận vào",
+        "Dich": "nhận vào"
+      },
+      {
+        "TraLoi": "C. Apply - nộp đơn",
+        "Dich": "nộp đơn"
+      },
+      {
+        "TraLoi": "D. Subscribe - đăng ký",
+        "Dich": "đăng ký"
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "'Enroll' có nghĩa là 'đăng ký' vào một chương trình học, phù hợp với ngữ cảnh."
+  },
+  {
+    "CauHoi": "Question 146. Hyssop Chemists is ............ experienced pharmacists for the eight new locations they have opened this year.",
+    "DichCauHoi": "Hyssop Chemists đang tìm kiếm các nhà dược có kinh nghiệm cho tám địa điểm mới mà họ đã mở trong năm nay.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. seeking - đang tìm kiếm",
+        "Dich": "đang tìm kiếm"
+      },
+      {
+        "TraLoi": "B. looking - tìm kiếm",
+        "Dich": "tìm kiếm"
+      },
+      {
+        "TraLoi": "C. entering - tham gia",
+        "Dich": "tham gia"
+      },
+      {
+        "TraLoi": "D. requiring - yêu cầu",
+        "Dich": "yêu cầu"
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Cấu trúc 'is seeking' là thì hiện tại tiếp diễn, phù hợp với ngữ cảnh 'đang tìm kiếm' các dược sĩ."
+  },
+  {
+    "CauHoi": "Question 147. This is an excellent time to consider changing jobs because of the large number of positions ............ available in the mining sector.",
+    "DichCauHoi": "Đây là thời điểm tuyệt vời để cân nhắc thay đổi công việc vì có số lượng lớn các vị trí hiện có trong ngành khai thác mỏ.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. commonly - thường",
+        "Dich": "thường"
+      },
+      {
+        "TraLoi": "B. currently - hiện có",
+        "Dich": "hiện có"
+      },
+      {
+        "TraLoi": "C. actively - một cách tích cực",
+        "Dich": "một cách tích cực"
+      },
+      {
+        "TraLoi": "D. approvingly - chấp thuận",
+        "Dich": "chấp thuận"
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Trạng từ 'currently' có nghĩa là 'hiện tại', phù hợp với ngữ cảnh 'các vị trí hiện có'."
+  },
+  {
+    "CauHoi": "Question 148. The waitress said there weren't any tables open, but she would call my name once one became _________.",
+    "DichCauHoi": "Câu hỏi 148. Nữ phục vụ nói rằng không còn bàn nào trống, nhưng cô ấy sẽ gọi tên tôi một khi có bàn ____________.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) availability",
+        "Dich": "sự sẵn có"
+      },
+      {
+        "TraLoi": "(B) availably",
+        "Dich": "một cách sẵn có"
+      },
+      {
+        "TraLoi": "(C) avail",
+        "Dich": "có ích"
+      },
+      {
+        "TraLoi": "(D) available",
+        "Dich": "có sẵn"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Trong câu này, chúng ta cần một tính từ để bổ nghĩa cho 'one' (một cái bàn), có nghĩa là 'có sẵn'. Do đó, 'available' là đáp án đúng."
+  },
+  {
+    "CauHoi": "Question 149. A light and healthy lunch followed by some exercise will make workers __________ more productive in the afternoon.",
+    "DichCauHoi": "Câu hỏi 149. Một bữa trưa nhẹ và lành mạnh sau đó là một vài bài tập sẽ khiến công nhân ____________ năng suất hơn vào buổi chiều."
+    ,
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) complete",
+        "Dich": "hoàn toàn"
+      },
+      {
+        "TraLoi": "(B) much",
+        "Dich": "nhiều"
+      },
+      {
+        "TraLoi": "(C) ample",
+        "Dich": "dồi dào"
+      },
+      {
+        "TraLoi": "(D) greatly",
+        "Dich": "rất nhiều"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Ở đây, 'greatly' là một trạng từ có nghĩa là 'rất nhiều' hoặc 'vô cùng', nó bổ nghĩa cho tính từ 'productive'. Cấu trúc 'make someone greatly productive' có nghĩa là 'khiến ai đó năng suất hơn rất nhiều'."
+  },
+  {
+    "CauHoi": "Question 150. It is becoming____________ more difficult to find designers who are familiar with this software.",
+    "DichCauHoi": "Câu hỏi 150. Việc tìm những nhà thiết kế quen thuộc với phần mềm này đang ngày càng trở nên ____________ khó khăn hơn.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) progress",
+        "Dich": "sự tiến triển"
+      },
+      {
+        "TraLoi": "(B) progressive",
+        "Dich": "tăng dần"
+      },
+      {
+        "TraLoi": "(C) progression",
+        "Dich": "sự tiến triển"
+      },
+      {
+        "TraLoi": "(D) progressively",
+        "Dich": "một cách tăng dần"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "'Progressively' là một trạng từ có nghĩa là 'tăng dần theo thời gian', bổ nghĩa cho 'more difficult' (khó khăn hơn). Đáp án này phù hợp nhất với ngữ cảnh của câu."
+  },
+  {
+    "CauHoi": "Question 151. Of the six employees in __________ department he is the hardest working one.",
+    "DichCauHoi": "Câu hỏi 151. Trong số sáu nhân viên trong phòng ban ____________, anh ấy là người làm việc chăm chỉ nhất.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) himself",
+        "Dich": "chính anh ấy"
+      },
+      {
+        "TraLoi": "(B) him",
+        "Dich": "anh ấy"
+      },
+      {
+        "TraLoi": "(C) he",
+        "Dich": "anh ấy"
+      },
+      {
+        "TraLoi": "(D) his",
+        "Dich": "của anh ấy"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Chúng ta cần một tính từ sở hữu 'his' để chỉ ra phòng ban 'của anh ấy' ('his department')."
+  },
+  {
+    "CauHoi": "Question 152. The Technical Department is currently formulating written guidelines _________ the use of our micro-publishing facilities.",
+    "DichCauHoi": "Câu hỏi 152. Bộ phận Kỹ thuật hiện đang xây dựng các hướng dẫn bằng văn bản _________ việc sử dụng các cơ sở xuất bản vi mô của chúng tôi.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) in",
+        "Dich": "trong"
+      },
+      {
+        "TraLoi": "(B) for",
+        "Dich": "cho"
+      },
+      {
+        "TraLoi": "(C) at",
+        "Dich": "tại"
+      },
+      {
+        "TraLoi": "(D) with",
+        "Dich": "với"
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Cụm từ 'guidelines for' có nghĩa là 'hướng dẫn cho'. Đây là cấu trúc phù hợp nhất trong câu này."
+  },
+  {
+    "CauHoi": "Question 153. Actually, the Department of Transportation is responsible ___________ approving roadwork permits in the county.",
+    "DichCauHoi": "Câu hỏi 153. Thực tế, Bộ Giao thông vận tải chịu trách nhiệm ____________ việc phê duyệt giấy phép thi công đường bộ trong quận.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) by",
+        "Dich": "bởi"
+      },
+      {
+        "TraLoi": "(B) at",
+        "Dich": "tại"
+      },
+      {
+        "TraLoi": "(C) since",
+        "Dich": "kể từ"
+      },
+      {
+        "TraLoi": "(D) for",
+        "Dich": "cho"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Cụm từ cố định 'responsible for' có nghĩa là 'chịu trách nhiệm về'."
+  },
+  {
+    "CauHoi": "Question 154. _____________ leaving school, she has worked in a variety of positions but has not yet found one which suits her talents or interests.",
+    "DichCauHoi": "Câu hỏi 154. ____________ rời khỏi trường học, cô ấy đã làm việc ở nhiều vị trí khác nhau nhưng vẫn chưa tìm được vị trí nào phù hợp với tài năng hoặc sở thích của mình.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) Despite",
+        "Dich": "Mặc dù"
+      },
+      {
+        "TraLoi": "(B) Since",
+        "Dich": "Kể từ khi"
+      },
+      {
+        "TraLoi": "(C) In spite of",
+        "Dich": "Mặc dù"
+      },
+      {
+        "TraLoi": "(D) If",
+        "Dich": "Nếu"
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "'Since' được sử dụng để chỉ một mốc thời gian trong quá khứ và hành động vẫn tiếp tục cho đến hiện tại. Đây là từ phù hợp nhất với ngữ cảnh của câu."
+  },
+  {
+    "CauHoi": "Question 155. Analysts regarded the ________ between the construction giants a win-win situation for both companies.",
+    "DichCauHoi": "Câu hỏi 155. Các nhà phân tích coi ____________ giữa các ông lớn xây dựng là một tình huống đôi bên cùng có lợi cho cả hai công ty.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) factor",
+        "Dich": "yếu tố"
+      },
+      {
+        "TraLoi": "(B) management",
+        "Dich": "sự quản lý"
+      },
+      {
+        "TraLoi": "(C) authority",
+        "Dich": "quyền lực"
+      },
+      {
+        "TraLoi": "(D) alliance",
+        "Dich": "liên minh"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Trong ngữ cảnh này, 'alliance' (liên minh) là từ phù hợp nhất, chỉ sự hợp tác giữa hai công ty lớn để đạt được lợi ích chung."
+  },
+  {
+    "CauHoi": "Question 156. For such a large building project, you'll need to take out a massive loan to raise the necessary ____________.",
+    "DichCauHoi": "Câu hỏi 156. Đối với một dự án xây dựng lớn như vậy, bạn sẽ cần phải vay một khoản vay lớn để huy động ____________ cần thiết.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) assistance",
+        "Dich": "sự hỗ trợ"
+      },
+      {
+        "TraLoi": "(B) timeline",
+        "Dich": "mốc thời gian"
+      },
+      {
+        "TraLoi": "(C) institution",
+        "Dich": "tổ chức"
+      },
+      {
+        "TraLoi": "(D) capital",
+        "Dich": "vốn"
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "'Capital' (vốn) là thuật ngữ tài chính chính xác nhất để chỉ số tiền cần thiết cho một dự án, đặc biệt khi liên quan đến các khoản vay lớn."
+  },
+  {
+    "CauHoi": "Question 157. An investment _________ gradually increases in value over the years can be more profitable than more short-term alternatives.",
+    "DichCauHoi": "Câu hỏi 157. Một khoản đầu tư ____________ tăng dần giá trị theo thời gian có thể sinh lời hơn so với các lựa chọn ngắn hạn.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) that",
+        "Dich": "mà"
+      },
+      {
+        "TraLoi": "(B) they",
+        "Dich": "họ"
+      },
+      {
+        "TraLoi": "(C) what",
+        "Dich": "những gì"
+      },
+      {
+        "TraLoi": "(D) when",
+        "Dich": "khi"
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Chúng ta cần một đại từ quan hệ để giới thiệu một mệnh đề quan hệ ('that gradually increases...'). 'That' là lựa chọn phù hợp nhất."
+  },
+  {
+    "CauHoi": "Question 158. Maurice Robertson, ____________ an executive at a small company, became the CEO of Bradshaw Industries four months ago.",
+    "DichCauHoi": "Câu hỏi 158. Maurice Robertson, ____________ một giám đốc điều hành tại một công ty nhỏ, đã trở thành Giám đốc điều hành của Bradshaw Industries bốn tháng trước.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) once",
+        "Dich": "đã từng"
+      },
+      {
+        "TraLoi": "(B) often",
+        "Dich": "thường xuyên"
+      },
+      {
+        "TraLoi": "(C) soon",
+        "Dich": "sớm"
+      },
+      {
+        "TraLoi": "(D) now",
+        "Dich": "bây giờ"
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "'Once' là trạng từ chỉ thời gian trong quá khứ, có nghĩa là 'đã từng'. Nó phù hợp với ngữ cảnh của câu, cho thấy anh ta đã từng là giám đốc điều hành ở một công ty nhỏ trước khi trở thành CEO."
+  },
+  {
+    "CauHoi": "Question 159. An independent investigator ____________ a report on the company's financial operations which, for some unknown reason, was never released.",
+    "DichCauHoi": "Câu hỏi 159. Một điều tra viên độc lập ____________ một báo cáo về các hoạt động tài chính của công ty, nhưng vì một số lý do không rõ, báo cáo đó không bao giờ được công bố.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) contracted",
+        "Dich": "hợp đồng"
+      },
+      {
+        "TraLoi": "(B) confirmed",
+        "Dich": "xác nhận"
+      },
+      {
+        "TraLoi": "(C) compiled",
+        "Dich": "biên soạn"
+      },
+      {
+        "TraLoi": "(D) converted",
+        "Dich": "chuyển đổi"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "'Compiled' (biên soạn, tổng hợp) là động từ phù hợp nhất với 'a report' (một báo cáo), vì nó có nghĩa là thu thập và sắp xếp thông tin để tạo ra một văn bản."
+  },
+  {
+    "CauHoi": "Question 160. Windpower Co. is faced with financial hardship, so in order to overcome this crisis, ____________ financial support is needed.",
+    "DichCauHoi": "Câu hỏi 160. Công ty Windpower đang đối mặt với khó khăn tài chính, vì vậy để vượt qua cuộc khủng hoảng này, cần có sự hỗ trợ tài chính ____________.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) extend",
+        "Dich": "mở rộng"
+      },
+      {
+        "TraLoi": "(B) extent",
+        "Dich": "mức độ"
+      },
+      {
+        "TraLoi": "(C) extensive",
+        "Dich": "rộng rãi"
+      },
+      {
+        "TraLoi": "(D) extending",
+        "Dich": "mở rộng"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Chúng ta cần một tính từ để bổ nghĩa cho danh từ 'financial support'. 'Extensive' (rộng rãi, lớn) là từ phù hợp nhất, có nghĩa là cần một lượng hỗ trợ tài chính đáng kể."
+  },
+  {
+    "CauHoi": "Question 161. Thanks to the advances in technology the state-of-the-art device is made ____________ out of plastic.",
+    "DichCauHoi": "Câu hỏi 161. Nhờ những tiến bộ trong công nghệ, thiết bị hiện đại này được làm ____________ bằng nhựa.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) totaling",
+        "Dich": "tổng cộng"
+      },
+      {
+        "TraLoi": "(B) total",
+        "Dich": "tổng cộng"
+      },
+      {
+        "TraLoi": "(C) totally",
+        "Dich": "hoàn toàn"
+      },
+      {
+        "TraLoi": "(D) totaled",
+        "Dich": "tổng cộng"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "'Totally' (hoàn toàn) là một trạng từ bổ nghĩa cho động từ 'is made' và giới từ 'out of'. Nó nhấn mạnh rằng thiết bị được làm hoàn toàn bằng nhựa."
+  },
+  {
+    "CauHoi": "Question 162. Mr. Fukui ____________ washes his hands with antibacterial detergent right after coming home.",
+    "DichCauHoi": "Câu hỏi 162. Ông Fukui ____________ rửa tay bằng xà phòng diệt khuẩn ngay sau khi về nhà.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) habitual",
+        "Dich": "thường xuyên"
+      },
+      {
+        "TraLoi": "(B) habit",
+        "Dich": "thói quen"
+      },
+      {
+        "TraLoi": "(C) habitually",
+        "Dich": "một cách thường xuyên"
+      },
+      {
+        "TraLoi": "(D) habits",
+        "Dich": "các thói quen"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Chúng ta cần một trạng từ 'habitually' để bổ nghĩa cho động từ 'washes', thể hiện rằng ông Fukui rửa tay một cách có thói quen."
+  },
+  {
+    "CauHoi": "Question 163. Please read the ____________ passages carefully, and then answer the multiple choice questions below within the time allotted.",
+    "DichCauHoi": "Câu hỏi 163. Vui lòng đọc kỹ các đoạn văn ____________, và sau đó trả lời các câu hỏi trắc nghiệm bên dưới trong khoảng thời gian cho phép.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) consecutive",
+        "Dich": "liên tiếp"
+      },
+      {
+        "TraLoi": "(B) constant",
+        "Dich": "liên tục"
+      },
+      {
+        "TraLoi": "(C) following",
+        "Dich": "sau đây"
+      },
+      {
+        "TraLoi": "(D) subsequent",
+        "Dich": "tiếp theo"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "'Following' ở đây có nghĩa là 'những cái sau đây' (các đoạn văn nằm ngay sau câu này). Đây là từ phù hợp nhất trong ngữ cảnh của một bài kiểm tra."
+  },
+  {
+    "CauHoi": "Question 164. The sudden rainstorm arrived ____________, leaving a trail of damage which many predict will take some time to repair.",
+    "DichCauHoi": "Câu hỏi 164. Cơn bão bất ngờ ập đến ____________, để lại một vệt hư hại mà nhiều người dự đoán sẽ mất một thời gian để sửa chữa.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) unexpected",
+        "Dich": "bất ngờ"
+      },
+      {
+        "TraLoi": "(B) unexpectant",
+        "Dich": "không mong đợi"
+      },
+      {
+        "TraLoi": "(C) unexpectedly",
+        "Dich": "một cách bất ngờ"
+      },
+      {
+        "TraLoi": "(D) unexpectedness",
+        "Dich": "sự bất ngờ"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Chúng ta cần một trạng từ 'unexpectedly' để bổ nghĩa cho động từ 'arrived', mô tả cách cơn bão đến."
+  },
+  {
+    "CauHoi": "Question 165. Please accept our ____________ apology for the mistakes that we made on the last project.",
+    "DichCauHoi": "Câu hỏi 165. Vui lòng chấp nhận lời xin lỗi ____________ của chúng tôi về những sai lầm mà chúng tôi đã mắc phải trong dự án vừa qua.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) accurate",
+        "Dich": "chính xác"
+      },
+      {
+        "TraLoi": "(B) estimated",
+        "Dich": "ước tính"
+      },
+      {
+        "TraLoi": "(C) sincere",
+        "Dich": "chân thành"
+      },
+      {
+        "TraLoi": "(D) completed",
+        "Dich": "đã hoàn thành"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Từ 'sincere' (chân thành) là tính từ phù hợp nhất để bổ nghĩa cho 'apology' (lời xin lỗi), thể hiện sự hối lỗi thật sự."
+  },
+  {
+    "CauHoi": "Question 166. BMC publishing company will be checking the article ____________ mistakes and edit it before printing.",
+    "DichCauHoi": "Câu hỏi 166. Công ty xuất bản BMC sẽ kiểm tra bài báo ____________ những lỗi sai và chỉnh sửa nó trước khi in.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) barring",
+        "Dich": "ngoại trừ"
+      },
+      {
+        "TraLoi": "(B) over",
+        "Dich": "trên"
+      },
+      {
+        "TraLoi": "(C) for",
+        "Dich": "cho"
+      },
+      {
+        "TraLoi": "(D) from",
+        "Dich": "từ"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Cụm từ 'check for' có nghĩa là 'kiểm tra để tìm kiếm'. Đây là cấu trúc đúng để nói về việc kiểm tra một cái gì đó để phát hiện lỗi."
+  },
+  {
+    "CauHoi": "Question 167. Please place your luggage in the overhead locker, and ensure that the locker is closed ____________.",
+    "DichCauHoi": "Câu hỏi 167. Vui lòng đặt hành lý của bạn vào ngăn chứa đồ phía trên, và đảm bảo rằng tủ khóa đã được đóng ____________.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) secure",
+        "Dich": "an toàn"
+      },
+      {
+        "TraLoi": "(B) securely",
+        "Dich": "một cách an toàn"
+      },
+      {
+        "TraLoi": "(C) securable",
+        "Dich": "có thể khóa được"
+      },
+      {
+        "TraLoi": "(D) secureness",
+        "Dich": "sự an toàn"
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Chúng ta cần một trạng từ 'securely' để bổ nghĩa cho động từ 'is closed', mô tả cách tủ khóa phải được đóng."
+  },
+  {
+    "CauHoi": "Question 168. We would like to inform our employees that any complaints should be ____________ to their union representative at first.",
+    "DichCauHoi": "Câu hỏi 168. Chúng tôi muốn thông báo cho nhân viên của mình rằng bất kỳ khiếu nại nào cũng nên được ____________ với đại diện công đoàn của họ trước tiên.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) outlined",
+        "Dich": "phác thảo"
+      },
+      {
+        "TraLoi": "(B) addressed",
+        "Dich": "giải quyết/được gửi đến"
+      },
+      {
+        "TraLoi": "(C) focused",
+        "Dich": "tập trung"
+      },
+      {
+        "TraLoi": "(D) applied",
+        "Dich": "áp dụng"
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Trong ngữ cảnh này, 'addressed' (được gửi đến, được xử lý) là từ phù hợp nhất, có nghĩa là các khiếu nại nên được gửi đến hoặc xử lý bởi đại diện công đoàn."
+  },
+  {
+    "CauHoi": "Question 169. The new tax cuts are designed ____________ low-income earners and those with young families.",
+    "DichCauHoi": "Câu hỏi 169. Các đợt cắt giảm thuế mới được thiết kế ____________ những người có thu nhập thấp và những người có gia đình trẻ.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) benefits",
+        "Dich": "lợi ích"
+      },
+      {
+        "TraLoi": "(B) to benefit",
+        "Dich": "để mang lại lợi ích"
+      },
+      {
+        "TraLoi": "(C) benefited",
+        "Dich": "đã được hưởng lợi"
+      },
+      {
+        "TraLoi": "(D) benefiting",
+        "Dich": "mang lại lợi ích"
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Cấu trúc 'designed to + V' có nghĩa là 'được thiết kế để làm gì'. Do đó, 'to benefit' là đáp án chính xác."
+  },
+  {
+    "CauHoi": "Question 170. The budget to be released later this week will ____________ reduce spending on employee facilities such as the sports center.",
+    "DichCauHoi": "Câu hỏi 170. Ngân sách sẽ được công bố vào cuối tuần này ____________ giảm chi tiêu cho các cơ sở vật chất của nhân viên như trung tâm thể thao.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) due to",
+        "Dich": "do"
+      },
+      {
+        "TraLoi": "(B) most likely",
+        "Dich": "rất có thể"
+      },
+      {
+        "TraLoi": "(C) want",
+        "Dich": "muốn"
+      },
+      {
+        "TraLoi": "(D) be",
+        "Dich": "là"
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "'Most likely' là một trạng từ diễn tả khả năng cao, có nghĩa là 'rất có thể'. Nó phù hợp với ngữ cảnh dự đoán về ngân sách sắp tới."
+  },
+  {
+    "CauHoi": "Question 171. Following media criticism ____________ the Defense Secretary's performance, the President today spoke in his defense at a special press conference.",
+    "DichCauHoi": "Câu hỏi 171. Sau những lời chỉ trích của giới truyền thông ____________ hiệu suất của Bộ trưởng Quốc phòng, Tổng thống hôm nay đã lên tiếng bảo vệ ông tại một cuộc họp báo đặc biệt.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "(A) at",
+        "Dich": "tại"
+      },
+      {
+        "TraLoi": "(B) of",
+        "Dich": "của"
+      },
+      {
+        "TraLoi": "(C) for",
+        "Dich": "cho"
+      },
+      {
+        "TraLoi": "(D) from",
+        "Dich": "từ"
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Cấu trúc 'criticism of' có nghĩa là 'lời chỉ trích về'. Đây là giới từ chính xác để sử dụng trong ngữ cảnh này."
   }
 ]
+
 
