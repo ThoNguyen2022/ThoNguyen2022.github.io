@@ -1,46 +1,45 @@
 /*
-    Mã CSS chung để định dạng toàn bộ trang web.
-    Sử dụng flexbox để căn giữa nội dung theo chiều dọc và chiều ngang.
+    Loại bỏ margin và padding mặc định của body để nội dung tràn viền.
 */
 body {
     font-family: sans-serif;
     margin: 0;
+    padding: 0;
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
-    align-items: center; /* Đảm bảo container được căn giữa theo chiều dọc */
-    min-height: 100vh;
+    align-items: flex-start;
 }
 
 /*
-    Container chính của trang web.
-    Giới hạn chiều rộng và thêm box-shadow.
+    Container chính sẽ chiếm 100% chiều rộng và chiều cao, không có padding hay box-shadow.
 */
 .container {
-    width: 90%; /* Sử dụng phần trăm để thích ứng tốt hơn với màn hình */
-    max-width: 900px;
+    max-width: 100%;
+    width: 100%;
     background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước tổng thể */
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    box-sizing: border-box;
 }
 
 h2 {
     text-align: center;
     color: #333;
-    margin-bottom: 25px;
+    padding: 20px 20px 25px; /* Thêm padding ngang để tiêu đề không dính sát mép */
+    margin: 0;
 }
 
 /*
-    Ẩn nội dung quiz và đoạn văn ban đầu.
-    JavaScript sẽ thay đổi display: none thành block/flex khi cần.
+    Thêm padding cho các khối nội dung bên trong để tạo khoảng trống.
+    Sử dụng margin để tạo khoảng cách giữa các khối.
 */
 .quiz-content, .passage-content {
-    border: 1px solid #ddd;
+    border: none;
     padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    margin: 0 20px 20px; /* Thêm margin hai bên để tạo khoảng cách với mép màn hình */
     display: none;
 }
 
@@ -58,7 +57,7 @@ h2 {
 }
 
 /*
-    Định dạng cho các câu hỏi và tiêu đề
+    Định dạng cho các câu hỏi
 */
 #questionNumber {
     font-size: 1.1em;
@@ -81,7 +80,7 @@ h2 {
 }
 
 /*
-    Định dạng cho các tùy chọn trả lời.
+    Định dạng cho các tùy chọn trả lời
 */
 .options-list {
     list-style-type: none;
@@ -139,10 +138,6 @@ h2 {
     margin-left: 10px;
 }
 
-.options-list li.show-dich .dich-tra-loi {
-    display: inline;
-}
-
 /*
     Định dạng cho phần giải thích
 */
@@ -153,6 +148,7 @@ h2 {
     border-left: 4px solid #007BFF;
     border-radius: 4px;
     display: none;
+    margin: 20px; /* Thêm margin để tạo khoảng cách với các thành phần khác */
 }
 
 .explanation p {
@@ -164,22 +160,21 @@ h2 {
 }
 
 /*
-    Định dạng cho các nút điều hướng.
-    Sử dụng flex-wrap để các nút tự động xuống dòng trên màn hình nhỏ.
+    Định dạng cho các nút điều hướng
 */
 .navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Cho phép các mục tự động xuống dòng */
-    margin-top: 20px;
-    gap: 10px;
+    padding: 20px; /* Dùng padding thay cho margin */
     display: none;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .button-group, .goto-section {
     display: flex;
-    gap: 10px; /* Tăng khoảng cách giữa các nút */
+    gap: 10px;
     flex-wrap: wrap;
     align-items: center;
 }
@@ -214,7 +209,7 @@ button:hover:not(:disabled) {
 
 .goto-section input {
     padding: 10px;
-    width: 60px; /* Tăng chiều rộng input */
+    width: 60px;
     border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
@@ -222,6 +217,7 @@ button:hover:not(:disabled) {
 
 .welcome-screen {
     text-align: center;
+    padding: 20px;
 }
 
 .welcome-screen h3 {
@@ -236,9 +232,6 @@ button:hover:not(:disabled) {
     Media Queries để tối ưu trên màn hình nhỏ
 */
 @media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
     .navigation {
         flex-direction: column;
         align-items: stretch;
