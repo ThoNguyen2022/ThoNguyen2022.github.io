@@ -273,12 +273,8 @@
             const options = document.querySelectorAll('#options li');
             options.forEach(option => {
                 const radio = option.querySelector('input[type="radio"]');
-                // Làm sạch giá trị của radio và đáp án đúng
-  const cleanedRadioValue = radio.value.replace(/[().\s]/g, '');
-  const cleanedCorrectAnswer = currentQuiz.DapAn.replace(/[().\s]/g, '');
-
-  // So sánh các giá trị đã được làm sạch
-  if (cleanedRadioValue === cleanedCorrectAnswer) {
+                
+  if (radio.value === currentQuiz.DapAn) {
                     option.classList.add(isCorrect ? 'correct' : 'incorrect');
                 }
                 radio.disabled = true;
