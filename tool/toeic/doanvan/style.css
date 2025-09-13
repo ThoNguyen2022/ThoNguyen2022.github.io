@@ -1,28 +1,20 @@
-/*
-    Loại bỏ margin và padding mặc định của body để nội dung tràn viền.
-*/
 body {
     font-family: sans-serif;
-    margin: 0;
-    padding: 0;
+    margin: 20px;
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    min-height: 100vh;
 }
 
-/*
-    Container chính sẽ chiếm 100% chiều rộng và chiều cao, không có padding hay box-shadow.
-*/
 .container {
     max-width: 100%;
     width: 100%;
     background: #fff;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
-    position: relative;
-    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
