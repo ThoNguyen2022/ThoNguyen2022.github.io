@@ -1,33 +1,40 @@
 /*
-    Đây là mã CSS chung để định dạng toàn bộ trang web
-    Màu nền, phông chữ, và bố cục chính
+    Mã CSS chung để định dạng toàn bộ trang web.
+    Sử dụng flexbox để căn giữa nội dung theo chiều dọc và chiều ngang.
 */
 body {
     font-family: sans-serif;
-    margin: 20px;
+    margin: 0;
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center; /* Đảm bảo container được căn giữa theo chiều dọc */
     min-height: 100vh;
 }
+
+/*
+    Container chính của trang web.
+    Giới hạn chiều rộng và thêm box-shadow.
+*/
 .container {
+    width: 90%; /* Sử dụng phần trăm để thích ứng tốt hơn với màn hình */
     max-width: 900px;
-    width: 100%;
     background: #fff;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    position: relative;
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước tổng thể */
 }
+
 h2 {
     text-align: center;
     color: #333;
     margin-bottom: 25px;
 }
+
 /*
-    Ẩn nội dung quiz và đoạn văn ban đầu
-    JavaScript sẽ thay đổi display: none thành block/flex khi cần
+    Ẩn nội dung quiz và đoạn văn ban đầu.
+    JavaScript sẽ thay đổi display: none thành block/flex khi cần.
 */
 .quiz-content, .passage-content {
     border: 1px solid #ddd;
@@ -36,45 +43,52 @@ h2 {
     margin-bottom: 20px;
     display: none;
 }
+
 #passage-text p {
     font-size: 1.1em;
     line-height: 1.6;
     margin: 0 0 15px;
 }
+
 .passage-dich {
     font-style: italic;
     color: #666;
     margin-left: 15px;
     display: none;
 }
+
 /*
-    Định dạng cho các câu hỏi
+    Định dạng cho các câu hỏi và tiêu đề
 */
 #questionNumber {
     font-size: 1.1em;
     color: #555;
     margin-bottom: 5px;
 }
+
 #questionText {
     font-size: 1.25em;
     margin-top: 0;
     color: #007BFF;
     margin-bottom: 5px;
 }
+
 .dich-cau-hoi {
     font-style: italic;
     color: #666;
     margin-top: 0;
     display: none;
 }
+
 /*
-    Định dạng cho các tùy chọn trả lời
+    Định dạng cho các tùy chọn trả lời.
 */
 .options-list {
     list-style-type: none;
     padding: 0;
     margin-top: 15px;
 }
+
 .options-list li {
     background: #f9f9f9;
     padding: 12px;
@@ -87,9 +101,11 @@ h2 {
     align-items: center;
     position: relative;
 }
+
 .options-list li:hover {
     background-color: #f0f0f0;
 }
+
 /*
     Màu cho câu trả lời đúng và sai
 */
@@ -99,25 +115,34 @@ h2 {
     background-color: #e6f7e9;
     border-color: #28a745;
 }
+
 .options-list li.incorrect {
     color: #dc3545;
     background-color: #f8d7da;
     border-color: #dc3545;
 }
+
 .options-list input[type="radio"] {
     margin-right: 10px;
     cursor: pointer;
 }
+
 .options-list label {
     width: 100%;
     cursor: pointer;
 }
+
 .dich-tra-loi {
     font-style: italic;
     color: #888;
     display: none;
     margin-left: 10px;
 }
+
+.options-list li.show-dich .dich-tra-loi {
+    display: inline;
+}
+
 /*
     Định dạng cho phần giải thích
 */
@@ -129,33 +154,36 @@ h2 {
     border-radius: 4px;
     display: none;
 }
+
 .explanation p {
     margin: 0;
 }
+
 .explanation strong {
     color: #0056b3;
 }
+
 /*
-    Định dạng cho các nút điều hướng
+    Định dạng cho các nút điều hướng.
+    Sử dụng flex-wrap để các nút tự động xuống dòng trên màn hình nhỏ.
 */
 .navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 5px;
+    flex-wrap: wrap; /* Cho phép các mục tự động xuống dòng */
+    margin-top: 20px;
+    gap: 10px;
     display: none;
-    /* Thêm dòng này để các nhóm nút xếp chồng lên nhau theo cột */
-    flex-direction: column; 
-    gap: 2px; /* Thêm khoảng cách giữa 2 dòng */
 }
-/*
-   Thay đổi dưới đây để các nhóm nút con bên trong không tự động xuống dòng
-*/
+
 .button-group, .goto-section {
     display: flex;
-    gap: 2px;
-    flex-wrap: nowrap; /* Đảm bảo các nút trong một nhóm không xuống dòng */
+    gap: 10px; /* Tăng khoảng cách giữa các nút */
+    flex-wrap: wrap;
+    align-items: center;
 }
+
 button {
     padding: 12px 20px;
     background-color: #007BFF;
@@ -166,34 +194,57 @@ button {
     font-size: 16px;
     transition: background-color 0.2s;
 }
+
 button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
+
 button:hover:not(:disabled) {
     background-color: #0056b3;
 }
+
 #showAnswerBtn {
     background-color: #6c757d;
 }
+
 #showAnswerBtn:hover {
     background-color: #5a6268;
 }
-.goto-section {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+
 .goto-section input {
     padding: 10px;
-    width: 50px;
+    width: 60px; /* Tăng chiều rộng input */
     border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
 }
+
 .welcome-screen {
     text-align: center;
 }
+
 .welcome-screen h3 {
     margin-bottom: 20px;
+}
+
+.welcome-screen button {
+    margin: 5px;
+}
+
+/*
+    Media Queries để tối ưu trên màn hình nhỏ
+*/
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    .navigation {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .button-group, .goto-section {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
 }
