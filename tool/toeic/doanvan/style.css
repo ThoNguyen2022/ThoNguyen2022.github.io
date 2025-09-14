@@ -12,9 +12,8 @@ body {
     max-width: 100%;
     width: 100%;
     background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -28,20 +27,26 @@ h2 {
     Thêm padding cho các khối nội dung bên trong để tạo khoảng trống.
     Sử dụng margin để tạo khoảng cách giữa các khối.
 */
-.quiz-content, .passage-content {
+.passage-content {
     border: none;
     display: none;
 }
 
+.quiz-content {
+    border: none;
+    display: none;	
+    padding-left: 10px;
+	padding-right: 10px;
+}
+
 #passage-text p {
-    font-size: 0.8em;
-    line-height: 1.6;
+    margin: 0 0 2px;
 }
 
 .passage-dich {
-    font-size: 0.8em;
     font-style: italic;
     color: #666;
+    margin-left: 2px;
     display: none;
 }
 
@@ -51,12 +56,15 @@ h2 {
 #questionNumber {
     font-size: 1.1em;
     color: #555;
+    margin-bottom: 5px;
 }
 
 #questionText {
     font-size: 1.25em;
     margin-top: 0;
     color: #007BFF;
+    margin-bottom: 5px;	
+    padding-left: 10px;
 }
 
 .dich-cau-hoi {
@@ -72,10 +80,14 @@ h2 {
 .options-list {
     list-style-type: none;
     padding: 0;
+    margin-top: 15px;
 }
 
 .options-list li {
     background: #f9f9f9;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 5px;
     border: 1px solid #eee;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -105,6 +117,7 @@ h2 {
 }
 
 .options-list input[type="radio"] {
+    margin-right: 10px;
     cursor: pointer;
 }
 
@@ -117,6 +130,7 @@ h2 {
     font-style: italic;
     color: #888;
     display: none;
+    margin-left: 10px;
 }
 
 /*
@@ -144,20 +158,23 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px; /* Dùng padding thay cho margin */
     display: none;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 .button-group, .goto-section {
     display: flex;
+    gap: 10px;
     flex-wrap: wrap;
     align-items: center;
 }
 
 button {
+    padding: 12px 20px;
     background-color: #007BFF;
     color: white;
-    padding: 1px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -183,7 +200,7 @@ button:hover:not(:disabled) {
 }
 
 .goto-section input {
-    padding: 1px;
+    padding: 10px;
     width: 60px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -192,15 +209,15 @@ button:hover:not(:disabled) {
 
 .welcome-screen {
     text-align: center;
-    padding: 1px;
+    padding: 20px;
 }
 
 .welcome-screen h3 {
-    margin-bottom: 1px;
+    margin-bottom: 20px;
 }
 
 .welcome-screen button {
-    margin: 1px;
+    margin: 5px;
 }
 
 /*
