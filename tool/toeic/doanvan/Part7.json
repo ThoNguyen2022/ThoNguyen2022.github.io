@@ -322,142 +322,166 @@
   {
     "DoanVan": [
       {
-        "Cau": "Important Notice\n(To be kept posted in clear view at all times)",
-        "Dich": "Thông báo quan trọng\n(Được dán ở nơi dễ nhìn thấy bất cứ lúc nào)"
+        "Cau": "Subject: Schedule of Building Works",
+        "Dich": "Chủ đề: Lịch trình công việc xây dựng"
       },
       {
-        "Cau": "Subject: Schedule of Building Works\nNotice date: March 15th\nWritten by: Mike Connor, Chairman of the Office of Public Records",
-        "Dich": "Chủ đề: Lịch trình công việc xây dựng\nNgày thông báo: 15 tháng 3\nNgười viết: Mike Connor, Chủ tịch Văn phòng Hồ sơ Công cộng"
+        "Cau": "Notice date: March 15th",
+        "Dich": "Ngày thông báo: 15 tháng 3"
       },
       {
-        "Cau": "The Office of Public Records has been scheduled for a series of renovation works ranging from new wiring and the changing of tiles and carpets to the installation of fire preventive panels.",
-        "Dich": "Văn phòng Hồ sơ Công cộng đã được lên lịch cho một loạt các công việc cải tạo, từ việc đi dây mới, thay đổi gạch và thảm cho đến lắp đặt các tấm phòng cháy chữa cháy."
+        "Cau": "To: All employees of the Office of Public Records, From: John Miller, Chairman of the Office of Public Records",
+        "Dich": "Gửi: Tất cả nhân viên Văn phòng Hồ sơ Công cộng, Từ: John Miller, Chủ tịch Văn phòng Hồ sơ Công cộng"
       },
       {
-        "Cau": "This will be done floor by floor beginning on April 1.",
-        "Dich": "Việc này sẽ được thực hiện theo từng tầng, bắt đầu từ ngày 1 tháng 4."
+        "Cau": "The Office of Public Records has been scheduled for a series of renovation works ranging from new electrical wiring to a fresh coat of paint.",
+        "Dich": "Văn phòng Hồ sơ Công cộng đã lên lịch cho một loạt các công việc cải tạo, từ lắp đặt hệ thống dây điện mới đến sơn lại."
       },
       {
-        "Cau": "Affected personnel will be asked to relocate to an allocated space within the building.",
-        "Dich": "Nhân viên bị ảnh hưởng sẽ được yêu cầu di chuyển đến một không gian được chỉ định trong tòa nhà."
+        "Cau": "These works are expected to be done floor by floor beginning on April 1.",
+        "Dich": "Những công việc này dự kiến sẽ được thực hiện từng tầng một, bắt đầu từ ngày 1 tháng 4."
+      },
+      {
+        "Cau": "Affected offices will be temporarily relocated to another office space within the building.",
+        "Dich": "Các văn phòng bị ảnh hưởng sẽ được tạm thời di dời đến một không gian văn phòng khác trong tòa nhà."
       },
       {
         "Cau": "The affected floors, relocation schedule, and allocated space are as follows:",
-        "Dich": "Các tầng bị ảnh hưởng, lịch trình di dời và không gian được chỉ định như sau:"
+        "Dich": "Các tầng bị ảnh hưởng, lịch trình di dời và không gian được phân bổ như sau:"
+      },
+      {
+        "Cau": "Affected Floor, Allocated Period for Relocation, Allocated Space",
+        "Dich": "Tầng bị ảnh hưởng, Khoảng thời gian được phân bổ để di dời, Không gian được phân bổ"
+      },
+      {
+        "Cau": "Floor 1, April 1-10, Third Floor",
+        "Dich": "Tầng 1, 1-10 tháng 4, Tầng ba"
+      },
+      {
+        "Cau": "Floor 2, April 11-20, Third Floor",
+        "Dich": "Tầng 2, 11-20 tháng 4, Tầng ba"
+      },
+      {
+        "Cau": "Floor 3, April 21-30, Fourth Floor",
+        "Dich": "Tầng 3, 21-30 tháng 4, Tầng bốn"
+      },
+      {
+        "Cau": "Floor 4, May 1-9, Fourth Floor",
+        "Dich": "Tầng 4, 1-9 tháng 5, Tầng bốn"
+      },
+      {
+        "Cau": "Floor 5, May 10-19, Fourth Floor",
+        "Dich": "Tầng 5, 10-19 tháng 5, Tầng bốn"
       },
       {
         "Cau": "It will be necessary to make new schedule changes as unexpected delays may occur.",
         "Dich": "Sẽ cần phải thực hiện các thay đổi lịch trình mới vì những sự chậm trễ không lường trước có thể xảy ra."
       },
       {
-        "Cau": "Departments with other staff will experience temporary overcrowding.",
-        "Dich": "Các phòng ban có nhân viên khác sẽ bị quá tải tạm thời."
-      },
-      {
-        "Cau": "We urge all visitors to these offices to excuse delays and any crowding issues being faced, and also any temporary reductions to our services.",
-        "Dich": "Chúng tôi kêu gọi tất cả khách đến các văn phòng này bỏ qua sự chậm trễ và bất kỳ vấn đề quá tải nào đang phải đối mặt, cũng như bất kỳ sự cắt giảm tạm thời nào đối với dịch vụ của chúng tôi."
+        "Cau": "Departments must make sure that all office equipment and materials that will be needed during the day come during normal operating hours before and after the renovations to avoid any inconveniences.",
+        "Dich": "Các phòng ban phải đảm bảo rằng tất cả thiết bị và vật liệu văn phòng cần thiết trong ngày sẽ được mang đến trong giờ làm việc bình thường, trước và sau khi cải tạo để tránh mọi sự bất tiện."
       },
       {
         "Cau": "We want to express our thanks for your kind understanding and tolerance towards our staff during this unpleasant and inconvenient period.",
-        "Dich": "Chúng tôi muốn bày tỏ lời cảm ơn của chúng tôi vì sự thông cảm và khoan dung của bạn đối với nhân viên của chúng tôi trong giai đoạn khó chịu và bất tiện này."
+        "Dich": "Chúng tôi muốn bày tỏ lòng biết ơn của chúng tôi đối với sự thông cảm và khoan dung của bạn đối với nhân viên của chúng tôi trong giai đoạn khó chịu và bất tiện này."
       }
     ]
   },
   {
-    "CauHoi": "161. What is the purpose of the announcement?",
-    "DichCauHoi": "161. Mục đích của thông báo là gì?",
+    "CauHoi": "What is the purpose of the announcement?",
+    "DichCauHoi": "Mục đích của thông báo này là gì?",
     "CauTraLoi": [
       {
-        "TraLoi": "(A) To restrict unnecessary staff members from visiting the work area.",
-        "Dich": "Để hạn chế các nhân viên không cần thiết đến khu vực làm việc."
+        "TraLoi": "To restrict unnecessary staff members from visiting the work area",
+        "Dich": "Để hạn chế các nhân viên không cần thiết đến thăm khu vực làm việc"
       },
       {
-        "TraLoi": "(B) To provide a timetable for some office renovation work.",
-        "Dich": "Để cung cấp một lịch trình cho một số công việc cải tạo văn phòng."
+        "TraLoi": "To provide a timetable for some office renovation work",
+        "Dich": "Để cung cấp một thời gian biểu cho một số công việc cải tạo văn phòng"
       },
       {
-        "TraLoi": "(C) To thank employees for their support in the work",
+        "TraLoi": "To thank employees for their support in the work",
         "Dich": "Để cảm ơn nhân viên vì sự hỗ trợ của họ trong công việc"
       },
       {
-        "TraLoi": "(D) To prepare for an unexpected shipment delay",
-        "Dich": "Để chuẩn bị cho việc giao hàng chậm trễ không lường trước"
+        "TraLoi": "To prepare for an unexpected shipment delay",
+        "Dich": "Để chuẩn bị cho việc giao hàng bị chậm trễ không lường trước"
       }
     ],
     "DapAn": "B",
-    "GiaiThich": "Tiêu đề của thông báo là 'Schedule of Building Works' (Lịch trình công việc xây dựng) và nội dung chính mô tả chi tiết lịch trình cải tạo từng tầng. Do đó, mục đích chính là cung cấp một lịch trình cho công việc cải tạo văn phòng."
+    "GiaiThich": "Thông báo này chủ yếu cung cấp thông tin về lịch trình cải tạo văn phòng, bao gồm ngày bắt đầu, các tầng bị ảnh hưởng và lịch trình di dời."
   },
   {
-    "CauHoi": "162. Where will employees on the ground floor likely be on March 15?",
-    "DichCauHoi": "162. Các nhân viên ở tầng trệt có thể sẽ ở đâu vào ngày 15 tháng 3?",
+    "CauHoi": "Where will employees on the ground floor likely be on March 15?",
+    "DichCauHoi": "Nhân viên ở tầng trệt có khả năng sẽ ở đâu vào ngày 15 tháng 3?",
     "CauTraLoi": [
       {
-        "TraLoi": "(A) The first floor",
+        "TraLoi": "The first floor",
         "Dich": "Tầng một"
       },
       {
-        "TraLoi": "(B) The second floor",
+        "TraLoi": "The second floor",
         "Dich": "Tầng hai"
       },
       {
-        "TraLoi": "(C) The third floor",
+        "TraLoi": "The third floor",
         "Dich": "Tầng ba"
       },
       {
-        "TraLoi": "(D) The fourth floor",
+        "TraLoi": "The fourth floor",
         "Dich": "Tầng bốn"
       }
     ],
     "DapAn": "A",
-    "GiaiThich": "Thông báo được viết vào ngày 15 tháng 3 ('Notice date: March 15th'), và công việc cải tạo sẽ bắt đầu vào ngày 1 tháng 4 ('beginning on April 1.'). Do đó, vào ngày 15 tháng 3, việc cải tạo chưa bắt đầu, vì vậy nhân viên vẫn sẽ làm việc tại tầng của họ, tức là tầng một."
+    "GiaiThich": "Thông báo ghi ngày 15 tháng 3, nhưng công việc cải tạo không bắt đầu cho đến ngày 1 tháng 4. Do đó, nhân viên ở tầng trệt (tầng 1) vẫn sẽ ở tầng của họ."
   },
   {
-    "CauHoi": "163. The word 'urge' in paragraph 2, line 2 is closest in meaning to",
-    "DichCauHoi": "163. Từ 'urge' trong đoạn 2, dòng 2 có nghĩa gần nhất với",
+    "CauHoi": "The word \"urge\" in paragraph 2, line 2 is closest in meaning to",
+    "DichCauHoi": "Từ \"urge\" trong đoạn 2, dòng 2 có nghĩa gần nhất với",
     "CauTraLoi": [
       {
-        "TraLoi": "(A) influence",
+        "TraLoi": "influence",
         "Dich": "ảnh hưởng"
       },
       {
-        "TraLoi": "(B) encourage",
+        "TraLoi": "encourage",
         "Dich": "khuyến khích"
       },
       {
-        "TraLoi": "(C) support",
-        "Dich": "ủng hộ"
+        "TraLoi": "support",
+        "Dich": "hỗ trợ"
       },
       {
-        "TraLoi": "(D) command",
+        "TraLoi": "command",
         "Dich": "ra lệnh"
       }
     ],
     "DapAn": "B",
-    "GiaiThich": "Trong ngữ cảnh 'We urge all visitors... to excuse delays' (Chúng tôi kêu gọi tất cả khách...), từ 'urge' có nghĩa là khuyến khích, động viên hoặc khuyên nhủ một cách mạnh mẽ. Do đó, 'encourage' (khuyến khích) là từ có nghĩa gần nhất."
+    "GiaiThich": "Từ 'urge' trong ngữ cảnh này có nghĩa là khuyến khích hoặc thúc giục ai đó làm điều gì đó. Trong số các lựa chọn, 'encourage' (khuyến khích) là gần nghĩa nhất."
   },
   {
-    "CauHoi": "164. During which period will the employees on the fourth floor not be affected?",
-    "DichCauHoi": "164. Trong khoảng thời gian nào, nhân viên ở tầng bốn sẽ không bị ảnh hưởng?",
+    "CauHoi": "During which period will the employees on the fourth floor not be affected?",
+    "DichCauHoi": "Trong khoảng thời gian nào, nhân viên ở tầng bốn sẽ không bị ảnh hưởng?",
     "CauTraLoi": [
       {
-        "TraLoi": "(A) April 11-20",
-        "Dich": "Ngày 11-20 tháng 4"
+        "TraLoi": "April 11-20",
+        "Dich": "11-20 tháng 4"
       },
       {
-        "TraLoi": "(B) April 21-30",
-        "Dich": "Ngày 21-30 tháng 4"
+        "TraLoi": "April 21-30",
+        "Dich": "21-30 tháng 4"
       },
       {
-        "TraLoi": "(C) May 1-9",
-        "Dich": "Ngày 1-9 tháng 5"
+        "TraLoi": "May 1-9",
+        "Dich": "1-9 tháng 5"
       },
       {
-        "TraLoi": "(D) May 10-19",
-        "Dich": "Ngày 10-19 tháng 5"
+        "TraLoi": "May 10-19",
+        "Dich": "10-19 tháng 5"
       }
     ],
     "DapAn": "A",
-    "GiaiThich": "Bảng lịch trình cho thấy việc cải tạo tầng 4 sẽ diễn ra từ ngày 21-30 tháng 4. Điều này có nghĩa là trước ngày 21 tháng 4, các nhân viên ở tầng 4 sẽ không bị ảnh hưởng. Trong các lựa chọn, 'April 11-20' là khoảng thời gian duy nhất nằm hoàn toàn trước ngày 21 tháng 4."
+    "GiaiThich": "Bảng trong đoạn văn cho thấy tầng 4 sẽ bị ảnh hưởng từ ngày 1 đến ngày 9 tháng 5. Do đó, nhân viên ở tầng 4 sẽ không bị ảnh hưởng trong khoảng thời gian từ ngày 11 đến 20 tháng 4."
   },
   {
     "DoanVan": [
