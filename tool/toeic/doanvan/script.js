@@ -2,6 +2,72 @@ let quizData = [];
 let currentQuizIndex = 1;
 let currentQuestionIndex = 0;
 
+function showQuizScreen() {
+    document.getElementById('welcomeScreen').style.display = 'none';
+    document.querySelector('.quiz-content').style.display = 'block';
+    document.querySelector('.navigation').style.display = 'flex';
+}
+
+function updateQuizTitle(title) {
+    let heading = document.querySelector('.container h2');
+    if (!heading) {
+        heading = document.createElement('h2');
+        document.querySelector('.container').prepend(heading);
+    }
+    heading.textContent = 'Bài kiểm tra: ' + title;
+}
+
+async function loadQuizFile(fileName, title) {
+    try {
+        const response = await fetch(fileName);
+        if (!response.ok) {
+            throw new Error('Lỗi khi tải file ' + fileName);
+        }
+        const data = await response.json();
+        if (Array.isArray(data)) {
+			quizData = data;
+            document.getElementById('welcomeScreen').style.display = 'none';
+            document.getElementById('quizContent').style.display = 'block';
+            document.getElementById('navigationControls').style.display = 'flex';
+            renderQuiz(currentQuizIndex);
+        } else {
+            alert('File JSON không hợp lệ. Dữ liệu phải là một mảng.');
+        }
+    } catch (error) {
+        alert('Không thể tải bài kiểm tra: ' + error.message);
+        console.error('Fetch error: ', error);
+    }
+}
+
+async function loadQuizList() {
+    try {
+        const response = await fetch('quiz_list.json');
+        if (!response.ok) {
+            throw new Error('Lỗi khi tải danh sách đề thi.');
+        }
+        const listData = await response.json();
+        if (Array.isArray(listData)) {
+            const quizListContainer = document.getElementById('quizListContainer');
+            quizListContainer.innerHTML = '';
+            if (listData.length === 0) {
+                quizListContainer.innerHTML = '<p>Không có đề thi có sẵn.</p>';
+            } else {
+                listData.forEach(quiz => {
+                    const button = document.createElement('button');
+                    button.textContent = 'Làm đề ' + quiz.name;
+                    button.onclick = () => loadQuizFile(quiz.file, quiz.name);
+                    quizListContainer.appendChild(button);
+                });
+            }
+        }
+    } catch (error) {
+        alert('Không thể tải danh sách bài kiểm tra: ' + error.message);
+        console.error('Fetch error: ', error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', loadQuizList);
+
 async function startQuiz() {
     try {
         const response = await fetch('Part7.json');
