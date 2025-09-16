@@ -8,10 +8,14 @@
 <body>
     <div class="container">
         <h2>Bài kiểm tra đọc hiểu</h2>
-        <div id="welcomeScreen" class="welcome-screen">
-            <h3>Chào mừng bạn đến với bài kiểm tra.</h3>
-            <button onclick="startQuiz()">Bắt đầu</button>
-        </div>
+        <div id="welcomeScreen" class="welcome-section">
+            <h3>Chọn bài kiểm tra có sẵn hoặc tải lên file của bạn</h3>
+            <div class="welcome-buttons">
+                <div id="quizListContainer"></div>
+                <input type="file" id="jsonFile" accept=".json" style="display:none;">
+                <button onclick="document.getElementById('jsonFile').click()">Tải lên file</button>
+            </div>
+        </div>
         <div id="quizScreen">
 			<div class="navigation" id="navigationControls">
 				<div class="button-group">
