@@ -1,10 +1,26 @@
 [
   {
     "name": "Đề mặc định",
-    "file": "data.json"
+    "file": "data/data.json"
   },
   {
-    "name": "Full part 7",
-    "file": "Part7.json"
+    "name": "Part 7",
+    "file": "data/Part7.json"
+  },
+  {
+    "name": "Part_3_1",
+    "file": "data/Part_3_1.json"
+  },
+  {
+    "name": "Part_3_2",
+    "file": "data/Part_3_2.json"
+  },
+  {
+    "name": "Part_4_1",
+    "file": "data/Part_4_1.json"
+  },
+  {
+    "name": "Part_4_2",
+    "file": "data/Part_4_2.json"
   }
 ]
