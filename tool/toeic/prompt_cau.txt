@@ -5,10 +5,11 @@ JSON
     "CauHoi": "[Original Question Text]",
     "DichCauHoi": "[Vietnamese Translation of the Question]",
     "CauTraLoi": [
-        { "TraLoi": "[Original Option Text]", "Dich": "[Vietnamese Translation of the Option]" },
+        { "TraLoi": "A. [Original Option Text]", "Dich": "[Vietnamese Translation of the Option]" },
+        { "TraLoi": "B. [Original Option Text]", "Dich": "[Vietnamese Translation of the Option]" },
         ...
     ],
-    "DapAn": "[Correct Option Letter (e.g., A, B, C)]",
+    "DapAn": "[Correct Option Letter (e.g., A, B, C, D)]",
     "GiaiThich": "[Explanation in Vietnamese]"
 }
 ```"
