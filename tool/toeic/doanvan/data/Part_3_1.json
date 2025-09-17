@@ -1,0 +1,834 @@
+[
+  {
+    "DoanVan": [
+      {
+        "Cau": "I'm sorry, Ma'am, but you're not allowed to be in here. This room is for hospital staff. Only, But I'm here to see Dr. McFarland, he told me to meet him in the room. At the end of the hall. He must have meant the visitors area. It's at the other end of the hallway. This is the conference room. Oh my mistake. Sorry for the mix-up.",
+        "Dich": "Tôi xin lỗi, thưa cô, nhưng cô không được phép vào đây. Căn phòng này dành cho nhân viên bệnh viện. Chỉ, Nhưng tôi ở đây để gặp Tiến sĩ McFarland, ông ấy bảo tôi gặp ông ấy trong phòng. Cuối hành lang. Hẳn là ông ấy có ý nói khu vực dành cho khách tham quan. Nó ở đầu bên kia của hành lang. Đây là phòng họp. Ôi tôi nhầm rồi. Xin lỗi vì sự nhầm lẫn."
+      }
+    ]
+  },
+  {
+    "CauHoi": "Who is allowed to use the conference room?",
+    "DichCauHoi": "Ai được phép sử dụng phòng họp?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "Visitors.",
+        "Dich": "Khách thăm."
+      },
+      {
+        "TraLoi": "Hospital patients.",
+        "Dich": "Bệnh nhân."
+      },
+      {
+        "TraLoi": "Hospital staff.",
+        "Dich": "Nhân viên bệnh viện."
+      },
+      {
+        "TraLoi": "Friends and relatives.",
+        "Dich": "Bạn bè và người thân."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Người đàn ông nói 'This room is for hospital staff. Only' (Căn phòng này chỉ dành cho nhân viên bệnh viện)."
+  },
+  {
+    "CauHoi": "Why is the woman at the hospital?",
+    "DichCauHoi": "Tại sao người phụ nữ lại ở bệnh viện?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "To visit a sick friend.",
+        "Dich": "Để thăm một người bạn bị ốm."
+      },
+      {
+        "TraLoi": "To undergo some tests.",
+        "Dich": "Để làm một vài xét nghiệm."
+      },
+      {
+        "TraLoi": "To meet a doctor.",
+        "Dich": "Để gặp một bác sĩ."
+      },
+      {
+        "TraLoi": "To attend a conference.",
+        "Dich": "Để tham dự một hội nghị."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Người phụ nữ nói 'But I'm here to see Dr. McFarland' (Nhưng tôi ở đây để gặp Tiến sĩ McFarland), cho thấy cô ấy đến gặp một bác sĩ."
+  },
+  {
+    "CauHoi": "Where most likely are the speakers?",
+    "DichCauHoi": "Người nói có khả năng ở đâu nhất?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "In the conference room.",
+        "Dich": "Trong phòng họp."
+      },
+      {
+        "TraLoi": "In the visitors' area.",
+        "Dich": "Trong khu vực dành cho khách tham quan."
+      },
+      {
+        "TraLoi": "In the hallway.",
+        "Dich": "Trong hành lang."
+      },
+      {
+        "TraLoi": "In the waiting room.",
+        "Dich": "Trong phòng chờ."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Đoạn hội thoại đề cập đến việc đi lại trong hành lang và phòng họp nằm ở cuối hành lang, cho thấy họ đang ở trong hành lang."
+  },
+  {
+    "DoanVan": [
+      {
+        "Cau": "A bunch of us are getting together after work to go and grab a bite to eat.",
+        "Dich": "Một nhóm chúng tôi đang tụ tập sau giờ làm để đi ăn một chút gì đó."
+      },
+      {
+        "Cau": "Do you want to come?",
+        "Dich": "Bạn có muốn đi cùng không?"
+      },
+      {
+        "Cau": "I'm not sure yet.",
+        "Dich": "Tôi vẫn chưa chắc chắn."
+      },
+      {
+        "Cau": "I'm waiting on a fax at the moment if it doesn't get here.",
+        "Dich": "Hiện tại tôi đang chờ một bản fax nếu nó không đến đây."
+      },
+      {
+        "Cau": "Soon, I'll have to stay late to finish my work.",
+        "Dich": "Sớm thôi, tôi sẽ phải ở lại muộn để hoàn thành công việc của mình."
+      },
+      {
+        "Cau": "All right.",
+        "Dich": "Được rồi."
+      },
+      {
+        "Cau": "Just call me and let me know.",
+        "Dich": "Chỉ cần gọi cho tôi và cho tôi biết."
+      },
+      {
+        "Cau": "I will, but if you haven't heard from me by six o'clock, you can probably count me out.",
+        "Dich": "Tôi sẽ làm vậy, nhưng nếu bạn chưa nhận được tin tức gì từ tôi trước sáu giờ, bạn có thể coi như tôi không tham gia."
+      }
+    ]
+  },
+  {
+    "CauHoi": "Where is everyone most likely to go after work?",
+    "DichCauHoi": "Mọi người có khả năng sẽ đi đâu nhất sau giờ làm?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "To a telephone shop.",
+        "Dich": "Đến một cửa hàng điện thoại."
+      },
+      {
+        "TraLoi": "To a library.",
+        "Dich": "Đến một thư viện."
+      },
+      {
+        "TraLoi": "To an office.",
+        "Dich": "Đến một văn phòng."
+      },
+      {
+        "TraLoi": "To a restaurant.",
+        "Dich": "Đến một nhà hàng."
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Đoạn hội thoại đề cập đến việc 'grab a bite to eat' (đi ăn một chút gì đó), điều này có nghĩa là họ sẽ đi đến một nhà hàng."
+  },
+  {
+    "CauHoi": "Why isn't the woman sure if she can join them?",
+    "DichCauHoi": "Tại sao người phụ nữ không chắc chắn liệu cô ấy có thể tham gia cùng họ không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "She might have to work late.",
+        "Dich": "Cô ấy có thể phải làm việc muộn."
+      },
+      {
+        "TraLoi": "She has reservations at a restaurant.",
+        "Dich": "Cô ấy đã đặt chỗ tại một nhà hàng."
+      },
+      {
+        "TraLoi": "She needs to get to sleep by six o'clock.",
+        "Dich": "Cô ấy cần đi ngủ trước sáu giờ."
+      },
+      {
+        "TraLoi": "She doesn't like going out.",
+        "Dich": "Cô ấy không thích đi ra ngoài."
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Người phụ nữ nói 'I'll have to stay late to finish my work' (Tôi sẽ phải ở lại muộn để hoàn thành công việc của mình), cho thấy cô ấy có thể phải làm việc muộn."
+  },
+  {
+    "CauHoi": "How will the woman tell the man about her plan?",
+    "DichCauHoi": "Người phụ nữ sẽ nói với người đàn ông về kế hoạch của mình bằng cách nào?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "By e-mail.",
+        "Dich": "Bằng email."
+      },
+      {
+        "TraLoi": "By telephone.",
+        "Dich": "Bằng điện thoại."
+      },
+      {
+        "TraLoi": "By fax.",
+        "Dich": "Bằng fax."
+      },
+      {
+        "TraLoi": "By text message.",
+        "Dich": "Bằng tin nhắn văn bản."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Người đàn ông nói 'Just call me and let me know' (Chỉ cần gọi cho tôi và cho tôi biết), và người phụ nữ đáp lại 'I will' (Tôi sẽ làm vậy). Điều này cho thấy cô ấy sẽ sử dụng điện thoại để thông báo."
+  },
+  {
+    "DoanVan": [
+      {
+        "Cau": "to the next page. Questions 47-49. Refer to the following conversation. There are several sales reps down in the lobby right now, they're asking to speak with you. Should I send them up? No, Now's really not a good time at all. See if they can come back around three. Why are you busy right now? Don't you remember? I have to have that reports submitted to my supervisor by 2 30. Number",
+        "Dich": "sang trang tiếp theo. Câu hỏi 47-49. Tham khảo cuộc hội thoại sau. Có một vài nhân viên kinh doanh đang ở sảnh ngay bây giờ, họ đang yêu cầu được nói chuyện với anh. Tôi có nên đưa họ lên không? Không, bây giờ thực sự không phải là thời điểm tốt chút nào. Hãy xem liệu họ có thể quay lại vào khoảng ba giờ không. Tại sao bây giờ anh lại bận? Anh không nhớ à? Tôi phải nộp báo cáo đó cho sếp của tôi trước 2 rưỡi."
+      }
+    ]
+  },
+  {
+    "CauHoi": "Where are the sales reps?",
+    "DichCauHoi": "Các nhân viên kinh doanh đang ở đâu?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "In the man's office.",
+        "Dich": "Trong văn phòng của người đàn ông."
+      },
+      {
+        "TraLoi": "In the lobby.",
+        "Dich": "Trong sảnh."
+      },
+      {
+        "TraLoi": "In the supervisors office.",
+        "Dich": "Trong văn phòng của người giám sát."
+      },
+      {
+        "TraLoi": "In the waiting room.",
+        "Dich": "Trong phòng chờ."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Đoạn hội thoại nói 'There are several sales reps down in the lobby right now' (Có một vài nhân viên kinh doanh đang ở sảnh ngay bây giờ), vì vậy đáp án đúng là B."
+  },
+  {
+    "CauHoi": "When would the woman prefer to meet the sales reps?",
+    "DichCauHoi": "Người phụ nữ muốn gặp các nhân viên kinh doanh vào lúc nào?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. 2:00.",
+        "Dich": "A. 2:00."
+      },
+      {
+        "TraLoi": "B. 2:30.",
+        "Dich": "B. 2:30."
+      },
+      {
+        "TraLoi": "C. 3:00.",
+        "Dich": "C. 3:00."
+      },
+      {
+        "TraLoi": "D. 3:20.",
+        "Dich": "D. 3:20."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Người phụ nữ nói 'See if they can come back around three' (Hãy xem liệu họ có thể quay lại vào khoảng ba giờ không), vì vậy đáp án đúng là C."
+  },
+  {
+    "CauHoi": "What is the woman doing now?",
+    "DichCauHoi": "Người phụ nữ đang làm gì bây giờ?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Talking to her supervisor.",
+        "Dich": "A. Nói chuyện với người giám sát của cô ấy."
+      },
+      {
+        "TraLoi": "B. Writing a report.",
+        "Dich": "B. Viết một báo cáo."
+      },
+      {
+        "TraLoi": "C. Meeting with some sales reps.",
+        "Dich": "C. Gặp gỡ một vài nhân viên kinh doanh."
+      },
+      {
+        "TraLoi": "D. Forgetting an appointment.",
+        "Dich": "D. Quên một cuộc hẹn."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Người phụ nữ nói 'I have to have that reports submitted to my supervisor by 2 30' (Tôi phải nộp báo cáo đó cho sếp của tôi trước 2 rưỡi), vì vậy cô ấy đang bận viết báo cáo. Đáp án đúng là B."
+  },
+  {
+    "DoanVan": [
+      {
+        "Cau": "Questions. 50 through 52. Refer to the following conversation. Hi. There, would it be possible to speak to the manager right now? I'm afraid not he's out at the moment and we're not expecting him back for a while. Is there anything that I can help you with? I was wondering if I could fill out an employment application. Certainly there's a table in the next room you can go in there if you like",
+        "Dich": "Câu hỏi 50 đến 52. Tham khảo cuộc hội thoại sau. Chào. Có thể nói chuyện với người quản lý ngay bây giờ không? Tôi e là không, anh ấy hiện đang ra ngoài và chúng tôi không mong đợi anh ấy quay lại trong một thời gian. Tôi có thể giúp gì cho bạn không? Tôi đang tự hỏi liệu tôi có thể điền vào đơn xin việc không. Chắc chắn rồi, có một cái bàn ở phòng bên cạnh, bạn có thể vào đó nếu muốn."
+      }
+    ]
+  },
+  {
+    "CauHoi": "Who most likely is the woman?",
+    "DichCauHoi": "Người phụ nữ có khả năng là ai nhất?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. A manager.",
+        "Dich": "A. Một người quản lý."
+      },
+      {
+        "TraLoi": "B. A secretary.",
+        "Dich": "B. Một thư ký."
+      },
+      {
+        "TraLoi": "C. A career counselor.",
+        "Dich": "C. Một cố vấn nghề nghiệp."
+      },
+      {
+        "TraLoi": "D. A real estate agent.",
+        "Dich": "D. Một nhân viên bất động sản."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Người phụ nữ trả lời điện thoại, biết người quản lý không có mặt và có thể giúp đỡ người đàn ông, những điều này phù hợp với vai trò của một thư ký. Đáp án đúng là B."
+  },
+  {
+    "CauHoi": "Why did the man want to see the manager?",
+    "DichCauHoi": "Tại sao người đàn ông muốn gặp người quản lý?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. To book a table.",
+        "Dich": "A. Để đặt bàn."
+      },
+      {
+        "TraLoi": "B. To lodge a complaint.",
+        "Dich": "B. Để đưa ra một khiếu nại."
+      },
+      {
+        "TraLoi": "C. To apply for a job.",
+        "Dich": "C. Để nộp đơn xin việc."
+      },
+      {
+        "TraLoi": "D. To sell him a product.",
+        "Dich": "D. Để bán cho anh ấy một sản phẩm."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Người đàn ông nói 'I was wondering if I could fill out an employment application' (Tôi đang tự hỏi liệu tôi có thể điền vào đơn xin việc không), vì vậy anh ấy muốn nộp đơn xin việc. Đáp án đúng là C."
+  },
+  {
+    "CauHoi": "What does the woman tell the man to do?",
+    "DichCauHoi": "Người phụ nữ bảo người đàn ông làm gì?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Come back later.",
+        "Dich": "A. Quay lại sau."
+      },
+      {
+        "TraLoi": "B. Speak to the manager.",
+        "Dich": "B. Nói chuyện với người quản lý."
+      },
+      {
+        "TraLoi": "C. Go into the next room.",
+        "Dich": "C. Đi vào phòng bên cạnh."
+      },
+      {
+        "TraLoi": "D. Wait in the hallway.",
+        "Dich": "D. Chờ trong hành lang."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Người phụ nữ nói 'Certainly there's a table in the next room you can go in there if you like' (Chắc chắn rồi, có một cái bàn ở phòng bên cạnh, bạn có thể vào đó nếu muốn), vì vậy cô ấy bảo anh ta đi vào phòng bên cạnh. Đáp án đúng là C."
+  },
+  {
+    "DoanVan": [
+      {
+        "Cau": "Tell the man to do. Questions. 53-55, refer to the following conversation. I'm going to go to that big bookstore later on today. Oh, the one that just opened up around the corner opposite the florist. Yes, I need to find a book on Italian cooking. I promised my girlfriend, I'd make her a pastor dinner. This Thursday, I need to pick up a book on personal computer computers. Would it be a ride if I came with you? Number 53",
+        "Dich": "Bảo người đàn ông làm gì. Câu hỏi 53-55, tham khảo cuộc hội thoại sau. Hôm nay tôi sẽ đi đến hiệu sách lớn đó sau. Ồ, cái mới mở ở góc đối diện tiệm hoa à. Vâng, tôi cần tìm một cuốn sách về nấu ăn Ý. Tôi đã hứa với bạn gái của tôi, tôi sẽ làm cho cô ấy một bữa tối. Thứ Năm này, tôi cần lấy một cuốn sách về máy tính cá nhân. Liệu có được không nếu tôi đi cùng bạn?"
+      }
+    ]
+  },
+  {
+    "CauHoi": "Where is the man going?",
+    "DichCauHoi": "Người đàn ông đang đi đâu?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. To a computer store.",
+        "Dich": "A. Đến một cửa hàng máy tính."
+      },
+      {
+        "TraLoi": "B. To a bookstore.",
+        "Dich": "B. Đến một hiệu sách."
+      },
+      {
+        "TraLoi": "C. To a restaurant.",
+        "Dich": "C. Đến một nhà hàng."
+      },
+      {
+        "TraLoi": "D. To a florist.",
+        "Dich": "D. Đến một tiệm hoa."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Người đàn ông nói 'I'm going to go to that big bookstore later on today' (Hôm nay tôi sẽ đi đến hiệu sách lớn đó sau). Vì vậy, đáp án đúng là B."
+  },
+  {
+    "CauHoi": "What kind of book is he interested in getting?",
+    "DichCauHoi": "Anh ấy quan tâm đến việc lấy loại sách nào?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. A book about flowers",
+        "Dich": "A. Một cuốn sách về hoa"
+      },
+      {
+        "TraLoi": "B. A book with recipes",
+        "Dich": "B. Một cuốn sách có công thức nấu ăn"
+      },
+      {
+        "TraLoi": "C. A book about Europe",
+        "Dich": "C. Một cuốn sách về châu Âu"
+      },
+      {
+        "TraLoi": "D. A book with information about computers.",
+        "Dich": "D. Một cuốn sách có thông tin về máy tính."
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Người đàn ông nói 'I need to pick up a book on personal computer computers' (Tôi cần lấy một cuốn sách về máy tính cá nhân). Vì vậy, đáp án đúng là D."
+  },
+  {
+    "CauHoi": "What does the woman want to do?",
+    "DichCauHoi": "Người phụ nữ muốn làm gì?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Go with the man.",
+        "Dich": "A. Đi cùng người đàn ông."
+      },
+      {
+        "TraLoi": "B. Get a library card.",
+        "Dich": "B. Lấy một thẻ thư viện."
+      },
+      {
+        "TraLoi": "C. Buy a computer.",
+        "Dich": "C. Mua một cái máy tính."
+      },
+      {
+        "TraLoi": "D. Pick some flowers.",
+        "Dich": "D. Hái một vài bông hoa."
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Người phụ nữ hỏi 'Would it be a ride if I came with you?' (Liệu có được không nếu tôi đi cùng bạn?), cho thấy cô ấy muốn đi cùng người đàn ông. Đáp án đúng là A."
+  },
+  {
+    "DoanVan": [
+      {
+        "Cau": "What kind of book is he interested in getting. Number 55. What does the woman want to do? Questions. 56-58 refer to the following conversation. Before you move to Miami. Did you ever work in sales? Have you had any experience at all in retail? I had a couple of part-time jobs, back in Cleveland, for the most part, I did telemarketing well, working in a record shop is a bit different. Do you know anything about music? I can't name all the new bands out there but I played the piano for eight years Number",
+        "Dich": "Loại sách nào anh ấy quan tâm đến việc lấy. Câu hỏi 55. Người phụ nữ muốn làm gì? Câu hỏi 56-58 tham khảo cuộc hội thoại sau. Trước khi bạn chuyển đến Miami. Bạn đã từng làm việc trong lĩnh vực bán hàng chưa? Bạn đã có kinh nghiệm gì trong bán lẻ chưa? Tôi đã có một vài công việc bán thời gian, ở Cleveland, phần lớn, tôi đã làm tiếp thị qua điện thoại, làm việc trong một cửa hàng băng đĩa thì hơi khác một chút. Bạn có biết gì về âm nhạc không? Tôi không thể kể tên tất cả các ban nhạc mới ngoài kia nhưng tôi đã chơi piano được tám năm."
+      }
+    ]
+  },
+  {
+    "CauHoi": "What is the woman doing?",
+    "DichCauHoi": "Người phụ nữ đang làm gì?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Selling clothes.",
+        "Dich": "A. Bán quần áo."
+      },
+      {
+        "TraLoi": "B. Applying for a job.",
+        "Dich": "B. Nộp đơn xin việc."
+      },
+      {
+        "TraLoi": "C. Playing the piano.",
+        "Dich": "C. Chơi piano."
+      },
+      {
+        "TraLoi": "D. Attending a conference.",
+        "Dich": "D. Tham dự một hội thảo."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Cuộc hội thoại xoay quanh kinh nghiệm làm việc và kỹ năng, cho thấy người phụ nữ đang phỏng vấn xin việc. Đáp án đúng là B."
+  },
+  {
+    "CauHoi": "Where is the woman originally from?",
+    "DichCauHoi": "Người phụ nữ ban đầu đến từ đâu?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Miami.",
+        "Dich": "A. Miami."
+      },
+      {
+        "TraLoi": "B. South America.",
+        "Dich": "B. Nam Mỹ."
+      },
+      {
+        "TraLoi": "C. New York.",
+        "Dich": "C. New York."
+      },
+      {
+        "TraLoi": "D. Cleveland.",
+        "Dich": "D. Cleveland."
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Người phụ nữ nói 'back in Cleveland, for the most part, I did telemarketing' (ở Cleveland, phần lớn, tôi đã làm tiếp thị qua điện thoại). Vì vậy, cô ấy đến từ Cleveland. Đáp án đúng là D."
+  },
+  {
+    "CauHoi": "What most likely is the man's job?",
+    "DichCauHoi": "Công việc của người đàn ông có khả năng là gì nhất?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Concert pianist.",
+        "Dich": "A. Nghệ sĩ dương cầm hòa nhạc."
+      },
+      {
+        "TraLoi": "B. Travel agent.",
+        "Dich": "B. Nhân viên du lịch."
+      },
+      {
+        "TraLoi": "C. Clothing designer.",
+        "Dich": "C. Nhà thiết kế quần áo."
+      },
+      {
+        "TraLoi": "D. Store manager.",
+        "Dich": "D. Quản lý cửa hàng."
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Người đàn ông hỏi về kinh nghiệm bán hàng, bán lẻ và làm việc tại cửa hàng băng đĩa, điều này cho thấy anh ta có khả năng là một quản lý cửa hàng đang phỏng vấn. Đáp án đúng là D."
+  },
+  {
+    "DoanVan": [
+      {
+        "Cau": "most likely is the man's job. Questions 59-61 refer to the following conversation. Did the technical help departments. Send you your new alarm key yet. No, corporate security has to approve everything beforehand. I probably won't get it anytime soon. Maybe you should ask your director to call and hurry them up a little I already did. Apparently, it takes half an hour to process each individual application and there are 20 people in this department alone Number",
+        "Dich": "có khả năng nhất là công việc của người đàn ông. Câu hỏi 59-61. Tham khảo cuộc hội thoại sau. Bộ phận hỗ trợ kỹ thuật. Đã gửi cho anh chìa khóa báo động mới chưa. Chưa, bộ phận an ninh công ty phải phê duyệt mọi thứ trước. Tôi có lẽ sẽ không nhận được nó sớm đâu. Có lẽ anh nên yêu cầu giám đốc của mình gọi điện và hối thúc họ một chút. Tôi đã làm rồi. Rõ ràng, phải mất nửa giờ để xử lý mỗi đơn đăng ký và chỉ riêng bộ phận này đã có 20 người."
+      }
+    ]
+  },
+  {
+    "CauHoi": "Who has to approve the request for an alarm key?",
+    "DichCauHoi": "Ai phải phê duyệt yêu cầu cấp chìa khóa báo động?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. The manager.",
+        "Dich": "A. Người quản lý."
+      },
+      {
+        "TraLoi": "B. The technical help department.",
+        "Dich": "B. Bộ phận hỗ trợ kỹ thuật."
+      },
+      {
+        "TraLoi": "C. The director.",
+        "Dich": "C. Giám đốc."
+      },
+      {
+        "TraLoi": "D. The corporate security department.",
+        "Dich": "D. Bộ phận an ninh công ty."
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Đoạn hội thoại nói 'corporate security has to approve everything beforehand' (bộ phận an ninh công ty phải phê duyệt mọi thứ trước). Vì vậy, đáp án đúng là D."
+  },
+  {
+    "CauHoi": "What does the man suggest?",
+    "DichCauHoi": "Người đàn ông đề xuất điều gì?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Going to the corporate security office.",
+        "Dich": "A. Đi đến văn phòng an ninh công ty."
+      },
+      {
+        "TraLoi": "B. Talking to the director.",
+        "Dich": "B. Nói chuyện với giám đốc."
+      },
+      {
+        "TraLoi": "C. Creating a new password.",
+        "Dich": "C. Tạo một mật khẩu mới."
+      },
+      {
+        "TraLoi": "D. Waiting.",
+        "Dich": "D. Chờ đợi."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Người đàn ông nói 'Maybe you should ask your director to call and hurry them up a little' (Có lẽ anh nên yêu cầu giám đốc của mình gọi điện và hối thúc họ một chút). Vì vậy, anh ấy đề xuất nói chuyện với giám đốc. Đáp án đúng là B."
+  },
+  {
+    "CauHoi": "How long does it take to process an application?",
+    "DichCauHoi": "Mất bao lâu để xử lý một đơn đăng ký?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. 30 minutes.",
+        "Dich": "A. 30 phút."
+      },
+      {
+        "TraLoi": "B. 1 hour.",
+        "Dich": "B. 1 giờ."
+      },
+      {
+        "TraLoi": "C. 90 minutes.",
+        "Dich": "C. 90 phút."
+      },
+      {
+        "TraLoi": "D. 2 hours.",
+        "Dich": "D. 2 giờ."
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Đoạn hội thoại nói 'it takes half an hour to process each individual application' (mất nửa giờ để xử lý mỗi đơn đăng ký). Nửa giờ là 30 phút. Vì vậy, đáp án đúng là A."
+  },
+  {
+    "DoanVan": [
+      {
+        "Cau": "does it take to process an application? Questions 62-64 refer to the following conversation. It says that it's an E4 problem. It can't be a paper jam because that's an E1, and E4 is it? That's strange. I've never encountered an E4 before. Perhaps, there's something wrong with the toner or your copies. Extremely light actually. They are I don't think we need to change the",
+        "Dich": "mất bao lâu để xử lý một đơn đăng ký? Câu hỏi 62-64 tham khảo cuộc hội thoại sau. Nó nói đó là vấn đề E4. Nó không thể là kẹt giấy vì đó là E1, còn E4 thì sao? Thật kỳ lạ. Tôi chưa bao giờ gặp E4 trước đây. Có lẽ, có gì đó không ổn với mực in hoặc bản sao của bạn. Thực tế là chúng cực kỳ nhạt. Tôi không nghĩ chúng ta cần phải thay đổi"
+      },
+      {
+        "Cau": "toner or your copies. Extremely light actually. They are I don't think we need to change the Tony yet because we just bought this one last week. Don't you have the owner's manual in your desk? The error list should be at the back of the book. Oh I see, according to the manual, there's a problem with the scanner wire that's why your copies are coming out properly. It says that we have to phone a technician and have the scanner wire",
+        "Dich": "mực in hoặc bản sao của bạn. Thực tế là chúng cực kỳ nhạt. Tôi không nghĩ chúng ta cần phải thay đổi mực in vì chúng ta vừa mua cái này vào tuần trước. Anh không có sách hướng dẫn sử dụng trong bàn làm việc à? Danh sách lỗi nên ở phía sau cuốn sách. Ồ tôi thấy, theo sách hướng dẫn, có vấn đề với dây máy quét, đó là lý do tại sao các bản sao của bạn không ra đúng. Nó nói rằng chúng ta phải gọi một kỹ thuật viên và kiểm tra dây máy quét."
+      }
+    ]
+  },
+  {
+    "CauHoi": "What's the main problem with the photocopier?",
+    "DichCauHoi": "Vấn đề chính với máy photocopy là gì?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Jammed paper.",
+        "Dich": "A. Kẹt giấy."
+      },
+      {
+        "TraLoi": "B. Not enough toner.",
+        "Dich": "B. Không đủ mực in."
+      },
+      {
+        "TraLoi": "C. Strange noise.",
+        "Dich": "C. Tiếng ồn lạ."
+      },
+      {
+        "TraLoi": "D. The scanner wire.",
+        "Dich": "D. Dây máy quét."
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Đoạn hội thoại nói 'according to the manual, there's a problem with the scanner wire' (theo sách hướng dẫn, có vấn đề với dây máy quét). Vì vậy, đáp án đúng là D."
+  },
+  {
+    "CauHoi": "What code is a paper jam?",
+    "DichCauHoi": "Mã nào là kẹt giấy?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. E1",
+        "Dich": "A. E1"
+      },
+      {
+        "TraLoi": "B. E2",
+        "Dich": "B. E2"
+      },
+      {
+        "TraLoi": "C. E3",
+        "Dich": "C. E3"
+      },
+      {
+        "TraLoi": "D. E4",
+        "Dich": "D. E4"
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Đoạn hội thoại nói 'It can't be a paper jam because that's an E1' (Nó không thể là kẹt giấy vì đó là E1). Vì vậy, đáp án đúng là A."
+  },
+  {
+    "CauHoi": "Why isn't the toner a problem?",
+    "DichCauHoi": "Tại sao mực in không phải là vấn đề?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Because there's nothing wrong with the color.",
+        "Dich": "A. Bởi vì không có gì sai với màu sắc."
+      },
+      {
+        "TraLoi": "B. Because it is an E4.",
+        "Dich": "B. Bởi vì nó là một E4."
+      },
+      {
+        "TraLoi": "C. Because the toner was just changed.",
+        "Dich": "C. Bởi vì mực in vừa được thay đổi."
+      },
+      {
+        "TraLoi": "D. Because it is a brand-new photocopier.",
+        "Dich": "D. Bởi vì đó là một máy photocopy hoàn toàn mới."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Người nói nói 'I don't think we need to change the Tony yet because we just bought this one last week' (Tôi không nghĩ chúng ta cần phải thay đổi mực in vì chúng ta vừa mua cái này vào tuần trước), ám chỉ rằng mực in còn mới. Đáp án đúng là C."
+  },
+  {
+    "DoanVan": [
+      {
+        "Cau": "the photocopier. Number 65. What code is a paper jam. Number 64. Why isn't the toner a problem? Questions. 65-67, refer to the following conversation. I see you've made some changes to interior of the restaurant while I've been away. Yes. By moving some of these tables around, we can fit more customers into the place. What about the waiters won't? They find it crowded. It doesn't seem to bother them. I haven't'ard. Any complaints from them yet Number 65, where",
+        "Dich": "máy photocopy. Câu hỏi 65. Mã kẹt giấy là gì. Câu hỏi 64. Tại sao mực in không phải là vấn đề? Câu hỏi 65-67, tham khảo cuộc hội thoại sau. Tôi thấy bạn đã thực hiện một vài thay đổi đối với nội thất của nhà hàng khi tôi vắng mặt. Vâng. Bằng cách di chuyển một số bàn này, chúng ta có thể chứa được nhiều khách hàng hơn. Còn những người phục vụ thì sao? Họ có thấy nó chật chội không? Dường như nó không làm phiền họ. Tôi chưa nghe thấy bất kỳ khiếu nại nào từ họ cả. Câu hỏi 65, ở đâu"
+      }
+    ]
+  },
+  {
+    "CauHoi": "Where do the speakers work?",
+    "DichCauHoi": "Những người nói chuyện làm việc ở đâu?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. At a furniture store.",
+        "Dich": "A. Tại một cửa hàng nội thất."
+      },
+      {
+        "TraLoi": "B. At a customs office.",
+        "Dich": "B. Tại một văn phòng hải quan."
+      },
+      {
+        "TraLoi": "C. At a restaurant.",
+        "Dich": "C. Tại một nhà hàng."
+      },
+      {
+        "TraLoi": "D. At a library.",
+        "Dich": "D. Tại một thư viện."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Cuộc hội thoại đề cập đến 'restaurant', 'tables' và 'waiters'. Vì vậy, họ làm việc tại một nhà hàng. Đáp án đúng là C."
+  },
+  {
+    "CauHoi": "Why did the woman rearrange the tables?",
+    "DichCauHoi": "Tại sao người phụ nữ sắp xếp lại các bàn?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Because they were blocking the doors.",
+        "Dich": "A. Bởi vì chúng đang chặn cửa."
+      },
+      {
+        "TraLoi": "B. To make room for more customers.",
+        "Dich": "B. Để tạo không gian cho nhiều khách hàng hơn."
+      },
+      {
+        "TraLoi": "C. To move in a new coffee machine.",
+        "Dich": "C. Để chuyển vào một máy pha cà phê mới."
+      },
+      {
+        "TraLoi": "D. To listen to complaints.",
+        "Dich": "D. Để lắng nghe khiếu nại."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Người phụ nữ nói 'By moving some of these tables around, we can fit more customers into the place' (Bằng cách di chuyển một số bàn này, chúng ta có thể chứa được nhiều khách hàng hơn). Vì vậy, đáp án đúng là B."
+  },
+  {
+    "CauHoi": "Why is the man concerned?",
+    "DichCauHoi": "Tại sao người đàn ông lo lắng?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. The waiters don't like the new arrangement.",
+        "Dich": "A. Những người phục vụ không thích cách sắp xếp mới."
+      },
+      {
+        "TraLoi": "B. There might not be enough space for employees.",
+        "Dich": "B. Có thể không đủ không gian cho nhân viên."
+      },
+      {
+        "TraLoi": "C. The business is losing money.",
+        "Dich": "C. Doanh nghiệp đang thua lỗ."
+      },
+      {
+        "TraLoi": "D. The tables are facing the wrong way.",
+        "Dich": "D. Các bàn đang quay sai hướng."
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Người đàn ông hỏi 'What about the waiters won't? They find it crowded.' (Còn những người phục vụ thì sao? Họ có thấy nó chật chội không?), thể hiện sự lo lắng về việc những người phục vụ có thích cách sắp xếp mới hay không. Đáp án đúng là A."
+  },
+  {
+    "DoanVan": [
+      {
+        "Cau": "tables? Number 67. Why is the man concerned? Questions. 68-70 refer to the following conversation. Have you seen the updated plan for the new Finance building not yet? Did they solve the problems we discussed at the last architectural review? I think so, they're going to reinforce the foundation and plan a row of trees on the north side. That sounds good. Do me a favor and fax me a copy of the plan before noon. Number 68, what are",
+        "Dich": "các bàn? Câu hỏi 67. Tại sao người đàn ông lo lắng? Câu hỏi 68-70 tham khảo cuộc hội thoại sau. Bạn đã xem kế hoạch cập nhật cho tòa nhà Tài chính mới chưa? Vẫn chưa. Họ đã giải quyết các vấn đề chúng ta đã thảo luận tại buổi xem xét kiến trúc lần trước chưa? Tôi nghĩ là có, họ sẽ gia cố nền móng và trồng một hàng cây ở phía bắc. Nghe hay đấy. Giúp tôi một việc và fax cho tôi một bản sao của kế hoạch trước buổi trưa."
+      }
+    ]
+  },
+  {
+    "CauHoi": "What are they discussing?",
+    "DichCauHoi": "Họ đang thảo luận về điều gì?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Changes to a design plan.",
+        "Dich": "A. Thay đổi một kế hoạch thiết kế."
+      },
+      {
+        "TraLoi": "B. Hiring additional staff.",
+        "Dich": "B. Thuê thêm nhân viên."
+      },
+      {
+        "TraLoi": "C. Finding an architect.",
+        "Dich": "C. Tìm một kiến trúc sư."
+      },
+      {
+        "TraLoi": "D. Planting trees.",
+        "Dich": "D. Trồng cây."
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Cuộc hội thoại đề cập đến 'the updated plan for the new Finance building' (kế hoạch cập nhật cho tòa nhà Tài chính mới) và 'problems we discussed at the last architectural review' (các vấn đề chúng ta đã thảo luận tại buổi xem xét kiến trúc lần trước), cho thấy họ đang thảo luận về những thay đổi trong kế hoạch thiết kế. Đáp án đúng là A."
+  },
+  {
+    "CauHoi": "What did they do at the architectural review?",
+    "DichCauHoi": "Họ đã làm gì tại buổi xem xét kiến trúc?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Reinforced the foundation.",
+        "Dich": "A. Gia cố nền móng."
+      },
+      {
+        "TraLoi": "B. Discussed problems.",
+        "Dich": "B. Thảo luận các vấn đề."
+      },
+      {
+        "TraLoi": "C. Faxed a report.",
+        "Dich": "C. Fax một báo cáo."
+      },
+      {
+        "TraLoi": "D. Fired the design team.",
+        "Dich": "D. Sa thải đội ngũ thiết kế."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Người đàn ông hỏi 'Did they solve the problems we discussed at the last architectural review?' (Họ đã giải quyết các vấn đề chúng ta đã thảo luận tại buổi xem xét kiến trúc lần trước chưa?). Vì vậy, tại buổi xem xét, họ đã thảo luận các vấn đề. Đáp án đúng là B."
+  },
+  {
+    "CauHoi": "What does the woman want the man to do?",
+    "DichCauHoi": "Người phụ nữ muốn người đàn ông làm gì?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Update a plan.",
+        "Dich": "A. Cập nhật một kế hoạch."
+      },
+      {
+        "TraLoi": "B. Do some landscaping.",
+        "Dich": "B. Làm một vài công việc cảnh quan."
+      },
+      {
+        "TraLoi": "C. Send her an e-mail.",
+        "Dich": "C. Gửi cho cô ấy một e-mail."
+      },
+      {
+        "TraLoi": "D. Send her a fax.",
+        "Dich": "D. Gửi cho cô ấy một bản fax."
+      }
+    ],
+    "DapAn": "D",
+    "GiaiThich": "Người phụ nữ nói 'Do me a favor and fax me a copy of the plan before noon' (Giúp tôi một việc và fax cho tôi một bản sao của kế hoạch trước buổi trưa). Vì vậy, cô ấy muốn người đàn ông gửi cho cô ấy một bản fax. Đáp án đúng là D."
+  }
+]
