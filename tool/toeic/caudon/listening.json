@@ -1,0 +1,1202 @@
+[
+  {
+    "CauHoi": "Who was the woman with Richard at the company dinner?",
+    "DichCauHoi": "Người phụ nữ đi cùng Richard tại bữa tiệc tối của công ty là ai vậy?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. That was Maryland from sales.",
+        "Dich": "A. Đó là Maryland từ phòng kinh doanh."
+      },
+      {
+        "TraLoi": "B. I really enjoyed it.",
+        "Dich": "B. Tôi đã thực sự rất thích nó."
+      },
+      {
+        "TraLoi": "C. He's in good company.",
+        "Dich": "C. Anh ấy đang ở cùng người rất tốt."
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Câu hỏi hỏi về danh tính của người phụ nữ đi cùng Richard. Đáp án A cung cấp thông tin đó một cách trực tiếp và chính xác."
+  },
+  {
+    "CauHoi": "Where can I catch a bus to the downtown area?",
+    "DichCauHoi": "Tôi có thể bắt xe buýt đến khu trung tâm ở đâu?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. You can catch a taxi there.",
+        "Dich": "A. Bạn có thể bắt một chiếc taxi ở đó."
+      },
+      {
+        "TraLoi": "B. Just around the corner.",
+        "Dich": "B. Ngay quanh góc phố thôi."
+      },
+      {
+        "TraLoi": "C. At 4:30 p.m.",
+        "Dich": "C. Vào 4:30 chiều."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi hỏi về địa điểm ('Where'). Đáp án B cung cấp một địa điểm cụ thể, 'ngay quanh góc phố', phù hợp với câu hỏi."
+  },
+  {
+    "CauHoi": "What sort of job are you interested in?",
+    "DichCauHoi": "Bạn quan tâm đến loại công việc nào?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. No, he's taking another job.",
+        "Dich": "A. Không, anh ấy đang nhận một công việc khác rồi."
+      },
+      {
+        "TraLoi": "B. I've been out of work for a long time.",
+        "Dich": "B. Tôi đã thất nghiệp một thời gian dài rồi."
+      },
+      {
+        "TraLoi": "C. Something with flexible hours.",
+        "Dich": "C. Một công việc với giờ giấc linh hoạt."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi hỏi về loại công việc mà bạn quan tâm. Đáp án C đưa ra một câu trả lời trực tiếp và phù hợp, mô tả loại công việc mong muốn."
+  },
+  {
+    "CauHoi": "Do you think I should put on a coat?",
+    "DichCauHoi": "Bạn có nghĩ tôi nên mặc áo khoác không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. No, I don't think she did.",
+        "Dich": "A. Không, tôi không nghĩ cô ấy đã làm thế."
+      },
+      {
+        "TraLoi": "B. Yeah, it's supposed to get chili later on.",
+        "Dich": "B. Ừ, trời sẽ trở lạnh hơn vào cuối ngày đấy."
+      },
+      {
+        "TraLoi": "C. Stop putting on weight.",
+        "Dich": "C. Đừng tăng cân nữa."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi hỏi xin lời khuyên về việc mặc áo khoác. Đáp án B đưa ra một lý do hợp lý để mặc áo khoác, 'trời sẽ trở lạnh hơn vào cuối ngày'."
+  },
+  {
+    "CauHoi": "Should we place an order now or break for lunch first?",
+    "DichCauHoi": "Chúng ta nên đặt hàng ngay bây giờ hay nghỉ ăn trưa trước?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. It's out of order again.",
+        "Dich": "A. Nó lại hỏng rồi."
+      },
+      {
+        "TraLoi": "B. I'd like to visit that place someday.",
+        "Dich": "B. Tôi muốn đến thăm nơi đó vào một ngày nào đó."
+      },
+      {
+        "TraLoi": "C. What don't we get the order finished.",
+        "Dich": "C. Sao chúng ta không hoàn thành đơn hàng trước?"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi đưa ra hai lựa chọn: đặt hàng ngay hay nghỉ trưa trước. Đáp án C là một gợi ý phản hồi, đề xuất hoàn thành đơn hàng trước, là một câu trả lời hợp lý."
+  },
+  {
+    "CauHoi": "When do you think the parcel will be sent out?",
+    "DichCauHoi": "Khi nào bạn nghĩ bưu kiện sẽ được gửi đi?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Yes, I think it will.",
+        "Dich": "A. Vâng, tôi nghĩ vậy."
+      },
+      {
+        "TraLoi": "B. No later than this Friday.",
+        "Dich": "B. Không muộn hơn thứ Sáu tuần này."
+      },
+      {
+        "TraLoi": "C. I'd rather send it by Korea.",
+        "Dich": "C. Tôi thà gửi nó qua Hàn Quốc."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi hỏi về thời gian ('When'). Đáp án B đưa ra một mốc thời gian cụ thể, 'không muộn hơn thứ Sáu này', phù hợp với câu hỏi."
+  },
+  {
+    "CauHoi": "Why don't we go to that new restaurant across the street for dinner?",
+    "DichCauHoi": "Sao chúng ta không đi ăn tối ở nhà hàng mới bên kia đường nhỉ?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. The meal was delicious. Thanks.",
+        "Dich": "A. Bữa ăn rất ngon. Cảm ơn."
+      },
+      {
+        "TraLoi": "B. That sounds like a great idea.",
+        "Dich": "B. Nghe có vẻ là một ý tưởng tuyệt vời."
+      },
+      {
+        "TraLoi": "C. The rest of us won't go.",
+        "Dich": "C. Những người còn lại sẽ không đi."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi là một lời đề nghị. Đáp án B thể hiện sự đồng ý và nhiệt tình với lời đề nghị đó."
+  },
+  {
+    "CauHoi": "Where am I supposed to register for the convention?",
+    "DichCauHoi": "Tôi phải đăng ký hội nghị ở đâu?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Yes, I suppose you're right.",
+        "Dich": "A. Vâng, tôi cho là bạn đúng."
+      },
+      {
+        "TraLoi": "B. You should check out the information desk.",
+        "Dich": "B. Bạn nên hỏi quầy thông tin."
+      },
+      {
+        "TraLoi": "C. That seems rather conventional.",
+        "Dich": "C. Điều đó có vẻ khá thông thường."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi hỏi về địa điểm ('Where') đăng ký hội nghị. Đáp án B đưa ra một địa điểm cụ thể để tìm thông tin, là một câu trả lời hợp lý."
+  },
+  {
+    "CauHoi": "Don't you want to go for a drink tonight?",
+    "DichCauHoi": "Bạn không muốn đi uống nước tối nay sao?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Thanks. I'll take another glass.",
+        "Dich": "A. Cảm ơn. Tôi sẽ lấy một ly khác."
+      },
+      {
+        "TraLoi": "B. No, I've got to work late.",
+        "Dich": "B. Không, tôi phải làm việc muộn."
+      },
+      {
+        "TraLoi": "C. Yes, we should go for it.",
+        "Dich": "C. Vâng, chúng ta nên đi thôi."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi là một lời mời. Đáp án B từ chối lời mời và đưa ra lý do, là một câu trả lời phù hợp nhất."
+  },
+  {
+    "CauHoi": "Who is absent from the staff meeting yesterday?",
+    "DichCauHoi": "Ai đã vắng mặt trong cuộc họp nhân viên ngày hôm qua?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Yes. We discussed quite a few issues.",
+        "Dich": "A. Vâng. Chúng tôi đã thảo luận khá nhiều vấn đề."
+      },
+      {
+        "TraLoi": "B. Jessica had a dentist appointment.",
+        "Dich": "B. Jessica có cuộc hẹn với nha sĩ."
+      },
+      {
+        "TraLoi": "C. It hasn't been sent yet.",
+        "Dich": "C. Nó vẫn chưa được gửi đi."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi hỏi về danh tính của người vắng mặt. Đáp án B cung cấp tên và lý do vắng mặt của người đó."
+  },
+  {
+    "CauHoi": "Samuel drives to work. Doesn't he.",
+    "DichCauHoi": "Samuel lái xe đi làm, phải không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. He's having trouble parking though.",
+        "Dich": "A. Mặc dù vậy, anh ấy đang gặp khó khăn khi đỗ xe."
+      },
+      {
+        "TraLoi": "B. Yes, he is very hard working.",
+        "Dich": "B. Vâng, anh ấy rất chăm chỉ."
+      },
+      {
+        "TraLoi": "C. Did you check the train schedule.",
+        "Dich": "C. Bạn đã kiểm tra lịch trình tàu chưa?"
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Câu hỏi là một câu hỏi đuôi để xác nhận thông tin. Đáp án A gián tiếp xác nhận việc Samuel lái xe đi làm bằng cách đề cập đến một vấn đề liên quan đến việc đó, là một câu trả lời hợp lý."
+  },
+  {
+    "CauHoi": "I wonder why the turnout is so small, this time.",
+    "DichCauHoi": "Tôi tự hỏi tại sao lần này số người tham dự lại ít như vậy.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. It turned out to be true.",
+        "Dich": "A. Hóa ra đó là sự thật."
+      },
+      {
+        "TraLoi": "B. Well, we still got a few more minutes.",
+        "Dich": "B. Chà, chúng ta vẫn còn vài phút nữa mà."
+      },
+      {
+        "TraLoi": "C. No, this isn't good time for me.",
+        "Dich": "C. Không, đây không phải là thời điểm tốt cho tôi."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi là một sự thắc mắc về số lượng người tham dự. Đáp án B đưa ra một lời giải thích và trấn an rằng vẫn còn thời gian để có thêm người đến."
+  },
+  {
+    "CauHoi": "Why don't you have Mr. Lawrence organized the tour of the city.",
+    "DichCauHoi": "Sao bạn không nhờ ông Lawrence tổ chức chuyến tham quan thành phố?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. It's a non-profit organization.",
+        "Dich": "A. Đó là một tổ chức phi lợi nhuận."
+      },
+      {
+        "TraLoi": "B. I'll ask him to arrange the schedule.",
+        "Dich": "B. Tôi sẽ yêu cầu anh ấy sắp xếp lịch trình."
+      },
+      {
+        "TraLoi": "C. I don't think he did that.",
+        "Dich": "C. Tôi không nghĩ anh ấy đã làm điều đó."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi là một lời gợi ý. Đáp án B thể hiện sự chấp nhận và sẽ thực hiện theo lời gợi ý đó."
+  },
+  {
+    "CauHoi": "Have you met the new secretary yet?",
+    "DichCauHoi": "Bạn đã gặp thư ký mới chưa?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Very much. Thank you.",
+        "Dich": "A. Rất nhiều. Cảm ơn."
+      },
+      {
+        "TraLoi": "B. It's before the meeting.",
+        "Dich": "B. Nó trước cuộc họp."
+      },
+      {
+        "TraLoi": "C. We were introduced in the lounge.",
+        "Dich": "C. Chúng tôi đã được giới thiệu trong phòng chờ."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi hỏi liệu bạn đã gặp thư ký mới chưa. Đáp án C xác nhận rằng đã gặp và cho biết địa điểm."
+  },
+  {
+    "CauHoi": "You are going to the outdoor concert this weekend, aren't you?",
+    "DichCauHoi": "Bạn sẽ đi buổi hòa nhạc ngoài trời cuối tuần này, phải không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Yes. You should spend more time Outdoors.",
+        "Dich": "A. Vâng, bạn nên dành nhiều thời gian hơn ở ngoài trời."
+      },
+      {
+        "TraLoi": "B. Let me show it to you now.",
+        "Dich": "B. Hãy để tôi cho bạn xem nó ngay bây giờ."
+      },
+      {
+        "TraLoi": "C. That depends on who's conducting the orchestra.",
+        "Dich": "C. Điều đó phụ thuộc vào ai là người chỉ huy dàn nhạc."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi là một câu hỏi đuôi để xác nhận thông tin. Đáp án C đưa ra một câu trả lời có điều kiện, là một cách phản hồi hợp lý."
+  },
+  {
+    "CauHoi": "When can I expect to get the invoice?",
+    "DichCauHoi": "Khi nào tôi có thể nhận được hóa đơn?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Within two to three days.",
+        "Dich": "A. Trong vòng hai đến ba ngày."
+      },
+      {
+        "TraLoi": "B. I already got one.",
+        "Dich": "B. Tôi đã có một cái rồi."
+      },
+      {
+        "TraLoi": "C. Feel free to voice your ideas.",
+        "Dich": "C. Hãy thoải mái nói lên ý kiến của bạn."
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Câu hỏi hỏi về thời gian ('When'). Đáp án A đưa ra một khoảng thời gian cụ thể, phù hợp với câu hỏi."
+  },
+  {
+    "CauHoi": "Why don't you ask your supervisor for a letter of recommendation?",
+    "DichCauHoi": "Tại sao bạn không hỏi giám sát viên của mình xin một lá thư giới thiệu?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Oh, try the stationary shop down the street.",
+        "Dich": "A. Ồ, hãy thử đến cửa hàng văn phòng phẩm cuối phố."
+      },
+      {
+        "TraLoi": "B. Because I've been late for work three times this month.",
+        "Dich": "B. Vì tôi đã đi làm muộn ba lần trong tháng này."
+      },
+      {
+        "TraLoi": "C. I think I could do that.",
+        "Dich": "C. Tôi nghĩ tôi có thể làm điều đó."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi là một lời gợi ý. Đáp án C thể hiện sự đồng ý và khả năng thực hiện theo gợi ý đó."
+  },
+  {
+    "CauHoi": "Do you know why Ms. Riley's job interview is set for Thursday?",
+    "DichCauHoi": "Bạn có biết tại sao buổi phỏng vấn xin việc của cô Riley được sắp xếp vào thứ Năm không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. I haven't heard anything about it.",
+        "Dich": "A. Tôi chưa nghe bất cứ điều gì về nó."
+      },
+      {
+        "TraLoi": "B. Yes you can view it.",
+        "Dich": "B. Vâng, bạn có thể xem nó."
+      },
+      {
+        "TraLoi": "C. Anytime Thursday from two to three p.m.",
+        "Dich": "C. Bất cứ lúc nào vào thứ Năm từ hai đến ba giờ chiều."
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Câu hỏi hỏi về lý do. Đáp án A cho biết người trả lời không có thông tin về lý do đó, là một câu trả lời hợp lý."
+  },
+  {
+    "CauHoi": "You didn't see any pharmacies on your way to the hotel, did you?",
+    "DichCauHoi": "Bạn không thấy hiệu thuốc nào trên đường đến khách sạn, phải không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. She's on her way here.",
+        "Dich": "A. Cô ấy đang trên đường đến đây."
+      },
+      {
+        "TraLoi": "B. I haven't seen it yet.",
+        "Dich": "B. Tôi vẫn chưa xem nó."
+      },
+      {
+        "TraLoi": "C. I noticed a couple.",
+        "Dich": "C. Tôi đã để ý thấy một vài cái."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi là một câu hỏi đuôi để xác nhận thông tin. Đáp án C xác nhận rằng người đó đã nhìn thấy một vài hiệu thuốc."
+  },
+  {
+    "CauHoi": "How long is this voucher valid for?",
+    "DichCauHoi": "Phiếu mua hàng này có giá trị trong bao lâu?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Yes, long enough.",
+        "Dich": "A. Vâng, đủ lâu."
+      },
+      {
+        "TraLoi": "B. For a month.",
+        "Dich": "B. Trong một tháng."
+      },
+      {
+        "TraLoi": "C. 20 off the regular price.",
+        "Dich": "C. Giảm 20% so với giá thông thường."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi hỏi về thời gian hiệu lực ('How long'). Đáp án B đưa ra một khoảng thời gian cụ thể, phù hợp với câu hỏi."
+  },
+  {
+    "CauHoi": "We have way too much work to get done today.",
+    "DichCauHoi": "Hôm nay chúng ta có quá nhiều việc phải làm.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. They're coming all the way from the West Coast.",
+        "Dich": "A. Họ đến từ Bờ Tây."
+      },
+      {
+        "TraLoi": "B. Don't worry about it. We'll get through it.",
+        "Dich": "B. Đừng lo lắng. Chúng ta sẽ vượt qua thôi."
+      },
+      {
+        "TraLoi": "C. I work out every morning to keep in shape.",
+        "Dich": "C. Tôi tập thể dục mỗi sáng để giữ dáng."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu nói là một lời than phiền về khối lượng công việc. Đáp án B đưa ra một lời động viên và trấn an phù hợp."
+  },
+  {
+    "CauHoi": "Would you care for a cup of coffee after the conference?",
+    "DichCauHoi": "Bạn có muốn uống một tách cà phê sau hội nghị không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Oh, she's going to take care of everything.",
+        "Dich": "A. Ồ, cô ấy sẽ lo mọi thứ."
+      },
+      {
+        "TraLoi": "B. No, I miss the conference.",
+        "Dich": "B. Không, tôi đã bỏ lỡ hội nghị."
+      },
+      {
+        "TraLoi": "C. That would be nice. Thanks.",
+        "Dich": "C. Điều đó thật tuyệt. Cảm ơn."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi là một lời mời lịch sự. Đáp án C thể hiện sự chấp nhận lời mời một cách lịch sự."
+  },
+  {
+    "CauHoi": "Hasn't he been interviewed on the radio before?",
+    "DichCauHoi": "Anh ấy đã từng được phỏng vấn trên đài phát thanh trước đây rồi phải không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Yes, but I don't remember exactly when.",
+        "Dich": "A. Vâng nhưng tôi không nhớ chính xác là khi nào."
+      },
+      {
+        "TraLoi": "B. I'm looking for a mountain view room.",
+        "Dich": "B. Tôi đang tìm một phòng có view núi."
+      },
+      {
+        "TraLoi": "C. No, we should turn the dial on the left.",
+        "Dich": "C. Không, chúng ta nên vặn nút bên trái."
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Câu hỏi là một câu hỏi phủ định để xác nhận. Đáp án A xác nhận sự việc đã xảy ra và đưa ra thông tin bổ sung."
+  },
+  {
+    "CauHoi": "How many days of paid leave are your employees entitled to?",
+    "DichCauHoi": "Nhân viên của bạn được hưởng bao nhiêu ngày nghỉ có lương?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. No, I've never heard about that.",
+        "Dich": "A. Không, tôi chưa bao giờ nghe về điều đó."
+      },
+      {
+        "TraLoi": "B. Everyone starts with two weeks a year.",
+        "Dich": "B. Mọi người bắt đầu với hai tuần mỗi năm."
+      },
+      {
+        "TraLoi": "C. They have been out sick for five days.",
+        "Dich": "C. Họ đã nghỉ ốm năm ngày."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi hỏi về số lượng ngày nghỉ phép. Đáp án B đưa ra một con số cụ thể về số tuần nghỉ phép, là một câu trả lời hợp lý."
+  },
+  {
+    "CauHoi": "Your new manufacturing facility is scheduled to open next week, isn't it?",
+    "DichCauHoi": "Cơ sở sản xuất mới của bạn dự kiến sẽ mở cửa vào tuần tới, phải không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. I'm afraid, we're now closed.",
+        "Dich": "A. Tôi e rằng, chúng tôi đã đóng cửa rồi."
+      },
+      {
+        "TraLoi": "B. That's what we're aiming for.",
+        "Dich": "B. Đó là điều chúng tôi đang hướng tới."
+      },
+      {
+        "TraLoi": "C. It's published bi-weekly.",
+        "Dich": "C. Nó được xuất bản hai tuần một lần."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi là một câu hỏi đuôi để xác nhận. Đáp án B xác nhận lại thông tin được đưa ra trong câu hỏi."
+  },
+  {
+    "CauHoi": "Did you hear the news that Ms. We got the director position.",
+    "DichCauHoi": "Bạn có nghe tin cô We đã nhận được vị trí giám đốc không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. I don't know what position she holds there.",
+        "Dich": "A. Tôi không biết cô ấy giữ vị trí gì ở đó."
+      },
+      {
+        "TraLoi": "B. Yes. I applied for it.",
+        "Dich": "B. Vâng. Tôi đã nộp đơn xin việc đó."
+      },
+      {
+        "TraLoi": "C. Actually I don't think it's been decided.",
+        "Dich": "C. Thực ra tôi không nghĩ nó đã được quyết định."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi hỏi về một tin tức. Đáp án C phủ nhận tin tức đó và cho biết sự thật."
+  },
+  {
+    "CauHoi": "I'll be right with you.",
+    "DichCauHoi": "Tôi sẽ đến ngay với bạn đây.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Yes, you're right.",
+        "Dich": "A. Vâng, bạn nói đúng."
+      },
+      {
+        "TraLoi": "B. No, turn left at the light.",
+        "Dich": "B. Không, rẽ trái tại đèn giao thông."
+      },
+      {
+        "TraLoi": "C. Take your time. I'm in no hurry.",
+        "Dich": "C. Cứ từ từ. Tôi không vội."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Đây là một lời nói báo hiệu sẽ đến sau. Đáp án C thể hiện sự kiên nhẫn và trấn an người nói."
+  },
+  {
+    "CauHoi": "What's in that box on the counter?",
+    "DichCauHoi": "Có gì trong cái hộp trên quầy vậy?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Those are the office supplies we ordered yesterday.",
+        "Dich": "A. Đó là những vật tư văn phòng. Chúng tôi đã đặt hàng ngày hôm qua."
+      },
+      {
+        "TraLoi": "B. The yellow one with their address on it.",
+        "Dich": "B. Cái màu vàng có địa chỉ của họ trên đó."
+      },
+      {
+        "TraLoi": "C. I left it with the receptionist.",
+        "Dich": "C. Tôi đã để nó lại với nhân viên lễ tân."
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Câu hỏi hỏi về nội dung của chiếc hộp. Đáp án A đưa ra một mô tả cụ thể về nội dung đó."
+  },
+  {
+    "CauHoi": "Why haven't the contributions been taken to the local charities yet?",
+    "DichCauHoi": "Tại sao những khoản đóng góp vẫn chưa được mang đến các tổ chức từ thiện địa phương?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Through the main entrance, please.",
+        "Dich": "A. Qua lối vào chính, làm ơn."
+      },
+      {
+        "TraLoi": "B. We contributed a few weeks ago.",
+        "Dich": "B. Chúng tôi đã đóng góp vài tuần trước."
+      },
+      {
+        "TraLoi": "C. They're waiting until the end of the week to do it.",
+        "Dich": "C. Họ đang đợi đến cuối tuần để làm điều đó."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi hỏi về lý do tại sao công việc chưa được thực hiện. Đáp án C đưa ra một lý do cụ thể."
+  },
+  {
+    "CauHoi": "Is the new catalog in color or is it in black and white?",
+    "DichCauHoi": "Cuốn catalog mới là bản màu hay bản trắng đen?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Navy blue is my favorite color.",
+        "Dich": "A. Xanh hải quân là màu yêu thích của tôi."
+      },
+      {
+        "TraLoi": "B. It is printed in full colors.",
+        "Dich": "B. Nó được in đầy đủ màu sắc."
+      },
+      {
+        "TraLoi": "C. Brand new products.",
+        "Dich": "C. Các sản phẩm hoàn toàn mới."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi đưa ra hai lựa chọn. Đáp án B trả lời trực tiếp câu hỏi bằng cách xác nhận rằng cuốn catalog được in màu."
+  },
+  {
+    "CauHoi": "Who was the woman with Richard at the company dinner?",
+    "DichCauHoi": "Người phụ nữ đi cùng Richard tại bữa tiệc tối của công ty là ai?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. That was Maryland from sales.",
+        "Dich": "A. Đó là Maryland từ phòng kinh doanh."
+      },
+      {
+        "TraLoi": "B. I really enjoyed it.",
+        "Dich": "B. Tôi đã thực sự rất thích nó."
+      },
+      {
+        "TraLoi": "C. He's in good company.",
+        "Dich": "C. Anh ấy đang ở cùng người rất tốt."
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Câu hỏi hỏi về danh tính của người phụ nữ. Đáp án A cung cấp thông tin đó một cách trực tiếp."
+  },
+  {
+    "CauHoi": "Where can I catch a bus to the downtown area?",
+    "DichCauHoi": "Tôi có thể bắt xe buýt đến khu trung tâm ở đâu?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. You can catch a taxi there.",
+        "Dich": "A. Bạn có thể bắt một chiếc taxi ở đó."
+      },
+      {
+        "TraLoi": "B. Just around the corner.",
+        "Dich": "B. Ngay quanh góc phố thôi."
+      },
+      {
+        "TraLoi": "C. At 4:30 p.m.",
+        "Dich": "C. Vào 4:30 chiều."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi hỏi về địa điểm ('Where'). Đáp án B cung cấp một địa điểm cụ thể."
+  },
+  {
+    "CauHoi": "What sort of job are you interested in?",
+    "DichCauHoi": "Bạn quan tâm đến loại công việc nào?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. No, he's taking another job.",
+        "Dich": "A. Không, anh ấy đang nhận một công việc khác rồi."
+      },
+      {
+        "TraLoi": "B. I've been out of work for a long time.",
+        "Dich": "B. Tôi đã thất nghiệp một thời gian dài rồi."
+      },
+      {
+        "TraLoi": "C. Something with flexible hours.",
+        "Dich": "C. Một công việc với giờ giấc linh hoạt."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi hỏi về loại công việc mà bạn quan tâm. Đáp án C đưa ra một câu trả lời trực tiếp và phù hợp."
+  },
+  {
+    "CauHoi": "Do you think I should put on a coat?",
+    "DichCauHoi": "Bạn có nghĩ tôi nên mặc áo khoác không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. No, I don't think she did.",
+        "Dich": "A. Không, tôi không nghĩ cô ấy đã làm thế."
+      },
+      {
+        "TraLoi": "B. Yeah, it's supposed to get chili later on.",
+        "Dich": "B. Ừ, trời sẽ trở lạnh hơn vào cuối ngày đấy."
+      },
+      {
+        "TraLoi": "C. Stop putting on weight.",
+        "Dich": "C. Đừng tăng cân nữa."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi hỏi xin lời khuyên. Đáp án B đưa ra một lý do hợp lý để mặc áo khoác."
+  },
+  {
+    "CauHoi": "Should we place an order now or break for lunch first?",
+    "DichCauHoi": "Chúng ta nên đặt hàng ngay bây giờ hay nghỉ ăn trưa trước?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. It's out of order again.",
+        "Dich": "A. Nó lại hỏng rồi."
+      },
+      {
+        "TraLoi": "B. I'd like to visit that place someday.",
+        "Dich": "B. Tôi muốn đến thăm nơi đó vào một ngày nào đó."
+      },
+      {
+        "TraLoi": "C. What don't we get the order finished.",
+        "Dich": "C. Sao chúng ta không hoàn thành đơn hàng trước?"
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi đưa ra hai lựa chọn. Đáp án C là một gợi ý phản hồi, đề xuất hoàn thành đơn hàng trước."
+  },
+  {
+    "CauHoi": "When do you think the parcel will be sent out?",
+    "DichCauHoi": "Khi nào bạn nghĩ bưu kiện sẽ được gửi đi?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Yes, I think it will.",
+        "Dich": "A. Vâng, tôi nghĩ vậy."
+      },
+      {
+        "TraLoi": "B. No later than this Friday.",
+        "Dich": "B. Không muộn hơn thứ Sáu tuần này."
+      },
+      {
+        "TraLoi": "C. I'd rather send it by Korea.",
+        "Dich": "C. Tôi thà gửi nó qua Hàn Quốc."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi hỏi về thời gian ('When'). Đáp án B đưa ra một mốc thời gian cụ thể."
+  },
+  {
+    "CauHoi": "Why don't we go to that new restaurant across the street for dinner?",
+    "DichCauHoi": "Sao chúng ta không đi ăn tối ở nhà hàng mới bên kia đường nhỉ?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. The meal was delicious. Thanks.",
+        "Dich": "A. Bữa ăn rất ngon. Cảm ơn."
+      },
+      {
+        "TraLoi": "B. That sounds like a great idea.",
+        "Dich": "B. Nghe có vẻ là một ý tưởng tuyệt vời."
+      },
+      {
+        "TraLoi": "C. The rest of us won't go.",
+        "Dich": "C. Những người còn lại sẽ không đi."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi là một lời đề nghị. Đáp án B thể hiện sự đồng ý."
+  },
+  {
+    "CauHoi": "Where am I supposed to register for the convention?",
+    "DichCauHoi": "Tôi phải đăng ký hội nghị ở đâu?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Yes, I suppose you're right.",
+        "Dich": "A. Vâng, tôi cho là bạn đúng."
+      },
+      {
+        "TraLoi": "B. You should check out the information desk.",
+        "Dich": "B. Bạn nên hỏi quầy thông tin."
+      },
+      {
+        "TraLoi": "C. That seems rather conventional.",
+        "Dich": "C. Điều đó có vẻ khá thông thường."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi hỏi về địa điểm ('Where'). Đáp án B hướng dẫn người hỏi đến quầy thông tin."
+  },
+  {
+    "CauHoi": "Don't you want to go for a drink tonight?",
+    "DichCauHoi": "Bạn không muốn đi uống nước tối nay sao?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Thanks. I'll take another glass.",
+        "Dich": "A. Cảm ơn. Tôi sẽ lấy một ly khác."
+      },
+      {
+        "TraLoi": "B. No, I've got to work late.",
+        "Dich": "B. Không, tôi phải làm việc muộn."
+      },
+      {
+        "TraLoi": "C. Yes, we should go for it.",
+        "Dich": "C. Vâng, chúng ta nên đi thôi."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi là một lời mời. Đáp án B từ chối lời mời và đưa ra lý do."
+  },
+  {
+    "CauHoi": "Who is absent from the staff meeting yesterday?",
+    "DichCauHoi": "Ai đã vắng mặt trong cuộc họp nhân viên ngày hôm qua?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Yes. We discussed quite a few issues.",
+        "Dich": "A. Vâng. Chúng tôi đã thảo luận khá nhiều vấn đề."
+      },
+      {
+        "TraLoi": "B. Jessica had a dentist appointment.",
+        "Dich": "B. Jessica có cuộc hẹn với nha sĩ."
+      },
+      {
+        "TraLoi": "C. It hasn't been sent yet.",
+        "Dich": "C. Nó vẫn chưa được gửi đi."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi hỏi về danh tính của người vắng mặt. Đáp án B cung cấp tên và lý do."
+  },
+  {
+    "CauHoi": "Samuel drives to work. Doesn't he?",
+    "DichCauHoi": "Samuel lái xe đi làm, phải không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. He's having trouble parking though.",
+        "Dich": "A. Mặc dù vậy, anh ấy đang gặp khó khăn khi đỗ xe."
+      },
+      {
+        "TraLoi": "B. Yes, he is very hard working.",
+        "Dich": "B. Vâng, anh ấy rất chăm chỉ."
+      },
+      {
+        "TraLoi": "C. Did you check the train schedule?",
+        "Dich": "C. Bạn đã kiểm tra lịch trình tàu chưa?"
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Câu hỏi là một câu hỏi đuôi để xác nhận. Đáp án A gián tiếp xác nhận bằng cách đề cập đến một vấn đề liên quan đến việc lái xe."
+  },
+  {
+    "CauHoi": "I wonder why the turnout is so small, this time.",
+    "DichCauHoi": "Tôi tự hỏi tại sao lần này số người tham dự lại ít như vậy.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. It turned out to be true.",
+        "Dich": "A. Hóa ra đó là sự thật."
+      },
+      {
+        "TraLoi": "B. Well, we still got a few more minutes.",
+        "Dich": "B. Chà, chúng ta vẫn còn vài phút nữa mà."
+      },
+      {
+        "TraLoi": "C. No, this isn't a good time for me.",
+        "Dich": "C. Không, đây không phải là thời điểm tốt cho tôi."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu nói là một sự thắc mắc. Đáp án B đưa ra một lời giải thích và trấn an rằng vẫn còn thời gian."
+  },
+  {
+    "CauHoi": "Why don't you have Mr. Lawrence organized the tour of the city?",
+    "DichCauHoi": "Sao bạn không nhờ ông Lawrence tổ chức chuyến tham quan thành phố?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. It's a non-profit organization.",
+        "Dich": "A. Đó là một tổ chức phi lợi nhuận."
+      },
+      {
+        "TraLoi": "B. I'll ask him to arrange the schedule.",
+        "Dich": "B. Tôi sẽ yêu cầu anh ấy sắp xếp lịch trình."
+      },
+      {
+        "TraLoi": "C. I don't think he did that.",
+        "Dich": "C. Tôi không nghĩ anh ấy đã làm điều đó."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi là một lời gợi ý. Đáp án B thể hiện sự chấp nhận và sẽ thực hiện theo lời gợi ý đó."
+  },
+  {
+    "CauHoi": "Have you met the new secretary yet?",
+    "DichCauHoi": "Bạn đã gặp thư ký mới chưa?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Very much. Thank you.",
+        "Dich": "A. Rất nhiều. Cảm ơn."
+      },
+      {
+        "TraLoi": "B. It's before the meeting.",
+        "Dich": "B. Nó trước cuộc họp."
+      },
+      {
+        "TraLoi": "C. We were introduced in the lounge.",
+        "Dich": "C. Chúng tôi đã được giới thiệu trong phòng chờ."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi hỏi liệu bạn đã gặp thư ký mới chưa. Đáp án C xác nhận rằng đã gặp và cho biết địa điểm."
+  },
+  {
+    "CauHoi": "You are going to the outdoor concert this weekend, aren't you?",
+    "DichCauHoi": "Bạn sẽ đi buổi hòa nhạc ngoài trời cuối tuần này, phải không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Yes. You should spend more time outdoors.",
+        "Dich": "A. Vâng, bạn nên dành nhiều thời gian hơn ở ngoài trời."
+      },
+      {
+        "TraLoi": "B. Let me show it to you now.",
+        "Dich": "B. Hãy để tôi cho bạn xem nó ngay bây giờ."
+      },
+      {
+        "TraLoi": "C. That depends on who's conducting the orchestra.",
+        "Dich": "C. Điều đó phụ thuộc vào ai là người chỉ huy dàn nhạc."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi là một câu hỏi đuôi để xác nhận. Đáp án C đưa ra một câu trả lời có điều kiện, là một cách phản hồi hợp lý."
+  },
+  {
+    "CauHoi": "When can I expect to get the invoice?",
+    "DichCauHoi": "Khi nào tôi có thể nhận được hóa đơn?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Within two to three days.",
+        "Dich": "A. Trong vòng hai đến ba ngày."
+      },
+      {
+        "TraLoi": "B. I already got one.",
+        "Dich": "B. Tôi đã có một cái rồi."
+      },
+      {
+        "TraLoi": "C. Feel free to voice your ideas.",
+        "Dich": "C. Hãy thoải mái nói lên ý kiến của bạn."
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Câu hỏi hỏi về thời gian ('When'). Đáp án A đưa ra một khoảng thời gian cụ thể."
+  },
+  {
+    "CauHoi": "Why don't you ask your supervisor for a letter of recommendation?",
+    "DichCauHoi": "Tại sao bạn không hỏi giám sát viên của mình xin một lá thư giới thiệu?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Oh, try the stationary shop down the street.",
+        "Dich": "A. Ồ, hãy thử đến cửa hàng văn phòng phẩm cuối phố."
+      },
+      {
+        "TraLoi": "B. Because I've been late for work three times this month.",
+        "Dich": "B. Vì tôi đã đi làm muộn ba lần trong tháng này."
+      },
+      {
+        "TraLoi": "C. I think I could do that.",
+        "Dich": "C. Tôi nghĩ tôi có thể làm điều đó."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi là một lời gợi ý. Đáp án C thể hiện sự đồng ý và khả năng thực hiện theo gợi ý đó."
+  },
+  {
+    "CauHoi": "Do you know why Ms. Riley's job interview is set for Thursday?",
+    "DichCauHoi": "Bạn có biết tại sao buổi phỏng vấn xin việc của cô Riley được sắp xếp vào thứ Năm không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. I haven't heard anything about it.",
+        "Dich": "A. Tôi chưa nghe bất cứ điều gì về nó."
+      },
+      {
+        "TraLoi": "B. Yes you can view it.",
+        "Dich": "B. Vâng, bạn có thể xem nó."
+      },
+      {
+        "TraLoi": "C. Anytime Thursday from two to three p.m.",
+        "Dich": "C. Bất cứ lúc nào vào thứ Năm từ hai đến ba giờ chiều."
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Câu hỏi hỏi về lý do. Đáp án A cho biết người trả lời không có thông tin về lý do đó, là một câu trả lời hợp lý."
+  },
+  {
+    "CauHoi": "You didn't see any pharmacies on your way to the hotel, did you?",
+    "DichCauHoi": "Bạn không thấy hiệu thuốc nào trên đường đến khách sạn, phải không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. She's on her way here.",
+        "Dich": "A. Cô ấy đang trên đường đến đây."
+      },
+      {
+        "TraLoi": "B. I haven't seen it yet.",
+        "Dich": "B. Tôi vẫn chưa xem nó."
+      },
+      {
+        "TraLoi": "C. I noticed a couple.",
+        "Dich": "C. Tôi đã để ý thấy một vài cái."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi là một câu hỏi đuôi để xác nhận. Đáp án C xác nhận rằng người đó đã nhìn thấy một vài hiệu thuốc."
+  },
+  {
+    "CauHoi": "How long is this voucher valid for?",
+    "DichCauHoi": "Phiếu mua hàng này có giá trị trong bao lâu?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Yes, long enough.",
+        "Dich": "A. Vâng, đủ lâu."
+      },
+      {
+        "TraLoi": "B. For a month.",
+        "Dich": "B. Trong một tháng."
+      },
+      {
+        "TraLoi": "C. 20 off the regular price.",
+        "Dich": "C. Giảm 20% so với giá thông thường."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi hỏi về thời gian hiệu lực ('How long'). Đáp án B đưa ra một khoảng thời gian cụ thể."
+  },
+  {
+    "CauHoi": "We have way too much work to get done today.",
+    "DichCauHoi": "Hôm nay chúng ta có quá nhiều việc phải làm.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. They're coming all the way from the West Coast.",
+        "Dich": "A. Họ đến từ Bờ Tây."
+      },
+      {
+        "TraLoi": "B. Don't worry about it. We'll get through it.",
+        "Dich": "B. Đừng lo lắng. Chúng ta sẽ vượt qua thôi."
+      },
+      {
+        "TraLoi": "C. I work out every morning to keep in shape.",
+        "Dich": "C. Tôi tập thể dục mỗi sáng để giữ dáng."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu nói là một lời than phiền. Đáp án B đưa ra một lời động viên và trấn an."
+  },
+  {
+    "CauHoi": "Would you care for a cup of coffee after the conference?",
+    "DichCauHoi": "Bạn có muốn uống một tách cà phê sau hội nghị không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Oh, she's going to take care of everything.",
+        "Dich": "A. Ồ, cô ấy sẽ lo mọi thứ."
+      },
+      {
+        "TraLoi": "B. No, I miss the conference.",
+        "Dich": "B. Không, tôi đã bỏ lỡ hội nghị."
+      },
+      {
+        "TraLoi": "C. That would be nice. Thanks.",
+        "Dich": "C. Điều đó thật tuyệt. Cảm ơn."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi là một lời mời lịch sự. Đáp án C thể hiện sự chấp nhận lời mời."
+  },
+  {
+    "CauHoi": "Hasn't he been interviewed on the radio before?",
+    "DichCauHoi": "Anh ấy đã từng được phỏng vấn trên đài phát thanh trước đây rồi phải không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Yes, but I don't remember exactly when.",
+        "Dich": "A. Vâng nhưng tôi không nhớ chính xác là khi nào."
+      },
+      {
+        "TraLoi": "B. I'm looking for a mountain view room.",
+        "Dich": "B. Tôi đang tìm một phòng có view núi."
+      },
+      {
+        "TraLoi": "C. No, we should turn the dial on the left.",
+        "Dich": "C. Không, chúng ta nên vặn nút bên trái."
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Câu hỏi là một câu hỏi phủ định để xác nhận. Đáp án A xác nhận sự việc đã xảy ra."
+  },
+  {
+    "CauHoi": "How many days of paid leave are your employees entitled to?",
+    "DichCauHoi": "Nhân viên của bạn được hưởng bao nhiêu ngày nghỉ có lương?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. No, I've never heard about that.",
+        "Dich": "A. Không, tôi chưa bao giờ nghe về điều đó."
+      },
+      {
+        "TraLoi": "B. Everyone starts with two weeks a year.",
+        "Dich": "B. Mọi người bắt đầu với hai tuần mỗi năm."
+      },
+      {
+        "TraLoi": "C. They have been out sick for five days.",
+        "Dich": "C. Họ đã nghỉ ốm năm ngày."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi hỏi về số lượng ngày nghỉ phép. Đáp án B đưa ra một con số cụ thể."
+  },
+  {
+    "CauHoi": "Your new manufacturing facility is scheduled to open next week, isn't it?",
+    "DichCauHoi": "Cơ sở sản xuất mới của bạn dự kiến sẽ mở cửa vào tuần tới, phải không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. I'm afraid, we're now closed.",
+        "Dich": "A. Tôi e rằng, chúng tôi đã đóng cửa rồi."
+      },
+      {
+        "TraLoi": "B. That's what we're aiming for.",
+        "Dich": "B. Đó là điều chúng tôi đang hướng tới."
+      },
+      {
+        "TraLoi": "C. It's published bi-weekly.",
+        "Dich": "C. Nó được xuất bản hai tuần một lần."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi là một câu hỏi đuôi để xác nhận. Đáp án B xác nhận lại thông tin."
+  },
+  {
+    "CauHoi": "Did you hear the news that Ms. We got the director position?",
+    "DichCauHoi": "Bạn có nghe tin cô We đã nhận được vị trí giám đốc không?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. I don't know what position she holds there.",
+        "Dich": "A. Tôi không biết cô ấy giữ vị trí gì ở đó."
+      },
+      {
+        "TraLoi": "B. Yes. I applied for it.",
+        "Dich": "B. Vâng. Tôi đã nộp đơn xin việc đó."
+      },
+      {
+        "TraLoi": "C. Actually I don't think it's been decided.",
+        "Dich": "C. Thực ra tôi không nghĩ nó đã được quyết định."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi hỏi về một tin tức. Đáp án C phủ nhận tin tức đó và cho biết sự thật."
+  },
+  {
+    "CauHoi": "I'll be right with you.",
+    "DichCauHoi": "Tôi sẽ đến ngay với bạn đây.",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Yes, you're right.",
+        "Dich": "A. Vâng, bạn nói đúng."
+      },
+      {
+        "TraLoi": "B. No, turn left at the light.",
+        "Dich": "B. Không, rẽ trái tại đèn giao thông."
+      },
+      {
+        "TraLoi": "C. Take your time. I'm in no hurry.",
+        "Dich": "C. Cứ từ từ. Tôi không vội."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Đây là một câu nói báo hiệu sẽ đến sau. Đáp án C là một phản hồi lịch sự, thể hiện sự kiên nhẫn."
+  },
+  {
+    "CauHoi": "What's in that box on the counter?",
+    "DichCauHoi": "Có gì trong cái hộp trên quầy vậy?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Those are the office supplies we ordered yesterday.",
+        "Dich": "A. Đó là những vật tư văn phòng. Chúng tôi đã đặt hàng ngày hôm qua."
+      },
+      {
+        "TraLoi": "B. The yellow one with their address on it.",
+        "Dich": "B. Cái màu vàng có địa chỉ của họ trên đó."
+      },
+      {
+        "TraLoi": "C. I left it with the receptionist.",
+        "Dich": "C. Tôi đã để nó lại với nhân viên lễ tân."
+      }
+    ],
+    "DapAn": "A",
+    "GiaiThich": "Câu hỏi hỏi về nội dung của chiếc hộp. Đáp án A mô tả nội dung đó."
+  },
+  {
+    "CauHoi": "Why haven't the contributions been taken to the local charities yet?",
+    "DichCauHoi": "Tại sao những khoản đóng góp vẫn chưa được mang đến các tổ chức từ thiện địa phương?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Through the main entrance, please.",
+        "Dich": "A. Qua lối vào chính, làm ơn."
+      },
+      {
+        "TraLoi": "B. We contributed a few weeks ago.",
+        "Dich": "B. Chúng tôi đã đóng góp vài tuần trước."
+      },
+      {
+        "TraLoi": "C. They're waiting until the end of the week to do it.",
+        "Dich": "C. Họ đang đợi đến cuối tuần để làm điều đó."
+      }
+    ],
+    "DapAn": "C",
+    "GiaiThich": "Câu hỏi hỏi về lý do tại sao công việc chưa được thực hiện. Đáp án C đưa ra một lý do cụ thể."
+  },
+  {
+    "CauHoi": "Is the new catalog in color or is it in black and white?",
+    "DichCauHoi": "Cuốn catalog mới là bản màu hay bản trắng đen?",
+    "CauTraLoi": [
+      {
+        "TraLoi": "A. Navy blue is my favorite color.",
+        "Dich": "A. Xanh hải quân là màu yêu thích của tôi."
+      },
+      {
+        "TraLoi": "B. It is printed in full colors.",
+        "Dich": "B. Nó được in đầy đủ màu sắc."
+      },
+      {
+        "TraLoi": "C. Brand new products.",
+        "Dich": "C. Các sản phẩm hoàn toàn mới."
+      }
+    ],
+    "DapAn": "B",
+    "GiaiThich": "Câu hỏi đưa ra hai lựa chọn. Đáp án B trả lời trực tiếp câu hỏi bằng cách xác nhận rằng cuốn catalog được in màu."
+  }
+]
