@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App Postman</title>
+    <link rel="stylesheet" href="style.css">
+	<script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Tiêu đề và Mô tả -->
+        <div class="header text-center">
+            <h1 class="text-3xl font-bold text-gray-800">Web App Postman</h1>
+            <p class="text-gray-500 mt-2">Gửi các yêu cầu HTTP (GET, POST) và xem phản hồi.</p>
+        </div>
+
+        <!-- Phần Gửi yêu cầu -->
+        <div class="form-section">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Gửi Yêu Cầu</h2>
+            
+            <!-- CURL nhập liệu -->
+            <div class="mb-4">
+                <div class="flex items-center space-x-2">
+                    <h3 class="text-lg font-medium text-gray-600">Nhập từ cURL</h3>
+                    <button id="toggle-curl-btn" class="text-blue-500 hover:underline text-sm font-medium">Ẩn/Hiện</button>
+                </div>
+                <div id="curl-section-content" class="mt-2">
+                    <textarea id="curl-input" placeholder="Dán lệnh cURL vào đây..." class="w-full h-40 p-4 border rounded-lg resize-y focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    <button id="import-curl-btn" class="btn text-green-500 mt-2 px-4 py-2 rounded-lg font-semibold flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                        Tải từ cURL
+                    </button>
+                </div>
+            </div>
+            
+            <hr class="my-4 border-gray-300" />
+
+            <div class="flex items-center space-x-4 mb-4">
+                <!-- Dropdown Method -->
+                <select id="method" class="px-4 py-2 border rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <option value="GET">GET</option>
+                    <option value="POST">POST</option>
+                </select>
+
+                <!-- Input URL -->
+                <input type="text" id="url" placeholder="Nhập URL..." class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            </div>
+
+            <!-- Phần Headers có thể thu gọn -->
+            <div class="mb-4">
+                <div class="flex items-center cursor-pointer" id="headers-toggle">
+                    <h3 class="text-lg font-medium text-gray-600">Headers</h3>
+                    <svg id="headers-arrow" class="h-5 w-5 ml-2 transform rotate-90 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div id="headers-container" class="space-y-2 mt-2 hidden">
+                    <!-- Header rows will be added here -->
+                </div>
+                <button id="add-header-btn" class="btn text-indigo-500 mt-2 px-4 py-2 rounded-lg font-semibold flex items-center justify-center hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-9V6a1 1 0 112 0v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3z" clip-rule="evenodd" />
+                    </svg>
+                    Thêm Header
+                </button>
+            </div>
+
+            <!-- Textarea Body có thể thu gọn -->
+            <div id="body-section">
+                <div class="flex items-center cursor-pointer" id="body-toggle">
+                    <h3 class="text-lg font-medium text-gray-600">Body</h3>
+                    <svg id="body-arrow" class="h-5 w-5 ml-2 transform rotate-90 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div id="body-content" class="hidden">
+                    <textarea id="body" placeholder="Nhập body cho yêu cầu POST (JSON)..." class="w-full h-32 p-4 border rounded-lg resize-y focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                </div>
+            </div>
+
+            <!-- Nút Gửi -->
+            <button id="send-btn" class="btn btn-primary w-full mt-4 px-4 py-2 rounded-lg font-semibold flex items-center justify-center">
+                <span id="btn-text">Gửi</span>
+                <div id="loader" class="loader ml-2 hidden"></div>
+            </button>
+        </div>
+
+        <!-- Phần Phản hồi -->
+        <div class="response-section mt-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Phản Hồi</h2>
+            <div id="response-container" class="code-container">
+                <span class="text-gray-400">Phản hồi sẽ hiển thị ở đây...</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
