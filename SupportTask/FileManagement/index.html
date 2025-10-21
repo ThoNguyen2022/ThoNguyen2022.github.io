@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File management</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>C# Files</h2>
+        <input type="file" id="folderInput" webkitdirectory directory multiple />
+        <div class="button-group">
+            <button onclick="standardizeFileName()">Standardize FileName</button>
+			<button class="comment-btn" onclick="commentFiles(true)">Comment files</button>
+			<button class="uncomment-btn" onclick="commentFiles(false)">Uncomment files</button>
+        </div>
+        <p id="status">Select a folder to begin.</p>
+    </div>
+	<script src="script.js"></script>
+</body>
+</html>
