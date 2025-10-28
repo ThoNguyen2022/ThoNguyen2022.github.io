@@ -1,75 +1,120 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find Numbers</title>
+    <title>Công Ty Xây Dựng [Tên Công Ty] - Kiến Tạo Tương Lai</title>
+    <meta name="description" content="[Tên Công Ty] là đơn vị hàng đầu trong lĩnh vực xây dựng dân dụng, công nghiệp và hạ tầng. Cam kết chất lượng, tiến độ và bền vững.">
+    
+    <style>
+        /* CSS cơ bản để trang web dễ đọc */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #004d99; /* Màu xanh đậm đặc trưng của xây dựng */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #004d99;
+            border-bottom: 2px solid #ffcc00; /* Màu vàng nổi bật */
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .services ul {
+            list-style: none;
+            padding: 0;
+        }
+        .services li {
+            background: #e6f0ff;
+            margin: 5px 0;
+            padding: 10px;
+            border-left: 5px solid #004d99;
+        }
+        .contact p {
+            font-size: 1.1em;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Find Numbers</h1>
-    
-    <label for="txtNumbers">Enter Numbers (comma-separated):</label>
-    <input type="text" id="txtNumbers">
-    <br>
 
-    <label for="txtTargetSum">Enter Target Sum:</label>
-    <input type="text" id="txtTargetSum">
-    <br>
+    <header>
+        <h1>[Tên Công Ty Xây Dựng Của Bạn]</h1>
+        <p>Kiến Tạo Giá Trị Bền Vững - Chất Lượng Dựng Niềm Tin</p>
+    </header>
 
-    <button onclick="findNumbers()">Find Result</button>
-    <br>
+    <div class="container">
 
-    <label for="lstResult">Result:</label>
-    <ul id="lstResult"></ul>
+        <section class="section introduction">
+            <h2>🌍 Về Chúng Tôi</h2>
+            <p><strong>[Tên Công Ty]</strong> được thành lập vào năm [Năm Thành Lập], là một trong những đơn vị xây dựng hàng đầu tại Việt Nam, chuyên cung cấp các giải pháp tổng thể từ thiết kế, thi công đến quản lý dự án.</p>
+            <p>Với đội ngũ kỹ sư, kiến trúc sư giàu kinh nghiệm và hệ thống quản lý chất lượng tiên tiến, chúng tôi cam kết mang đến những công trình không chỉ đạt chuẩn về kỹ thuật mà còn tối ưu về mặt thẩm mỹ và công năng.</p>
+        </section>
 
-    <script>
-        function findNumbers() {
-            var numbersInput = document.getElementById('txtNumbers');
-            var targetSumInput = document.getElementById('txtTargetSum');
-            var resultContainer = document.getElementById('lstResult');
+        <section class="section services">
+            <h2>🏗️ Lĩnh Vực Hoạt Động Chính</h2>
+            <ul>
+                <li><strong>Xây Dựng Dân Dụng:</strong> Nhà ở, biệt thự, căn hộ cao cấp.</li>
+                <li><strong>Xây Dựng Công Nghiệp:</strong> Nhà xưởng, khu công nghiệp, nhà kho.</li>
+                <li><strong>Thi Công Hạ Tầng:</strong> Đường giao thông, cầu cống, hệ thống cấp thoát nước.</li>
+                <li><strong>Quản Lý Dự Án & Giám Sát:</strong> Đảm bảo tiến độ và chất lượng theo tiêu chuẩn quốc tế.</li>
+            </ul>
+        </section>
 
-            // Lấy và chuyển đổi dữ liệu nhập từ người dùng
-            var numbers = numbersInput.value.split(',').map(Number);
-            var targetSum = parseInt(targetSumInput.value);
+        <section class="section commitment">
+            <h2>🌟 Giá Trị Cốt Lõi</h2>
+            <p>Tại [Tên Công Ty], chúng tôi hoạt động dựa trên các nguyên tắc:</p>
+            <ul>
+                <li>**Chất Lượng Là Ưu Tiên:** Sử dụng vật liệu chất lượng, quy trình kiểm soát nghiêm ngặt.</li>
+                <li>**Bền Vững & An Toàn:** Đảm bảo an toàn lao động tuyệt đối và thân thiện với môi trường.</li>
+                <li>**Đổi Mới & Sáng Tạo:** Ứng dụng công nghệ BIM và các giải pháp xây dựng thông minh.</li>
+            </ul>
+        </section>
 
-            // Thực hiện thuật toán tìm kiếm
-            var result = findNumbersWithSum(numbers, targetSum);
+        <section class="section contact">
+            <h2>📞 Liên Hệ Với Chúng Tôi</h2>
+            <p>Hãy để chúng tôi kiến tạo công trình mơ ước của bạn. Liên hệ ngay để nhận tư vấn và báo giá chi tiết!</p>
+            <p>📧 Email: **lienhe@[tencongty].com**</p>
+            <p>☎️ Hotline: **[Số điện thoại của bạn]**</p>
+            <p>📍 Địa chỉ: **[Địa chỉ công ty của bạn]**</p>
+        </section>
 
-            // Hiển thị kết quả trên giao diện web
-            resultContainer.innerHTML = '';
-            result.forEach(function (num) {
-                var listItem = document.createElement('li');
-                listItem.textContent = num;
-                resultContainer.appendChild(listItem);
-            });
-        }
+    </div>
 
-        function findNumbersWithSum(numbers, targetSum) {
-            var result = [];
+    <footer>
+        &copy; 2025 [Tên Công Ty]. Bảo lưu mọi quyền.
+    </footer>
 
-            // Sắp xếp mảng để tối ưu hóa thuật toán
-            numbers.sort(function(a, b) {
-                return a - b;
-            });
-
-            function backtrack(startIndex, currentSum, currentCombination) {
-                if (currentSum === targetSum) {
-                    result.push(currentCombination.slice());
-                    return;
-                }
-
-                for (var i = startIndex; i < numbers.length; i++) {
-                    if (currentSum + numbers[i] <= targetSum) {
-                        currentCombination.push(numbers[i]);
-                        backtrack(i + 1, currentSum + numbers[i], currentCombination);
-                        currentCombination.pop();
-                    }
-                }
-            }
-
-            backtrack(0, 0, []);
-
-            return result;
-        }
-    </script>
-
-
-</body></html>
+</body>
+</html>
