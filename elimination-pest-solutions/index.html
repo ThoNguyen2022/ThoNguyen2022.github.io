@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elimination Pest Solutions</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0; /* Light background color */
+            color: #333;
+        }
+
+        /* --- OPTIMIZED HEADER TABLE (2 Columns) --- */
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed; /* Ensures column width adheres to percentage */
+        }
+
+        .logo-cell {
+            width: 35%; /* Logo column width */
+            background-color: #ffffff;
+            text-align: center;
+            vertical-align: middle; /* Vertical centering */
+            padding: 10px;
+        }
+
+        .logo-cell p {
+            margin: 0 0 5px 0;
+            font-weight: bold;
+            color: #121212;
+            font-size: 1em;
+        }
+
+        .logo-cell img {
+            max-width: 180px; /* Logo size */
+            height: auto;
+            display: block;
+            margin: 0 auto; /* Center image */
+        }
+
+        .announcement-cell {
+            width: 65%; /* Announcement column width */
+            background-color: #121212;
+            color: #ffffff;
+            text-align: center;
+            vertical-align: middle;
+            padding: 15px 10px;
+        }
+
+        .announcement-cell h2 {
+            font-size: 1.5em;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .announcement-cell strong {
+            color: #e22120; /* Red color for phone number */
+        }
+        /* --- END OPTIMIZED HEADER TABLE --- */
+
+        /* --- MAIN CONTENT BLOCK OPTIMIZATION (Image & Text) --- */
+        .content-section {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .content-section img {
+            max-width: 50%;
+            height: auto;
+            display: block;
+            flex: 1 1 50%; 
+            min-width: 300px;
+        }
+
+        .text-content {
+            /* No background color, text uses dark color */
+            color: #121212; /* Dark text color on light background */
+            padding: 25px 20px;
+            flex: 1 1 50%; 
+            min-width: 300px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .text-content h2 {
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+
+        .text-content p {
+            font-size: 1.0em;
+            line-height: 1.4;
+            max-width: 90%; 
+            margin: 0 auto;
+        }
+        /* --- END MAIN CONTENT BLOCK OPTIMIZATION --- */
+
+        /* --- FOOTER OPTIMIZATION --- */
+        footer {
+            background-color: #121212; /* Dark footer background */
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+
+        footer h3 {
+            margin: 0 0 5px 0;
+            font-size: 1em;
+        }
+
+        footer p {
+            margin: 3px 0;
+            font-size: 0.8em;
+            color: #cccccc;
+        }
+
+        /* --- INSECT CRAWLER EFFECT CSS --- */
+        .insect {
+            position: fixed; 
+            width: 30px; 
+            height: 30px;
+            z-index: 9999; 
+            /* Add transition for smooth crawling effect */
+            transition: transform 1s linear, left 1s linear, top 1s linear; 
+            
+            /* Background image is now set dynamically in JavaScript */
+            background-size: contain; 
+            background-repeat: no-repeat;
+        }
+        /* --- END INSECT CRAWLER EFFECT CSS --- */
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header-table, .logo-cell, .announcement-cell {
+                display: block; /* Stack table cells */
+                width: 100%;
+                table-layout: auto;
+            }
+            .content-section img,
+            .text-content {
+                max-width: 100%;
+                flex: 1 1 100%;
+            }
+            .content-section {
+                padding: 5px;
+            }
+            .text-content {
+                padding: 15px;
+            }
+            .announcement-cell h2 {
+                font-size: 1.2em;
+            }
+            .text-content h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="insect-container"></div> 
+
+    <header>
+        <table class="header-table">
+            <tr>
+                <td class="logo-cell">
+                    <p>Insured & Certified Professional</p>
+                    <img src="images/logo.png" alt="Elimination Pest Solutions Logo">
+                </td>
+                
+                <td class="announcement-cell">
+                    <h2>
+                        <span>Book an inspection with one of our <strong>Licenced Professional</strong>'s Today! 
+                            <br> <strong>Call: 0431 866 296</strong>
+                        </span>
+                    </h2>
+                </td>
+            </tr>
+        </table>
+    </header>
+
+    <main> 
+        <section class="content-section">
+            <img src="images/home.jpg" alt="Pest Control Image">
+            <div class="text-content">
+                <h2>We'll rid your home of pests, Guaranteed.</h2>
+                <p>As specialists in un-wanted pest removal, we understand that your home is your place of peace, so we'll treat it like our own upon arrival for your next service.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <h3>Certified License No. 5104054</h3>
+            <p>ABN 72 658 724 522</p>
+        </div>
+        
+        <p>© 2024, Elimination Pest Solutions. Australian Pest Control</p>
+    </footer>
+
+    <script>
+        // --- CẤU HÌNH ĐA CÔN TRÙNG ---
+        // LƯU Ý: Đảm bảo các tệp ảnh này tồn tại trong thư mục của bạn
+        const INSECT_IMAGES = [
+            'cockroach.png', // Gián
+            'ant.png',       // Kiến
+            'spider.png',    // Nhện
+            'fly.png'        // Ruồi
+        ];
+
+        // Số lượng côn trùng bạn muốn. Nên giảm xuống 20-50 để tối ưu hiệu suất.
+        const NUM_INSECTS = 100; 
+
+        // Function to get a random insect image path
+        function getRandomInsectImage() {
+            const randomIndex = Math.floor(Math.random() * INSECT_IMAGES.length);
+            return INSECT_IMAGES[randomIndex];
+        }
+        
+        // Create and add insects to the container
+        for (let i = 0; i < NUM_INSECTS; i++) {
+            const imagePath = getRandomInsectImage();
+            const $insectDiv = $('<div class="insect" id="insect-' + i + '"></div>');
+            
+            // Apply the specific image path inline
+            $insectDiv.css('background-image', 'url(' + imagePath + ')');
+            
+            $('#insect-container').append($insectDiv);
+        }
+
+        // Function to move the insect to a random position
+        function moveInsect(insectId) {
+            const $insect = $('#' + insectId);
+            
+            // Get viewport dimensions
+            const maxWidth = $(window).width() - $insect.width();
+            const maxHeight = $(window).height() - $insect.height();
+
+            // Random position
+            const newX = Math.random() * maxWidth;
+            const newY = Math.random() * maxHeight;
+            
+            // Get current position for angle calculation
+            const currentLeft = parseFloat($insect.css('left')) || 0;
+            const currentTop = parseFloat($insect.css('top')) || 0;
+
+            // Calculate rotation angle (direction of movement)
+            const angle = Math.atan2(newY - currentTop, newX - currentLeft) * (180 / Math.PI) + 90; 
+
+            // Apply position and rotation using the CSS transition
+            $insect.css({
+                'left': newX + 'px',
+                'top': newY + 'px',
+                'transform': 'rotate(' + angle + 'deg)'
+            });
+            
+            // Set random time for the next move (e.g., 1 to 4 seconds)
+            const randomTime = Math.random() * 3000 + 1000; 
+
+            // Repeat the function after a random time
+            setTimeout(function() {
+                moveInsect(insectId);
+            }, randomTime);
+        }
+
+        // Initialize starting position and start movement for all insects
+        $(document).ready(function() {
+            for (let i = 0; i < NUM_INSECTS; i++) {
+                // Set random initial position
+                $('#insect-' + i).css({
+                    'left': Math.random() * $(window).width() + 'px',
+                    'top': Math.random() * $(window).height() + 'px'
+                });
+                // Start movement
+                moveInsect('insect-' + i);
+            }
+        });
+    </script>
+
+</body>
+</html>
