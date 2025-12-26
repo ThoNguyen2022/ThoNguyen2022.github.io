@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily task board - PetCare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .status-completed-row { opacity: 0.5; background-color: #f1f5f9; }
+        .row-editing { background-color: #eef2ff !important; border-left: 4px solid #4f46e5; }
+        
+        /* Deadline Warning Style */
+        .deadline-overdue { background-color: #fff1f2 !important; border-left: 4px solid #ef4444; }
+        
+        th.sortable { cursor: pointer; transition: background 0.2s; position: relative; }
+        th.sortable:hover { background-color: #f1f5f9; color: #4f46e5; }
+        
+        .ticket-link { color: #4f46e5; text-decoration: none; }
+        .ticket-link:hover { text-decoration: underline; }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-[1700px] mx-auto">
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-6">
+            <div>
+                <h1 class="text-3xl font-black text-slate-900 tracking-tight">Daily task board</h1>
+                <p class="text-slate-500 font-medium italic">Task Management for PetCare Project</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <input type="file" id="importFile" class="hidden" accept=".json" onchange="importJSON(event)">
+                <button onclick="document.getElementById('importFile').click()" class="px-4 py-2 bg-white text-slate-700 border border-slate-200 rounded-lg hover:bg-slate-50 transition font-semibold text-sm shadow-sm">Import</button>
+                <button onclick="exportJSON()" class="px-4 py-2 bg-white text-slate-700 border border-slate-200 rounded-lg hover:bg-slate-50 transition font-semibold text-sm shadow-sm">Export JSON</button>
+                <button onclick="clearAll()" class="px-4 py-2 bg-red-50 text-red-600 border border-red-100 rounded-lg hover:bg-red-100 transition font-semibold text-sm">Clear Board</button>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Sidebar: Input Form -->
+            <div class="lg:col-span-3 space-y-6">
+                <div id="formContainer" class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 sticky top-8">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 id="formTitle" class="text-sm font-black flex items-center gap-2 text-slate-700 uppercase tracking-wider">New Task</h3>
+                        <button id="cancelEditBtn" onclick="resetForm()" class="hidden text-[10px] font-bold text-red-500 uppercase hover:underline">Cancel Edit</button>
+                    </div>
+                    <div class="space-y-4">
+                        <input type="hidden" id="editTaskId">
+                        <div>
+                            <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Ticket Name / URL</label>
+                            <input type="text" id="ticketName" class="w-full px-3 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none text-sm" placeholder="Jira ID or GitHub URL">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Description</label>
+                            <textarea id="description" rows="3" class="w-full px-3 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none text-sm" placeholder="Review logic..."></textarea>
+                        </div>
+                        <div class="grid grid-cols-1 gap-3">
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Assignee</label>
+                                <input list="assigneeList" id="assignee" class="w-full px-3 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none text-sm" placeholder="Name">
+                                <datalist id="assigneeList">
+                                    <option value="Thọ"><option value="Toàn"><option value="Ca">
+                                </datalist>
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Deadline Type</label>
+                                <select id="deadlineType" onchange="toggleCalendar(this.value)" class="w-full px-3 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white cursor-pointer">
+                                    <option value="today">Today</option>
+                                    <option value="week">By Friday</option>
+                                    <option value="info">FYI</option>
+                                    <option value="custom">Custom Date...</option>
+                                </select>
+                            </div>
+                            <div id="calendarContainer" class="hidden">
+                                <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Pick Date</label>
+                                <input type="date" id="customDate" class="w-full px-3 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
+                            </div>
+                        </div>
+                        <button id="submitBtn" onclick="handleTaskSubmit()" class="w-full bg-slate-800 text-white font-bold py-2.5 rounded-lg hover:bg-slate-900 transition shadow-md text-sm">
+                            Create Task
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick Paste -->
+                <div class="bg-indigo-50 p-6 rounded-2xl border border-indigo-100 shadow-sm">
+                    <h3 class="text-sm font-black mb-3 flex items-center gap-2 text-indigo-700 uppercase tracking-wider">Quick Paste</h3>
+                    <textarea id="bulkInput" rows="4" class="w-full px-3 py-2 rounded-lg border border-indigo-200 focus:ring-2 focus:ring-indigo-500 outline-none text-xs mb-3" placeholder="Thọ: Logic review: http://..."></textarea>
+                    <button onclick="processBulkInput()" class="w-full bg-indigo-600 text-white font-bold py-2 rounded-lg hover:bg-indigo-700 transition shadow-md text-xs">Add Multiple</button>
+                </div>
+            </div>
+
+            <!-- Main Table Container -->
+            <div class="lg:col-span-9">
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse min-w-[1000px]">
+                            <thead>
+                                <tr class="bg-slate-50/80 text-[11px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100">
+                                    <th class="px-6 py-4 sortable" onclick="handleSort('name')">Ticket ↕</th>
+                                    <th class="px-4 py-4">Description</th>
+                                    <th class="px-4 py-4 w-32 text-center sortable" onclick="handleSort('assignee')">Assignee ↕</th>
+                                    <th class="px-4 py-4 w-32 text-center sortable" onclick="handleSort('deadlineTs')">Deadline ↕</th>
+                                    <th class="px-4 py-4 w-36 text-center sortable" onclick="handleSort('status')">Status ↕</th>
+                                    <th class="px-4 py-4 w-40 text-center sortable" onclick="handleSort('id')">Created ↕</th>
+                                    <th class="px-6 py-4 w-12"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="taskTableBody" class="divide-y divide-slate-100"></tbody>
+                        </table>
+                    </div>
+                    <div id="emptyState" class="hidden py-32 text-center text-slate-400 font-medium">Board is empty.</div>
+                </div>
+                <div class="mt-4 flex justify-between items-center text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                    <span>* Click row to edit | Click Ticket Name to open link</span>
+                    <div id="statsCount"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let tasks = [];
+        let currentSort = { field: 'id', direction: 'desc' };
+        const STORAGE_KEY = 'daily_task_board_petcare';
+
+        window.onload = () => {
+            setDefaultDate();
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved) {
+                tasks = JSON.parse(saved);
+                renderTasks();
+            }
+        };
+
+        function setDefaultDate() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('customDate').value = today;
+        }
+
+        function toggleCalendar(val) {
+            document.getElementById('calendarContainer').classList.toggle('hidden', val !== 'custom');
+        }
+
+        function getDeadlineTimestamp(type, custom) {
+            const now = new Date();
+            now.setHours(23, 59, 59, 999);
+            if (type === 'today') return now.getTime();
+            if (type === 'week') {
+                const d = new Date();
+                const diff = (d.getDay() <= 5) ? (5 - d.getDay()) : (5 + 7 - d.getDay());
+                d.setDate(d.getDate() + diff);
+                d.setHours(23, 59, 59, 999);
+                return d.getTime();
+            }
+            if (type === 'custom' && custom) {
+                const cd = new Date(custom);
+                cd.setHours(23, 59, 59, 999);
+                return cd.getTime();
+            }
+            return 9999999999999; // FYI
+        }
+
+        function calculateDeadlineLabel(type, custom) {
+            if (type === 'today') return 'TODAY';
+            if (type === 'week') {
+                const d = new Date();
+                const diff = (d.getDay() <= 5) ? (5 - d.getDay()) : (5 + 7 - d.getDay());
+                d.setDate(d.getDate() + diff);
+                return 'FRI ' + d.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit' });
+            }
+            if (type === 'custom' && custom) {
+                const parts = custom.split('-');
+                return `${parts[2]}/${parts[1]}`;
+            }
+            return 'FYI';
+        }
+
+        function handleTaskSubmit() {
+            const editId = document.getElementById('editTaskId').value;
+            const name = document.getElementById('ticketName').value.trim();
+            const desc = document.getElementById('description').value.trim();
+            const assignee = document.getElementById('assignee').value.trim();
+            const deadlineType = document.getElementById('deadlineType').value;
+            const customDate = document.getElementById('customDate').value;
+
+            if (!name) return;
+
+            const dlTs = getDeadlineTimestamp(deadlineType, customDate);
+            const dlLabel = calculateDeadlineLabel(deadlineType, customDate);
+
+            if (editId) {
+                tasks = tasks.map(t => t.id == editId ? {
+                    ...t, name, description: desc || '-', assignee: assignee || 'TBA',
+                    deadlineType, rawCustomDate: customDate, deadlineTs: dlTs, deadlineLabel: dlLabel
+                } : t);
+                resetForm();
+            } else {
+                tasks.push({
+                    id: Date.now(),
+                    name,
+                    description: desc || '-',
+                    assignee: assignee || 'TBA',
+                    deadlineType,
+                    rawCustomDate: customDate,
+                    deadlineTs: dlTs,
+                    deadlineLabel: dlLabel,
+                    status: 'ready',
+                    createdAt: new Date().toLocaleString('en-GB', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' })
+                });
+            }
+            save();
+        }
+
+        function processBulkInput() {
+            const input = document.getElementById('bulkInput').value;
+            if (!input.trim()) return;
+            input.split('\n').forEach(line => {
+                if (!line.trim()) return;
+                const urlMatch = line.match(/(https?:\/\/[^\s]+)/);
+                const url = urlMatch ? urlMatch[0] : null;
+                let cleanLine = line.replace(/(https?:\/\/[^\s]+)/, '').trim();
+                const parts = cleanLine.split(':').map(p => p.trim());
+                
+                let assignee = 'TBA', desc = cleanLine;
+                if (parts.length >= 2) {
+                    assignee = parts[0].replace(/^\d+\.\s*/, '');
+                    desc = parts.slice(1).join(':').trim();
+                }
+
+                tasks.push({
+                    id: Date.now() + Math.random(),
+                    name: url || 'Task',
+                    description: desc || '-',
+                    assignee,
+                    deadlineType: 'today',
+                    deadlineTs: getDeadlineTimestamp('today'),
+                    deadlineLabel: 'TODAY',
+                    status: 'ready',
+                    createdAt: new Date().toLocaleString('en-GB', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' })
+                });
+            });
+            document.getElementById('bulkInput').value = '';
+            save();
+        }
+
+        function handleSort(field) {
+            if (currentSort.field === field) {
+                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.field = field;
+                currentSort.direction = 'asc';
+            }
+            renderTasks();
+        }
+
+        function renderTasks() {
+            const tbody = document.getElementById('taskTableBody');
+            const editId = document.getElementById('editTaskId').value;
+            const nowTs = new Date().setHours(0, 0, 0, 0);
+
+            if (tasks.length === 0) {
+                tbody.innerHTML = ''; document.getElementById('emptyState').classList.remove('hidden'); return;
+            }
+            document.getElementById('emptyState').classList.add('hidden');
+
+            // Sorting Logic
+            const sorted = [...tasks].sort((a, b) => {
+                // Completed always bottom
+                if (a.status === 'completed' && b.status !== 'completed') return 1;
+                if (a.status !== 'completed' && b.status === 'completed') return -1;
+
+                let valA = a[currentSort.field];
+                let valB = b[currentSort.field];
+
+                if (typeof valA === 'string') { valA = valA.toLowerCase(); valB = valB.toLowerCase(); }
+                if (valA < valB) return currentSort.direction === 'asc' ? -1 : 1;
+                if (valA > valB) return currentSort.direction === 'asc' ? 1 : -1;
+                return 0;
+            });
+
+            tbody.innerHTML = sorted.map(t => {
+                const isUrl = t.name.startsWith('http');
+                const isOverdue = t.deadlineTs < nowTs && t.status !== 'completed';
+                const isCompleted = t.status === 'completed';
+                
+                let deadlineStyle = 'text-blue-600 bg-blue-50 border-blue-100';
+                if (t.deadlineType === 'today') deadlineStyle = 'text-red-600 bg-red-50 border-red-100';
+                else if (t.deadlineType === 'week' || t.deadlineType === 'custom') deadlineStyle = 'text-amber-600 bg-amber-50 border-amber-100';
+                if (isOverdue) deadlineStyle = 'text-white bg-red-600 border-red-700';
+
+                const statusStyle = t.status === 'ready' ? 'text-slate-600 bg-slate-100' : t.status === 'processing' ? 'text-indigo-600 bg-indigo-50' : 'text-emerald-600 bg-emerald-50';
+
+				// Format Task Display Name (Remove Jira path if exists)
+                const taskDisplayName = isUrl 
+                    ? t.name.replace('https://pathwayvets.atlassian.net/browse/', '').replace(/\/$/, '') 
+                    : t.name;
+					
+				const ticketContent = isUrl 
+                    ? `<a href="${t.name}" target="_blank" onclick="event.stopPropagation()" class="ticket-link font-bold underline decoration-indigo-300">${taskDisplayName}🔗</a>` 
+                    : t.name;
+
+                return `
+                <tr onclick="editTask(${t.id})" class="group cursor-pointer transition-all ${editId == t.id ? 'row-editing' : (isCompleted ? 'status-completed-row' : (isOverdue ? 'deadline-overdue' : 'hover:bg-slate-50/80'))}">
+                    <td class="px-6 py-4 align-top text-sm font-bold truncate max-w-[180px]">
+                        ${isOverdue ? '⚠️ ' : ''}${ticketContent}
+                    </td>
+                    <td class="px-4 py-4 align-top text-slate-600 text-xs leading-relaxed max-w-[350px] italic">
+                        ${t.description}
+                    </td>
+                    <td class="px-4 py-4 align-top text-center">
+                        <span class="text-[10px] font-black text-slate-500 uppercase bg-slate-100 px-2 py-1 rounded">${t.assignee}</span>
+                    </td>
+                    <td class="px-4 py-4 align-top text-center">
+                        <span class="text-[10px] font-black px-2 py-1 rounded border uppercase ${deadlineStyle}">${t.deadlineLabel}</span>
+                    </td>
+                    <td class="px-4 py-4 align-top text-center">
+                        <select onchange="updateStatus(${t.id}, this.value, event)" onclick="event.stopPropagation()" class="text-[10px] font-bold uppercase px-2 py-1 rounded cursor-pointer outline-none border-none ${statusStyle}">
+                            <option value="ready" ${t.status === 'ready' ? 'selected' : ''}>READY</option>
+                            <option value="processing" ${t.status === 'processing' ? 'selected' : ''}>PROCESS</option>
+                            <option value="completed" ${t.status === 'completed' ? 'selected' : ''}>DONE</option>
+                        </select>
+                    </td>
+                    <td class="px-4 py-4 align-top text-center text-[10px] font-bold text-slate-400">${t.createdAt}</td>
+                    <td class="px-6 py-4 align-top text-right">
+                        <button onclick="deleteTask(${t.id}, event)" class="text-slate-200 hover:text-red-500 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                        </button>
+                    </td>
+                </tr>`;
+            }).join('');
+
+            const active = tasks.filter(x => x.status !== 'completed').length;
+            document.getElementById('statsCount').innerText = `${active} active • ${tasks.length - active} done`;
+        }
+
+        function updateStatus(id, stat, e) { e.stopPropagation(); tasks = tasks.map(t => t.id === id ? {...t, status: stat} : t); save(); }
+        function deleteTask(id, e) { e.stopPropagation(); tasks = tasks.filter(t => t.id !== id); save(); }
+        function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks)); renderTasks(); }
+        function resetForm() {
+            document.getElementById('editTaskId').value = '';
+            document.getElementById('ticketName').value = '';
+            document.getElementById('description').value = '';
+            document.getElementById('assignee').value = '';
+            document.getElementById('formTitle').innerText = "New Task";
+            document.getElementById('submitBtn').innerText = "Create Task";
+            document.getElementById('cancelEditBtn').classList.add('hidden');
+            renderTasks();
+        }
+        function editTask(id) {
+            const t = tasks.find(x => x.id === id);
+            if (!t) return;
+            document.getElementById('editTaskId').value = t.id;
+            document.getElementById('ticketName').value = t.name;
+            document.getElementById('description').value = t.description === '-' ? '' : t.description;
+            document.getElementById('assignee').value = t.assignee;
+            document.getElementById('formTitle').innerText = "Editing Task";
+            document.getElementById('submitBtn').innerText = "Update Task";
+            document.getElementById('cancelEditBtn').classList.remove('hidden');
+            renderTasks();
+        }
+        function exportJSON() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(tasks, null, 2));
+            const dl = document.createElement('a');
+            dl.setAttribute("href", dataStr);
+            dl.setAttribute("download", `petcare_tasks.json`);
+            dl.click();
+        }
+        function importJSON(e) {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onload = (ev) => { tasks = JSON.parse(ev.target.result); save(); };
+            reader.readAsText(file);
+        }
+        function clearAll() { if(confirm('Clear all?')) { tasks = []; save(); } }
+    </script>
+</body>
+</html>
