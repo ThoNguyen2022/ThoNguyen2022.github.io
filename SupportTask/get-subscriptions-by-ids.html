@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscriptions Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; }
+        .json-container { background: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; max-height: 300px; }
+        .table-wrapper { overflow-x: auto; margin-top: 1.5rem; background: white; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; min-width: 1300px; }
+        th, td { border-bottom: 1px solid #e2e8f0; padding: 10px 12px; text-align: left; font-size: 11px; white-space: nowrap; }
+        th { background: #f1f5f9; font-weight: 600; color: #475569; position: sticky; top: 0; cursor: pointer; transition: background 0.2s; }
+        th:not(:first-child):hover { background: #e2e8f0; }
+        tr:hover { background: #f8fafc; }
+        #copyMessage {
+            position: fixed; top: 20px; right: 20px; 
+            padding: 12px 24px; border-radius: 8px; 
+            color: white; font-weight: 500; display: none; 
+            z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    </style>
+</head>
+<body class="p-4 md:p-6">
+
+    <div class="max-w-[1500px] mx-auto">
+        <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
+            <h1 class="text-2xl font-bold mb-1 text-slate-800">Subscriptions Manager</h1>
+            <p class="text-xs text-slate-500 mb-6">Secure data management for Petcare project using personal API Key.</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-1 space-y-4">
+                    <div>
+                        <label class="block text-sm font-bold text-red-600 mb-1 tracking-tight">API KEY:</label>
+                        <input type="password" id="apiKeyInput" class="w-full p-2.5 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none text-xs font-mono" placeholder="Paste your API Key here...">
+                        <p class="text-[10px] text-slate-400 mt-1 italic">* This key is only used for the current session and is not stored.</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Subscription IDs (Newline separated):</label>
+                        <textarea id="idInput" rows="10" class="w-full p-3 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none font-mono text-xs mb-4" placeholder="q7wnm9eu5d06&#10;q8cqpv016kue..."></textarea>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="fetchSubscriptions()" id="fetchBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-md font-medium transition-all flex items-center text-sm shadow-sm">
+                            <span id="btnText">Fetch & Verify</span>
+                            <div id="loader" class="hidden ml-2 w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        </button>
+                        <button onclick="clearAll()" class="border border-slate-300 hover:bg-slate-50 px-5 py-2.5 rounded-md text-sm transition-colors">Clear All</button>
+                    </div>
+                    
+                    <div id="statusMessage" class="hidden mt-4 p-3 rounded-md text-sm"></div>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-semibold text-slate-700">Raw JSON Result:</label>
+                        <button id="copyJsonBtn" onclick="copyRawJson()" class="text-blue-600 text-xs hover:font-bold transition-all">Copy JSON</button>
+                    </div>
+                    <pre id="jsonOutput" class="json-container text-[10px]">Data will appear here after fetching...</pre>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultSection" class="hidden mt-8 animate-in fade-in duration-500">
+            <div class="flex items-center justify-between mb-4">
+                <div>
+                    <h2 class="text-lg font-bold text-slate-800">Subscription Verification Table</h2>
+                    <p class="text-xs text-slate-500">💡 Click on column headers to copy the entire list.</p>
+                </div>
+                <button id="copyFullTableBtn" onclick="copyFullTable()" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-xs font-medium flex items-center shadow-sm transition-all min-w-[140px] justify-center">
+                    Copy Full Table (Excel)
+                </button>
+            </div>
+
+            <div class="table-wrapper">
+                <table id="subscriptionTable">
+                    <thead>
+                        <tr id="tableHeaderRow">
+                            <th>#</th>
+                            <th>Subscription ID</th>
+                            <th>Subscription UUID</th>
+                            <th>State</th>
+                            <th>Account Code (Email)</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Pet Name</th>
+                            <th>Clinic Name</th>
+                            <th>Customer Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 bg-blue-50 border-l-4 border-blue-500 rounded-md">
+                <h3 class="font-bold text-blue-800 mb-2 text-sm uppercase">Option 1: "Allow CORS" Extension (Recommended)</h3>
+                <ul class="text-xs text-blue-700 list-disc list-inside space-y-1">
+                    <li>Install <b>Allow CORS: Access-Control-Allow-Origin</b> extension.</li>
+                    <li>Switch it to <b>ON</b> (orange icon) and refresh this page (F5).</li>
+                </ul>
+            </div>
+            <div class="p-4 bg-orange-50 border-l-4 border-orange-500 rounded-md">
+                <h3 class="font-bold text-orange-800 mb-2 text-sm uppercase">Option 2: Windows Run Command</h3>
+                <p class="text-[10px] text-orange-700 mb-2 font-medium">Close all Chrome instances, then paste into <b>Win + R</b>:</p>
+                <code class="bg-orange-100 p-2 block mt-1 break-all text-[10px] border border-orange-200 rounded font-mono">chrome.exe --user-data-dir="C:/temp" --disable-web-security</code>
+            </div>
+        </div>
+    </div>
+
+    <div id="copyMessage">Copied to clipboard!</div>
+
+    <script>
+        const fieldsMapping = [
+            { key: 'id', path: (d) => d.id },
+            { key: 'uuid', path: (d) => d.uuid },			
+            { key: 'state', path: (d) => d.state },
+            { key: 'account_code', path: (d) => d.account ? d.account.code : '' },
+            { key: 'first_name', path: (d) => d.account ? d.account.first_name : '' }, 
+            { key: 'last_name', path: (d) => d.account ? d.account.last_name : '' },
+            { key: 'pet_name', path: (d) => getCustomFieldValue(d.custom_fields, 'pet_name') },
+            { key: 'clinic_name', path: (d) => getCustomFieldValue(d.custom_fields, 'clinic_name') },
+            { key: 'customer_notes', path: (d) => d.customer_notes || '' } 
+        ];
+
+        function getCustomFieldValue(customFields, name) {
+            if (!customFields || !Array.isArray(customFields)) return '';
+            const field = customFields.find(f => f.name === name);
+            return field ? field.value : '';
+        }
+
+        async function fetchSubscriptions() {
+            const apiKey = document.getElementById('apiKeyInput').value.trim();
+            const input = document.getElementById('idInput').value.trim();
+            const btn = document.getElementById('fetchBtn');
+            const loader = document.getElementById('loader');
+            const statusBox = document.getElementById('statusMessage');
+            const resultSection = document.getElementById('resultSection');
+            const jsonOutput = document.getElementById('jsonOutput');
+
+            if (!apiKey) {
+                showStatus('Please enter API Key', 'error');
+                return;
+            }
+
+            if (!input) {
+                showStatus('Please enter Subscription IDs', 'error');
+                return;
+            }
+
+            const basicAuthToken = btoa(apiKey + ':');
+            const idList = input.split(/\r?\n/).map(id => id.trim()).filter(id => id.length > 0);
+            const url = `https://v3.recurly.com/subscriptions?ids=${encodeURIComponent(idList.join(','))}`;
+
+            btn.disabled = true;
+            loader.classList.remove('hidden');
+            statusBox.classList.add('hidden');
+
+            try {
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Basic ${basicAuthToken}`,
+                        'Accept': 'application/vnd.recurly.v2021-02-25'
+                    }
+                });
+
+                if (!response.ok) {
+                    if (response.status === 401) throw new Error('Invalid or expired API Key');
+                    throw new Error(`HTTP ${response.status} - Connection Error`);
+                }
+
+                const data = await response.json();
+                jsonOutput.textContent = JSON.stringify(data, null, 2);
+                
+                if (data.data && Array.isArray(data.data)) {
+                    renderTable(data.data);
+                    resultSection.classList.remove('hidden');
+                    showStatus(`Successfully fetched ${data.data.length} subscriptions.`, 'success');
+                } else {
+                    showStatus('No subscriptions found.', 'error');
+                }
+
+            } catch (error) {
+                showStatus('Error: ' + error.message + '. Check CORS or API Key!', 'error');
+            } finally {
+                btn.disabled = false;
+                loader.classList.add('hidden');
+            }
+        }
+
+        function renderTable(data) {
+            const tbody = document.querySelector('#subscriptionTable tbody');
+            tbody.innerHTML = '';
+
+            const sorted = data.sort((a, b) => {
+                const emA = (a.account?.code || '').toLowerCase();
+                const emB = (b.account?.code || '').toLowerCase();
+                return emA.localeCompare(emB);
+            });
+
+            sorted.forEach((item, index) => {
+                const row = document.createElement('tr');
+                const idxCell = document.createElement('td');
+                idxCell.textContent = index + 1;
+                idxCell.className = "font-medium text-slate-400";
+                row.appendChild(idxCell);
+
+                fieldsMapping.forEach(field => {
+                    const td = document.createElement('td');
+                    td.textContent = field.path(item);
+                    row.appendChild(td);
+                });
+                tbody.appendChild(row);
+            });
+            setupTableCopyListeners();
+        }
+
+        function setupTableCopyListeners() {
+            const headers = document.querySelectorAll('#subscriptionTable thead th');
+            headers.forEach((header, index) => {
+                if (index === 0) return;
+                const newHeader = header.cloneNode(true);
+                header.parentNode.replaceChild(newHeader, header);
+                newHeader.addEventListener('click', () => {
+                    copyColumnData(index, newHeader.textContent.trim());
+                });
+            });
+        }
+
+        function copyColumnData(columnIndex, headerName) {
+            const rows = document.querySelectorAll('#subscriptionTable tbody tr');
+            const values = [];
+            rows.forEach(row => {
+                const cell = row.querySelectorAll('td')[columnIndex];
+                const val = cell.textContent.trim();
+                if (val) values.push(val);
+            });
+            const textToCopy = values.join(', ');
+            if (textToCopy) {
+                copyToClipboard(textToCopy);
+                showCopyMessage(`Copied '${headerName}' (${values.length} items)`);
+            }
+        }
+
+        function copyFullTable() {
+            const table = document.getElementById('subscriptionTable');
+            const btn = document.getElementById('copyFullTableBtn');
+            const originalText = btn.innerText;
+            const originalClass = btn.className;
+            let tsv = '';
+            const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
+            tsv += headers.join('\t') + '\n';
+            const rows = table.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                const cells = Array.from(row.querySelectorAll('td')).map(td => td.textContent.trim());
+                tsv += cells.join('\t') + '\n';
+            });
+            copyToClipboard(tsv);
+            btn.innerText = "Copied!";
+            btn.className = "bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-xs font-medium flex items-center shadow-sm transition-all min-w-[140px] justify-center";
+            setTimeout(() => { btn.innerText = originalText; btn.className = originalClass; }, 2000);
+            showCopyMessage('Full table copied for Excel!');
+        }
+
+        function copyRawJson() {
+            const text = document.getElementById('jsonOutput').textContent;
+            copyToClipboard(text);
+            const btn = document.getElementById('copyJsonBtn');
+            btn.innerText = "COPIED!";
+            setTimeout(() => { btn.innerText = "Copy JSON"; }, 2000);
+        }
+
+        function copyToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+        }
+
+        function showCopyMessage(text) {
+            const msg = document.getElementById('copyMessage');
+            msg.innerText = text;
+            msg.style.backgroundColor = '#10b981';
+            msg.style.display = 'block';
+            setTimeout(() => msg.style.display = 'none', 2500);
+        }
+
+        function showStatus(msg, type) {
+            const box = document.getElementById('statusMessage');
+            box.innerText = msg;
+            box.className = `mt-4 p-3 rounded-md text-sm ${type === 'error' ? 'bg-red-50 text-red-600' : 'bg-green-50 text-green-600'}`;
+            box.classList.remove('hidden');
+        }
+
+        function clearAll() {
+            document.getElementById('idInput').value = '';
+            document.getElementById('apiKeyInput').value = '';
+            document.getElementById('jsonOutput').textContent = 'Data will appear here after fetching...';
+            document.getElementById('resultSection').classList.add('hidden');
+            document.getElementById('statusMessage').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
