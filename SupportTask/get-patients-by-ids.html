@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Data Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .full-screen-container { width: 100%; padding: 1.5rem; }
+        #ids-input { min-height: 100px; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen"> 
+
+    <div class="full-screen-container mx-auto bg-white rounded-xl shadow-2xl">
+        <h1 class="text-3xl font-extrabold text-indigo-700 mb-6">Patient Data Tool</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="space-y-4">
+                <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100">
+                    <h3 class="text-sm font-bold text-indigo-800 mb-3 uppercase">Settings (Saved Automatically)</h3>
+                    <div class="mb-3">
+                        <label class="block text-xs font-bold text-gray-600 mb-1">API Endpoint URL:</label>
+                        <input id="api-url" type="text" 
+                            class="w-full border border-gray-300 rounded p-2 text-sm focus:ring-2 focus:ring-indigo-500" 
+                            placeholder="https://api.example.com/graphql">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-600 mb-1">Authorization Token:</label>
+                        <input id="auth-token" type="text" 
+                            class="w-full border border-gray-300 rounded p-2 text-sm focus:ring-2 focus:ring-indigo-500" 
+                            placeholder="Bearer token...">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Patient IDs (Comma or New line):</label>
+                    <textarea id="ids-input" 
+                        class="w-full border border-gray-300 rounded-lg p-2 font-mono text-sm shadow-sm focus:ring-2 focus:ring-indigo-500" 
+                        placeholder="401347032, 401347715..."></textarea>
+                </div>
+                <button id="fetch-button"
+                    class="w-full px-6 py-3 bg-indigo-600 text-white font-bold rounded-lg shadow-md hover:bg-indigo-700 transition transform hover:scale-[1.01]">
+                    Fetch Data from API
+                </button>
+            </div>
+
+            <div class="flex flex-col">
+                <label class="block text-sm font-bold text-gray-700 mb-1">Or Paste Manual JSON Response:</label>
+                <textarea id="json-input" 
+                    class="w-full border border-gray-300 rounded-lg p-2 font-mono text-sm shadow-sm focus:ring-2 focus:ring-indigo-500 flex-grow mb-2" 
+                    placeholder="Paste full JSON response here..."></textarea>
+                <button id="process-manual-button"
+                    class="w-full px-6 py-2 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 transition">
+                    Process Manual JSON
+                </button>
+            </div>
+        </div>
+        
+        <hr class="my-8">
+
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-semibold text-gray-700">Table Results <span id="record-count" class="text-sm font-normal text-gray-500"></span></h2>
+            <button id="copy-button" disabled
+                    class="px-4 py-2 bg-green-500 text-white font-medium rounded-lg shadow-md hover:bg-green-600 transition disabled:opacity-50">
+                Copy All (CSV)
+            </button>
+        </div>
+
+        <div id="status-message" class="p-3 mb-4 rounded-lg hidden font-medium"></div>
+        <div id="data-table-container" class="mt-4 overflow-auto"></div>
+    </div>
+
+    <script>
+        const fetchButton = document.getElementById('fetch-button');
+        const processManualButton = document.getElementById('process-manual-button');
+        const copyButton = document.getElementById('copy-button');
+        const idsInput = document.getElementById('ids-input');
+        const authToken = document.getElementById('auth-token');
+        const apiUrlInput = document.getElementById('api-url');
+        const jsonInput = document.getElementById('json-input');
+        const container = document.getElementById('data-table-container');
+        const statusMessage = document.getElementById('status-message');
+        const recordCountLabel = document.getElementById('record-count');
+        
+        let structuredData = [];
+
+        // --- LocalStorage Logic ---
+        function loadSettings() {
+            apiUrlInput.value = localStorage.getItem('api_tool_url') || '';
+            authToken.value = localStorage.getItem('api_tool_token') || '';
+        }
+
+        function saveSettings() {
+            localStorage.setItem('api_tool_url', apiUrlInput.value.trim());
+            localStorage.setItem('api_tool_token', authToken.value.trim());
+        }
+
+        apiUrlInput.addEventListener('input', saveSettings);
+        authToken.addEventListener('input', saveSettings);
+        // --------------------------
+
+        function showStatus(message, type = 'success') {
+            statusMessage.textContent = message;
+            statusMessage.className = `p-3 mb-4 rounded-lg block ${type === 'error' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}`;
+            if (type === 'success') setTimeout(() => statusMessage.className = 'hidden', 5000);
+        }
+
+        async function fetchPatientData() {
+            const token = authToken.value.trim();
+            const rawIds = idsInput.value.trim();
+            const apiUrl = apiUrlInput.value.trim();
+
+            if (!apiUrl || !token || !rawIds) return showStatus('Please fill URL, Token and IDs!', 'error');
+
+            const ids = rawIds.split(/[,\s\n]+/).map(id => parseInt(id.trim())).filter(id => !isNaN(id));
+            
+            showStatus('Fetching...', 'success');
+            fetchButton.disabled = true;
+
+            const query = `query searchPatients($filters: PatientFilters!) {
+                patients(filters: $filters) {
+                    id, name, tags {name},
+                    customFields { customPatientField { name } value }
+                    client { email familyName givenName }
+                }
+            }`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': token.startsWith('SFMyNTY') ? token : `SFMyNTY.${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ query, variables: { filters: { ids } } })
+                });
+
+                const result = await response.json();
+                if (result.errors) {
+                    showStatus('API Error: ' + result.errors[0].message, 'error');
+                } else {
+                    jsonInput.value = JSON.stringify(result, null, 2);
+                    processAndRender(result);
+                }
+            } catch (err) {
+                showStatus('Error: ' + err.message, 'error');
+            } finally {
+                fetchButton.disabled = false;
+            }
+        }
+
+        function processAndRender(parsedData) {
+            const rawIdsInput = idsInput.value.trim();
+            const originalIds = rawIdsInput.split(/[,\s\n]+/).map(id => id.trim()).filter(id => id !== "");
+            const patientsFromApi = parsedData.data?.patients || [];
+            const apiDataMap = new Map();
+            patientsFromApi.forEach(p => apiDataMap.set(p.id.toString(), p));
+
+            structuredData = originalIds.map((id, index) => {
+                const patient = apiDataMap.get(id);
+                if (!patient) return { stt: index + 1, petId: id, petName: "NOT FOUND", email: "N/A", firstName: "N/A", lastName: "N/A", tags: "N/A", recurlyUuid: "N/A" };
+
+                const tagNames = patient.tags ? patient.tags.map(tag => tag.name).join('; ') : 'N/A';
+                const recurlyField = patient.customFields?.find(f => f.customPatientField?.name === 'RecurlyReferenceUuid');
+                const client = patient.client || {};
+
+                return {
+                    stt: index + 1,
+                    petId: patient.id,
+                    petName: patient.name || 'N/A',
+                    email: client.email || 'N/A',
+                    firstName: client.givenName || 'N/A',
+                    lastName: client.familyName || 'N/A',
+                    tags: tagNames || 'N/A',
+                    recurlyUuid: recurlyField ? recurlyField.value : 'N/A'
+                };
+            });
+
+            recordCountLabel.textContent = `(${structuredData.length} records)`;
+            renderTable(structuredData);
+        }
+
+        function renderTable(data) {
+            if (data.length === 0) return;
+            copyButton.disabled = false;
+            const headers = Object.keys(data[0]);
+            let html = '<table class="min-w-full divide-y divide-gray-200 border text-sm">';
+            html += '<thead class="bg-indigo-600 text-white"><tr>';
+            headers.forEach(h => html += `<th class="px-4 py-2 text-left font-bold uppercase">${h}</th>`);
+            html += '</tr></thead><tbody class="bg-white divide-y">';
+            data.forEach((row, idx) => {
+                html += `<tr class="${row.petName === 'NOT FOUND' ? 'bg-red-50' : (idx % 2 === 0 ? 'bg-white' : 'bg-gray-50')}">`;
+                headers.forEach(h => html += `<td class="px-4 py-2 border-r">${row[h]}</td>`);
+                html += '</tr>';
+            });
+            html += '</tbody></table>';
+            container.innerHTML = html;
+        }
+
+        fetchButton.addEventListener('click', fetchPatientData);
+        processManualButton.addEventListener('click', () => {
+            try { processAndRender(JSON.parse(jsonInput.value)); } catch(e) { showStatus('Invalid JSON', 'error'); }
+        });
+        copyButton.addEventListener('click', () => {
+            const csv = [Object.keys(structuredData[0]).join(','), ...structuredData.map(r => Object.values(r).join(','))].join('\n');
+            navigator.clipboard.writeText(csv).then(() => showStatus('CSV Copied!'));
+        });
+
+        // Initialize
+        loadSettings();
+    </script>
+</body>
+</html>
